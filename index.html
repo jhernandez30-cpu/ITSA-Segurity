@@ -3,191 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITSA Segurity - Innovación tecnológica</title>
-    <!-- Fuentes -->
+    <title>ITSA Segurity · Innovación digital</title>
+    <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome (iconos) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- CSS personalizados (RUTAS CORREGIDAS: /ITSA-Segurity/css/ ...) -->
-    <link rel="stylesheet" href="/ITSA-Segurity/css/style.css">
-    <link rel="stylesheet" href="/ITSA-Segurity/css/hero.css">
-    <link rel="stylesheet" href="/ITSA-Segurity/css/projects.css">
-    <link rel="stylesheet" href="/ITSA-Segurity/css/skills.css">
+    <!-- CSS modulares -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
 </head>
 <body>
-    <!-- Preloader -->
+    <!-- Preloader elegante -->
     <div id="preloader">
-        <div class="loader"></div>
+        <div class="loader">
+            <span></span><span></span><span></span><span></span>
+        </div>
     </div>
 
-    <!-- Navegación fija (RUTAS CORREGIDAS) -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/ITSA-Segurity/index.html" class="logo">ITSA <span>Segurity</span></a>
+    <!-- Header glassmorphism -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
             <ul class="nav-menu">
-                <li><a href="/ITSA-Segurity/index.html">Inicio</a></li>
-                <li><a href="/ITSA-Segurity/servicios.html">Servicios</a></li>
-                <li><a href="/ITSA-Segurity/tecnologia.html">Tecnología</a></li>
-                <li><a href="/ITSA-Segurity/metodologia.html">Metodología</a></li>
-                <li><a href="/ITSA-Segurity/contacto.html">Contacto</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
+                <li><a href="metodologia.html">Metodología</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-    </nav>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
 
     <main>
-        <!-- HERO SECTION -->
+        <!-- HERO SECTION (impacto) -->
         <section id="hero" class="hero">
-            <div class="hero-background"></div>
-            <div class="hero-content">
-                <h1 class="hero-title">Construimos el <span>futuro digital</span></h1>
-                <p class="hero-subtitle">Desarrollo web, software, ciberseguridad y marketing digital</p>
-                <a href="/ITSA-Segurity/contacto.html" class="btn-cta">Impulsa tu negocio</a>
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <h1 class="hero-title">Construimos el futuro <br><span class="gradient-text">digital</span> de tu negocio</h1>
+                <p class="hero-subtitle">Desarrollo web, software, ciberseguridad y marketing digital con enfoque storytelling.</p>
+                <div class="hero-cta">
+                    <a href="contacto.html" class="btn btn-primary">Inicia tu proyecto <i class="fas fa-arrow-right"></i></a>
+                    <a href="servicios.html" class="btn btn-outline">Descubre cómo</a>
+                </div>
             </div>
             <div class="hero-scroll-indicator">
-                <span></span>
+                <span>Desliza</span>
+                <i class="fas fa-chevron-down"></i>
             </div>
         </section>
 
-        <!-- SECCIÓN PRESENTACIÓN -->
-        <section id="presentacion" class="section presentation">
-            <div class="container">
-                <div class="presentation-grid">
-                    <div class="presentation-text">
-                        <h2 class="section-title">Más que una empresa tecnológica</h2>
-                        <p class="section-paragraph">En ITSA Segurity combinamos creatividad, innovación y seguridad para ofrecer soluciones digitales que transforman negocios. Nuestro enfoque integral abarca desde el desarrollo web hasta la ciberseguridad, siempre con la calidad como estandarte.</p>
-                    </div>
-                    <div class="presentation-image">
-                        <img src="https://placehold.co/600x400/1a1a1a/00ff88?text=Innovación" alt="Innovación">
+        <!-- SECCIÓN PRESENTACIÓN (storytelling) -->
+        <section id="presentacion" class="section presentacion">
+            <div class="container grid-2">
+                <div class="presentacion-texto">
+                    <span class="section-subtitle">· ITSA Segurity ·</span>
+                    <h2 class="section-title">Donde la tecnología cuenta <span class="accent">historias</span></h2>
+                    <p class="section-paragraph">No solo creamos código: diseñamos experiencias inmersivas que conectan con tu audiencia. Fusionamos desarrollo, creatividad y seguridad para llevarte al siguiente nivel.</p>
+                    <div class="stats-mini">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="8">0</span><span>+</span>
+                            <p>Años de experiencia</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="120">0</span><span>+</span>
+                            <p>Proyectos exitosos</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="15">0</span><span>+</span>
+                            <p>Especialistas</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- SERVICIOS DESTACADOS -->
-        <section id="servicios-destacados" class="section services">
-            <div class="container">
-                <h2 class="section-title">Servicios que marcan la diferencia</h2>
-                <div class="services-grid">
-                    <div class="service-card">
+                <div class="presentacion-visual">
+                    <div class="glass-card">
                         <i class="fas fa-code"></i>
-                        <h3>Desarrollo Web</h3>
-                        <p>Sitios web y aplicaciones de alto rendimiento, con diseño adaptable y experiencias de usuario impactantes.</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-laptop-code"></i>
-                        <h3>Desarrollo de Software</h3>
-                        <p>Soluciones a medida para optimizar tus procesos, escalables y seguras.</p>
-                    </div>
-                    <div class="service-card">
                         <i class="fas fa-shield-alt"></i>
-                        <h3>Ciberseguridad</h3>
-                        <p>Protección avanzada para tus activos digitales: auditorías, pentesting y gestión de riesgos.</p>
-                    </div>
-                    <div class="service-card">
                         <i class="fas fa-chart-line"></i>
-                        <h3>Marketing Digital</h3>
-                        <p>Estrategias basadas en datos para aumentar tu visibilidad y conversiones.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN EXPERIENCIA / DIFERENCIAL -->
-        <section id="experiencia" class="section experience">
+        <!-- SERVICIOS (grid con hover 3D) -->
+        <section id="servicios" class="section servicios">
             <div class="container">
-                <div class="experience-timeline">
+                <span class="section-subtitle">· Nuestra experiencia ·</span>
+                <h2 class="section-title">Soluciones integrales <span class="accent">premium</span></h2>
+                <div class="services-grid">
+                    <div class="service-card" data-tilt>
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Desarrollo Web</h3>
+                        <p>Sitios y aplicaciones con narrativa visual y alto rendimiento.</p>
+                    </div>
+                    <div class="service-card" data-tilt>
+                        <i class="fas fa-cogs"></i>
+                        <h3>Software a medida</h3>
+                        <p>Arquitecturas robustas y escalables para tu negocio.</p>
+                    </div>
+                    <div class="service-card" data-tilt>
+                        <i class="fas fa-shield-haltered"></i>
+                        <h3>Ciberseguridad</h3>
+                        <p>Protección proactiva y auditorías de seguridad.</p>
+                    </div>
+                    <div class="service-card" data-tilt>
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Marketing Digital</h3>
+                        <p>Estrategias basadas en datos que convierten.</p>
+                    </div>
+                </div>
+                <div class="service-cta">
+                    <a href="servicios.html" class="btn btn-link">Explorar todos los servicios <i class="fas fa-long-arrow-alt-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCIA / DIFERENCIAL (storytelling visual) -->
+        <section id="experiencia" class="section experiencia">
+            <div class="container">
+                <div class="timeline-grid">
                     <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>+5 años de experiencia</h3>
-                            <p>Hemos acompañado a decenas de empresas en su transformación digital, superando siempre sus expectativas.</p>
+                        <div class="timeline-year">2018</div>
+                        <div class="timeline-content glass-card">
+                            <h4>Nacimiento de ITSA</h4>
+                            <p>Con la visión de fusionar tecnología y narrativa.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Metodología ágil</h3>
-                            <p>Entregas rápidas, iteraciones constantes y total adaptabilidad a los cambios del mercado.</p>
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-content glass-card">
+                            <h4>Expansión en ciberseguridad</h4>
+                            <p>Certificaciones y alianzas estratégicas.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Enfoque en seguridad</h3>
-                            <p>Cada línea de código está pensada para resistir amenazas, protegiendo tu negocio y a tus clientes.</p>
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content glass-card">
+                            <h4>+120 proyectos</h4>
+                            <p>Empresas nacionales confían en nosotros.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ESTADÍSTICAS -->
-        <section id="stats" class="section stats">
+        <!-- ESTADÍSTICAS (contadores) -->
+        <section id="estadisticas" class="section stats">
             <div class="container">
                 <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="150">0</span>
-                        <span class="stat-label">Proyectos exitosos</span>
+                    <div class="stat-large">
+                        <span class="stat-number" data-target="98">0</span><span>%</span>
+                        <p>Satisfacción cliente</p>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="12">0</span>
-                        <span class="stat-label">Expertos en tecnología</span>
+                    <div class="stat-large">
+                        <span class="stat-number" data-target="24">0</span><span>/7</span>
+                        <p>Soporte continuo</p>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="98">0</span>
-                        <span class="stat-label">% de satisfacción</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TESTIMONIOS -->
-        <section id="testimonios" class="section testimonials">
-            <div class="container">
-                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-                <div class="testimonials-carousel">
-                    <div class="carousel-track">
-                        <div class="testimonial">
-                            <p>"ITSA Segurity transformó nuestra presencia online. Su equipo es altamente profesional y creativo."</p>
-                            <h4>— Carlos Mendoza, CEO de TechCorp</h4>
-                        </div>
-                        <div class="testimonial">
-                            <p>"La ciberseguridad de nuestra empresa ahora es robusta gracias a sus auditorías. Totalmente recomendados."</p>
-                            <h4>— Ana Lucía Pérez, Directora de Sistemas</h4>
-                        </div>
-                        <div class="testimonial">
-                            <p>"Su enfoque en marketing digital nos ayudó a aumentar las ventas en un 200% en seis meses."</p>
-                            <h4>— Javier Ruiz, Fundador de RuizStyle</h4>
-                        </div>
+                    <div class="stat-large">
+                        <span class="stat-number" data-target="15">0</span><span>+</span>
+                        <p>Premios innovación</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACTO (sección en home) -->
-        <section id="contacto" class="section contact">
+        <!-- TESTIMONIOS (carrusel automático) -->
+        <section id="testimonios" class="section testimonios">
             <div class="container">
-                <h2 class="section-title">Hablemos de tu proyecto</h2>
-                <div class="contact-grid">
-                    <form id="contact-form" class="contact-form">
-                        <input type="text" name="nombre" placeholder="Nombre" required>
-                        <input type="email" name="email" placeholder="Email" required>
-                        <textarea name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
-                        <button type="submit" class="btn-submit">Enviar mensaje</button>
-                    </form>
-                    <div class="contact-info">
-                        <h3>Conecta con nosotros</h3>
-                        <div class="social-links">
-                            <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                            <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                            <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                            <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+                <span class="section-subtitle">· Clientes ·</span>
+                <h2 class="section-title">Lo que dicen de <span class="accent">nosotros</span></h2>
+                <div class="testimonial-carousel">
+                    <div class="testimonial-track">
+                        <div class="testimonial-card">
+                            <p>"ITSA transformó nuestra presencia digital. El enfoque storytelling marcó la diferencia."</p>
+                            <h5>— Laura Méndez, CMO de InnovaCorp</h5>
                         </div>
-                        <p class="phone"><i class="fas fa-phone-alt"></i> +505 8987 1374</p>
+                        <div class="testimonial-card">
+                            <p>"Su equipo de ciberseguridad evitó vulnerabilidades críticas. Altamente recomendados."</p>
+                            <h5>— Carlos Rivas, CTO de FintechPro</h5>
+                        </div>
+                        <div class="testimonial-card">
+                            <p>"El desarrollo de software fue impecable, con entregas ágiles y calidad superior."</p>
+                            <h5>— Ana Soto, Directora de Operaciones</h5>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO (avanzado) -->
+        <section id="contacto" class="section contacto">
+            <div class="container grid-2">
+                <div class="contact-info">
+                    <span class="section-subtitle">· Hablemos ·</span>
+                    <h2 class="section-title">Comienza tu <span class="accent">historia</span></h2>
+                    <p>Estamos listos para hacer realidad tu proyecto.</p>
+                    <ul class="contact-details">
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/50589871374">+505 8987 1374</a></li>
+                        <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/it_segurity" target="_blank">@it_segurity</a></li>
+                        <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank">ITSA Segurity</a></li>
+                        <li><i class="fab fa-tiktok"></i> <a href="https://www.tiktok.com/@it._segurity" target="_blank">@it._segurity</a></li>
+                    </ul>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Nombre</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <label for="message">Mensaje</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
+                </form>
             </div>
         </section>
     </main>
@@ -195,21 +235,36 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 ITSA Segurity. Todos los derechos reservados.</p>
-                <div class="footer-links">
-                    <a href="#">Aviso legal</a>
-                    <a href="#">Política de privacidad</a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+                    <p>Innovación digital con propósito.</p>
                 </div>
+                <div class="footer-links">
+                    <h5>Empresa</h5>
+                    <ul>
+                        <li><a href="metodologia.html">Metodología</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h5>Redes</h5>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts (RUTAS CORREGIDAS) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    <script src="/ITSA-Segurity/js/script.js"></script>
-    <script src="/ITSA-Segurity/js/animation.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/animation.js"></script>
 </body>
 </html>
