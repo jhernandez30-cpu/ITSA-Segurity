@@ -53,7 +53,7 @@
     <main>
         <!-- HERO SECTION con particles.js -->
         <section id="hero" class="hero">
-            <div id="particles-js"></div> <!-- Fondo de partículas -->
+            <div id="particles-js"></div>
             <div class="hero-content container">
                 <h1 class="hero-title">Construimos el futuro <br><span class="gradient-text">digital</span> de tu negocio</h1>
                 <p class="hero-subtitle">Desarrollo web, software, ciberseguridad y marketing digital con enfoque storytelling.</p>
@@ -68,7 +68,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN PRESENTACIÓN -->
+        <!-- SECCIÓN PRESENTACIÓN (sin cambios) -->
         <section id="presentacion" class="section presentacion">
             <div class="container grid-2">
                 <div class="presentacion-texto">
@@ -91,7 +91,6 @@
                     </div>
                 </div>
                 <div class="presentacion-visual">
-                    <!-- Imagen representativa (mockup, dashboard, etc.) -->
                     <img src="assets/images/presentation.jpg" alt="ITSA tecnología" class="presentation-img" onerror="this.style.display='none'">
                     <div class="glass-card" style="margin-top: 1rem;">
                         <i class="fas fa-code"></i>
@@ -102,40 +101,53 @@
             </div>
         </section>
 
-        <!-- SERVICIOS -->
-        <section id="servicios" class="section servicios">
+        <!-- ===== SECCIÓN DE SERVICIOS REDISEÑADA ===== -->
+        <section id="servicios" class="section servicios-grid-section" style="background: #0a0c12; padding: 80px 0;">
             <div class="container">
                 <span class="section-subtitle">· Nuestra experiencia ·</span>
                 <h2 class="section-title">Soluciones integrales <span class="accent">premium</span></h2>
-                <div class="services-grid">
-                    <div class="service-card" data-tilt>
-                        <i class="fas fa-laptop-code"></i>
+                
+                <div class="servicios-grid" style="margin-top: 3rem;">
+                    <!-- Desarrollo Web -->
+                    <div class="servicio-card">
+                        <i class="fas fa-laptop-code card-icon"></i>
                         <h3>Desarrollo Web</h3>
-                        <p>Sitios y aplicaciones con narrativa visual y alto rendimiento.</p>
+                        <p class="card-description">Sitios y aplicaciones con narrativa visual, alto rendimiento y las últimas tecnologías frontend y backend.</p>
+                        <a href="servicios.html" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="service-card" data-tilt>
-                        <i class="fas fa-cogs"></i>
+
+                    <!-- Software a medida -->
+                    <div class="servicio-card">
+                        <i class="fas fa-cogs card-icon"></i>
                         <h3>Software a medida</h3>
-                        <p>Arquitecturas robustas y escalables para tu negocio.</p>
+                        <p class="card-description">Aplicaciones de escritorio, móviles y cloud con arquitecturas escalables y metodologías ágiles.</p>
+                        <a href="servicios.html" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="service-card" data-tilt>
-                        <i class="fas fa-shield-haltered"></i>
+
+                    <!-- Ciberseguridad -->
+                    <div class="servicio-card">
+                        <i class="fas fa-shield-haltered card-icon"></i>
                         <h3>Ciberseguridad</h3>
-                        <p>Protección proactiva y auditorías de seguridad.</p>
+                        <p class="card-description">Auditorías, pentesting, protección de datos y monitorización 24/7 para mantener tu negocio seguro.</p>
+                        <a href="servicios.html" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="service-card" data-tilt>
-                        <i class="fas fa-bullseye"></i>
+
+                    <!-- Marketing Digital -->
+                    <div class="servicio-card">
+                        <i class="fas fa-bullseye card-icon"></i>
                         <h3>Marketing Digital</h3>
-                        <p>Estrategias basadas en datos que convierten.</p>
+                        <p class="card-description">Estrategias basadas en datos: SEO, SEM, redes sociales y automatización para maximizar conversiones.</p>
+                        <a href="servicios.html" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="service-cta">
-                    <a href="servicios.html" class="btn btn-link">Explorar todos los servicios <i class="fas fa-long-arrow-alt-right"></i></a>
+
+                <div class="service-cta" style="text-align: center; margin-top: 3rem;">
+                    <a href="servicios.html" class="btn btn-link">Ver todos los servicios <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>
             </div>
         </section>
 
-        <!-- EXPERIENCIA / TIMELINE -->
+        <!-- EXPERIENCIA / TIMELINE (sin cambios) -->
         <section id="experiencia" class="section experiencia">
             <div class="container">
                 <span class="section-subtitle">· Nuestra historia ·</span>
@@ -166,7 +178,7 @@
             </div>
         </section>
 
-        <!-- ESTADÍSTICAS -->
+        <!-- ESTADÍSTICAS (sin cambios) -->
         <section id="estadisticas" class="section stats">
             <div class="container">
                 <div class="stats-grid">
@@ -186,7 +198,7 @@
             </div>
         </section>
 
-        <!-- TESTIMONIOS -->
+        <!-- TESTIMONIOS (sin cambios) -->
         <section id="testimonios" class="section testimonios">
             <div class="container">
                 <span class="section-subtitle">· Clientes ·</span>
@@ -210,7 +222,7 @@
             </div>
         </section>
 
-        <!-- CONTACTO -->
+        <!-- CONTACTO (sin cambios) -->
         <section id="contacto" class="section contacto">
             <div class="container grid-2">
                 <div class="contact-info">
@@ -243,7 +255,7 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (sin cambios) -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -284,83 +296,18 @@
             if (typeof particlesJS !== 'undefined') {
                 particlesJS('particles-js', {
                     "particles": {
-                        "number": {
-                            "value": 100,
-                            "density": {
-                                "enable": true,
-                                "value_area": 800
-                            }
-                        },
+                        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
                         "color": { "value": "#00aaff" },
-                        "shape": {
-                            "type": "circle",
-                            "stroke": {
-                                "width": 0,
-                                "color": "#000000"
-                            }
-                        },
-                        "opacity": {
-                            "value": 0.5,
-                            "random": true,
-                            "anim": {
-                                "enable": true,
-                                "speed": 1,
-                                "opacity_min": 0.1,
-                                "sync": false
-                            }
-                        },
-                        "size": {
-                            "value": 3,
-                            "random": true,
-                            "anim": {
-                                "enable": true,
-                                "speed": 4,
-                                "size_min": 0.3,
-                                "sync": false
-                            }
-                        },
-                        "line_linked": {
-                            "enable": true,
-                            "distance": 150,
-                            "color": "#00aaff",
-                            "opacity": 0.4,
-                            "width": 1
-                        },
-                        "move": {
-                            "enable": true,
-                            "speed": 1.5,
-                            "direction": "none",
-                            "random": true,
-                            "straight": false,
-                            "out_mode": "out",
-                            "bounce": false,
-                            "attract": {
-                                "enable": false,
-                                "rotateX": 600,
-                                "rotateY": 1200
-                            }
-                        }
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } },
+                        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 4, "size_min": 0.3 } },
+                        "line_linked": { "enable": true, "distance": 150, "color": "#00aaff", "opacity": 0.4, "width": 1 },
+                        "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
                     },
                     "interactivity": {
                         "detect_on": "canvas",
-                        "events": {
-                            "onhover": {
-                                "enable": true,
-                                "mode": "grab"
-                            },
-                            "onclick": {
-                                "enable": true,
-                                "mode": "push"
-                            },
-                            "resize": true
-                        },
-                        "modes": {
-                            "grab": {
-                                "distance": 140,
-                                "line_linked": { "opacity": 1 }
-                            },
-                            "push": { "particles_nb": 4 }
-                        }
+                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
                     },
                     "retina_detect": true
                 });
