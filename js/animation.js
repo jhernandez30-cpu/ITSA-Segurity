@@ -1,162 +1,108 @@
-// animation.js - Animaciones con GSAP y ScrollTrigger
-
+// animation.js
 gsap.registerPlugin(ScrollTrigger);
 
-// Hero animation
-const heroTimeline = gsap.timeline();
-heroTimeline
-    .to('.hero-title', {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power3.out'
-    })
-    .to('.hero-subtitle', {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power3.out'
-    }, '-=0.5')
-    .to('.btn-cta', {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power3.out'
-    }, '-=0.5');
+// Animación inicial de la hero (carga)
+window.addEventListener('load', () => {
+    const tl = gsap.timeline();
+    tl.from('.hero-title', { opacity: 0, y: 100, duration: 1.2, ease: 'power3.out' })
+      .from('.hero-subtitle', { opacity: 0, y: 30, duration: 0.8 }, '-=0.6')
+      .from('.hero-cta .btn', { opacity: 0, scale: 0.8, stagger: 0.2, duration: 0.8 }, '-=0.4')
+      .from('.hero-scroll-indicator', { opacity: 0, y: -20, duration: 0.6 }, '-=0.2');
+});
 
-// Parallax ligero en hero
-gsap.to('.hero-background', {
-    y: 100,
-    ease: 'none',
+// ScrollTrigger: revelado de secciones
+gsap.utils.toArray('.section').forEach(section => {
+    gsap.from(section, {
+        scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: 'power2.out'
+    });
+});
+
+// Animación de textos divididos (split) en títulos
+gsap.utils.toArray('.section-title').forEach(title => {
+    const chars = title.innerText.split('');
+    title.innerHTML = chars.map(c => `<span class="char">${c}</span>`).join('');
+    gsap.from(title.querySelectorAll('.char'), {
+        scrollTrigger: {
+            trigger: title,
+            start: 'top 80%',
+        },
+        opacity: 0,
+        y: 20,
+        rotateX: -90,
+        stagger: 0.02,
+        duration: 0.6,
+        ease: 'back.out(1.7)'
+    });
+});
+
+// Efecto parallax en hero
+gsap.to('.hero-overlay', {
     scrollTrigger: {
         trigger: '.hero',
         start: 'top top',
         end: 'bottom top',
         scrub: true
-    }
-});
-
-// Presentación: texto e imagen con scroll
-gsap.from('.presentation-text', {
-    scrollTrigger: {
-        trigger: '#presentacion',
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: 1
     },
-    x: -100,
-    opacity: 0
+    y: 200,
+    scale: 1.2,
+    ease: 'none'
 });
 
-gsap.from('.presentation-image', {
-    scrollTrigger: {
-        trigger: '#presentacion',
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: 1
-    },
-    x: 100,
-    opacity: 0
-});
-
-// Servicios: stagger
+// Animación de tarjetas de servicios (stagger)
 gsap.from('.service-card', {
     scrollTrigger: {
-        trigger: '#servicios-destacados',
+        trigger: '#servicios',
         start: 'top 70%',
     },
-    y: 50,
     opacity: 0,
-    duration: 0.8,
+    y: 60,
+    stagger: 0.15,
+    duration: 0.9,
+    ease: 'power3.out'
+});
+
+// Animación de los pasos de metodología
+gsap.from('.step', {
+    scrollTrigger: {
+        trigger: '.metodologia-steps',
+        start: 'top 70%',
+    },
+    opacity: 0,
+    x: -50,
     stagger: 0.2,
+    duration: 0.8
+});
+
+// Animación de la nube de skills (stagger)
+gsap.from('.skill-item', {
+    scrollTrigger: {
+        trigger: '.skills-cloud',
+        start: 'top 80%',
+    },
+    opacity: 0,
+    scale: 0.5,
+    stagger: 0.03,
+    duration: 0.5,
     ease: 'back.out(1.2)'
 });
 
-// Experiencia: timeline items con efecto escalera
+// Línea de tiempo horizontal en experiencia (si se desea)
 gsap.from('.timeline-item', {
     scrollTrigger: {
         trigger: '#experiencia',
         start: 'top 70%',
     },
+    opacity: 0,
     x: -100,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.3
-});
-
-// Estadísticas ya se manejan con contadores, pero podemos animar la entrada del contenedor
-gsap.from('.stats-grid', {
-    scrollTrigger: {
-        trigger: '#stats',
-        start: 'top 80%',
-    },
-    scale: 0.8,
-    opacity: 0,
+    stagger: 0.3,
     duration: 1
 });
-
-// Testimonios carrusel: animación de entrada
-gsap.from('.testimonials-carousel', {
-    scrollTrigger: {
-        trigger: '#testimonios',
-        start: 'top 80%',
-    },
-    y: 50,
-    opacity: 0,
-    duration: 1
-});
-
-// Contacto: animación de formulario e info
-gsap.from('.contact-form', {
-    scrollTrigger: {
-        trigger: '#contacto',
-        start: 'top 80%',
-    },
-    x: -50,
-    opacity: 0,
-    duration: 1
-});
-
-gsap.from('.contact-info', {
-    scrollTrigger: {
-        trigger: '#contacto',
-        start: 'top 80%',
-    },
-    x: 50,
-    opacity: 0,
-    duration: 1
-});
-
-// Footer sutil
-gsap.from('.footer', {
-    scrollTrigger: {
-        trigger: '.footer',
-        start: 'top 90%',
-    },
-    opacity: 0,
-    y: 20,
-    duration: 0.8
-});
-
-// Split text animation opcional (si se desea, se puede agregar para títulos)
-// Ejemplo: dividir el título del hero en letras
-const heroTitle = document.querySelector('.hero-title');
-if (heroTitle) {
-    const text = heroTitle.innerText;
-    heroTitle.innerHTML = '';
-    [...text].forEach(char => {
-        const span = document.createElement('span');
-        span.innerText = char;
-        span.style.display = 'inline-block';
-        heroTitle.appendChild(span);
-    });
-    gsap.from('.hero-title span', {
-        opacity: 0,
-        y: 50,
-        rotateX: -90,
-        stagger: 0.02,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.5
-    });
-}
