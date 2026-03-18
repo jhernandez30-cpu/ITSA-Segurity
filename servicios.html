@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (iconos tecnológicos) -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- CSS Principal -->
+    <!-- CSS modulares -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/projects.css">
@@ -22,15 +22,31 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <!-- PRELOADER (mantener el que ya tienes) -->
-    <div id="preloader"><div class="loader"><span></span><span></span><span></span><span></span></div></div>
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="loader">
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </div>
 
-    <!-- HEADER (igual) -->
-    <header class="header"> <!-- ... tu header actual ... --> </header>
+    <!-- HEADER GLASS (idéntico al de index.html, con active en Servicios) -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html" class="active">Servicios</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
+                <li><a href="metodologia.html">Metodología</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
 
     <main>
         <!-- HERO DE SERVICIOS CON PARTICLES -->
-        <section class="servicios-hero" id="servicios-hero">
+        <section class="servicios-hero section" id="servicios-hero">
             <div id="particles-js-servicios"></div> <!-- Contenedor de partículas -->
             <div class="container hero-content">
                 <h1 class="servicios-title">Nuestros <span class="accent">servicios</span></h1>
@@ -39,7 +55,7 @@
         </section>
 
         <!-- SECCIÓN DE SERVICIOS - TARJETAS TECNOLÓGICAS -->
-        <section class="servicios-grid-section">
+        <section class="servicios-grid-section section">
             <div class="container">
                 <div class="servicios-grid">
                     <!-- Servicio 1: Desarrollo Web -->
@@ -89,7 +105,7 @@
         </section>
 
         <!-- SECCIÓN "CÓMO TRABAJAMOS" -->
-        <section class="metodologia-section">
+        <section class="metodologia-section section">
             <div class="container">
                 <h2 class="section-title">Cómo <span class="accent">trabajamos</span></h2>
                 <p class="section-subtitle">Un proceso probado que combina agilidad, transparencia y comunicación constante.</p>
@@ -119,7 +135,7 @@
         </section>
 
         <!-- SECCIÓN DE TECNOLOGÍAS -->
-        <section class="tecnologias-section">
+        <section class="tecnologias-section section">
             <div class="container">
                 <h2 class="section-title">Tecnologías que <span class="accent">utilizamos</span></h2>
                 <div class="tech-cloud">
@@ -140,7 +156,7 @@
         </section>
 
         <!-- CTA FINAL -->
-        <section class="cta-section">
+        <section class="cta-section section">
             <div class="container">
                 <div class="cta-content">
                     <h2>¿Listo para transformar tu idea en un producto real?</h2>
@@ -151,9 +167,39 @@
         </section>
     </main>
 
-    <!-- FOOTER (igual) -->
-    <footer class="footer"> <!-- ... tu footer actual ... --> </footer>
+    <!-- FOOTER (idéntico al de index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+                    <p>Innovación digital con propósito.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Empresa</h5>
+                    <ul>
+                        <li><a href="metodologia.html">Metodología</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h5>Redes</h5>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
+    <!-- SCRIPTS -->
     <script src="js/script.js"></script>
     <script src="js/animation.js"></script>
     <script>
