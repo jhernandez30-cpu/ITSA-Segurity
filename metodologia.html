@@ -3,88 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metodología - ITSA Segurity</title>
+    <title>Metodología · ITSA Segurity</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/ITSA-Segurity/css/styles.css">
-    <link rel="stylesheet" href="/ITSA-Segurity/css/hero.css">
-    <link rel="stylesheet" href="/ITSA-Segurity/css/projects.css">
-    <link rel="stylesheet" href="/ITSA-Segurity/css/skills.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
-    <div id="preloader"><div class="loader"></div></div>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/ITSA-Segurity/index.html" class="logo">ITSA <span>Segurity</span></a>
-            <ul class="nav-menu">
-                <li><a href="/ITSA-Segurity/index.html">Inicio</a></li>
-                <li><a href="/ITSA-Segurity/servicios.html">Servicios</a></li>
-                <li><a href="/ITSA-Segurity/tecnologia.html">Tecnología</a></li>
-                <li><a href="/ITSA-Segurity/metodologia.html">Metodología</a></li>
-                <li><a href="/ITSA-Segurity/contacto.html">Contacto</a></li>
-            </ul>
-            <div class="hamburger"><span></span><span></span><span></span></div>
-        </div>
-    </nav>
+    <div id="preloader"><div class="loader"><span></span><span></span><span></span><span></span></div></div>
+    <header class="header"><nav class="navbar container"><a href="index.html" class="logo">ITSA <span>Segurity</span></a><ul class="nav-menu"><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="tecnologia.html">Tecnología</a></li><li><a href="metodologia.html">Metodología</a></li><li><a href="contacto.html">Contacto</a></li></ul><div class="hamburger"><i class="fas fa-bars"></i></div></nav></header>
+
     <main>
-        <section class="hero hero-small">
-            <div class="hero-background"></div>
-            <div class="hero-content">
-                <h1 class="hero-title">Nuestra <span>metodología</span></h1>
-                <p class="hero-subtitle">Ágil, transparente y centrada en resultados</p>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Metodología <span class="accent">ágil</span></h1>
+                <p class="page-subtitle">Transparencia, iteración y valor continuo.</p>
             </div>
         </section>
 
-        <section class="section methodology">
+        <section class="section metodologia-steps">
             <div class="container">
-                <h2 class="section-title">Cómo trabajamos</h2>
-                <div class="methodology-steps">
+                <div class="steps-grid">
                     <div class="step">
-                        <span class="step-number">1</span>
+                        <div class="step-number">1</div>
                         <h3>Descubrimiento</h3>
-                        <p>Analizamos tus necesidades y objetivos.</p>
+                        <p>Entendemos tu negocio, usuarios y objetivos. Realizamos workshops y definimos la hoja de ruta.</p>
                     </div>
                     <div class="step">
-                        <span class="step-number">2</span>
-                        <h3>Estrategia</h3>
-                        <p>Diseñamos la solución más adecuada.</p>
+                        <div class="step-number">2</div>
+                        <h3>Diseño conceptual</h3>
+                        <p>Wireframes, prototipos interactivos y narrativa visual. Validamos contigo cada detalle.</p>
                     </div>
                     <div class="step">
-                        <span class="step-number">3</span>
-                        <h3>Desarrollo ágil</h3>
-                        <p>Iteramos con entregas constantes.</p>
+                        <div class="step-number">3</div>
+                        <h3>Desarrollo iterativo</h3>
+                        <p>Sprints semanales con entregas funcionales. Aplicamos Scrum y Kanban.</p>
                     </div>
                     <div class="step">
-                        <span class="step-number">4</span>
-                        <h3>Pruebas y seguridad</h3>
-                        <p>Garantizamos calidad y protección.</p>
+                        <div class="step-number">4</div>
+                        <h3>Pruebas y calidad</h3>
+                        <p>Testing continuo, auditorías de seguridad y optimización de rendimiento.</p>
                     </div>
                     <div class="step">
-                        <span class="step-number">5</span>
+                        <div class="step-number">5</div>
                         <h3>Lanzamiento</h3>
-                        <p>Despliegue y acompañamiento.</p>
+                        <p>Deploy monitoreado y estrategia de go-to-market.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <h3>Evolución</h3>
+                        <p>Soporte, mantenimiento y mejora continua basada en datos.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 ITSA Segurity. Todos los derechos reservados.</p>
-                <div class="footer-links">
-                    <a href="#">Aviso legal</a>
-                    <a href="#">Política de privacidad</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    <script src="/ITSA-Segurity/js/script.js"></script>
-    <script src="/ITSA-Segurity/js/animation.js"></script>
+
+    <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo">ITSA <span>Segurity</span></a><p>Innovación digital con propósito.</p></div><div class="footer-links"><h5>Empresa</h5><ul><li><a href="metodologia.html">Metodología</a></li><li><a href="tecnologia.html">Tecnología</a></li><li><a href="contacto.html">Contacto</a></li></ul></div><div class="footer-social"><h5>Redes</h5><div class="social-icons"><a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a><a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div></div><div class="footer-bottom"><p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p></div></div></footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/animation.js"></script>
 </body>
 </html>
