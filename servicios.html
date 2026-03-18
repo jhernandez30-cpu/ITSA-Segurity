@@ -8,102 +8,87 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <!-- Font Awesome (iconos) -->
+    <!-- Font Awesome 6 (iconos tecnológicos) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- CSS modulares -->
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/skills.css">
-    <!-- GSAP (opcional, para animaciones suaves) -->
+    <!-- GSAP y ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <!-- PRELOADER (opcional, lo puedes mantener) -->
+    <!-- PRELOADER (mantener el que ya tienes) -->
     <div id="preloader"><div class="loader"><span></span><span></span><span></span><span></span></div></div>
 
     <!-- HEADER (igual) -->
-    <header class="header">
-        <nav class="navbar container">
-            <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
-            <ul class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html" class="active">Servicios</a></li>
-                <li><a href="tecnologia.html">Tecnología</a></li>
-                <li><a href="metodologia.html">Metodología</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-            <div class="hamburger"><i class="fas fa-bars"></i></div>
-        </nav>
-    </header>
+    <header class="header"> <!-- ... tu header actual ... --> </header>
 
     <main>
-        <!-- HERO DE SERVICIOS (similar a Veloxia) -->
-        <section class="servicios-hero">
-            <div class="container">
+        <!-- HERO DE SERVICIOS CON PARTICLES -->
+        <section class="servicios-hero" id="servicios-hero">
+            <div id="particles-js-servicios"></div> <!-- Contenedor de partículas -->
+            <div class="container hero-content">
                 <h1 class="servicios-title">Nuestros <span class="accent">servicios</span></h1>
                 <p class="servicios-subtitle">Construimos productos digitales de alta calidad, integramos IA y potenciamos tu negocio con tecnología avanzada.</p>
             </div>
         </section>
 
-        <!-- SECCIÓN DE SERVICIOS (TARJETAS ESTILO VELOXIA) -->
+        <!-- SECCIÓN DE SERVICIOS - TARJETAS TECNOLÓGICAS -->
         <section class="servicios-grid-section">
             <div class="container">
                 <div class="servicios-grid">
-                    
                     <!-- Servicio 1: Desarrollo Web -->
                     <div class="servicio-card">
-                        <div class="card-icon">💻</div>
+                        <i class="fas fa-laptop-code card-icon"></i>
                         <h3>Desarrollo Web</h3>
                         <p class="card-description">Sitios y aplicaciones con narrativa visual, alto rendimiento y las últimas tecnologías frontend y backend.</p>
-                        <a href="#" class="card-link">Ver servicio →</a>
+                        <a href="#" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <!-- Servicio 2: Software a medida -->
                     <div class="servicio-card">
-                        <div class="card-icon">⚙️</div>
+                        <i class="fas fa-cogs card-icon"></i>
                         <h3>Software a medida</h3>
                         <p class="card-description">Aplicaciones de escritorio, móviles y cloud con arquitecturas escalables y metodologías ágiles.</p>
-                        <a href="#" class="card-link">Ver servicio →</a>
+                        <a href="#" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <!-- Servicio 3: Ciberseguridad -->
                     <div class="servicio-card">
-                        <div class="card-icon">🛡️</div>
+                        <i class="fas fa-shield-haltered card-icon"></i>
                         <h3>Ciberseguridad</h3>
                         <p class="card-description">Auditorías, pentesting, protección de datos y monitorización 24/7 para mantener tu negocio seguro.</p>
-                        <a href="#" class="card-link">Ver servicio →</a>
+                        <a href="#" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <!-- Servicio 4: Marketing Digital -->
                     <div class="servicio-card">
-                        <div class="card-icon">📈</div>
+                        <i class="fas fa-bullseye card-icon"></i>
                         <h3>Marketing Digital</h3>
                         <p class="card-description">Estrategias basadas en datos: SEO, SEM, redes sociales y automatización para maximizar conversiones.</p>
-                        <a href="#" class="card-link">Ver servicio →</a>
+                        <a href="#" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
-
-                    <!-- Servicio 5: IA y Datos (opcional, para dar más variedad) -->
+                    <!-- Servicio 5: IA y Datos -->
                     <div class="servicio-card">
-                        <div class="card-icon">🤖</div>
+                        <i class="fas fa-brain card-icon"></i>
                         <h3>IA & Datos</h3>
                         <p class="card-description">Integración de inteligencia artificial, análisis de datos y modelos predictivos para tu negocio.</p>
-                        <a href="#" class="card-link">Ver servicio →</a>
+                        <a href="#" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
-
                     <!-- Servicio 6: Consultoría Tecnológica -->
                     <div class="servicio-card">
-                        <div class="card-icon">📋</div>
+                        <i class="fas fa-chart-pie card-icon"></i>
                         <h3>Consultoría</h3>
                         <p class="card-description">Asesoramiento experto en arquitectura, tecnología y transformación digital para empresas.</p>
-                        <a href="#" class="card-link">Ver servicio →</a>
+                        <a href="#" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN "CÓMO TRABAJAMOS" (opcional, inspirada en Veloxia) -->
+        <!-- SECCIÓN "CÓMO TRABAJAMOS" -->
         <section class="metodologia-section">
             <div class="container">
                 <h2 class="section-title">Cómo <span class="accent">trabajamos</span></h2>
@@ -133,7 +118,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DE TECNOLOGÍAS (estilo Veloxia) -->
+        <!-- SECCIÓN DE TECNOLOGÍAS -->
         <section class="tecnologias-section">
             <div class="container">
                 <h2 class="section-title">Tecnologías que <span class="accent">utilizamos</span></h2>
@@ -154,7 +139,7 @@
             </div>
         </section>
 
-        <!-- CTA FINAL (como Veloxia) -->
+        <!-- CTA FINAL -->
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
@@ -167,11 +152,54 @@
     </main>
 
     <!-- FOOTER (igual) -->
-    <footer class="footer">
-        <!-- ... (tu footer actual) ... -->
-    </footer>
+    <footer class="footer"> <!-- ... tu footer actual ... --> </footer>
 
     <script src="js/script.js"></script>
     <script src="js/animation.js"></script>
+    <script>
+        // Inicialización de Particles.js para el hero de servicios
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js-servicios', {
+                    "particles": {
+                        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": "#00aaff" },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": true },
+                        "size": { "value": 3, "random": true },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#00aaff",
+                            "opacity": 0.4,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 2,
+                            "direction": "none",
+                            "random": true,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": { "enable": true, "mode": "grab" },
+                            "onclick": { "enable": true, "mode": "push" },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+                            "push": { "particles_nb": 4 }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            }
+        });
+    </script>
 </body>
 </html>
