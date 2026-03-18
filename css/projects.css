@@ -170,359 +170,180 @@
         flex-wrap: wrap;
         justify-content: center;
     }
-    /* ===== MEJORAS PARA SERVICIOS ===== */
-.servicios-detalle {
-    padding-top: 50px;
+
+    /* ===== ESTILOS INSPIRADOS EN VELOXIA ===== */
+
+/* Hero de servicios */
+.servicios-hero {
+    padding: 150px 0 60px;
+    text-align: center;
+    background: radial-gradient(circle at 70% 30%, rgba(0, 170, 255, 0.1) 0%, transparent 50%);
 }
 
-.service-detailed-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.service-detailed-card {
-    position: relative;
-    border-radius: 30px;
-    overflow: hidden;
-    background: var(--glass-bg);
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--glass-border);
-    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
-    min-height: 550px;
-    display: flex;
-    cursor: pointer;
-}
-
-.service-detailed-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 30px 50px rgba(0, 170, 255, 0.3);
-    border-color: var(--accent);
-}
-
-.card-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.15;
-    transition: opacity 0.4s ease, transform 0.6s ease;
-    z-index: 0;
-}
-
-.service-detailed-card:hover .card-bg {
-    opacity: 0.25;
-    transform: scale(1.1);
-}
-
-.card-content {
-    position: relative;
-    z-index: 2;
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(10,20,30,0.7) 0%, rgba(0,0,0,0.9) 100%);
-    backdrop-filter: blur(2px);
-}
-
-.service-icon {
-    font-size: 3rem;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    align-self: flex-start;
-}
-
-.bg-icon {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 8rem;
-    color: rgba(0, 170, 255, 0.1);
-    z-index: -1;
-    transition: all 0.4s ease;
-}
-
-.service-detailed-card:hover .bg-icon {
-    color: rgba(0, 170, 255, 0.2);
-    transform: scale(1.1) rotate(5deg);
-}
-
-.card-content h2 {
-    font-size: 2.2rem;
+.servicios-title {
+    font-size: 4rem;
+    font-weight: 800;
     margin-bottom: 1rem;
-    font-weight: 700;
-    position: relative;
-    display: inline-block;
 }
 
-.card-content h2::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: var(--accent);
-    border-radius: 3px;
-}
-
-.card-content p {
+.servicios-subtitle {
+    font-size: 1.3rem;
     color: var(--text-dim);
-    margin: 1.5rem 0 1rem;
-    line-height: 1.7;
-    flex-grow: 1;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.feature-list {
-    list-style: none;
-    margin: 1.5rem 0;
+/* Grid de servicios */
+.servicios-grid-section {
+    padding: 80px 0;
 }
 
-.feature-list li {
-    margin-bottom: 0.7rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    color: var(--text-dim);
-    font-size: 0.95rem;
-}
-
-.feature-list i {
-    color: var(--accent);
-    font-size: 1.1rem;
-}
-
-.card-content .btn-link {
-    align-self: flex-start;
-    margin-top: 0.5rem;
-    font-weight: 600;
-}
-
-/* Casos de éxito (nuevo) */
-.success-cases {
-    background: linear-gradient(180deg, transparent, rgba(0,170,255,0.05));
-}
-
-.success-grid {
+.servicios-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
-.success-card {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    aspect-ratio: 4/3;
+.servicio-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 2rem 1.5rem;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.success-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
+.servicio-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    background: rgba(0, 170, 255, 0.02);
+    box-shadow: 0 10px 30px rgba(0, 170, 255, 0.1);
 }
 
-.success-card:hover img {
-    transform: scale(1.1);
+.card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 10px var(--accent));
 }
 
-.success-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 1.5rem;
-    background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%);
-    color: white;
-    transform: translateY(30px);
-    opacity: 0;
-    transition: all 0.4s ease;
+.servicio-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
 }
 
-.success-card:hover .success-overlay {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.success-overlay h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.3rem;
-}
-
-.success-overlay p {
-    font-size: 0.9rem;
+.card-description {
     color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .service-detailed-grid {
-        grid-template-columns: 1fr;
-    }
-    .success-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.card-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .success-grid {
-        grid-template-columns: 1fr;
-    }
-    .card-content h2 {
-        font-size: 1.8rem;
-    }
-}
-    /* ===== ESTILOS PARA SERVICIOS TECH ===== */
-.servicios-tech {
-    padding: 60px 0;
+.card-link:hover {
+    gap: 0.8rem;
+    color: #fff;
 }
 
-.services-tech-grid {
+/* Metodología */
+.metodologia-section {
+    padding: 80px 0;
+    background: rgba(0, 170, 255, 0.02);
+}
+
+.metodologia-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
 
-.service-tech-card {
-    position: relative;
-    border-radius: 24px;
-    overflow: hidden;
-    background: var(--glass-bg);
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--glass-border);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    min-height: 400px;
-    display: flex;
+.metodologia-item {
+    text-align: left;
 }
 
-.service-tech-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 45px rgba(0, 170, 255, 0.25);
-    border-color: var(--accent);
-}
-
-.card-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.15;
-    transition: opacity 0.4s ease, transform 0.5s ease;
-    z-index: 0;
-}
-
-.service-tech-card:hover .card-bg {
-    opacity: 0.25;
-    transform: scale(1.1);
-}
-
-.card-content {
-    position: relative;
-    z-index: 2;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background: linear-gradient(135deg, rgba(10,20,30,0.8) 0%, rgba(0,0,0,0.95) 100%);
-}
-
-.card-content h3 {
+.metodologia-number {
     font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.card-content h3 i {
+    font-weight: 800;
     color: var(--accent);
-    font-size: 2rem;
+    opacity: 0.5;
+    display: block;
+    margin-bottom: 1rem;
 }
 
-.service-desc {
+.metodologia-item h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.metodologia-item p {
     color: var(--text-dim);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
-.tech-logos {
+/* Tecnologías */
+.tecnologias-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.tech-cloud {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
-    margin: 1rem 0 1.5rem;
-    padding: 1rem 0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.tech-logos i {
-    font-size: 2rem;
-    color: var(--text-dim);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.tech-logos i:hover {
-    color: var(--accent);
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 8px var(--accent));
-}
-
-/* Tecnologías globales */
-.global-tech {
-    background: linear-gradient(180deg, transparent, rgba(0,170,255,0.03));
-}
-
-.global-tech-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2.5rem;
     margin-top: 3rem;
 }
 
-.global-tech-grid i {
-    font-size: 3rem;
+.tech-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 40px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
     color: var(--text-dim);
     transition: all 0.3s ease;
-    opacity: 0.7;
 }
 
-.global-tech-grid i:hover {
-    color: var(--accent);
-    transform: scale(1.2);
-    opacity: 1;
+.tech-item:hover {
+    background: var(--accent);
+    color: #000;
+    transform: scale(1.05);
+    border-color: var(--accent);
 }
 
 /* CTA final */
-.quick-contact .cta-card {
+.cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,30,50,0.8) 100%);
     text-align: center;
-    padding: 4rem 2rem;
-    background: rgba(0, 40, 60, 0.6);
-    border: 1px solid var(--accent);
-    box-shadow: 0 0 30px rgba(0,170,255,0.2);
 }
 
-.cta-card h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.cta-card p {
+.cta-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.cta-content p {
     font-size: 1.2rem;
     color: var(--text-dim);
     margin-bottom: 2rem;
@@ -530,413 +351,29 @@
 
 /* Responsive */
 @media (max-width: 992px) {
-    .services-tech-grid {
-        grid-template-columns: 1fr;
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .global-tech-grid i {
-        font-size: 2.5rem;
+    .metodologia-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .servicios-title {
+        font-size: 3rem;
     }
 }
 
 @media (max-width: 768px) {
-    .card-content h3 {
-        font-size: 1.6rem;
+    .servicios-grid {
+        grid-template-columns: 1fr;
     }
-    .tech-logos i {
-        font-size: 1.6rem;
+    .metodologia-grid {
+        grid-template-columns: 1fr;
     }
-    .global-tech-grid {
-        gap: 1.5rem;
+    .servicios-title {
+        font-size: 2.5rem;
     }
-    .global-tech-grid i {
+    .cta-content h2 {
         font-size: 2rem;
     }
 }
-    /* ===== TARJETAS NEÓN PARA SERVICIOS ===== */
-.servicios-neon {
-    padding: 60px 0;
-    background: radial-gradient(circle at 20% 30%, rgba(0, 170, 255, 0.05) 0%, transparent 50%);
-}
-
-.neon-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-    margin-top: 3rem;
-}
-
-.neon-card {
-    position: relative;
-    background: rgba(5, 10, 20, 0.7);
-    backdrop-filter: blur(5px);
-    border-radius: 30px;
-    padding: 2.5rem;
-    overflow: hidden;
-    transition: transform 0.4s ease;
-    min-height: 550px;
-    display: flex;
-    border: 1px solid rgba(0, 170, 255, 0.3);
-    box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
-}
-
-.neon-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 30px rgba(0, 170, 255, 0.5);
-    border-color: var(--accent);
-}
-
-/* Efecto de borde neón animado */
-.neon-border {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 30px;
-    padding: 2px;
-    background: linear-gradient(45deg, #00aaff, #00ffaa, #00aaff, #00ffaa);
-    background-size: 300% 300%;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    animation: neon-glow 3s ease infinite;
-}
-
-.neon-card:hover .neon-border {
-    opacity: 1;
-}
-
-@keyframes neon-glow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.card-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.card-icon {
-    font-size: 3.5rem;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 0 10px var(--accent));
-}
-
-.neon-card h3 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(0,170,255,0.5);
-}
-
-.card-description {
-    color: var(--text-dim);
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-}
-
-.service-features {
-    list-style: none;
-    margin: 1rem 0 2rem;
-    flex-grow: 1;
-}
-
-.service-features li {
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    color: #ccc;
-    font-size: 0.95rem;
-}
-
-.service-features i {
-    color: var(--accent);
-    width: 20px;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.btn-neon {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 0.8rem 2rem;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    align-self: flex-start;
-    box-shadow: 0 0 10px rgba(0,170,255,0.3);
-}
-
-.btn-neon:hover {
-    background: var(--accent);
-    color: #000;
-    box-shadow: 0 0 25px var(--accent);
-    transform: scale(1.05);
-}
-
-.btn-neon i {
-    transition: transform 0.3s;
-}
-
-.btn-neon:hover i {
-    transform: translateX(5px);
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    .neon-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .neon-card {
-        padding: 2rem;
-        min-height: auto;
-    }
-    .neon-card h3 {
-        font-size: 1.8rem;
-    }
-    .card-icon {
-        font-size: 2.5rem;
-    }
-}
-/* ===== TARJETAS NEÓN PARA SERVICIOS ===== */
-.servicios-neon {
-    padding: 60px 0;
-    background: radial-gradient(circle at 20% 30%, rgba(0, 170, 255, 0.05) 0%, transparent 50%);
-}
-
-.neon-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-    margin-top: 3rem;
-}
-
-.neon-card {
-    position: relative;
-    background: rgba(5, 10, 20, 0.7);
-    backdrop-filter: blur(5px);
-    border-radius: 30px;
-    padding: 2.5rem;
-    overflow: hidden;
-    transition: transform 0.4s ease;
-    min-height: 550px;
-    display: flex;
-    border: 1px solid rgba(0, 170, 255, 0.3);
-    box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
-}
-
-.neon-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 30px rgba(0, 170, 255, 0.5);
-    border-color: var(--accent);
-}
-
-/* Efecto de borde neón animado */
-.neon-border {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 30px;
-    padding: 2px;
-    background: linear-gradient(45deg, #00aaff, #00ffaa, #00aaff, #00ffaa);
-    background-size: 300% 300%;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    animation: neon-glow 3s ease infinite;
-}
-
-.neon-card:hover .neon-border {
-    opacity: 1;
-}
-
-@keyframes neon-glow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.card-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.card-icon {
-    font-size: 3.5rem;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 0 10px var(--accent));
-}
-
-.neon-card h3 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(0,170,255,0.5);
-}
-
-.card-description {
-    color: var(--text-dim);
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-}
-
-.service-features {
-    list-style: none;
-    margin: 1rem 0 2rem;
-    flex-grow: 1;
-}
-
-.service-features li {
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    color: #ccc;
-    font-size: 0.95rem;
-}
-
-.service-features i {
-    color: var(--accent);
-    width: 20px;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.btn-neon {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 0.8rem 2rem;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    align-self: flex-start;
-    box-shadow: 0 0 10px rgba(0,170,255,0.3);
-}
-
-.btn-neon:hover {
-    background: var(--accent);
-    color: #000;
-    box-shadow: 0 0 25px var(--accent);
-    transform: scale(1.05);
-}
-
-.btn-neon i {
-    transition: transform 0.3s;
-}
-
-.btn-neon:hover i {
-    transform: translateX(5px);
-}
-
-/* Tecnologías globales */
-.global-tech {
-    background: linear-gradient(180deg, transparent, rgba(0,170,255,0.03));
-}
-
-.global-tech-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2.5rem;
-    margin-top: 3rem;
-}
-
-.global-tech-grid i {
-    font-size: 3rem;
-    color: var(--text-dim);
-    transition: all 0.3s ease;
-    opacity: 0.7;
-}
-
-.global-tech-grid i:hover {
-    color: var(--accent);
-    transform: scale(1.2);
-    opacity: 1;
-}
-
-/* CTA final */
-.quick-contact .cta-card {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: rgba(0, 40, 60, 0.6);
-    border: 1px solid var(--accent);
-    box-shadow: 0 0 30px rgba(0,170,255,0.2);
-}
-
-.cta-card h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.cta-card p {
-    font-size: 1.2rem;
-    color: var(--text-dim);
-    margin-bottom: 2rem;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    .neon-grid {
-        grid-template-columns: 1fr;
-    }
-    .global-tech-grid i {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .neon-card {
-        padding: 2rem;
-        min-height: auto;
-    }
-    .neon-card h3 {
-        font-size: 1.8rem;
-    }
-    .card-icon {
-        font-size: 2.5rem;
-    }
-    .global-tech-grid {
-        gap: 1.5rem;
-    }
-    .global-tech-grid i {
-        font-size: 2rem;
-    }
-}    
 }
