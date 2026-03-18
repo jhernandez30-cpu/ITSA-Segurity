@@ -170,4 +170,214 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+    /* ===== MEJORAS PARA SERVICIOS ===== */
+.servicios-detalle {
+    padding-top: 50px;
+}
+
+.service-detailed-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-detailed-card {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    background: var(--glass-bg);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+    min-height: 550px;
+    display: flex;
+    cursor: pointer;
+}
+
+.service-detailed-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 50px rgba(0, 170, 255, 0.3);
+    border-color: var(--accent);
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    transition: opacity 0.4s ease, transform 0.6s ease;
+    z-index: 0;
+}
+
+.service-detailed-card:hover .card-bg {
+    opacity: 0.25;
+    transform: scale(1.1);
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(10,20,30,0.7) 0%, rgba(0,0,0,0.9) 100%);
+    backdrop-filter: blur(2px);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    align-self: flex-start;
+}
+
+.bg-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 8rem;
+    color: rgba(0, 170, 255, 0.1);
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+.service-detailed-card:hover .bg-icon {
+    color: rgba(0, 170, 255, 0.2);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.card-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.card-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 3px;
+}
+
+.card-content p {
+    color: var(--text-dim);
+    margin: 1.5rem 0 1rem;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+.feature-list {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.feature-list li {
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+.feature-list i {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.card-content .btn-link {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+/* Casos de éxito (nuevo) */
+.success-cases {
+    background: linear-gradient(180deg, transparent, rgba(0,170,255,0.05));
+}
+
+.success-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.success-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+}
+
+.success-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.success-card:hover img {
+    transform: scale(1.1);
+}
+
+.success-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%);
+    color: white;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.success-card:hover .success-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.success-overlay h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.success-overlay p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .service-detailed-grid {
+        grid-template-columns: 1fr;
+    }
+    .success-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .success-grid {
+        grid-template-columns: 1fr;
+    }
+    .card-content h2 {
+        font-size: 1.8rem;
+    }
+}
 }
