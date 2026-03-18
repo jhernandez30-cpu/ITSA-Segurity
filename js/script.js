@@ -4,10 +4,10 @@
 window.addEventListener('load', () => {
     setTimeout(() => {
         document.getElementById('preloader').classList.add('hidden');
-    }, 800); // mínimo 0.8s para que se vea elegante
+    }, 800);
 });
 
-// Menú hamburguesa responsive
+// Menú hamburguesa
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 if (hamburger) {
@@ -23,12 +23,12 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
-// Contadores animados (stat numbers)
+// Contadores animados
 function animateCounter(el) {
     const target = parseInt(el.getAttribute('data-target'));
     if (isNaN(target)) return;
     let current = 0;
-    const increment = target / 50; // ajuste para velocidad
+    const increment = target / 50;
     const updateCounter = () => {
         current += increment;
         if (current < target) {
@@ -41,7 +41,7 @@ function animateCounter(el) {
     updateCounter();
 }
 
-// Usar Intersection Observer para disparar contadores cuando sean visibles
+// Intersection Observer para contadores
 const statNumbers = document.querySelectorAll('.stat-number');
 if (statNumbers.length > 0) {
     const observer = new IntersectionObserver((entries) => {
@@ -49,7 +49,7 @@ if (statNumbers.length > 0) {
             if (entry.isIntersecting) {
                 const el = entry.target;
                 animateCounter(el);
-                observer.unobserve(el); // solo una vez
+                observer.unobserve(el);
             }
         });
     }, { threshold: 0.5 });
@@ -68,7 +68,7 @@ if (track) {
     }, 5000);
 }
 
-// Efecto tilt en tarjetas (simple)
+// Efecto tilt en tarjetas
 const tiltCards = document.querySelectorAll('[data-tilt]');
 tiltCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -86,7 +86,7 @@ tiltCards.forEach(card => {
     });
 });
 
-// Validación simple de formulario (ejemplo)
+// Validación de formulario
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
