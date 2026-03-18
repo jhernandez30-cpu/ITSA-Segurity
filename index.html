@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ITSA Segurity - Expertos en desarrollo web - software, ciberseguridad y marketing digital. Planes de mantenimiento integral para tu negocio.">
+    <title>ITSA Segurity · Expertos en tecnología</title>
+    <link rel="stylesheet" href="../CSS/components/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos adicionales para el nuevo diseño */
+        .hero {
+            position: relative;
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        .hero-box {
+            position: relative;
+            z-index: 2;
+            background: transparent;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+        .hero-box h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .hero-box p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-outline-light {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--btn-bg);
+            transform: scale(1.05);
+        }
+
+        /* Sección de Mantenimiento */
+        .mantenimiento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .mantenimiento-card {
+            background: var(--card-bg);
+            padding: 35px 25px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+        .mantenimiento-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--btn-bg);
+            box-shadow: 0 20px 30px rgba(0,170,255,0.15);
+        }
+        .mantenimiento-card i {
+            font-size: 3.2rem;
+            color: var(--btn-bg);
+            margin-bottom: 20px;
+        }
+        .mantenimiento-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        .mantenimiento-card p {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 25px;
+            opacity: 0.85;
+        }
+        .btn-mantenimiento {
+            display: inline-block;
+            padding: 8px 25px;
+            border: 2px solid var(--btn-bg);
+            border-radius: 40px;
+            color: var(--btn-bg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-mantenimiento:hover {
+            background: var(--btn-bg);
+            color: white;
+        }
+
+        /* Características destacadas del plan */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        .feature-item {
+            padding: 20px;
+        }
+        .feature-item i {
+            font-size: 2.5rem;
+            color: var(--btn-bg);
+            margin-bottom: 15px;
+        }
+        .feature-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .feature-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Portafolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .portfolio-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            aspect-ratio: 16 / 9;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 30px 20px 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        .portfolio-overlay h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        .portfolio-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Beneficios */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .benefit-item {
+            text-align: center;
+            padding: 20px;
+        }
+        .benefit-item i {
+            font-size: 3rem;
+            color: var(--btn-bg);
+            margin-bottom: 20px;
+        }
+        .benefit-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .benefit-item p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: var(--btn-bg);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 24px;
+            margin: 40px 0;
+        }
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        .cta-section .btn {
+            background: white;
+            color: var(--btn-bg);
+            font-size: 1.2rem;
+            padding: 15px 45px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .cta-section .btn:hover {
+            background: var(--btn-hover);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero-box h1 { font-size: 2.8rem; }
+            .hero-box p { font-size: 1.2rem; }
+            .cta-section h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><i class="fas fa-shield-halved"></i> ITSA Segurity</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="empresa.html" aria-current="page">Empresa</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="metodologia.html">Metodología</a></li>
+                <li><a href="tecnologia.html">Tecnologías</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <button class="btn" onclick="toggleDark()"><i class="fas fa-moon"></i></button>
+        </div>
+    </header>
+
+    <!-- HERO PRINCIPAL con imagen local -->
+    <section class="hero" style="background: url('../img/imagen1.avif') center/cover no-repeat;">
+        <div class="hero-box">
+            <h1>ITSA Segurity</h1>
+            <p>
+                El mejor equipo multidisciplinario al alcance de tu negocio.<br>
+                Tu sitio siempre online, seguro y rápido. Sin preocupaciones, sin tareas sueltas.<br>
+                Tu presencia digital, blindada y optimizada.
+            </p>
+            <div class="hero-buttons">
+                <a href="#plan-mantenimiento" class="btn btn-large">Descubre nuestro plan integral</a>
+                <a href="contacto.html" class="btn btn-large btn-outline-light">Hablemos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: PLAN DE MANTENIMIENTO INTEGRAL -->
+    <section id="plan-mantenimiento" class="reveal">
+        <div class="section-title" style="text-align: center; margin-bottom: 20px;">
+            <h2>Plan de Mantenimiento Integral</h2>
+            <p style="max-width: 800px; margin: 0 auto;">No cobramos por tarea suelta, cobramos por responsabilidad, continuidad y resultados. Todo el equipo trabajando para ti.</p>
+        </div>
+
+        <!-- Características clave del plan -->
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Seguridad 24/7</h4>
+                <p>Controles de seguridad, firewall, detección de amenazas.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <h4>Optimización de velocidad</h4>
+                <p>WP Rocket, caché, compresión y CDN para carga rápida.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-database"></i>
+                <h4>Backups semanales</h4>
+                <p>Copia de seguridad automática cada semana.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-sync-alt"></i>
+                <h4>Actualizaciones</h4>
+                <p>Plugins, temas y núcleo siempre actualizados.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-headset"></i>
+                <h4>Soporte continuo</h4>
+                <p>Si algo se rompe, lo arreglamos. Sin costos extra.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-chart-line"></i>
+                <h4>Mejora continua</h4>
+                <p>Ajustes menores y optimizaciones periódicas.</p>
+            </div>
+        </div>
+
+        <!-- Tarjetas detalladas del servicio -->
+        <div class="mantenimiento-grid">
+            <div class="mantenimiento-card">
+                <i class="fas fa-shield-virus"></i>
+                <h3>Ciberseguridad integrada</h3>
+                <p>Monitoreo de vulnerabilidades, parches de seguridad, y protección contra malware. Tu sitio blindado.</p>
+                <a href="servicios.html" class="btn-mantenimiento">Más info</a>
+            </div>
+            <div class="mantenimiento-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Velocidad profesional</h3>
+                <p>Usamos WP Rocket y herramientas avanzadas para que tu web cargue en menos de 2 segundos. ¡No pierdas ventas!</p>
+                <a href="servicios.html" class="btn-mantenimiento">Más info</a>
+            </div>
+            <div class="mantenimiento-card">
+                <i class="fas fa-life-ring"></i>
+                <h3>Soporte sin límites</h3>
+                <p>¿Se rompió algo? Te cubrimos. Ajustes menores, actualizaciones y resolución de incidencias sin costo adicional.</p>
+                <a href="servicios.html" class="btn-mantenimiento">Más info</a>
+            </div>
+            <div class="mantenimiento-card">
+                <i class="fas fa-clock"></i>
+                <h3>Tranquilidad total</h3>
+                <p>Olvídate de escribir a alguien cada vez que pasa algo. Nosotros nos encargamos de todo.</p>
+                <a href="servicios.html" class="btn-mantenimiento">Más info</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTAFOLIO / CASOS DE ÉXITO con imágenes locales -->
+    <section class="reveal" style="background: var(--card-bg); border-radius: 24px; padding: 60px 20px; margin-top: 40px;">
+        <div class="section-title" style="text-align: center; margin-bottom: 40px;">
+            <h2>Casos de éxito</h2>
+            <p>Proyectos que mantenemos con nuestro plan integral</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="../img/imagen2.avif" alt="Proyecto E-commerce">
+                <div class="portfolio-overlay">
+                    <h4>E-commerce para Retail</h4>
+                    <p>+30% de conversión con optimización continua</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="../img/imagen3.avif" alt="Sistema de gestión">
+                <div class="portfolio-overlay">
+                    <h4>Sitio institucional</h4>
+                    <p>100% uptime con nuestro plan de mantenimiento</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="../img/imagen4.avif" alt="Landing page">
+                <div class="portfolio-overlay">
+                    <h4>Landing page</h4>
+                    <p>Carga en 1.5 segundos gracias a WP Rocket</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="contacto.html" class="btn btn-large">Quiero este plan</a>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="reveal">
+        <div class="section-title" style="text-align: center; margin-bottom: 20px;">
+            <h2>¿Por qué elegirnos?</h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <i class="fas fa-broom"></i>
+                <h3>Sin tareas sueltas</h3>
+                <p>No cobramos por cada arreglo. Pagas una cuota y te olvidas.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Enfoque en resultados</h3>
+                <p>Tu sitio web es una inversión, no un gasto. Medimos el rendimiento.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Ciberseguridad real</h3>
+                <p>Protegemos tu negocio y la información de tus clientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LLAMADA A LA ACCIÓN -->
+    <section class="cta-section reveal">
+        <h2>¿Listo para dejar de preocuparte?</h2>
+        <p>Contrata nuestro plan de mantenimiento y asegura la continuidad de tu negocio.</p>
+        <a href="contacto.html" class="btn">Solicitar información</a>
+    </section>
+
+    <footer style="background:var(--footer-bg); color:white; text-align:center; padding:30px 20px;">
+        <p>© 2025 ITSA Segurity · Todos los derechos reservados</p>
+        <div class="social" style="margin-top: 15px;">
+            <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok fa-2x"></i></a>
+        </div>
+    </footer>
+
+    <button id="btnTop" title="Volver arriba"><i class="fas fa-chevron-up"></i></button>
+
+    <script src="../JS/script.js"></script>
+</body>
+</html>
