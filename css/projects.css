@@ -380,4 +380,176 @@
         font-size: 1.8rem;
     }
 }
+    /* ===== ESTILOS PARA SERVICIOS TECH ===== */
+.servicios-tech {
+    padding: 60px 0;
+}
+
+.services-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-tech-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--glass-bg);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    min-height: 400px;
+    display: flex;
+}
+
+.service-tech-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px rgba(0, 170, 255, 0.25);
+    border-color: var(--accent);
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    transition: opacity 0.4s ease, transform 0.5s ease;
+    z-index: 0;
+}
+
+.service-tech-card:hover .card-bg {
+    opacity: 0.25;
+    transform: scale(1.1);
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(10,20,30,0.8) 0%, rgba(0,0,0,0.95) 100%);
+}
+
+.card-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.card-content h3 i {
+    color: var(--accent);
+    font-size: 2rem;
+}
+
+.service-desc {
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.tech-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.tech-logos i {
+    font-size: 2rem;
+    color: var(--text-dim);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tech-logos i:hover {
+    color: var(--accent);
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px var(--accent));
+}
+
+/* Tecnologías globales */
+.global-tech {
+    background: linear-gradient(180deg, transparent, rgba(0,170,255,0.03));
+}
+
+.global-tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.global-tech-grid i {
+    font-size: 3rem;
+    color: var(--text-dim);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.global-tech-grid i:hover {
+    color: var(--accent);
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* CTA final */
+.quick-contact .cta-card {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(0, 40, 60, 0.6);
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 30px rgba(0,170,255,0.2);
+}
+
+.cta-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-card p {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .services-tech-grid {
+        grid-template-columns: 1fr;
+    }
+    .global-tech-grid i {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-content h3 {
+        font-size: 1.6rem;
+    }
+    .tech-logos i {
+        font-size: 1.6rem;
+    }
+    .global-tech-grid {
+        gap: 1.5rem;
+    }
+    .global-tech-grid i {
+        font-size: 2rem;
+    }
+}
 }
