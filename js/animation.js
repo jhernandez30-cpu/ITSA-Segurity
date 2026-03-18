@@ -1,7 +1,7 @@
 // animation.js
 gsap.registerPlugin(ScrollTrigger);
 
-// Animación inicial de la hero (carga)
+// Animación inicial de la hero
 window.addEventListener('load', () => {
     const tl = gsap.timeline();
     tl.from('.hero-title', { opacity: 0, y: 100, duration: 1.2, ease: 'power3.out' })
@@ -26,7 +26,7 @@ gsap.utils.toArray('.section').forEach(section => {
     });
 });
 
-// Animación de textos divididos (split) en títulos
+// Animación de títulos con split (letra por letra)
 gsap.utils.toArray('.section-title').forEach(title => {
     const chars = title.innerText.split('');
     title.innerHTML = chars.map(c => `<span class="char">${c}</span>`).join('');
@@ -44,16 +44,15 @@ gsap.utils.toArray('.section-title').forEach(title => {
     });
 });
 
-// Efecto parallax en hero
-gsap.to('.hero-overlay', {
+// Efecto parallax en hero (si tiene imagen de fondo)
+gsap.to('.hero', {
     scrollTrigger: {
         trigger: '.hero',
         start: 'top top',
         end: 'bottom top',
         scrub: true
     },
-    y: 200,
-    scale: 1.2,
+    backgroundPosition: '50% 30%', // ajusta según imagen
     ease: 'none'
 });
 
@@ -70,19 +69,19 @@ gsap.from('.service-card', {
     ease: 'power3.out'
 });
 
-// Animación de los pasos de metodología
-gsap.from('.step', {
+// Animación de la línea de tiempo
+gsap.from('.timeline-item', {
     scrollTrigger: {
-        trigger: '.metodologia-steps',
+        trigger: '#experiencia',
         start: 'top 70%',
     },
     opacity: 0,
-    x: -50,
-    stagger: 0.2,
-    duration: 0.8
+    x: -100,
+    stagger: 0.3,
+    duration: 1
 });
 
-// Animación de la nube de skills (stagger)
+// Animación de la nube de habilidades (si existe)
 gsap.from('.skill-item', {
     scrollTrigger: {
         trigger: '.skills-cloud',
@@ -93,16 +92,4 @@ gsap.from('.skill-item', {
     stagger: 0.03,
     duration: 0.5,
     ease: 'back.out(1.2)'
-});
-
-// Línea de tiempo horizontal en experiencia (si se desea)
-gsap.from('.timeline-item', {
-    scrollTrigger: {
-        trigger: '#experiencia',
-        start: 'top 70%',
-    },
-    opacity: 0,
-    x: -100,
-    stagger: 0.3,
-    duration: 1
 });
