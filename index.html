@@ -1,318 +1,244 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITSA Segurity · Innovación digital</title>
-    
-    <!-- Fuentes Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- CSS modulares -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/projects.css">
-    <link rel="stylesheet" href="css/skills.css">
-    
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-    
-    <!-- particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abraham Hernández | Web & Software Developer</title>
+  <!-- Fuentes e iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/skills.css">
+  <!-- projects.css no se usa, pero lo dejamos por si acaso -->
+  <link rel="stylesheet" href="css/projects.css">
+  <!-- GSAP y ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <!-- PRELOADER -->
-    <div id="preloader">
-        <div class="loader">
-            <span></span><span></span><span></span><span></span>
-        </div>
+  <!-- LOADER -->
+  <div class="loader-wrapper" id="loader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-links">
+      <a href="#hero" class="nav-link active">Inicio</a>
+      <a href="#about" class="nav-link">Sobre mí</a>
+      <a href="#skills" class="nav-link">Habilidades</a>
+      <a href="#experience" class="nav-link">Servicios</a>
+      <a href="#contact" class="nav-link">Contacto</a>
     </div>
+  </nav>
 
-    <!-- HEADER GLASS -->
-    <header class="header">
-        <nav class="navbar container">
-            <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="tecnologia.html">Tecnología</a></li>
-                <li><a href="metodologia.html">Metodología</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-            <div class="hamburger"><i class="fas fa-bars"></i></div>
-        </nav>
-    </header>
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
 
-    <main>
-        <!-- HERO SECTION con particles.js -->
-        <section id="hero" class="hero">
-            <div id="particles-js"></div>
-            <div class="hero-content container">
-                <h1 class="hero-title">Construimos el futuro <br><span class="gradient-text">digital</span> de tu negocio</h1>
-                <p class="hero-subtitle">Desarrollo web, software, ciberseguridad y marketing digital con enfoque storytelling.</p>
-                <div class="hero-cta">
-                    <a href="contacto.html" class="btn btn-primary">Inicia tu proyecto <i class="fas fa-arrow-right"></i></a>
-                    <a href="servicios.html" class="btn btn-outline">Descubre cómo</a>
-                </div>
-            </div>
-            <div class="hero-scroll-indicator">
-                <span>Desliza</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </section>
+  <!-- Cursor personalizado -->
+  <div class="custom-cursor"></div>
 
-        <!-- SECCIÓN PRESENTACIÓN (sin cambios) -->
-        <section id="presentacion" class="section presentacion">
-            <div class="container grid-2">
-                <div class="presentacion-texto">
-                    <span class="section-subtitle">· ITSA Segurity ·</span>
-                    <h2 class="section-title">Donde la tecnología cuenta <span class="accent">historias</span></h2>
-                    <p class="section-paragraph">No solo creamos código: diseñamos experiencias inmersivas que conectan con tu audiencia. Fusionamos desarrollo, creatividad y seguridad para llevarte al siguiente nivel.</p>
-                    <div class="stats-mini">
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="8">0</span><span>+</span>
-                            <p>Años de experiencia</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="120">0</span><span>+</span>
-                            <p>Proyectos exitosos</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="15">0</span><span>+</span>
-                            <p>Especialistas</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="presentacion-visual">
-                    <img src="assets/images/presentation.jpg" alt="ITSA tecnología" class="presentation-img" onerror="this.style.display='none'">
-                    <div class="glass-card" style="margin-top: 1rem;">
-                        <i class="fas fa-code"></i>
-                        <i class="fas fa-shield-alt"></i>
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Partículas de fondo -->
+  <div id="particles-js"></div>
 
-        <!-- ===== SECCIÓN DE SERVICIOS REDISEÑADA ===== -->
-        <section id="servicios" class="section servicios-grid-section" style="background: #0a0c12; padding: 80px 0;">
-            <div class="container">
-                <span class="section-subtitle">· Nuestra experiencia ·</span>
-                <h2 class="section-title">Soluciones integrales <span class="accent">premium</span></h2>
-                
-                <div class="servicios-grid" style="margin-top: 3rem;">
-                    <!-- Desarrollo Web -->
-                    <div class="servicio-card">
-                        <i class="fas fa-laptop-code card-icon"></i>
-                        <h3>Desarrollo Web</h3>
-                        <p class="card-description">Sitios y aplicaciones con narrativa visual, alto rendimiento y las últimas tecnologías frontend y backend.</p>
-                        <a href="servicios.html" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
-                    </div>
-
-                    <!-- Software a medida -->
-                    <div class="servicio-card">
-                        <i class="fas fa-cogs card-icon"></i>
-                        <h3>Software a medida</h3>
-                        <p class="card-description">Aplicaciones de escritorio, móviles y cloud con arquitecturas escalables y metodologías ágiles.</p>
-                        <a href="servicios.html" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
-                    </div>
-
-                    <!-- Ciberseguridad -->
-                    <div class="servicio-card">
-                        <i class="fas fa-shield-haltered card-icon"></i>
-                        <h3>Ciberseguridad</h3>
-                        <p class="card-description">Auditorías, pentesting, protección de datos y monitorización 24/7 para mantener tu negocio seguro.</p>
-                        <a href="servicios.html" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
-                    </div>
-
-                    <!-- Marketing Digital -->
-                    <div class="servicio-card">
-                        <i class="fas fa-bullseye card-icon"></i>
-                        <h3>Marketing Digital</h3>
-                        <p class="card-description">Estrategias basadas en datos: SEO, SEM, redes sociales y automatización para maximizar conversiones.</p>
-                        <a href="servicios.html" class="card-link">Explorar servicio <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="service-cta" style="text-align: center; margin-top: 3rem;">
-                    <a href="servicios.html" class="btn btn-link">Ver todos los servicios <i class="fas fa-long-arrow-alt-right"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPERIENCIA / TIMELINE (sin cambios) -->
-        <section id="experiencia" class="section experiencia">
-            <div class="container">
-                <span class="section-subtitle">· Nuestra historia ·</span>
-                <h2 class="section-title">Evolución <span class="accent">constante</span></h2>
-                <div class="timeline-grid">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2018</div>
-                        <div class="timeline-content glass-card">
-                            <h4>Nacimiento de ITSA</h4>
-                            <p>Con la visión de fusionar tecnología y narrativa.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2020</div>
-                        <div class="timeline-content glass-card">
-                            <h4>Expansión en ciberseguridad</h4>
-                            <p>Certificaciones y alianzas estratégicas.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2023</div>
-                        <div class="timeline-content glass-card">
-                            <h4>+120 proyectos</h4>
-                            <p>Empresas nacionales confían en nosotros.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ESTADÍSTICAS (sin cambios) -->
-        <section id="estadisticas" class="section stats">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-large">
-                        <span class="stat-number" data-target="98">0</span><span>%</span>
-                        <p>Satisfacción cliente</p>
-                    </div>
-                    <div class="stat-large">
-                        <span class="stat-number" data-target="24">0</span><span>/7</span>
-                        <p>Soporte continuo</p>
-                    </div>
-                    <div class="stat-large">
-                        <span class="stat-number" data-target="15">0</span><span>+</span>
-                        <p>Premios innovación</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TESTIMONIOS (sin cambios) -->
-        <section id="testimonios" class="section testimonios">
-            <div class="container">
-                <span class="section-subtitle">· Clientes ·</span>
-                <h2 class="section-title">Lo que dicen de <span class="accent">nosotros</span></h2>
-                <div class="testimonial-carousel">
-                    <div class="testimonial-track">
-                        <div class="testimonial-card">
-                            <p>"ITSA transformó nuestra presencia digital. El enfoque storytelling marcó la diferencia."</p>
-                            <h5>— Laura Méndez, CMO de InnovaCorp</h5>
-                        </div>
-                        <div class="testimonial-card">
-                            <p>"Su equipo de ciberseguridad evitó vulnerabilidades críticas. Altamente recomendados."</p>
-                            <h5>— Carlos Rivas, CTO de FintechPro</h5>
-                        </div>
-                        <div class="testimonial-card">
-                            <p>"El desarrollo de software fue impecable, con entregas ágiles y calidad superior."</p>
-                            <h5>— Ana Soto, Directora de Operaciones</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACTO (sin cambios) -->
-        <section id="contacto" class="section contacto">
-            <div class="container grid-2">
-                <div class="contact-info">
-                    <span class="section-subtitle">· Hablemos ·</span>
-                    <h2 class="section-title">Comienza tu <span class="accent">historia</span></h2>
-                    <p>Estamos listos para hacer realidad tu proyecto.</p>
-                    <ul class="contact-details">
-                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/50589871374">+505 8987 1374</a></li>
-                        <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/it_segurity" target="_blank">@it_segurity</a></li>
-                        <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank">ITSA Segurity</a></li>
-                        <li><i class="fab fa-tiktok"></i> <a href="https://www.tiktok.com/@it._segurity" target="_blank">@it._segurity</a></li>
-                    </ul>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required>
-                        <label for="name">Nombre</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required>
-                        <label for="email">Email</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                        <label for="message">Mensaje</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER (sin cambios) -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
-                    <p>Innovación digital con propósito.</p>
-                </div>
-                <div class="footer-links">
-                    <h5>Empresa</h5>
-                    <ul>
-                        <li><a href="metodologia.html">Metodología</a></li>
-                        <li><a href="tecnologia.html">Tecnología</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h5>Redes</h5>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
-            </div>
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="highlight">Abraham Hernández</span><br>
+          Desarrollador <span class="typed"></span>
+        </h1>
+        <div class="dynamic-text">
+          <span class="typed-text"></span><span class="cursor">&nbsp;</span>
         </div>
-    </footer>
+        <p style="margin-bottom: 30px; color: var(--text-secondary); font-size: 1.2rem;">
+          +5 años creando soluciones web y software de alto impacto.
+        </p>
+        <!-- Redes sociales con tooltip -->
+        <div style="margin-top: 30px; display: flex; gap: 20px; justify-content: center;">
+          <a href="https://wa.me/50589871374" target="_blank" data-tooltip="WhatsApp" style="color: var(--accent); font-size: 1.8rem;"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://github.com/jhernandez30-cpu" target="_blank" data-tooltip="GitHub" style="color: var(--accent); font-size: 1.8rem;"><i class="fab fa-github"></i></a>
+          <a href="https://ni.linkedin.com/in/josue-abraham-hernandez-gonzalez-224a9a2a1" target="_blank" data-tooltip="LinkedIn" style="color: var(--accent); font-size: 1.8rem;"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="profile.jpg" alt="Abraham Hernández" class="profile-img" data-tooltip="¡Hola, soy Abraham!">
+      </div>
+    </div>
+  </section>
 
-    <!-- SCRIPTS -->
-    <script src="js/script.js"></script>
-    <script src="js/animation.js"></script>
-    <!-- Inicialización de particles.js -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS('particles-js', {
-                    "particles": {
-                        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
-                        "color": { "value": "#00aaff" },
-                        "shape": { "type": "circle" },
-                        "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } },
-                        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 4, "size_min": 0.3 } },
-                        "line_linked": { "enable": true, "distance": 150, "color": "#00aaff", "opacity": 0.4, "width": 1 },
-                        "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
-                    },
-                    "interactivity": {
-                        "detect_on": "canvas",
-                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
-                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
-                    },
-                    "retina_detect": true
-                });
-            }
-        });
-    </script>
+  <!-- SOBRE MÍ -->
+  <section id="about" class="parallax">
+    <div class="container">
+      <h2>Sobre mí</h2>
+      <div class="about-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+        <div>
+          <p style="font-size: 1.2rem; color: var(--text-secondary);">
+            Soy un desarrollador apasionado por la tecnología y la innovación. Me especializo en crear aplicaciones web robustas y software a medida que resuelven problemas reales. Mi objetivo es combinar diseño y funcionalidad para ofrecer experiencias digitales únicas.
+          </p>
+        </div>
+        <div class="glass-card" style="padding: 30px;">
+          <i class="fas fa-code" style="font-size: 3rem; color: var(--accent);"></i>
+          <h3 style="margin: 20px 0;">Full Stack & AI Enthusiast</h3>
+          <p>Trabajo con tecnologías modernas como React, Node.js, Python y siempre estoy explorando nuevas tendencias.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTONES DESTACADOS (ITSA Segurity y CV) -->
+  <div class="container cta-buttons" style="display: flex; justify-content: center; gap: 20px; margin: 40px 0 20px; flex-wrap: wrap;">
+    <a href="https://jhernandez30-cpu.github.io/ITSA-Segurity/" target="_blank" class="btn btn-primary" data-tooltip="Visita mi empresa">
+      <i class="fas fa-shield-alt"></i> ITSA SEGURITY
+    </a>
+    <a href="cv.pdf" download class="btn btn-outline" data-tooltip="Descarga mi CV">
+      <i class="fas fa-download"></i> Descargar CV
+    </a>
+  </div>
+
+  <!-- ESTADÍSTICAS ANIMADAS -->
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" id="stat1" data-target="5">0</div>
+        <div class="stat-label">Años de experiencia</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat2" data-target="20">0</div>
+        <div class="stat-label">Proyectos completados</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat3" data-target="10">0</div>
+        <div class="stat-label">Clientes satisfechos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HABILIDADES TÉCNICAS -->
+  <section id="skills">
+    <div class="container">
+      <h2>Habilidades técnicas</h2>
+      <div class="skills-grid">
+        <!-- Cada habilidad con tooltip de porcentaje -->
+        <div class="skill-card" data-tooltip="90%">
+          <div class="skill-icon"><i class="fab fa-html5"></i></div>
+          <h3>HTML5 & CSS3</h3>
+          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+        </div>
+        <div class="skill-card" data-tooltip="85%">
+          <div class="skill-icon"><i class="fab fa-js"></i></div>
+          <h3>JavaScript / ES6+</h3>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+        </div>
+        <div class="skill-card" data-tooltip="80%">
+          <div class="skill-icon"><i class="fab fa-react"></i></div>
+          <h3>React & Next.js</h3>
+          <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+        </div>
+        <div class="skill-card" data-tooltip="75%">
+          <div class="skill-icon"><i class="fab fa-node"></i></div>
+          <h3>Node.js / Python</h3>
+          <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+        </div>
+        <div class="skill-card" data-tooltip="80%">
+          <div class="skill-icon"><i class="fab fa-microsoft"></i></div>
+          <h3>C#</h3>
+          <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+        </div>
+        <div class="skill-card" data-tooltip="85%">
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
+          <h3>SQL</h3>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+        </div>
+        <div class="skill-card" data-tooltip="90%">
+          <div class="skill-icon"><i class="fab fa-python"></i></div>
+          <h3>Python</h3>
+          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+        </div>
+        <div class="skill-card" data-tooltip="75%">
+          <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+          <h3>Power BI</h3>
+          <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="experience">
+    <div class="container">
+      <h2>Servicios</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <div class="glass-card" style="padding: 30px; text-align: center;" data-tooltip="Desarrollo web a medida">
+          <i class="fas fa-laptop-code" style="font-size: 2.5rem; color: var(--accent);"></i>
+          <h3 style="margin: 15px 0;">Desarrollo Web</h3>
+          <p>Creación de sitios web modernos, rápidos y responsivos.</p>
+        </div>
+        <div class="glass-card" style="padding: 30px; text-align: center;" data-tooltip="Apps para iOS y Android">
+          <i class="fas fa-mobile-alt" style="font-size: 2.5rem; color: var(--accent);"></i>
+          <h3 style="margin: 15px 0;">Apps Móviles</h3>
+          <p>Aplicaciones nativas e híbridas para iOS y Android.</p>
+        </div>
+        <div class="glass-card" style="padding: 30px; text-align: center;" data-tooltip="Infraestructura en la nube">
+          <i class="fas fa-cloud" style="font-size: 2.5rem; color: var(--accent);"></i>
+          <h3 style="margin: 15px 0;">Cloud & DevOps</h3>
+          <p>Despliegue y escalado en AWS, Azure y Google Cloud.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contacto</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+        <div>
+          <form class="glass-card" style="padding: 40px;" id="contactForm">
+            <div style="margin-bottom: 20px;">
+              <input type="text" placeholder="Nombre" id="name" style="width: 100%; padding: 15px; background: transparent; border: 1px solid var(--glass-border); border-radius: 10px; color: white;">
+              <small class="error-message" style="color: #ff4444; display: none;"></small>
+            </div>
+            <div style="margin-bottom: 20px;">
+              <input type="email" placeholder="Email" id="email" style="width: 100%; padding: 15px; background: transparent; border: 1px solid var(--glass-border); border-radius: 10px; color: white;">
+              <small class="error-message" style="color: #ff4444; display: none;"></small>
+            </div>
+            <div style="margin-bottom: 20px;">
+              <textarea placeholder="Mensaje" rows="5" id="message" style="width: 100%; padding: 15px; background: transparent; border: 1px solid var(--glass-border); border-radius: 10px; color: white;"></textarea>
+              <small class="error-message" style="color: #ff4444; display: none;"></small>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar mensaje</button>
+            <div id="formSuccess" style="color: var(--accent); text-align: center; margin-top: 15px; display: none;">¡Mensaje enviado con éxito!</div>
+          </form>
+        </div>
+        <div>
+          <div class="glass-card" style="padding: 30px;">
+            <h3 style="margin-bottom: 20px;">Redes y contacto directo</h3>
+            <p><i class="fab fa-whatsapp" style="color: var(--accent);"></i> <a href="https://wa.me/50589871374" data-tooltip="Envíame un WhatsApp">+505 8987 1374</a></p>
+            <p><i class="fab fa-github" style="color: var(--accent);"></i> <a href="https://github.com/jhernandez30-cpu" data-tooltip="Mi GitHub">@jhernandez30-cpu</a></p>
+            <p><i class="fab fa-linkedin" style="color: var(--accent);"></i> <a href="https://ni.linkedin.com/in/josue-abraham-hernandez-gonzalez-224a9a2a1" target="_blank" data-tooltip="Mi LinkedIn">LinkedIn: Abraham Hernández</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Abraham Hernández - Todos los derechos reservados</p>
+    <p style="margin-top: 10px; color: var(--text-secondary);">Diseñado con <i class="fas fa-heart" style="color: var(--accent);"></i> y tecnología de vanguardia</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/animation.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
