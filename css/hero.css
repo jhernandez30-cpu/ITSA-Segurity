@@ -78,9 +78,3 @@
     .hero {
         background-attachment: scroll; /* Evita problemas en móvil */
     }
-
-    /* Ajuste para que el hero no quede tapado por el navbar (ya se puso en styles.css, pero por si acaso) */
-#hero {
-  padding-top: calc(100px + var(--navbar-height));
-}
-}
