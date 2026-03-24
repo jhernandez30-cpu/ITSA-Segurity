@@ -243,7 +243,7 @@ body {
 }
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr; /* Cambiado: ahora tres columnas iguales */
     gap: 2rem;
     margin-bottom: 3rem;
 }
