@@ -417,6 +417,19 @@ body {
     justify-content: flex-start;
 }
 
+/* Mensaje de estado del formulario */
+.form-status {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    display: none;
+}
+.form-status p {
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.6);
+}
 /* Responsive para grid-3 */
 @media (max-width: 992px) {
     .grid-3 {
