@@ -11,7 +11,7 @@
     
     <!-- CSS modulares -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/hero.css"> <!-- necesario para el hero y partículas -->
+    <link rel="stylesheet" href="css/hero.css">
     
     <!-- Scripts externos -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -42,19 +42,19 @@
     </header>
 
     <main>
-        <!-- HERO CON PARTICLES (como en index.html) -->
+        <!-- HERO CON PARTICLES -->
         <section class="hero" style="min-height: 60vh; background: linear-gradient(135deg, rgba(0,10,20,0.85) 0%, rgba(0,30,50,0.7) 100%);">
-            <div id="particles-js"></div> <!-- Fondo de partículas -->
+            <div id="particles-js"></div>
             <div class="hero-content container">
                 <h1 class="page-title">Contacta con <span class="accent">nosotros</span></h1>
                 <p class="page-subtitle">Estamos a un mensaje de distancia.</p>
             </div>
         </section>
 
-        <!-- SECCIÓN DE CONTACTO (información + formulario) -->
+        <!-- SECCIÓN DE CONTACTO -->
         <section class="section">
             <div class="container grid-2">
-                <!-- Tarjeta de información con estilo glass -->
+                <!-- Información de contacto -->
                 <div class="contact-info-large glass-card">
                     <h2>Información de contacto</h2>
                     <p><i class="fas fa-map-marker-alt"></i> Managua, Nicaragua</p>
@@ -68,8 +68,8 @@
                     </div>
                 </div>
 
-                <!-- Formulario de contacto (también puedes envolverlo en glass-card si deseas) -->
-                <form class="contact-form" id="contactForm">
+                <!-- Formulario con Formspree -->
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xnjojrwb" method="POST">
                     <div class="form-group">
                         <input type="text" id="name" name="name" required>
                         <label for="name">Nombre completo</label>
@@ -78,142 +78,94 @@
                         <input type="email" id="email" name="email" required>
                         <label for="email">Correo electrónico</label>
                     </div>
+                    <!-- Asunto fijo (se puede ocultar con CSS) -->
+                    <div class="form-group" style="display: none;">
+                        <input type="text" id="subject" name="_subject" value="Nuevo mensaje desde ITSA Segurity">
+                    </div>
+                    <!-- Campo tipo de servicio -->
                     <div class="form-group">
-                        <input type="text" id="subject" name="subject">
-                        <label for="subject">Asunto (opcional)</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Selecciona un servicio</option>
+                            <option value="desarrollo-web">Desarrollo Web</option>
+                            <option value="software-medida">Software a medida</option>
+                            <option value="ciberseguridad">Ciberseguridad</option>
+                            <option value="marketing-digital">Marketing Digital</option>
+                            <option value="ia-datos">IA & Datos</option>
+                            <option value="consultoria">Consultoría</option>
+                        </select>
+                        <label for="service">Tipo de servicio</label>
                     </div>
                     <div class="form-group">
                         <textarea id="message" name="message" rows="5" required></textarea>
                         <label for="message">Mensaje</label>
                     </div>
+                    <!-- Redirección después del envío -->
+                    <input type="hidden" name="_next" value="https://jhernandez30-cpu.github.io/ITSA-Segurity/gracias.html">
+                    <!-- Anti-spam -->
+                    <input type="text" name="_gotcha" style="display:none">
                     <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (igual que en index.html) -->
     <footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
-                <p>Innovación digital con propósito.</p>
-            </div>
-            <div class="footer-links">
-                <h5>Empresa</h5>
-                <ul>
-                    <li><a href="metodologia.html">Metodología</a></li>
-                    <li><a href="tecnologia.html">Tecnología</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="privacidad.html">Política de privacidad</a></li>
-                    <li><a href="aviso-legal.html">Aviso legal</a></li>
-                    <li><a href="terminos.html">Términos y condiciones</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h5>Redes</h5>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+                    <p>Innovación digital con propósito.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Empresa</h5>
+                    <ul>
+                        <li><a href="metodologia.html">Metodología</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="privacidad.html">Política de privacidad</a></li>
+                        <li><a href="aviso-legal.html">Aviso legal</a></li>
+                        <li><a href="terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h5>Redes</h5>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
+            </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
-    <!-- SCRIPTS PROPIOS -->
+    <!-- SCRIPTS -->
     <script src="js/script.js"></script>
     <script src="js/animation.js"></script>
 
-    <!-- INICIALIZACIÓN DE PARTICLES (misma configuración que en index.html) -->
+    <!-- Inicialización de particles.js -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof particlesJS !== 'undefined') {
                 particlesJS('particles-js', {
                     "particles": {
-                        "number": {
-                            "value": 100,
-                            "density": {
-                                "enable": true,
-                                "value_area": 800
-                            }
-                        },
+                        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
                         "color": { "value": "#00aaff" },
-                        "shape": {
-                            "type": "circle",
-                            "stroke": {
-                                "width": 0,
-                                "color": "#000000"
-                            }
-                        },
-                        "opacity": {
-                            "value": 0.5,
-                            "random": true,
-                            "anim": {
-                                "enable": true,
-                                "speed": 1,
-                                "opacity_min": 0.1,
-                                "sync": false
-                            }
-                        },
-                        "size": {
-                            "value": 3,
-                            "random": true,
-                            "anim": {
-                                "enable": true,
-                                "speed": 4,
-                                "size_min": 0.3,
-                                "sync": false
-                            }
-                        },
-                        "line_linked": {
-                            "enable": true,
-                            "distance": 150,
-                            "color": "#00aaff",
-                            "opacity": 0.4,
-                            "width": 1
-                        },
-                        "move": {
-                            "enable": true,
-                            "speed": 1.5,
-                            "direction": "none",
-                            "random": true,
-                            "straight": false,
-                            "out_mode": "out",
-                            "bounce": false,
-                            "attract": {
-                                "enable": false,
-                                "rotateX": 600,
-                                "rotateY": 1200
-                            }
-                        }
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } },
+                        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 4, "size_min": 0.3 } },
+                        "line_linked": { "enable": true, "distance": 150, "color": "#00aaff", "opacity": 0.4, "width": 1 },
+                        "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
                     },
                     "interactivity": {
                         "detect_on": "canvas",
-                        "events": {
-                            "onhover": {
-                                "enable": true,
-                                "mode": "grab"
-                            },
-                            "onclick": {
-                                "enable": true,
-                                "mode": "push"
-                            },
-                            "resize": true
-                        },
-                        "modes": {
-                            "grab": {
-                                "distance": 140,
-                                "line_linked": { "opacity": 1 }
-                            },
-                            "push": { "particles_nb": 4 }
-                        }
+                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
                     },
                     "retina_detect": true
                 });
