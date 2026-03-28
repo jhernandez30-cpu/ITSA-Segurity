@@ -18,6 +18,69 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <style>
+        /* Estilo para el campo con etiqueta horizontal (Tipo de servicio) */
+        .form-group-row {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .form-group-row label {
+            min-width: 130px;
+            font-weight: 500;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+        .form-group-row select {
+            flex: 1;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding: 0.8rem 0;
+            color: var(--text-light);
+            font-size: 1rem;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group-row select:focus {
+            border-bottom-color: var(--accent);
+        }
+        .form-group-row select option {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+        @media (max-width: 768px) {
+            .form-group-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            .form-group-row label {
+                margin-bottom: 0.2rem;
+            }
+            .form-group-row select {
+                width: 100%;
+            }
+        }
+        
+        /* Mensaje de estado del formulario */
+        .form-status {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .form-status p {
+            margin: 0;
+            padding: 0.5rem;
+            border-radius: 8px;
+            background: rgba(0,0,0,0.6);
+        }
+    </style>
 </head>
 <body>
     <!-- PRELOADER -->
@@ -69,7 +132,7 @@
                     </div>
                 </div>
 
-                <!-- Formulario con dropdown corregido -->
+                <!-- FORMULARIO CON ETIQUETA AL LADO -->
                 <form id="contactForm" action="https://formspree.io/f/xnjojrwb" method="POST" class="contact-form">
                     <div class="form-group">
                         <input type="text" id="name" name="name" required>
@@ -84,8 +147,9 @@
                         <label for="subject">Asunto (opcional)</label>
                     </div>
                     
-                    <!-- CAMPO DROPDOWN CORREGIDO -->
-                    <div class="form-group form-group-select">
+                    <!-- CAMPO CON ETIQUETA AL LADO -->
+                    <div class="form-group-row">
+                        <label for="service">Tipo de servicio</label>
                         <select id="service" name="service" required>
                             <option value="" disabled selected>Selecciona un servicio</option>
                             <option value="desarrollo-web">Desarrollo Web</option>
@@ -95,7 +159,6 @@
                             <option value="ia-datos">IA & Datos</option>
                             <option value="consultoria">Consultoría</option>
                         </select>
-                        <label for="service">Tipo de servicio</label>
                     </div>
 
                     <div class="form-group">
@@ -150,7 +213,7 @@
     <script src="js/script.js"></script>
     <script src="js/animation.js"></script>
 
-    <!-- Inicialización de particles.js (sin cambios) -->
+    <!-- Inicialización de particles.js -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof particlesJS !== 'undefined') {
