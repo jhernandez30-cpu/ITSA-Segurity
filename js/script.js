@@ -86,5 +86,50 @@ tiltCards.forEach(card => {
     });
 });
 
-// Formulario de contacto: ya no interceptamos el envío porque usamos Formspree
-// El código anterior que prevenía el envío y mostraba alert ha sido eliminado.
+// ========== NUEVO: Manejo del formulario de contacto con AJAX ==========
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const form = e.target;
+        const formData = new FormData(form);
+        const statusDiv = document.getElementById('form-status');
+        
+        // Mostrar mensaje de carga
+        statusDiv.innerHTML = '<p style="color: #00aaff;">Enviando...</p>';
+        statusDiv.style.display = 'block';
+        
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                statusDiv.innerHTML = '<p style="color: #00ffaa;">✓ ¡Mensaje enviado con éxito! Te contactaremos pronto.</p>';
+                form.reset();
+                // Opcional: resetear el select al placeholder
+                const select = form.querySelector('#service');
+                if (select) select.value = '';
+            } else {
+                const data = await response.json();
+                if (data.errors) {
+                    statusDiv.innerHTML = `<p style="color: #ff6666;">Error: ${data.errors.map(e => e.message).join(', ')}</p>`;
+                } else {
+                    statusDiv.innerHTML = '<p style="color: #ff6666;">Error al enviar. Intenta de nuevo más tarde.</p>';
+                }
+            }
+        } catch (error) {
+            statusDiv.innerHTML = '<p style="color: #ff6666;">Error de red. Comprueba tu conexión.</p>';
+        }
+        
+        // Ocultar el mensaje después de 5 segundos
+        setTimeout(() => {
+            statusDiv.style.display = 'none';
+        }, 5000);
+    });
+}
