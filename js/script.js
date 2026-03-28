@@ -86,12 +86,5 @@ tiltCards.forEach(card => {
     });
 });
 
-// Validación de formulario
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Gracias por contactarnos. Te responderemos a la brevedad.');
-        contactForm.reset();
-    });
-}
+// Formulario de contacto: ya no interceptamos el envío porque usamos Formspree
+// El código anterior que prevenía el envío y mostraba alert ha sido eliminado.
