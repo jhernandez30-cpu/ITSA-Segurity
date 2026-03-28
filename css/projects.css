@@ -464,4 +464,128 @@
         padding: 0.5rem 1.2rem;
         font-size: 0.95rem;
     }
+
+    /* ===== MEJORAS DE CREDIBILIDAD Y UX ===== */
+
+/* Testimonios con avatar */
+.testimonial-card {
+    text-align: center;
+}
+.testimonial-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 2px solid var(--accent);
+    object-fit: cover;
+}
+
+/* Sección equipo */
+.equipo {
+    background: linear-gradient(180deg, #0a0c12, #010101);
+}
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.miembro-card {
+    text-align: center;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+.miembro-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+}
+.miembro-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--accent);
+    object-fit: cover;
+}
+.miembro-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.miembro-card p {
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.social-links a {
+    color: var(--text-dim);
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: var(--accent);
+}
+
+/* Certificaciones */
+.certificaciones {
+    background: #010101;
+    text-align: center;
+}
+.cert-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.cert-item {
+    background: rgba(0,170,255,0.1);
+    border: 1px solid rgba(0,170,255,0.3);
+    border-radius: 60px;
+    padding: 0.8rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.cert-item i {
+    font-size: 1.8rem;
+    color: var(--accent);
+}
+.cert-item span {
+    color: #fff;
+}
+.cert-item:hover {
+    background: var(--accent);
+    transform: scale(1.05);
+}
+.cert-item:hover i,
+.cert-item:hover span {
+    color: #000;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .equipo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .equipo-grid {
+        grid-template-columns: 1fr;
+    }
+    .cert-grid {
+        gap: 1rem;
+    }
+    .cert-item {
+        padding: 0.5rem 1.2rem;
+    }
+}
 }
