@@ -69,7 +69,7 @@
                     </div>
                 </div>
 
-                <!-- Formulario con envío AJAX -->
+                <!-- Formulario con dropdown corregido -->
                 <form id="contactForm" action="https://formspree.io/f/xnjojrwb" method="POST" class="contact-form">
                     <div class="form-group">
                         <input type="text" id="name" name="name" required>
@@ -83,7 +83,9 @@
                         <input type="text" id="subject" name="_subject" value="Nuevo mensaje desde ITSA Segurity">
                         <label for="subject">Asunto (opcional)</label>
                     </div>
-                    <div class="form-group">
+                    
+                    <!-- CAMPO DROPDOWN CORREGIDO -->
+                    <div class="form-group form-group-select">
                         <select id="service" name="service" required>
                             <option value="" disabled selected>Selecciona un servicio</option>
                             <option value="desarrollo-web">Desarrollo Web</option>
@@ -95,11 +97,12 @@
                         </select>
                         <label for="service">Tipo de servicio</label>
                     </div>
+
                     <div class="form-group">
                         <textarea id="message" name="message" rows="5" required></textarea>
                         <label for="message">Mensaje</label>
                     </div>
-                    <!-- Campo anti-spam oculto -->
+                    
                     <input type="text" name="_gotcha" style="display:none">
                     <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
                     <div id="form-status" class="form-status"></div>
@@ -147,7 +150,7 @@
     <script src="js/script.js"></script>
     <script src="js/animation.js"></script>
 
-    <!-- Inicialización de particles.js -->
+    <!-- Inicialización de particles.js (sin cambios) -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof particlesJS !== 'undefined') {
