@@ -28,6 +28,15 @@
     
     <!-- particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Three.js import map -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+            }
+        }
+    </script>
 </head>
 <body>
     <!-- PRELOADER -->
@@ -53,8 +62,11 @@
     </header>
 
     <main>
-        <!-- HERO SECTION con particles.js -->
+        <!-- HERO SECTION con particles.js y Three.js -->
         <section id="hero" class="hero">
+            <!-- Contenedor para Three.js (fondo 3D) -->
+            <div id="three-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
+            <!-- Fondo de partículas (particles.js) -->
             <div id="particles-js"></div>
             <div class="hero-content container">
                 <h1 class="hero-title">Construimos el futuro <br><span class="gradient-text">digital</span> de tu negocio</h1>
@@ -384,5 +396,8 @@
             }
         });
     </script>
+
+    <!-- Three.js externo -->
+    <script type="module" src="js/three-background.js"></script>
 </body>
 </html>
