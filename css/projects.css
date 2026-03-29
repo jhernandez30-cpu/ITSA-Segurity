@@ -427,50 +427,9 @@
     to { transform: rotate(360deg); }
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 992px) {
-    .servicios-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .metodologia-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .servicios-title {
-        font-size: 3.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .timeline-grid {
-        flex-direction: column;
-    }
-    .stats-mini {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .servicios-grid {
-        grid-template-columns: 1fr;
-    }
-    .metodologia-grid {
-        grid-template-columns: 1fr;
-    }
-    .servicios-title {
-        font-size: 2.8rem;
-    }
-    .cta-content h2 {
-        font-size: 2.5rem;
-    }
-    .tech-item {
-        padding: 0.5rem 1.2rem;
-        font-size: 0.95rem;
-    }
-
-    /* ===== MEJORAS DE CREDIBILIDAD Y UX ===== */
+/* ===== MEJORAS DE CREDIBILIDAD Y UX ===== */
 
 /* Testimonios con avatar */
-.testimonial-card {
-    text-align: center;
-}
 .testimonial-avatar {
     width: 70px;
     height: 70px;
@@ -480,7 +439,7 @@
     object-fit: cover;
 }
 
-/* Sección equipo */
+/* Sección equipo (original, mantiene grid) */
 .equipo {
     background: linear-gradient(180deg, #0a0c12, #010101);
 }
@@ -532,7 +491,7 @@
     color: var(--accent);
 }
 
-/* Certificaciones */
+/* Certificaciones (original) */
 .certificaciones {
     background: #010101;
     text-align: center;
@@ -571,25 +530,8 @@
     color: #000;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .equipo-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 768px) {
-    .equipo-grid {
-        grid-template-columns: 1fr;
-    }
-    .cert-grid {
-        gap: 1rem;
-    }
-    .cert-item {
-        padding: 0.5rem 1.2rem;
-    }
-}
-
-    /* Equipo horizontal */
+/* ===== NUEVAS DISPOSICIONES HORIZONTALES ===== */
+/* Equipo horizontal */
 .equipo-grid-horizontal {
     display: flex;
     justify-content: center;
@@ -614,4 +556,61 @@
 .cert-grid-horizontal .cert-item {
     flex: 0 1 auto;
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .metodologia-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .servicios-title {
+        font-size: 3.5rem;
+    }
+    .equipo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .equipo-grid-horizontal .miembro-card {
+        min-width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-grid {
+        flex-direction: column;
+    }
+    .stats-mini {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .servicios-grid {
+        grid-template-columns: 1fr;
+    }
+    .metodologia-grid {
+        grid-template-columns: 1fr;
+    }
+    .servicios-title {
+        font-size: 2.8rem;
+    }
+    .cta-content h2 {
+        font-size: 2.5rem;
+    }
+    .tech-item {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.95rem;
+    }
+    .equipo-grid {
+        grid-template-columns: 1fr;
+    }
+    .equipo-grid-horizontal .miembro-card {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .cert-grid {
+        gap: 1rem;
+    }
+    .cert-item {
+        padding: 0.5rem 1.2rem;
+    }
 }
