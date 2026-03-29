@@ -4,24 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnología · ITSA Segurity</title>
+    <meta name="description" content="Conoce el stack tecnológico de ITSA Segurity: frontend, backend, cloud, IA y arquitecturas escalables para soluciones robustas.">
+    <meta name="keywords" content="tecnología, stack, frontend, backend, devops, IA, microservicios, serverless, ITSA Segurity">
+    
+    <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <!-- CSS modulares -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/projects.css"> <!-- AÑADIDO: necesario para .tech-cloud, .tech-item, etc. -->
+    <link rel="stylesheet" href="css/hero.css">      <!-- Para mantener consistencia en headers -->
+    <link rel="stylesheet" href="css/projects.css">  <!-- Contiene .tech-cloud, .grid-3, etc. -->
     <link rel="stylesheet" href="css/skills.css">
+    
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
-    <div id="preloader"><div class="loader"><span></span><span></span><span></span><span></span></div></div>
-    <header class="header"><nav class="navbar container"><a href="index.html" class="logo">ITSA <span>Segurity</span></a><ul class="nav-menu"><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="tecnologia.html">Tecnología</a></li><li><a href="metodologia.html">Metodología</a></li><li><a href="contacto.html">Contacto</a></li></ul><div class="hamburger"><i class="fas fa-bars"></i></div></nav></header>
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="loader">
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="tecnologia.html" class="active">Tecnología</a></li>
+                <li><a href="metodologia.html">Metodología</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Menú"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
 
     <main>
-        <!-- PAGE HEADER (actualizado el subtítulo) -->
+        <!-- PAGE HEADER -->
         <section class="page-header">
             <div class="container">
                 <h1 class="page-title">Tecnología <span class="accent">de punta</span></h1>
@@ -29,19 +57,18 @@
             </div>
         </section>
 
-        <!-- SECCIÓN: STACK TECNOLÓGICO (NUEVA ESTRUCTURA) -->
+        <!-- STACK TECNOLÓGICO -->
         <section class="section">
             <div class="container">
                 <span class="section-subtitle">· Stack tecnológico ·</span>
                 <h2 class="section-title">Nuestro arsenal <span class="accent">digital</span></h2>
                 <p class="text-center" style="margin-bottom: 3rem; color: var(--text-dim);">Seleccionamos las mejores herramientas para cada proyecto, garantizando rendimiento, seguridad y escalabilidad.</p>
 
-                <!-- Grid de categorías (usa .grid-3 de styles.css) -->
                 <div class="grid-3">
                     <!-- Frontend -->
                     <div class="categoria-tech">
                         <h3 class="categoria-title"><i class="fas fa-code"></i> Frontend</h3>
-                        <div class="tech-cloud" style="justify-content: flex-start;"> <!-- Nube alineada a la izquierda -->
+                        <div class="tech-cloud" style="justify-content: flex-start;">
                             <span class="tech-item">HTML5</span>
                             <span class="tech-item">CSS3</span>
                             <span class="tech-item">JavaScript (ES6+)</span>
@@ -52,7 +79,7 @@
                             <span class="tech-item">Three.js</span>
                         </div>
                     </div>
-                    <!-- Backend & Bases de datos -->
+                    <!-- Backend & BD -->
                     <div class="categoria-tech">
                         <h3 class="categoria-title"><i class="fas fa-database"></i> Backend & Bases de datos</h3>
                         <div class="tech-cloud" style="justify-content: flex-start;">
@@ -74,7 +101,8 @@
                             <span class="tech-item">Kubernetes</span>
                             <span class="tech-item">AWS</span>
                             <span class="tech-item">Azure</span>
-                            <span class="tech-item">Firebase</span>
+                            <span class="tech-item">GitHub Actions</span>
+                            <span class="tech-item">GitLab CI</span>
                         </div>
                     </div>
                     <!-- IA & Datos -->
@@ -91,12 +119,11 @@
             </div>
         </section>
 
-        <!-- SECCIÓN: ARQUITECTURAS ESCALABLES (NUEVA) -->
+        <!-- ARQUITECTURAS ESCALABLES -->
         <section class="section">
             <div class="container">
                 <h2 class="section-title text-center">Arquitecturas <span class="accent">escalables</span></h2>
                 <p class="text-center" style="margin-bottom: 3rem; color: var(--text-dim);">Diseñamos sistemas preparados para crecer, con microservicios, serverless y las mejores prácticas de la industria.</p>
-                <!-- Usamos .grid-3 para las tres columnas y .glass-card para las tarjetas -->
                 <div class="grid-3">
                     <div class="glass-card" style="text-align: center;">
                         <i class="fas fa-cubes" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
@@ -117,7 +144,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN: WORKFLOW (CI/CD) (NUEVA) -->
+        <!-- WORKFLOW CI/CD -->
         <section class="section">
             <div class="container">
                 <span class="section-subtitle">· Workflow ·</span>
@@ -132,52 +159,87 @@
             </div>
         </section>
 
-        <!-- SECCIÓN: CTA (NUEVA) -->
+        <!-- CTA FINAL -->
         <section class="section" style="background: linear-gradient(135deg, #000408, #001c28); text-align: center;">
             <div class="container">
                 <h2 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 1.5rem;">¿Listo para construir algo <span class="accent">increíble</span>?</h2>
                 <p style="font-size: 1.2rem; color: var(--text-dim); max-width: 600px; margin: 0 auto 2rem;">Contáctanos y descubre cómo nuestra tecnología puede impulsar tu proyecto.</p>
-                <a href="contacto.html" class="btn btn-primary btn-large">Hablemos <i class="fas fa-arrow-right"></i></a>
+                <a href="contacto.html" class="btn btn-primary">Hablemos <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER (idéntico al de index.html) -->
+    <!-- FOOTER (idéntico al resto del sitio) -->
     <footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
-                <p>Innovación digital con propósito.</p>
-            </div>
-            <div class="footer-links">
-                <h5>Empresa</h5>
-                <ul>
-                    <li><a href="metodologia.html">Metodología</a></li>
-                    <li><a href="tecnologia.html">Tecnología</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="privacidad.html">Política de privacidad</a></li>
-                    <li><a href="aviso-legal.html">Aviso legal</a></li>
-                    <li><a href="terminos.html">Términos y condiciones</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h5>Redes</h5>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+                    <p>Innovación digital con propósito.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Empresa</h5>
+                    <ul>
+                        <li><a href="metodologia.html">Metodología</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="privacidad.html">Política de privacidad</a></li>
+                        <li><a href="aviso-legal.html">Aviso legal</a></li>
+                        <li><a href="terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h5>Redes</h5>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
+            </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
-        </div>
-    </div>
-</footer>
-    
+    </footer>
+
+    <!-- SCRIPTS -->
     <script src="js/script.js"></script>
     <script src="js/animation.js"></script>
+    <script>
+        // Animaciones específicas para esta página (GSAP)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animar elementos .categoria-tech y .glass-card al hacer scroll
+            gsap.utils.toArray('.categoria-tech, .glass-card').forEach(el => {
+                gsap.from(el, {
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse'
+                    },
+                    opacity: 0,
+                    y: 30,
+                    duration: 0.8,
+                    ease: 'power2.out'
+                });
+            });
+            
+            // Animar la nube de tecnologías
+            gsap.utils.toArray('.tech-item').forEach((item, i) => {
+                gsap.from(item, {
+                    scrollTrigger: {
+                        trigger: item.closest('.tech-cloud'),
+                        start: 'top 80%'
+                    },
+                    opacity: 0,
+                    scale: 0.8,
+                    delay: i * 0.02,
+                    duration: 0.4,
+                    ease: 'back.out(1.2)'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
