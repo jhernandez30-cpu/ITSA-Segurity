@@ -588,4 +588,30 @@
         padding: 0.5rem 1.2rem;
     }
 }
+
+    /* Equipo horizontal */
+.equipo-grid-horizontal {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+.equipo-grid-horizontal .miembro-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+/* Certificaciones horizontal */
+.cert-grid-horizontal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.cert-grid-horizontal .cert-item {
+    flex: 0 1 auto;
+}
 }
