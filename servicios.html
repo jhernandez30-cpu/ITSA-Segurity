@@ -27,17 +27,30 @@
         
         /* Hero corporativo (sin partículas) */
         .servicios-hero {
-            min-height: 55vh;
-            background-color: #0a0c12;
+            min-height: 60vh;
+            background: radial-gradient(circle at 20% 30%, #0f1a2b 0%, #05080f 100%);
             position: relative;
             display: flex;
             align-items: center;
-            border-bottom: 1px solid rgba(0, 170, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 170, 255, 0.15);
             padding: 0;
         }
         
+        .servicios-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><path d="M0 400 Q 200 300 400 400 T 800 400 T 1200 400 L 1200 800 L 0 800 Z" fill="rgba(0,170,255,0.02)"/></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
         .servicios-hero .hero-content {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             text-align: center;
             position: relative;
@@ -45,25 +58,27 @@
         }
         
         .servicios-title {
-            font-size: 3.8rem;
+            font-size: 4rem;
             font-weight: 700;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
             line-height: 1.2;
             color: #fff;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         
         .servicios-subtitle {
             font-size: 1.3rem;
-            color: var(--text-dim);
+            color: #b0c7e0;
             font-weight: 400;
             max-width: 750px;
             margin: 0 auto;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
         
         /* Secciones generales */
         .section {
-            padding: 90px 0;
+            padding: 100px 0;
         }
         
         .section-title {
@@ -76,10 +91,10 @@
         
         .section-subtitle {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            color: var(--text-dim);
-            font-size: 1.1rem;
+            max-width: 750px;
+            margin: 0 auto 3.5rem;
+            color: #a0b5cc;
+            font-size: 1.15rem;
             line-height: 1.6;
         }
         
@@ -91,18 +106,19 @@
         }
         
         .servicio-card {
-            background: rgba(20, 30, 45, 0.5);
+            background: rgba(18, 28, 40, 0.7);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 28px;
-            padding: 2.5rem 2rem;
+            border-radius: 32px;
+            padding: 2.8rem 2rem;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             height: 100%;
+            border-bottom: 3px solid transparent;
         }
         
         .servicio-card::before {
@@ -111,17 +127,18 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), #0066cc);
+            height: 5px;
+            background: linear-gradient(90deg, #00aaff, #0066cc);
             opacity: 0;
             transition: opacity 0.4s;
         }
         
         .servicio-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(0, 170, 255, 0.25);
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
-            background: rgba(20, 30, 45, 0.7);
+            transform: translateY(-12px);
+            border-color: rgba(0, 170, 255, 0.3);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
+            background: rgba(20, 32, 48, 0.85);
+            border-bottom-color: #00aaff;
         }
         
         .servicio-card:hover::before {
@@ -130,41 +147,44 @@
         
         .card-icon {
             font-size: 2.8rem;
-            color: var(--accent);
-            margin-bottom: 1.8rem;
+            color: #00aaff;
+            margin-bottom: 2rem;
             background: rgba(0, 170, 255, 0.08);
-            width: 70px;
-            height: 70px;
+            width: 75px;
+            height: 75px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 18px;
+            border-radius: 20px;
             transition: all 0.3s;
+            border: 1px solid rgba(0,170,255,0.15);
         }
         
         .servicio-card:hover .card-icon {
-            background: var(--accent);
+            background: #00aaff;
             color: #fff;
-            transform: scale(1.05);
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 0 25px rgba(0,170,255,0.5);
         }
         
         .servicio-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 1.9rem;
+            margin-bottom: 1.2rem;
             color: #fff;
             font-weight: 600;
             letter-spacing: -0.01em;
         }
         
         .card-description {
-            color: var(--text-dim);
+            color: #b0c2d9;
             line-height: 1.7;
-            margin-bottom: 1.8rem;
+            margin-bottom: 2rem;
             flex-grow: 1;
+            font-size: 1rem;
         }
         
         .card-link {
-            color: var(--accent);
+            color: #00aaff;
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
@@ -172,15 +192,17 @@
             gap: 8px;
             transition: gap 0.3s;
             margin-top: auto;
+            font-size: 1.05rem;
         }
         
         .card-link:hover {
-            gap: 12px;
+            gap: 14px;
+            color: #33bbff;
         }
         
         /* Sección "Cómo trabajamos" */
         .metodologia-section {
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.25);
             border-top: 1px solid rgba(255,255,255,0.03);
             border-bottom: 1px solid rgba(255,255,255,0.03);
         }
@@ -193,36 +215,38 @@
         }
         
         .metodologia-item {
-            background: rgba(20, 30, 45, 0.4);
+            background: rgba(20, 30, 45, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 24px;
-            padding: 2rem 1.8rem;
+            border-radius: 28px;
+            padding: 2.2rem 1.8rem;
             text-align: center;
             backdrop-filter: blur(8px);
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         
         .metodologia-item:hover {
-            background: rgba(0, 170, 255, 0.05);
-            border-color: rgba(0, 170, 255, 0.2);
-            transform: translateY(-5px);
+            background: rgba(0, 170, 255, 0.06);
+            border-color: rgba(0, 170, 255, 0.25);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3);
         }
         
         .metodologia-number {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 800;
-            color: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.03);
             position: absolute;
-            top: 0.5rem;
-            right: 1.2rem;
+            top: 0.2rem;
+            right: 1rem;
             line-height: 1;
             z-index: 0;
         }
         
         .metodologia-item h4 {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             color: #fff;
             margin-bottom: 1rem;
             font-weight: 600;
@@ -231,8 +255,8 @@
         }
         
         .metodologia-item p {
-            color: var(--text-dim);
-            font-size: 0.95rem;
+            color: #b0c2d9;
+            font-size: 0.98rem;
             line-height: 1.6;
             position: relative;
             z-index: 1;
@@ -240,7 +264,7 @@
         
         /* Sección de tecnologías */
         .tecnologias-section {
-            background: #0a0c12;
+            background: #080c14;
         }
         
         .tech-cloud {
@@ -248,74 +272,167 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 1rem;
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
         
         .tech-item {
-            background: rgba(0, 170, 255, 0.08);
-            border: 1px solid rgba(0, 170, 255, 0.15);
-            color: var(--text-light);
-            padding: 0.8rem 1.6rem;
-            border-radius: 40px;
+            background: rgba(0, 170, 255, 0.06);
+            border: 1px solid rgba(0, 170, 255, 0.2);
+            color: #e0e9f5;
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
             font-size: 1rem;
             font-weight: 500;
-            transition: all 0.2s;
+            transition: all 0.25s;
             backdrop-filter: blur(4px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         }
         
         .tech-item:hover {
-            background: var(--accent);
+            background: #00aaff;
             color: #fff;
-            border-color: var(--accent);
-            transform: translateY(-2px);
+            border-color: #00aaff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,170,255,0.3);
         }
         
-        /* Estadísticas */
+        /* Estadísticas mejoradas */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         .stat-large {
             text-align: center;
-            padding: 2rem;
-            background: rgba(20, 30, 45, 0.3);
-            border-radius: 20px;
+            padding: 2.5rem 1.5rem;
+            background: rgba(20, 30, 45, 0.4);
+            border-radius: 24px;
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .stat-large:hover {
+            transform: scale(1.02);
+            background: rgba(0, 170, 255, 0.05);
         }
         
         .stat-number {
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 800;
-            color: var(--accent);
+            color: #00aaff;
             line-height: 1;
+            display: inline-block;
         }
         
         .stat-large span:not(.stat-number) {
-            font-size: 1.5rem;
-            color: var(--text-dim);
+            font-size: 1.8rem;
+            color: #a0b5cc;
             margin-left: 5px;
+            font-weight: 500;
         }
         
         .stat-large p {
-            color: var(--text-dim);
-            margin-top: 0.5rem;
-            font-size: 1.1rem;
+            color: #c0d0e5;
+            margin-top: 0.8rem;
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+        
+        .stat-large i {
+            font-size: 2.2rem;
+            color: #00aaff;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        
+        /* Sección de clientes/confianza (nueva) */
+        .trust-section {
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255,255,255,0.03);
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            padding: 70px 0;
+        }
+        
+        .trust-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem 4rem;
+        }
+        
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .trust-item:hover {
+            opacity: 1;
+        }
+        
+        .trust-item i {
+            font-size: 2.8rem;
+            color: #b0c7e0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .trust-item span {
+            color: #a0b5cc;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0 0;
+        }
+        
+        .badge {
+            background: rgba(0, 170, 255, 0.08);
+            border: 1px solid rgba(0, 170, 255, 0.25);
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            color: #e0e9f5;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+        
+        .badge i {
+            margin-right: 8px;
+            color: #00aaff;
         }
         
         /* CTA final */
         .cta-section {
-            background: linear-gradient(135deg, #000408 0%, #0a1a2a 100%);
+            background: linear-gradient(145deg, #020408 0%, #0e1a28 100%);
             text-align: center;
-            padding: 100px 0;
-            border-top: 1px solid rgba(0, 170, 255, 0.1);
+            padding: 110px 0;
+            border-top: 1px solid rgba(0, 170, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00aaff, transparent);
         }
         
         .cta-content h2 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
             line-height: 1.2;
@@ -323,32 +440,33 @@
         }
         
         .cta-content p {
-            font-size: 1.2rem;
-            color: var(--text-dim);
-            max-width: 650px;
-            margin: 0 auto 2.5rem;
+            font-size: 1.25rem;
+            color: #b0c7e0;
+            max-width: 700px;
+            margin: 0 auto 2.8rem;
         }
         
         .btn-primary {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 1.2rem 3rem;
+            gap: 14px;
+            padding: 1.3rem 3.2rem;
             font-size: 1.2rem;
             font-weight: 600;
-            background: var(--accent);
+            background: #00aaff;
             color: #fff;
-            border-radius: 50px;
+            border-radius: 60px;
             text-decoration: none;
             transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(0, 170, 255, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 170, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            letter-spacing: 0.3px;
         }
         
         .btn-primary:hover {
             background: #0099dd;
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 170, 255, 0.35);
+            transform: translateY(-4px);
+            box-shadow: 0 25px 45px rgba(0, 170, 255, 0.4);
         }
         
         /* Eliminar partículas */
@@ -365,10 +483,10 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             .servicios-title {
-                font-size: 3rem;
+                font-size: 3.2rem;
             }
             .section-title {
-                font-size: 2.4rem;
+                font-size: 2.5rem;
             }
         }
         
@@ -383,13 +501,16 @@
                 grid-template-columns: 1fr;
             }
             .servicios-title {
-                font-size: 2.5rem;
+                font-size: 2.6rem;
             }
             .section-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             .cta-content h2 {
-                font-size: 2.5rem;
+                font-size: 2.6rem;
+            }
+            .trust-grid {
+                gap: 2rem;
             }
         }
     </style>
@@ -418,58 +539,85 @@
     </header>
 
     <main>
-        <!-- HERO DE SERVICIOS (SIN PARTÍCULAS) -->
+        <!-- HERO DE SERVICIOS (SIN PARTÍCULAS, CON FONDO GRADIENTE Y ONDA) -->
         <section class="servicios-hero">
             <div class="container hero-content">
-                <h1 class="servicios-title">Nuestros <span class="accent">servicios</span></h1>
-                <p class="servicios-subtitle">Soluciones digitales integrales para empresas en Nicaragua. Desarrollo web, software a medida, ciberseguridad, marketing digital, IA y consultoría con resultados medibles.</p>
+                <h1 class="servicios-title">Soluciones <span class="accent">digitales</span> de clase mundial</h1>
+                <p class="servicios-subtitle">Impulsamos la transformación digital de empresas en Nicaragua y la región con servicios de desarrollo web, software a medida, ciberseguridad, marketing digital, inteligencia artificial y consultoría estratégica. Resultados medibles, estándares internacionales.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CONFIANZA (CLIENTES Y CERTIFICACIONES) - NUEVA -->
+        <section class="trust-section">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <i class="fas fa-building"></i>
+                        <span>Empresas líderes confían en nosotros</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>ISO 27001 · AWS Partner · Microsoft Partner</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-globe-americas"></i>
+                        <span>Presencia en Centroamérica y EE.UU.</span>
+                    </div>
+                </div>
+                <div class="badge-container">
+                    <div class="badge"><i class="fas fa-check-circle"></i> +50 proyectos entregados</div>
+                    <div class="badge"><i class="fas fa-clock"></i> Soporte 24/7</div>
+                    <div class="badge"><i class="fas fa-lock"></i> Cumplimiento GDPR</div>
+                </div>
             </div>
         </section>
 
         <!-- SECCIÓN DE SERVICIOS - TARJETAS MEJORADAS -->
         <section class="servicios-grid-section section">
             <div class="container">
+                <h2 class="section-title">Servicios <span class="accent">empresariales</span> de alto impacto</h2>
+                <p class="section-subtitle">Combinamos tecnología de vanguardia con experiencia sectorial para ofrecer soluciones personalizadas que aceleran el crecimiento de su organización.</p>
                 <div class="servicios-grid">
                     <!-- Servicio 1: Desarrollo Web -->
                     <div class="servicio-card">
                         <i class="fas fa-laptop-code card-icon"></i>
                         <h3>Desarrollo Web</h3>
-                        <p class="card-description">Creamos sitios web y aplicaciones que atraen clientes, mejoran tu posicionamiento en Google y reflejan la calidad de tu negocio en Nicaragua.</p>
+                        <p class="card-description">Sitios web corporativos, portales y aplicaciones progresivas (PWA) que reflejan la excelencia de su marca, optimizados para SEO y rendimiento.</p>
                         <a href="seopage/desarrollo-web.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <!-- Servicio 2: Software a medida -->
                     <div class="servicio-card">
                         <i class="fas fa-cogs card-icon"></i>
                         <h3>Software a medida</h3>
-                        <p class="card-description">Automatiza procesos, integra sistemas y escala tu operación con software diseñado específicamente para tu empresa en Managua o cualquier ciudad del país.</p>
+                        <p class="card-description">Automatización de procesos, ERPs, CRMs y sistemas personalizados que se adaptan exactamente a su operación y escalan con su negocio.</p>
                         <a href="seopage/software-medida.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <!-- Servicio 3: Ciberseguridad -->
                     <div class="servicio-card">
                         <i class="fas fa-shield-haltered card-icon"></i>
                         <h3>Ciberseguridad</h3>
-                        <p class="card-description">Auditorías, pruebas de penetración (pentesting) y monitorización 24/7 para proteger los datos de tu empresa y cumplir con normativas locales e internacionales.</p>
+                        <p class="card-description">Auditorías, pentesting, cumplimiento normativo y monitoreo continuo para blindar sus activos digitales y garantizar la continuidad del negocio.</p>
                         <a href="seopage/ciberseguridad.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <!-- Servicio 4: Marketing Digital -->
                     <div class="servicio-card">
                         <i class="fas fa-bullseye card-icon"></i>
                         <h3>Marketing Digital</h3>
-                        <p class="card-description">Atrae más clientes con SEO local, Google Ads, redes sociales y automatización. Estrategias adaptadas al mercado nicaragüense con ROI medible.</p>
+                        <p class="card-description">Estrategias de inbound marketing, SEO/SEM, gestión de redes sociales y analítica avanzada para conectar con su audiencia y maximizar el ROI.</p>
                         <a href="seopage/marketing-digital.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <!-- Servicio 5: IA y Datos -->
                     <div class="servicio-card">
                         <i class="fas fa-brain card-icon"></i>
-                        <h3>IA & Datos</h3>
-                        <p class="card-description">Integra inteligencia artificial en tus procesos, analiza datos y obtén predicciones para tomar mejores decisiones de negocio.</p>
+                        <h3>IA & Data Science</h3>
+                        <p class="card-description">Implementamos modelos de inteligencia artificial y machine learning para predicción, automatización inteligente y toma de decisiones basada en datos.</p>
                         <a href="seopage/ia-datos.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <!-- Servicio 6: Consultoría Tecnológica -->
                     <div class="servicio-card">
                         <i class="fas fa-chart-pie card-icon"></i>
-                        <h3>Consultoría</h3>
-                        <p class="card-description">Te asesoramos en arquitectura de software, transformación digital y selección de tecnología para que tu empresa en Nicaragua dé el siguiente paso.</p>
+                        <h3>Consultoría estratégica</h3>
+                        <p class="card-description">Asesoría en transformación digital, arquitectura cloud y optimización de procesos para alinear la tecnología con sus objetivos empresariales.</p>
                         <a href="seopage/consultoria.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -479,28 +627,28 @@
         <!-- SECCIÓN "CÓMO TRABAJAMOS" -->
         <section class="metodologia-section section">
             <div class="container">
-                <h2 class="section-title">Cómo <span class="accent">trabajamos</span></h2>
-                <p class="section-subtitle">Un proceso probado que combina agilidad, transparencia y comunicación constante para garantizar el éxito de tu proyecto.</p>
+                <h2 class="section-title">Metodología <span class="accent">probada</span></h2>
+                <p class="section-subtitle">Un enfoque ágil, transparente y orientado a resultados que ha sido perfeccionado en más de 50 implementaciones exitosas en la región.</p>
                 <div class="metodologia-grid">
                     <div class="metodologia-item">
                         <span class="metodologia-number">01</span>
                         <h4>Discovery</h4>
-                        <p>Entendemos tu visión, necesidades y objetivos de negocio en el contexto nicaragüense.</p>
+                        <p>Entendemos a fondo su negocio, sus retos y oportunidades en el contexto local e internacional.</p>
                     </div>
                     <div class="metodologia-item">
                         <span class="metodologia-number">02</span>
-                        <h4>Scope</h4>
-                        <p>Planificamos la arquitectura y el roadmap del proyecto, adaptado a tus plazos y presupuesto.</p>
+                        <h4>Scope & Plan</h4>
+                        <p>Definimos alcance, arquitectura y roadmap con total claridad, alineado a su presupuesto y plazos.</p>
                     </div>
                     <div class="metodologia-item">
                         <span class="metodologia-number">03</span>
-                        <h4>Build</h4>
-                        <p>Construimos el producto de forma iterativa con demos semanales para que veas el avance.</p>
+                        <h4>Build iterativo</h4>
+                        <p>Desarrollamos en sprints con demos semanales, permitiendo ajustes y visibilidad total del avance.</p>
                     </div>
                     <div class="metodologia-item">
                         <span class="metodologia-number">04</span>
-                        <h4>Launch</h4>
-                        <p>Desplegamos a producción y aseguramos un lanzamiento exitoso, con acompañamiento post-lanzamiento.</p>
+                        <h4>Launch & Evolve</h4>
+                        <p>Lanzamiento controlado, transferencia de conocimiento y soporte continuo para evolución futura.</p>
                     </div>
                 </div>
             </div>
@@ -509,8 +657,8 @@
         <!-- SECCIÓN DE TECNOLOGÍAS -->
         <section class="tecnologias-section section">
             <div class="container">
-                <h2 class="section-title">Tecnologías que <span class="accent">utilizamos</span></h2>
-                <p class="section-subtitle">Trabajamos con un stack moderno y escalable, seleccionando las mejores herramientas para cada proyecto.</p>
+                <h2 class="section-title">Stack tecnológico <span class="accent">enterprise</span></h2>
+                <p class="section-subtitle">Trabajamos con tecnologías modernas, escalables y seguras, seleccionadas según los requisitos específicos de cada proyecto.</p>
                 <div class="tech-cloud">
                     <span class="tech-item">React</span>
                     <span class="tech-item">Node.js</span>
@@ -526,25 +674,30 @@
                     <span class="tech-item">GitHub</span>
                     <span class="tech-item">Kubernetes</span>
                     <span class="tech-item">GraphQL</span>
+                    <span class="tech-item">Jenkins</span>
+                    <span class="tech-item">Terraform</span>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN DE ESTADÍSTICAS -->
+        <!-- SECCIÓN DE ESTADÍSTICAS CON ICONOS -->
         <section class="section stats">
             <div class="container">
                 <div class="stats-grid">
                     <div class="stat-large">
-                        <span class="stat-number">98</span><span>%</span>
+                        <i class="fas fa-smile"></i>
+                        <div><span class="stat-number">98</span><span>%</span></div>
                         <p>Satisfacción del cliente</p>
                     </div>
                     <div class="stat-large">
-                        <span class="stat-number">24</span><span>/7</span>
+                        <i class="fas fa-headset"></i>
+                        <div><span class="stat-number">24</span><span>/7</span></div>
                         <p>Soporte continuo</p>
                     </div>
                     <div class="stat-large">
-                        <span class="stat-number">15</span><span>+</span>
-                        <p>Premios e innovación</p>
+                        <i class="fas fa-trophy"></i>
+                        <div><span class="stat-number">15</span><span>+</span></div>
+                        <p>Premios y reconocimientos</p>
                     </div>
                 </div>
             </div>
@@ -554,13 +707,13 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2>¿Listo para transformar tu negocio en Nicaragua?</h2>
-                    <p>Hablemos sin compromiso. Cuéntanos tu proyecto y te daremos una propuesta personalizada con nuestra metodología de clase mundial.</p>
+                    <h2>¿Listo para llevar su empresa al siguiente nivel?</h2>
+                    <p>Agende una consultoría inicial sin costo. Analizaremos sus necesidades y le presentaremos una propuesta de valor personalizada con estándares internacionales.</p>
                     <a href="contacto.html" class="btn btn-primary">
                         <i class="fas fa-calendar-check"></i> Solicitar asesoría gratuita
                     </a>
-                    <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-dim);">
-                        <i class="fas fa-lock"></i> Consultoría inicial sin costo · Confidencialidad garantizada
+                    <p style="margin-top: 2.5rem; font-size: 0.95rem; color: #90a4c2;">
+                        <i class="fas fa-lock"></i> Confidencialidad garantizada · Sin compromiso
                     </p>
                 </div>
             </div>
@@ -573,7 +726,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
-                    <p>Innovación digital con propósito.</p>
+                    <p>Innovación digital con propósito. Partner tecnológico de empresas líderes en Nicaragua y Centroamérica.</p>
                 </div>
                 <div class="footer-links">
                     <h5>Empresa</h5>
@@ -606,7 +759,7 @@
     <script src="js/script.js"></script>
     <script src="js/animation.js"></script>
     
-    <!-- Animaciones GSAP suaves -->
+    <!-- Animaciones GSAP suaves (mantenidas y mejoradas) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Animación para tarjetas de servicio
@@ -618,8 +771,8 @@
                         toggleActions: 'play none none reverse'
                     },
                     opacity: 0,
-                    y: 40,
-                    duration: 0.6,
+                    y: 50,
+                    duration: 0.7,
                     delay: i * 0.1,
                     ease: 'power2.out'
                 });
@@ -633,8 +786,8 @@
                         start: 'top 85%'
                     },
                     opacity: 0,
-                    y: 30,
-                    duration: 0.5,
+                    y: 40,
+                    duration: 0.6,
                     delay: i * 0.1,
                     ease: 'power2.out'
                 });
@@ -648,9 +801,33 @@
                 },
                 opacity: 0,
                 scale: 0.8,
-                duration: 0.4,
+                duration: 0.5,
                 stagger: 0.03,
                 ease: 'back.out(1.2)'
+            });
+
+            // Animación para trust items
+            gsap.from('.trust-item', {
+                scrollTrigger: {
+                    trigger: '.trust-section',
+                    start: 'top 90%'
+                },
+                opacity: 0,
+                y: 20,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: 'power2.out'
+            });
+
+            gsap.from('.badge', {
+                scrollTrigger: {
+                    trigger: '.badge-container',
+                    start: 'top 95%'
+                },
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.4,
+                stagger: 0.1
             });
         });
     </script>
