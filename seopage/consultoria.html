@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría Tecnológica · ITSA Segurity</title>
+    <meta name="description" content="Te asesoramos en arquitectura de software, transformación digital y selección de tecnología para que tu empresa en Nicaragua dé el siguiente paso.">
+    <meta name="keywords" content="consultoría tecnológica Nicaragua, arquitectura software, transformación digital, selección de tecnología, asesoría TI">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/skills.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+            }
+        }
+    </script>
+    <style>
+        /* Estilos para acordeón de FAQs */
+        .faq-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: rgba(0,170,255,0.1);
+        }
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            max-height: 300px;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader"><div class="loader"><span></span><span></span><span></span><span></span></div></div>
+    
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
+                <li><a href="metodologia.html">Metodología</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero con partículas y Three.js -->
+        <section class="hero" style="min-height: 60vh; background: linear-gradient(135deg, rgba(0,10,20,0.85) 0%, rgba(0,30,50,0.7) 100%);">
+            <div id="three-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
+            <div id="particles-js" style="z-index: 1;"></div>
+            <div class="hero-content container" style="position: relative; z-index: 2;">
+                <h1 class="page-title">Consultoría <span class="accent">tecnológica</span> en Nicaragua</h1>
+                <p class="page-subtitle">Te asesoramos en arquitectura de software, transformación digital y selección de tecnología para que tu empresa dé el siguiente paso.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="contacto.html" class="btn btn-primary">Solicitar primera asesoría gratuita <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios clave -->
+        <section class="section">
+            <div class="container">
+                <span class="section-subtitle">· Por qué necesitas consultoría ·</span>
+                <h2 class="section-title">Tomar mejores decisiones <span class="accent">tecnológicas</span></h2>
+                <div class="grid-3" style="margin-top: 2rem;">
+                    <div class="glass-card" style="text-align: center;">
+                        <i class="fas fa-sitemap" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3>Arquitectura de software</h3>
+                        <p>Diseñamos la estructura técnica de tus sistemas para que sean escalables, mantenibles y seguros desde el inicio.</p>
+                    </div>
+                    <div class="glass-card" style="text-align: center;">
+                        <i class="fas fa-chalkboard-user" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3>Transformación digital</h3>
+                        <p>Te guiamos en el proceso de digitalizar procesos, adoptar nuevas tecnologías y cambiar la cultura organizacional.</p>
+                    </div>
+                    <div class="glass-card" style="text-align: center;">
+                        <i class="fas fa-microchip" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3>Selección de tecnología</h3>
+                        <p>Evaluamos y recomendamos las herramientas, lenguajes, plataformas y proveedores más adecuados para tu negocio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Áreas de asesoría (detalladas) -->
+        <section class="section" style="background: #0a0c12;">
+            <div class="container">
+                <span class="section-subtitle">· Áreas de asesoría ·</span>
+                <h2 class="section-title">En qué <span class="accent">te ayudamos</span></h2>
+                <div class="grid-3" style="margin-top: 2rem;">
+                    <div class="glass-card">
+                        <i class="fas fa-cloud-arrow-up" style="font-size: 2rem; color: var(--accent); margin-bottom: 0.8rem;"></i>
+                        <h3>Migración a la nube</h3>
+                        <p>Evaluamos tu infraestructura actual y diseñamos una estrategia de migración a AWS, Azure o Google Cloud.</p>
+                    </div>
+                    <div class="glass-card">
+                        <i class="fas fa-shield-virus" style="font-size: 2rem; color: var(--accent); margin-bottom: 0.8rem;"></i>
+                        <h3>Ciberseguridad estratégica</h3>
+                        <p>Identificamos brechas, definimos políticas de seguridad y te acompañamos en certificaciones como ISO 27001.</p>
+                    </div>
+                    <div class="glass-card">
+                        <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--accent); margin-bottom: 0.8rem;"></i>
+                        <h3>Data strategy</h3>
+                        <p>Te ayudamos a definir cómo capturar, almacenar y explotar tus datos para obtener ventajas competitivas.</p>
+                    </div>
+                    <div class="glass-card">
+                        <i class="fas fa-people-arrows" style="font-size: 2rem; color: var(--accent); margin-bottom: 0.8rem;"></i>
+                        <h3>Gestión del cambio</h3>
+                        <p>Acompañamos a tu equipo en la adopción de nuevas herramientas y metodologías (agile, devops).</p>
+                    </div>
+                    <div class="glass-card">
+                        <i class="fas fa-code-branch" style="font-size: 2rem; color: var(--accent); margin-bottom: 0.8rem;"></i>
+                        <h3>Arquitectura de microservicios</h3>
+                        <p>Diseñamos sistemas modulares, escalables y resilientes, preparados para evolucionar con tu negocio.</p>
+                    </div>
+                    <div class="glass-card">
+                        <i class="fas fa-file-invoice-dollar" style="font-size: 2rem; color: var(--accent); margin-bottom: 0.8rem;"></i>
+                        <h3>Análisis de ROI tecnológico</h3>
+                        <p>Evaluamos inversiones en tecnología y te ayudamos a priorizar proyectos con mayor retorno.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodología de consultoría -->
+        <section class="section">
+            <div class="container">
+                <span class="section-subtitle">· Proceso ·</span>
+                <h2 class="section-title">Cómo <span class="accent">trabajamos</span> contigo</h2>
+                <div class="metodologia-grid" style="margin-top: 2rem;">
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">1</span>
+                        <h4>Diagnóstico inicial</h4>
+                        <p>Reunión sin costo para entender tu situación, desafíos y objetivos.</p>
+                    </div>
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">2</span>
+                        <h4>Análisis y propuesta</h4>
+                        <p>Entregamos un informe con hallazgos, recomendaciones y hoja de ruta.</p>
+                    </div>
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">3</span>
+                        <h4>Acompañamiento</h4>
+                        <p>Te apoyamos en la implementación, ya sea ejecutando nosotros o supervisando a tu equipo.</p>
+                    </div>
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">4</span>
+                        <h4>Seguimiento y mejora</h4>
+                        <p>Revisamos resultados y ajustamos la estrategia según sea necesario.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tecnologías que manejamos -->
+        <section class="section" style="background: #0a0c12;">
+            <div class="container">
+                <h2 class="section-title text-center">Tecnologías sobre las que <span class="accent">asesoramos</span></h2>
+                <div class="tech-cloud" style="justify-content: center;">
+                    <span class="tech-item">AWS / Azure / GCP</span>
+                    <span class="tech-item">Kubernetes / Docker</span>
+                    <span class="tech-item">React / Angular / Vue</span>
+                    <span class="tech-item">Node.js / Python / Java</span>
+                    <span class="tech-item">PostgreSQL / MongoDB</span>
+                    <span class="tech-item">Power BI / Tableau</span>
+                    <span class="tech-item">Salesforce / HubSpot</span>
+                    <span class="tech-item">ISO 27001 / PCI DSS</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ (preguntas frecuentes) -->
+        <section class="section">
+            <div class="container">
+                <span class="section-subtitle">· Preguntas frecuentes ·</span>
+                <h2 class="section-title">Resolvemos tus <span class="accent">dudas</span></h2>
+                <div class="faq-list" style="margin-top: 2rem;">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ¿Cuánto cuesta una asesoría inicial?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            La primera reunión de diagnóstico es completamente gratuita y sin compromiso. En ella definimos el alcance y te entregamos una propuesta de valor.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ¿Trabajan solo con empresas grandes?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            No. Hemos ayudado tanto a pymes como a corporaciones. Adaptamos la profundidad de la consultoría a tu tamaño y presupuesto.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ¿Qué diferencia hay entre consultoría y desarrollo?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            La consultoría se enfoca en asesorarte para que tomes buenas decisiones (qué hacer, con qué tecnología, cómo organizarte). Si luego necesitas que ejecutemos, también podemos hacerlo.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ¿Cuánto tiempo dura un proyecto de consultoría?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Depende del alcance. Un diagnóstico puede llevar 2-4 semanas. Una transformación digital más profunda puede extenderse varios meses. Siempre trabajamos por fases y con entregables claros.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA final -->
+        <section class="section" style="background: linear-gradient(135deg, #000408, #001c28); text-align: center;">
+            <div class="container">
+                <h2 style="font-size: 2.5rem; font-weight: 700;">¿Necesitas una mirada externa y experta sobre tu estrategia tecnológica?</h2>
+                <p style="font-size: 1.2rem; margin: 1rem auto; max-width: 600px;">Solicita tu diagnóstico sin costo y descubre cómo podemos acelerar tu transformación digital.</p>
+                <a href="contacto.html" class="btn btn-primary">Agendar mi primera asesoría</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (idéntico al resto del sitio) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+                    <p>Innovación digital con propósito.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Empresa</h5>
+                    <ul>
+                        <li><a href="metodologia.html">Metodología</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="privacidad.html">Política de privacidad</a></li>
+                        <li><a href="aviso-legal.html">Aviso legal</a></li>
+                        <li><a href="terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h5>Redes</h5>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/animation.js"></script>
+    <script>
+        // Inicialización de particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": "#00aaff" },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } },
+                        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 4, "size_min": 0.3 } },
+                        "line_linked": { "enable": true, "distance": 150, "color": "#00aaff", "opacity": 0.4, "width": 1 },
+                        "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+                    },
+                    "retina_detect": true
+                });
+            }
+            
+            // Acordeón FAQ
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+    <script type="module" src="js/three-background.js"></script>
+</body>
+</html>

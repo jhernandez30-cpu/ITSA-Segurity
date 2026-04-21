@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA & Datos · ITSA Segurity</title>
+    <meta name="description" content="Transforma tu negocio con inteligencia artificial y análisis de datos en Managua, Nicaragua. Modelos predictivos, automatización y dashboards interactivos.">
+    <meta name="keywords" content="IA Nicaragua, datos Managua, inteligencia artificial, machine learning, análisis de datos, data science">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/skills.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+            }
+        }
+    </script>
+    <style>
+        /* Estilos para acordeón de FAQs */
+        .faq-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: rgba(0,170,255,0.1);
+        }
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            max-height: 300px;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader"><div class="loader"><span></span><span></span><span></span><span></span></div></div>
+    
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
+                <li><a href="metodologia.html">Metodología</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero con partículas y Three.js -->
+        <section class="hero" style="min-height: 60vh; background: linear-gradient(135deg, rgba(0,10,20,0.85) 0%, rgba(0,30,50,0.7) 100%);">
+            <div id="three-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
+            <div id="particles-js" style="z-index: 1;"></div>
+            <div class="hero-content container" style="position: relative; z-index: 2;">
+                <h1 class="page-title">IA & Datos <span class="accent">para empresas en Nicaragua</span></h1>
+                <p class="page-subtitle">Transforma datos en decisiones. Modelos predictivos, automatización inteligente y dashboards que revelan oportunidades ocultas.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="contacto.html" class="btn btn-primary">Solicitar diagnóstico gratuito <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios clave (basados en el documento) -->
+        <section class="section">
+            <div class="container">
+                <span class="section-subtitle">· El valor de los datos ·</span>
+                <h2 class="section-title">Por qué <span class="accent">IA y datos</span> transforman tu negocio</h2>
+                <div class="grid-3" style="margin-top: 2rem;">
+                    <div class="glass-card" style="text-align: center;">
+                        <i class="fas fa-chart-line" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3>Decisiones basadas en hechos</h3>
+                        <p>Deja de intuir. Te mostramos qué está pasando realmente en tu negocio y por qué.</p>
+                    </div>
+                    <div class="glass-card" style="text-align: center;">
+                        <i class="fas fa-robot" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3>Predicción y automatización</h3>
+                        <p>Anticípate al futuro: qué clientes se irán, qué productos se venderán más, dónde se produce el fraude.</p>
+                    </div>
+                    <div class="glass-card" style="text-align: center;">
+                        <i class="fas fa-lightbulb" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3>Soluciones simples que funcionan</h3>
+                        <p>No necesitas algoritmos complejos. Una media bien calculada o un gráfico claro pueden resolver problemas de años.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Qué ofrecemos (servicios concretos) -->
+        <section class="section" style="background: #0a0c12;">
+            <div class="container">
+                <span class="section-subtitle">· Nuestros servicios ·</span>
+                <h2 class="section-title">IA & Datos <span class="accent">a medida</span></h2>
+                <div class="grid-3" style="margin-top: 2rem;">
+                    <div class="glass-card">
+                        <i class="fas fa-database" style="font-size: 2rem; color: var(--accent); margin-bottom: 0.8rem;"></i>
+                        <h3>Análisis y reporting</h3>
+                        <p>Extraemos información de tus bases de datos (SQL) y creamos dashboards interactivos con Power BI o Tableau.</p>
+                    </div>
+                    <div class="glass-card">
+                        <i class="fas fa-chart-simple" style="font-size: 2rem; color: var(--accent); margin-bottom: 0.8rem;"></i>
+                        <h3>Modelos predictivos</h3>
+                        <p>Predice ventas, abandono de clientes, fraude o cualquier variable clave para tu negocio usando Python y scikit-learn.</p>
+                    </div>
+                    <div class="glass-card">
+                        <i class="fas fa-brain" style="font-size: 2rem; color: var(--accent); margin-bottom: 0.8rem;"></i>
+                        <h3>Automatización con IA</h3>
+                        <p>Integramos asistentes inteligentes, procesamiento de lenguaje natural y automatización de procesos repetitivos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tecnologías y herramientas (basadas en el documento) -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title text-center">Herramientas que <span class="accent">utilizamos</span></h2>
+                <div class="tech-cloud" style="justify-content: center;">
+                    <span class="tech-item">SQL</span>
+                    <span class="tech-item">Python (pandas, matplotlib)</span>
+                    <span class="tech-item">scikit-learn</span>
+                    <span class="tech-item">Power BI</span>
+                    <span class="tech-item">Tableau</span>
+                    <span class="tech-item">Looker</span>
+                    <span class="tech-item">ChatGPT API</span>
+                    <span class="tech-item">Google Cloud AI</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso de trabajo (end-to-end) -->
+        <section class="section" style="background: #0a0c12;">
+            <div class="container">
+                <span class="section-subtitle">· Metodología ·</span>
+                <h2 class="section-title">Cómo <span class="accent">construimos</span> soluciones de datos</h2>
+                <div class="metodologia-grid" style="margin-top: 2rem;">
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">1</span>
+                        <h4>Definición del problema</h4>
+                        <p>Entendemos qué decisión quieres mejorar y qué datos necesitas.</p>
+                    </div>
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">2</span>
+                        <h4>Extracción y limpieza</h4>
+                        <p>Accedemos a tus datos (SQL, APIs) y los preparamos para análisis.</p>
+                    </div>
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">3</span>
+                        <h4>Análisis y modelado</h4>
+                        <p>Aplicamos estadística básica o machine learning según la complejidad necesaria.</p>
+                    </div>
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">4</span>
+                        <h4>Visualización y despliegue</h4>
+                        <p>Creamos dashboards o APIs para que tomes decisiones en tiempo real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ (preguntas frecuentes basadas en el documento) -->
+        <section class="section">
+            <div class="container">
+                <span class="section-subtitle">· Preguntas frecuentes ·</span>
+                <h2 class="section-title">Resolvemos tus <span class="accent">dudas</span> sobre IA y datos</h2>
+                <div class="faq-list" style="margin-top: 2rem;">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ¿Necesito tener muchos datos para empezar?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            No. Con pocos datos también se pueden obtener insights valiosos. Muchas veces una media bien calculada o una segmentación básica resuelven el problema. Lo importante es la calidad, no la cantidad.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ¿Qué diferencia hay entre un dashboard y un modelo predictivo?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Un dashboard te muestra qué pasó (pasado). Un modelo predictivo te ayuda a anticipar qué pasará (futuro). Ambos son útiles. Empezamos siempre por lo simple: entender el pasado antes de predecir.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ¿Pueden aplicar IA a mi sector específico (retail, salud, finanzas)?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Sí. Hemos trabajado con empresas de distintos rubros. Lo clave es entender el negocio: qué decisiones tomas, qué datos generas, dónde están los puntos de dolor. La tecnología se adapta a ti, no al revés.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ¿Qué garantías tengo sobre la seguridad de mis datos?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Cumplimos con la Ley 787 de Protección de Datos de Nicaragua y estándares internacionales. Trabajamos con entornos seguros, anonimización cuando es necesario y acuerdos de confidencialidad.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA final -->
+        <section class="section" style="background: linear-gradient(135deg, #000408, #001c28); text-align: center;">
+            <div class="container">
+                <h2 style="font-size: 2.5rem; font-weight: 700;">¿Listo para convertir tus datos en ventajas competitivas?</h2>
+                <p style="font-size: 1.2rem; margin: 1rem auto; max-width: 600px;">Solicita una sesión gratuita para identificar la oportunidad de IA en tu negocio.</p>
+                <a href="contacto.html" class="btn btn-primary">Solicitar diagnóstico gratuito</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (idéntico al resto del sitio) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+                    <p>Innovación digital con propósito.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Empresa</h5>
+                    <ul>
+                        <li><a href="metodologia.html">Metodología</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="privacidad.html">Política de privacidad</a></li>
+                        <li><a href="aviso-legal.html">Aviso legal</a></li>
+                        <li><a href="terminos.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h5>Redes</h5>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/animation.js"></script>
+    <script>
+        // Inicialización de particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": "#00aaff" },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } },
+                        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 4, "size_min": 0.3 } },
+                        "line_linked": { "enable": true, "distance": 150, "color": "#00aaff", "opacity": 0.4, "width": 1 },
+                        "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+                    },
+                    "retina_detect": true
+                });
+            }
+            
+            // Acordeón FAQ
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+    <script type="module" src="js/three-background.js"></script>
+</body>
+</html>
