@@ -21,22 +21,45 @@
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/skills.css">
     
-    <!-- GSAP -->
+    <!-- GSAP (mantenido para otras animaciones) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
     
-    <!-- particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-    <!-- Three.js import map -->
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+    <!-- Se elimina particles.js y Three.js (ya no se usan) -->
+    
+    <style>
+        /* Ajuste rápido para el fondo azul oscuro del hero sin animaciones */
+        .hero {
+            background-color: #0a0c12; /* mismo tono que el fondo general */
+            position: relative;
+        }
+        /* Eliminamos cualquier elemento de animación flotante */
+        #particles-js, #three-container {
+            display: none;
+        }
+        /* Aseguramos que el contenido del hero sea visible */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        /* Pequeño ajuste para la cuadrícula del equipo (4 elementos) */
+        .equipo-grid-horizontal {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        @media (max-width: 992px) {
+            .equipo-grid-horizontal {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-    </script>
+        @media (max-width: 576px) {
+            .equipo-grid-horizontal {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- PRELOADER -->
@@ -62,10 +85,9 @@
     </header>
 
     <main>
-        <!-- HERO SECTION con particles.js y Three.js -->
+        <!-- HERO SECTION (sin particles ni Three.js, fondo azul oscuro) -->
         <section id="hero" class="hero">
-            <div id="three-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
-            <div id="particles-js"></div>
+            <!-- Contenedores de animación eliminados -->
             <div class="hero-content container">
                 <h1 class="hero-title">Expertos en <span class="gradient-text">Transformación Digital</span> para Empresas</h1>
                 <p class="hero-subtitle">Más de 120 proyectos exitosos en Managua y todo el país. Desarrollo web, software a medida, ciberseguridad y marketing digital con resultados medibles.</p>
@@ -230,37 +252,50 @@
             </div>
         </section>
 
-        <!-- EQUIPO -->
+        <!-- EQUIPO (ACTUALIZADO) -->
         <section class="section equipo">
             <div class="container">
                 <span class="section-subtitle">· Expertos ·</span>
                 <h2 class="section-title">Conoce a nuestro <span class="accent">equipo</span></h2>
                 <div class="equipo-grid-horizontal">
+                    <!-- Mario Álvarez -->
                     <div class="miembro-card">
-                        <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Ing. Juan Pérez" class="miembro-avatar">
-                        <h4>Ing. Juan Pérez</h4>
-                        <p>Director de Seguridad | CEH, CISSP</p>
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mario Álvarez" class="miembro-avatar">
+                        <h4>Mario Álvarez</h4>
+                        <p>Director en Ciberseguridad y Hacking Ético</p>
                         <div class="social-links">
                             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                             <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
+                    <!-- Brais Moure -->
                     <div class="miembro-card">
-                        <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Dra. María López" class="miembro-avatar">
-                        <h4>Dra. María López</h4>
-                        <p>Especialista en Pentesting | OSCP</p>
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Brais Moure" class="miembro-avatar">
+                        <h4>Brais Moure</h4>
+                        <p>Director de desarrollo de software</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <!-- Jon Hernández -->
+                    <div class="miembro-card">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Jon Hernández" class="miembro-avatar">
+                        <h4>Jon Hernández</h4>
+                        <p>Director de desarrollo Web</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <!-- Paula Gonzalez -->
+                    <div class="miembro-card">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Paula Gonzalez" class="miembro-avatar">
+                        <h4>Paula Gonzalez</h4>
+                        <p>Growth Marketing Manager</p>
                         <div class="social-links">
                             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                    <div class="miembro-card">
-                        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Carlos Rivas" class="miembro-avatar">
-                        <h4>Carlos Rivas</h4>
-                        <p>Arquitecto Cloud | AWS Certified</p>
-                        <div class="social-links">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -282,7 +317,7 @@
         </section>
     </main>
 
-    <!-- FOOTER (igual) -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -320,32 +355,6 @@
     <!-- SCRIPTS -->
     <script src="js/script.js"></script>
     <script src="js/animation.js"></script>
-    <!-- Inicialización de particles.js -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS('particles-js', {
-                    "particles": {
-                        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
-                        "color": { "value": "#00aaff" },
-                        "shape": { "type": "circle" },
-                        "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } },
-                        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 4, "size_min": 0.3 } },
-                        "line_linked": { "enable": true, "distance": 150, "color": "#00aaff", "opacity": 0.4, "width": 1 },
-                        "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
-                    },
-                    "interactivity": {
-                        "detect_on": "canvas",
-                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
-                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
-                    },
-                    "retina_detect": true
-                });
-            }
-        });
-    </script>
-
-    <!-- Three.js externo -->
-    <script type="module" src="js/three-background.js"></script>
+    <!-- Se elimina inicialización de particles.js y carga de three-background.js -->
 </body>
 </html>
