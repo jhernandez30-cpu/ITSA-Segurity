@@ -3,23 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desarrollo Web en Managua · ITSA Segurity</title>
-    <meta name="description" content="Desarrollo web profesional en Managua, Nicaragua. Creamos sitios web y aplicaciones que atraen clientes, mejoran tu posicionamiento y reflejan la calidad de tu negocio.">
+    <title>Desarrollo Web Profesional en Managua · ITSA Segurity</title>
+    <meta name="description" content="Desarrollo web profesional en Managua, Nicaragua. Creamos sitios web y aplicaciones que atraen clientes, mejoran tu posicionamiento en Google y reflejan la calidad de tu negocio.">
     <meta name="keywords" content="desarrollo web Managua, páginas web Nicaragua, aplicaciones web, diseño web profesional, ITSA Segurity">
     
+    <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/projects.css">
-    <link rel="stylesheet" href="css/skills.css">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS modulares -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/hero.css">
+    <link rel="stylesheet" href="../css/projects.css">
+    <link rel="stylesheet" href="../css/skills.css">
+    
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
+    <!-- Three.js import map -->
     <script type="importmap">
         {
             "imports": {
@@ -27,38 +36,116 @@
             }
         }
     </script>
+    
+    <style>
+        /* Estilos adicionales para mejorar la presentación */
+        .proyectos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .proyecto-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .proyecto-card:hover {
+            transform: translateY(-8px);
+        }
+        .proyecto-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .proyecto-card .proyecto-info {
+            padding: 1.5rem;
+        }
+        .proyecto-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .contacto-formulario {
+            margin-top: 2rem;
+        }
+        .btn-enviar {
+            background: var(--accent);
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-enviar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--accent);
+        }
+    </style>
 </head>
 <body>
     <div id="preloader"><div class="loader"><span></span><span></span><span></span><span></span></div></div>
     
     <header class="header">
         <nav class="navbar container">
-            <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+            <a href="../index.html" class="logo">ITSA <span>Segurity</span></a>
             <ul class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="tecnologia.html">Tecnología</a></li>
-                <li><a href="metodologia.html">Metodología</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../servicios.html">Servicios</a></li>
+                <li><a href="../tecnologia.html">Tecnología</a></li>
+                <li><a href="../metodologia.html">Metodología</a></li>
+                <li><a href="../contacto.html">Contacto</a></li>
             </ul>
             <div class="hamburger"><i class="fas fa-bars"></i></div>
         </nav>
     </header>
 
     <main>
-        <section class="hero" style="min-height: 60vh; background: linear-gradient(135deg, rgba(0,10,20,0.85) 0%, rgba(0,30,50,0.7) 100%);">
+        <!-- Hero Section mejorada -->
+        <section class="hero" style="min-height: 70vh; background: linear-gradient(135deg, rgba(0,10,20,0.85) 0%, rgba(0,30,50,0.7) 100%);">
             <div id="three-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
             <div id="particles-js" style="z-index: 1;"></div>
-            <div class="hero-content container" style="position: relative; z-index: 2;">
+            <div class="hero-content container" style="position: relative; z-index: 2; text-align: center;">
                 <h1 class="page-title">Desarrollo web profesional <span class="accent">en Managua</span></h1>
-                <p class="page-subtitle">Creamos sitios web y aplicaciones que atraen clientes, mejoran tu posicionamiento en Google y reflejan la calidad de tu negocio.</p>
+                <p class="page-subtitle" style="max-width: 800px; margin: 1rem auto;">Creamos sitios web y aplicaciones que atraen clientes, mejoran tu posicionamiento en Google y reflejan la calidad de tu negocio. Más de 120 proyectos exitosos en Nicaragua.</p>
                 <div style="margin-top: 2rem;">
-                    <a href="contacto.html" class="btn btn-primary">Solicitar presupuesto <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contacto" class="btn btn-primary">Solicitar presupuesto <i class="fas fa-arrow-right"></i></a>
+                    <a href="#servicios" class="btn btn-outline" style="margin-left: 1rem;">Conocer más</a>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <!-- Sección de servicios destacados -->
+        <section id="servicios" class="section">
+            <div class="container">
+                <span class="section-subtitle">· Qué ofrecemos ·</span>
+                <h2 class="section-title">Servicios de <span class="accent">desarrollo web</span></h2>
+                <div class="grid-3" style="margin-top: 2rem;">
+                    <div class="glass-card" style="text-align: center;">
+                        <i class="fas fa-globe" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3>Sitios web corporativos</h3>
+                        <p>Diseño profesional que transmite confianza y posiciona tu marca en el mercado nicaragüense.</p>
+                    </div>
+                    <div class="glass-card" style="text-align: center;">
+                        <i class="fas fa-store" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3>Tiendas online (E-commerce)</h3>
+                        <p>Plataformas de venta seguras y optimizadas para convertir visitantes en clientes.</p>
+                    </div>
+                    <div class="glass-card" style="text-align: center;">
+                        <i class="fas fa-mobile-alt" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3>Aplicaciones web y móviles</h3>
+                        <p>Experiencias interactivas y funcionales adaptadas a cualquier dispositivo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios (por qué elegirnos) -->
+        <section class="section" style="background: #0a0c12;">
             <div class="container">
                 <span class="section-subtitle">· Por qué elegirnos ·</span>
                 <h2 class="section-title">Beneficios de un <span class="accent">sitio web profesional</span></h2>
@@ -69,20 +156,21 @@
                         <p>Posicionamiento SEO local para que te encuentren en Google cuando busquen tus servicios en Managua.</p>
                     </div>
                     <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-mobile-alt" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                        <h3>Diseño responsivo</h3>
-                        <p>Tu sitio se verá perfecto en computadoras, tablets y móviles, adaptado a todos los dispositivos.</p>
-                    </div>
-                    <div class="glass-card" style="text-align: center;">
                         <i class="fas fa-tachometer-alt" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
                         <h3>Rendimiento y velocidad</h3>
                         <p>Código optimizado para que tu web cargue rápido y ofrezca una experiencia de usuario superior.</p>
+                    </div>
+                    <div class="glass-card" style="text-align: center;">
+                        <i class="fas fa-headset" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3>Soporte continuo</h3>
+                        <p>Acompañamiento post-lanzamiento y mantenimiento para garantizar el éxito de tu proyecto.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="background: #0a0c12;">
+        <!-- Tecnologías -->
+        <section class="section">
             <div class="container">
                 <h2 class="section-title text-center">Tecnologías <span class="accent">modernas</span></h2>
                 <div class="tech-cloud" style="justify-content: center;">
@@ -98,6 +186,38 @@
             </div>
         </section>
 
+        <!-- Proyectos destacados -->
+        <section class="section" style="background: #0a0c12;">
+            <div class="container">
+                <span class="section-subtitle">· Nuestro trabajo ·</span>
+                <h2 class="section-title">Proyectos <span class="accent">destacados</span></h2>
+                <div class="proyectos-grid">
+                    <div class="proyecto-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format" alt="Proyecto financiero">
+                        <div class="proyecto-info">
+                            <h4>Plataforma Financiera</h4>
+                            <p>Desarrollo de sistema de gestión para una importante entidad financiera en Managua.</p>
+                        </div>
+                    </div>
+                    <div class="proyecto-card">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format" alt="E-commerce">
+                        <div class="proyecto-info">
+                            <h4>Tienda Online</h4>
+                            <p>E-commerce con pasarela de pagos integrada para una cadena de retail nicaragüense.</p>
+                        </div>
+                    </div>
+                    <div class="proyecto-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format" alt="App móvil">
+                        <div class="proyecto-info">
+                            <h4>Aplicación Móvil</h4>
+                            <p>App de servicios para una empresa de logística con más de 10,000 descargas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso de trabajo -->
         <section class="section">
             <div class="container">
                 <span class="section-subtitle">· Cómo trabajamos ·</span>
@@ -127,31 +247,95 @@
             </div>
         </section>
 
-        <section class="section" style="background: linear-gradient(135deg, #000408, #001c28); text-align: center;">
+        <!-- Testimonios -->
+        <section class="section" style="background: #0a0c12;">
             <div class="container">
-                <h2 style="font-size: 2.5rem; font-weight: 700;">¿Necesitas una web que impulse tu negocio en Managua?</h2>
-                <p style="font-size: 1.2rem; margin: 1rem auto; max-width: 600px;">Hablemos sin compromiso. Te daremos un presupuesto adaptado a tus necesidades.</p>
-                <a href="contacto.html" class="btn btn-primary">Solicitar asesoría</a>
+                <span class="section-subtitle">· Testimonios ·</span>
+                <h2 class="section-title">Lo que dicen <span class="accent">nuestros clientes</span></h2>
+                <div class="testimonial-carousel" style="margin-top: 2rem;">
+                    <div class="testimonial-track">
+                        <div class="testimonial-card">
+                            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Cliente" class="testimonial-avatar" style="width: 60px; height: 60px; border-radius: 50%; margin-bottom: 1rem;">
+                            <p>"El equipo de ITSA transformó nuestra presencia digital. El sitio web superó nuestras expectativas y aumentó nuestras consultas en un 40%."</p>
+                            <h5>— Laura Méndez, CMO de InnovaCorp</h5>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente" class="testimonial-avatar" style="width: 60px; height: 60px; border-radius: 50%; margin-bottom: 1rem;">
+                            <p>"La tienda online que desarrollaron es increíble. Fácil de administrar y con un diseño que cautiva a nuestros clientes."</p>
+                            <h5>— Carlos Rivas, CEO de ModaStyle</h5>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Cliente" class="testimonial-avatar" style="width: 60px; height: 60px; border-radius: 50%; margin-bottom: 1rem;">
+                            <p>"Excelente servicio y atención. Siempre atentos a nuestras necesidades y con soluciones innovadoras."</p>
+                            <h5>— Ana Soto, Directora de Operaciones</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de contacto -->
+        <section id="contacto" class="section">
+            <div class="container">
+                <div class="grid-2">
+                    <div>
+                        <span class="section-subtitle">· Contacto ·</span>
+                        <h2 class="section-title">¿Listo para <span class="accent">impulsar tu negocio</span> en Managua?</h2>
+                        <p>Hablemos sin compromiso. Te daremos un presupuesto adaptado a tus necesidades.</p>
+                        <div style="margin-top: 2rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <i class="fas fa-phone-alt" style="color: var(--accent);"></i>
+                                <a href="tel:+50589871374">+505 8987 1374</a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <i class="fas fa-envelope" style="color: var(--accent);"></i>
+                                <a href="mailto:info@itsasegurity.com">info@itsasegurity.com</a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <i class="fas fa-map-marker-alt" style="color: var(--accent);"></i>
+                                <span>Managua, Nicaragua</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <form class="contacto-formulario" id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="nombre" name="nombre" required>
+                                <label for="nombre">Nombre completo</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Correo electrónico</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                                <label for="mensaje">Mensaje</label>
+                            </div>
+                            <button type="submit" class="btn-enviar">Enviar mensaje <i class="fas fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+                    <a href="../index.html" class="logo">ITSA <span>Segurity</span></a>
                     <p>Innovación digital con propósito.</p>
                 </div>
                 <div class="footer-links">
                     <h5>Empresa</h5>
                     <ul>
-                        <li><a href="metodologia.html">Metodología</a></li>
-                        <li><a href="tecnologia.html">Tecnología</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="privacidad.html">Política de privacidad</a></li>
-                        <li><a href="aviso-legal.html">Aviso legal</a></li>
-                        <li><a href="terminos.html">Términos y condiciones</a></li>
+                        <li><a href="../metodologia.html">Metodología</a></li>
+                        <li><a href="../tecnologia.html">Tecnología</a></li>
+                        <li><a href="../contacto.html">Contacto</a></li>
+                        <li><a href="../privacidad.html">Política de privacidad</a></li>
+                        <li><a href="../aviso-legal.html">Aviso legal</a></li>
+                        <li><a href="../terminos.html">Términos y condiciones</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
@@ -170,14 +354,15 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script src="js/animation.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/animation.js"></script>
     <script>
+        // Inicialización de Particles.js
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof particlesJS !== 'undefined') {
                 particlesJS('particles-js', {
                     "particles": {
-                        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
                         "color": { "value": "#00aaff" },
                         "shape": { "type": "circle" },
                         "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } },
@@ -193,8 +378,20 @@
                     "retina_detect": true
                 });
             }
+            
+            // Carrusel de testimonios
+            const track = document.querySelector('.testimonial-track');
+            if (track) {
+                let index = 0;
+                const cards = document.querySelectorAll('.testimonial-card');
+                const total = cards.length;
+                setInterval(() => {
+                    index = (index + 1) % total;
+                    track.style.transform = `translateX(-${index * 100}%)`;
+                }, 5000);
+            }
         });
     </script>
-    <script type="module" src="js/three-background.js"></script>
+    <script type="module" src="../js/three-background.js"></script>
 </body>
 </html>
