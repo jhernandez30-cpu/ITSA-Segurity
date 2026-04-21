@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnología · ITSA Segurity</title>
-    <meta name="description" content="Descubre las tecnologías que usamos en desarrollo web, desarrollo de software y ciberseguridad. Herramientas modernas, arquitecturas escalables y buenas prácticas.">
+    <meta name="description" content="Stack tecnológico empresarial: desarrollo web, software a medida y ciberseguridad. Trabajamos con las herramientas más avanzadas y arquitecturas escalables.">
     <meta name="keywords" content="tecnología, desarrollo web, desarrollo software, ciberseguridad, stack, frontend, backend, devops, microservicios, serverless">
     
     <!-- Fuentes Google -->
@@ -21,34 +21,273 @@
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/skills.css">
     
-    <!-- GSAP (conservado para animaciones de scroll) -->
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
-    <!-- Se eliminan particles.js y Three.js (ya no se usan) -->
-    
     <style>
-        /* Ajuste para el fondo azul oscuro sin animaciones */
+        /* ===== ESTILOS PROFESIONALES EMPRESARIALES ===== */
+        
+        /* Hero corporativo */
         .hero {
-            min-height: 60vh;
-            background-color: #0a0c12; /* Mismo tono que el fondo general */
+            min-height: 55vh;
+            background-color: #0a0c12;
             position: relative;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 170, 255, 0.1);
         }
-        /* Eliminamos cualquier contenedor de animación */
-        #particles-js, #three-container {
-            display: none;
-        }
-        /* Aseguramos que el contenido del hero esté por encima */
+        
         .hero-content {
             position: relative;
             z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        /* Pequeño ajuste para consistencia visual */
+        
         .page-title {
-            color: white;
+            font-size: 3.8rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #fff;
         }
+        
         .page-subtitle {
+            font-size: 1.3rem;
             color: var(--text-dim);
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Secciones */
+        .section {
+            padding: 90px 0;
+        }
+        
+        .section-subtitle {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+        
+        .section-description {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        /* Grid mejorado para categorías */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+        
+        /* Tarjetas de tecnología profesionales */
+        .categoria-tech {
+            background: rgba(20, 30, 45, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 28px;
+            padding: 2.5rem 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .categoria-tech::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), #0066cc);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .categoria-tech:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 170, 255, 0.25);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+            background: rgba(20, 30, 45, 0.7);
+        }
+        
+        .categoria-tech:hover::before {
+            opacity: 1;
+        }
+        
+        .categoria-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.8rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 1.2rem;
+        }
+        
+        .categoria-title i {
+            color: var(--accent);
+            font-size: 2rem;
+            width: 40px;
+        }
+        
+        .tech-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .tech-item {
+            background: rgba(0, 170, 255, 0.08);
+            border: 1px solid rgba(0, 170, 255, 0.15);
+            color: var(--text-light);
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            backdrop-filter: blur(4px);
+        }
+        
+        .tech-item:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Tarjetas de arquitectura (glass-card mejoradas) */
+        .glass-card {
+            background: rgba(20, 30, 45, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            height: 100%;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 170, 255, 0.2);
+            background: rgba(20, 30, 45, 0.7);
+        }
+        
+        .glass-card i {
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        .glass-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .glass-card p {
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+        
+        /* Sección de CI/CD */
+        .cicd-section {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 70px 0;
+            border-top: 1px solid rgba(255,255,255,0.03);
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        
+        /* CTA final */
+        .cta-section {
+            background: linear-gradient(135deg, #000408 0%, #0a1a2a 100%);
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 170, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-cta:hover {
+            background: #0099dd;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 170, 255, 0.35);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .page-title {
+                font-size: 3rem;
+            }
+            .section-title {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .page-title {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .cta-title {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -71,17 +310,16 @@
                 <li><a href="metodologia.html">Metodología</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
-            <div class="hamburger" aria-label="Menú"><i class="fas fa-bars"></i></div>
+            <div class="hamburger" aria-label="Menú" role="button" tabindex="0"><i class="fas fa-bars"></i></div>
         </nav>
     </header>
 
     <main>
-        <!-- HERO SIN ANIMACIONES, FONDO AZUL OSCURO -->
+        <!-- HERO CORPORATIVO -->
         <section class="hero">
-            <!-- Contenedores de animación eliminados -->
             <div class="hero-content container">
-                <h1 class="page-title">Tecnología <span class="accent">de punta</span></h1>
-                <p class="page-subtitle">Herramientas modernas, arquitecturas escalables y buenas prácticas para soluciones robustas.</p>
+                <h1 class="page-title">Stack Tecnológico <span class="accent">Empresarial</span></h1>
+                <p class="page-subtitle">Utilizamos las herramientas más avanzadas y arquitecturas probadas para construir soluciones robustas, seguras y escalables.</p>
             </div>
         </section>
 
@@ -89,19 +327,20 @@
         <section class="section">
             <div class="container">
                 <span class="section-subtitle">· Desarrollo Web ·</span>
-                <h2 class="section-title">Tecnologías para <span class="accent">experiencias digitales</span></h2>
-                <p class="text-center" style="margin-bottom: 2rem; color: var(--text-dim);">Construimos sitios y aplicaciones web modernas, rápidas y accesibles.</p>
+                <h2 class="section-title">Experiencias digitales <span class="accent">de alto rendimiento</span></h2>
+                <p class="section-description">Creamos aplicaciones web modernas, progresivas y accesibles que destacan por su velocidad y experiencia de usuario.</p>
 
                 <div class="grid-3">
                     <!-- Frontend -->
                     <div class="categoria-tech">
                         <h3 class="categoria-title"><i class="fas fa-code"></i> Frontend</h3>
-                        <div class="tech-cloud" style="justify-content: flex-start;">
+                        <div class="tech-cloud">
                             <span class="tech-item">HTML5</span>
                             <span class="tech-item">CSS3</span>
                             <span class="tech-item">JavaScript (ES6+)</span>
                             <span class="tech-item">TypeScript</span>
                             <span class="tech-item">React</span>
+                            <span class="tech-item">Next.js</span>
                             <span class="tech-item">Vue.js</span>
                             <span class="tech-item">Angular</span>
                             <span class="tech-item">GSAP</span>
@@ -112,25 +351,27 @@
                     <!-- Backend -->
                     <div class="categoria-tech">
                         <h3 class="categoria-title"><i class="fas fa-server"></i> Backend</h3>
-                        <div class="tech-cloud" style="justify-content: flex-start;">
+                        <div class="tech-cloud">
                             <span class="tech-item">Node.js</span>
                             <span class="tech-item">Python</span>
                             <span class="tech-item">Django</span>
                             <span class="tech-item">Flask</span>
                             <span class="tech-item">PHP (Laravel)</span>
                             <span class="tech-item">Ruby on Rails</span>
+                            <span class="tech-item">GraphQL</span>
                         </div>
                     </div>
                     <!-- Bases de datos -->
                     <div class="categoria-tech">
                         <h3 class="categoria-title"><i class="fas fa-database"></i> Bases de datos</h3>
-                        <div class="tech-cloud" style="justify-content: flex-start;">
+                        <div class="tech-cloud">
                             <span class="tech-item">PostgreSQL</span>
                             <span class="tech-item">MySQL</span>
                             <span class="tech-item">MongoDB</span>
                             <span class="tech-item">Redis</span>
                             <span class="tech-item">Firebase</span>
                             <span class="tech-item">Elasticsearch</span>
+                            <span class="tech-item">DynamoDB</span>
                         </div>
                     </div>
                 </div>
@@ -142,25 +383,26 @@
             <div class="container">
                 <span class="section-subtitle">· Desarrollo de Software ·</span>
                 <h2 class="section-title">Soluciones <span class="accent">escalables y robustas</span></h2>
-                <p class="text-center" style="margin-bottom: 2rem; color: var(--text-dim);">Aplicaciones de escritorio, móviles y cloud con arquitecturas modernas.</p>
+                <p class="section-description">Arquitecturas modernas para aplicaciones empresariales, móviles y cloud-native. Código limpio, mantenible y preparado para crecer.</p>
 
                 <div class="grid-3">
                     <!-- Lenguajes y frameworks -->
                     <div class="categoria-tech">
                         <h3 class="categoria-title"><i class="fas fa-code-branch"></i> Lenguajes & Frameworks</h3>
-                        <div class="tech-cloud" style="justify-content: flex-start;">
+                        <div class="tech-cloud">
                             <span class="tech-item">Java (Spring Boot)</span>
                             <span class="tech-item">C# (.NET Core)</span>
                             <span class="tech-item">Go</span>
                             <span class="tech-item">Rust</span>
                             <span class="tech-item">Python (Django, Flask)</span>
                             <span class="tech-item">Node.js</span>
+                            <span class="tech-item">Kotlin</span>
                         </div>
                     </div>
                     <!-- DevOps & Cloud -->
                     <div class="categoria-tech">
                         <h3 class="categoria-title"><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
-                        <div class="tech-cloud" style="justify-content: flex-start;">
+                        <div class="tech-cloud">
                             <span class="tech-item">Docker</span>
                             <span class="tech-item">Kubernetes</span>
                             <span class="tech-item">AWS</span>
@@ -173,13 +415,14 @@
                     <!-- Testing & Calidad -->
                     <div class="categoria-tech">
                         <h3 class="categoria-title"><i class="fas fa-vial"></i> Testing & QA</h3>
-                        <div class="tech-cloud" style="justify-content: flex-start;">
+                        <div class="tech-cloud">
                             <span class="tech-item">Jest</span>
                             <span class="tech-item">Cypress</span>
                             <span class="tech-item">Playwright</span>
                             <span class="tech-item">Selenium</span>
                             <span class="tech-item">JUnit</span>
                             <span class="tech-item">Postman</span>
+                            <span class="tech-item">k6</span>
                         </div>
                     </div>
                 </div>
@@ -190,43 +433,46 @@
         <section class="section">
             <div class="container">
                 <span class="section-subtitle">· Ciberseguridad ·</span>
-                <h2 class="section-title">Protección <span class="accent">proactiva</span></h2>
-                <p class="text-center" style="margin-bottom: 2rem; color: var(--text-dim);">Herramientas y técnicas para auditar, proteger y monitorizar entornos digitales.</p>
+                <h2 class="section-title">Protección <span class="accent">proactiva y defensa en profundidad</span></h2>
+                <p class="section-description">Aplicamos las mejores herramientas y metodologías para identificar vulnerabilidades, prevenir ataques y garantizar la continuidad del negocio.</p>
 
                 <div class="grid-3">
-                    <!-- Pentesting & Ethical Hacking -->
+                    <!-- Pentesting -->
                     <div class="categoria-tech">
-                        <h3 class="categoria-title"><i class="fas fa-user-secret"></i> Pentesting</h3>
-                        <div class="tech-cloud" style="justify-content: flex-start;">
+                        <h3 class="categoria-title"><i class="fas fa-user-secret"></i> Pentesting & Hacking Ético</h3>
+                        <div class="tech-cloud">
                             <span class="tech-item">Kali Linux</span>
                             <span class="tech-item">Metasploit</span>
-                            <span class="tech-item">Burp Suite</span>
+                            <span class="tech-item">Burp Suite Pro</span>
                             <span class="tech-item">Nmap</span>
                             <span class="tech-item">Wireshark</span>
                             <span class="tech-item">John the Ripper</span>
+                            <span class="tech-item">Hashcat</span>
                         </div>
                     </div>
                     <!-- Análisis de vulnerabilidades -->
                     <div class="categoria-tech">
                         <h3 class="categoria-title"><i class="fas fa-search"></i> Análisis de vulnerabilidades</h3>
-                        <div class="tech-cloud" style="justify-content: flex-start;">
+                        <div class="tech-cloud">
                             <span class="tech-item">Nessus</span>
                             <span class="tech-item">OpenVAS</span>
                             <span class="tech-item">Qualys</span>
                             <span class="tech-item">OWASP ZAP</span>
                             <span class="tech-item">Snyk</span>
                             <span class="tech-item">SonarQube</span>
+                            <span class="tech-item">Trivy</span>
                         </div>
                     </div>
                     <!-- SIEM & Monitorización -->
                     <div class="categoria-tech">
                         <h3 class="categoria-title"><i class="fas fa-chart-line"></i> SIEM & Monitorización</h3>
-                        <div class="tech-cloud" style="justify-content: flex-start;">
+                        <div class="tech-cloud">
                             <span class="tech-item">Splunk</span>
                             <span class="tech-item">ELK Stack</span>
                             <span class="tech-item">Prometheus</span>
                             <span class="tech-item">Grafana</span>
                             <span class="tech-item">Wazuh</span>
+                            <span class="tech-item">Datadog</span>
                         </div>
                     </div>
                 </div>
@@ -236,50 +482,63 @@
         <!-- ARQUITECTURAS ESCALABLES -->
         <section class="section" style="background: #0a0c12;">
             <div class="container">
-                <h2 class="section-title text-center">Arquitecturas <span class="accent">escalables</span></h2>
-                <p class="text-center" style="margin-bottom: 3rem; color: var(--text-dim);">Diseñamos sistemas preparados para crecer con las mejores prácticas.</p>
+                <span class="section-subtitle">· Diseño de sistemas ·</span>
+                <h2 class="section-title">Arquitecturas <span class="accent">preparadas para el futuro</span></h2>
+                <p class="section-description">Diseñamos sistemas que evolucionan con tu negocio, aplicando patrones probados y tecnología cloud-native.</p>
+                
                 <div class="grid-3">
-                    <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-cubes" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                        <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Microservicios</h3>
-                        <p style="color: var(--text-dim);">Componentes independientes, desacoplados y escalables individualmente.</p>
+                    <div class="glass-card">
+                        <i class="fas fa-cubes"></i>
+                        <h3>Microservicios</h3>
+                        <p>Componentes independientes, desplegables de forma autónoma. Escalabilidad granular y resiliencia mejorada.</p>
                     </div>
-                    <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-cloud-upload-alt" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                        <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Serverless</h3>
-                        <p style="color: var(--text-dim);">Ejecución de código sin gestionar servidores, pago por uso.</p>
+                    <div class="glass-card">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Serverless</h3>
+                        <p>Ejecución de código sin gestión de servidores. Pago por uso y escalado automático para cargas variables.</p>
                     </div>
-                    <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                        <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Seguridad por capas</h3>
-                        <p style="color: var(--text-dim);">Protección en cada nivel: red, aplicación, datos.</p>
+                    <div class="glass-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Seguridad por capas</h3>
+                        <p>Defensa en profundidad: perímetro, red, aplicación, datos. Cumplimiento de estándares internacionales.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- INTEGRACIÓN Y DESPLIEGUE CONTINUOS (CI/CD) -->
-        <section class="section">
+        <section class="cicd-section">
             <div class="container">
-                <span class="section-subtitle">· Workflow ·</span>
+                <span class="section-subtitle">· Automatización ·</span>
                 <h2 class="section-title">Integración y despliegue <span class="accent">continuos</span></h2>
-                <p class="text-center" style="margin-bottom: 2rem; color: var(--text-dim);">Automatizamos pruebas, builds y despliegues con las mejores herramientas. Control de versiones con Git.</p>
-                <div class="tech-cloud" style="justify-content: center;">
-                    <span class="tech-item">GitHub Actions</span>
-                    <span class="tech-item">GitLab CI</span>
-                    <span class="tech-item">Jenkins</span>
-                    <span class="tech-item">CircleCI</span>
-                    <span class="tech-item">Git</span>
+                <p class="section-description">Automatizamos todo el ciclo de vida del software: desde el commit hasta producción, con pruebas de calidad y seguridad integradas.</p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; margin-top: 2rem;">
+                    <span class="tech-item" style="font-size: 1.1rem; padding: 0.8rem 1.8rem;">GitHub Actions</span>
+                    <span class="tech-item" style="font-size: 1.1rem; padding: 0.8rem 1.8rem;">GitLab CI</span>
+                    <span class="tech-item" style="font-size: 1.1rem; padding: 0.8rem 1.8rem;">Jenkins</span>
+                    <span class="tech-item" style="font-size: 1.1rem; padding: 0.8rem 1.8rem;">CircleCI</span>
+                    <span class="tech-item" style="font-size: 1.1rem; padding: 0.8rem 1.8rem;">ArgoCD</span>
+                    <span class="tech-item" style="font-size: 1.1rem; padding: 0.8rem 1.8rem;">Git</span>
                 </div>
+                <p style="text-align: center; margin-top: 2.5rem; color: var(--text-dim);">
+                    <i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>
+                    Estrategias de despliegue: Blue/Green, Canary, Rolling updates.
+                </p>
             </div>
         </section>
 
-        <!-- CTA FINAL -->
-        <section class="section" style="background: linear-gradient(135deg, #000408, #001c28); text-align: center;">
+        <!-- CTA FINAL MEJORADO -->
+        <section class="cta-section">
             <div class="container">
-                <h2 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 1.5rem;">¿Listo para construir algo <span class="accent">increíble</span>?</h2>
-                <p style="font-size: 1.2rem; color: var(--text-dim); max-width: 600px; margin: 0 auto 2rem;">Contáctanos y descubre cómo nuestra tecnología puede impulsar tu proyecto.</p>
-                <a href="contacto.html" class="btn btn-primary">Hablemos <i class="fas fa-arrow-right"></i></a>
+                <h2 class="cta-title">¿Listo para llevar tu infraestructura <span class="accent">al siguiente nivel</span>?</h2>
+                <p class="section-description" style="margin-bottom: 2.5rem;">Conversemos sobre tu stack tecnológico actual y diseñemos juntos la solución óptima para tus objetivos.</p>
+                <a href="contacto.html" class="btn-cta">
+                    <i class="fas fa-calendar-check"></i> Solicitar asesoría técnica
+                </a>
+                <p style="margin-top: 2rem; color: var(--text-dim); font-size: 0.9rem;">
+                    <i class="fas fa-lock" style="margin-right: 5px;"></i> Consultoría inicial sin costo · Confidencialidad garantizada
+                </p>
             </div>
         </section>
     </main>
@@ -306,15 +565,15 @@
                 <div class="footer-social">
                     <h5>Redes</h5>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/it_segurity" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@it._segurity" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/50589871374" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
+                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados. | AWS Partner · Microsoft Partner · ISO 27001</p>
             </div>
         </div>
     </footer>
@@ -323,10 +582,9 @@
     <script src="js/script.js"></script>
     <script src="js/animation.js"></script>
 
-    <!-- Animaciones GSAP para elementos (scroll) -->
+    <!-- Animaciones GSAP suaves -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Animaciones GSAP para categorías y tarjetas
             gsap.utils.toArray('.categoria-tech, .glass-card').forEach(el => {
                 gsap.from(el, {
                     scrollTrigger: {
@@ -335,8 +593,8 @@
                         toggleActions: 'play none none reverse'
                     },
                     opacity: 0,
-                    y: 30,
-                    duration: 0.8,
+                    y: 40,
+                    duration: 0.7,
                     ease: 'power2.out'
                 });
             });
@@ -348,14 +606,13 @@
                         start: 'top 80%'
                     },
                     opacity: 0,
-                    scale: 0.8,
-                    delay: i * 0.02,
+                    scale: 0.85,
+                    delay: i * 0.015,
                     duration: 0.4,
                     ease: 'back.out(1.2)'
                 });
             });
         });
     </script>
-    <!-- Se ha eliminado la inicialización de particles.js y el script de Three.js -->
 </body>
 </html>
