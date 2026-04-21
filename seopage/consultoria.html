@@ -25,106 +25,507 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-    <!-- Three.js import map -->
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
-            }
-        }
-    </script>
-
+    <!-- Se eliminan particles.js y Three.js -->
+    
     <style>
-        /* Estilos adicionales para mejorar la presentación */
-        .proyectos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        /* ===== ESTILOS CORPORATIVOS PARA CONSULTORÍA ===== */
+        :root {
+            --bg-dark: #0a0c12;
+            --bg-card: rgba(18, 28, 40, 0.7);
+            --border-light: rgba(255, 255, 255, 0.06);
+            --accent: #00aaff;
+            --accent-hover: #0099dd;
+            --text-dim: #a0b3cc;
+            --text-light: #e6edf5;
+            --shadow-lg: 0 25px 40px -12px rgba(0, 0, 0, 0.45);
         }
-        .proyecto-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
+        
+        body {
+            background-color: var(--bg-dark);
         }
-        .proyecto-card:hover {
-            transform: translateY(-8px);
-        }
-        .proyecto-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--glass-border);
-        }
-        .proyecto-card .proyecto-info {
-            padding: 1.5rem;
-        }
-        .proyecto-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        .contacto-formulario {
-            margin-top: 2rem;
-        }
-        .btn-enviar {
-            background: var(--accent);
-            color: #000;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .btn-enviar:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px var(--accent);
-        }
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            object-fit: cover;
-        }
-        .testimonial-carousel {
-            overflow: hidden;
-            width: 100%;
-        }
-        .testimonial-track {
+        
+        /* Hero profesional sin animaciones */
+        .hero {
+            min-height: 70vh;
+            background-color: var(--bg-dark);
+            position: relative;
             display: flex;
-            transition: transform 0.5s ease;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 170, 255, 0.12);
         }
-        .testimonial-card {
-            flex: 0 0 100%;
-            background: var(--glass-bg);
-            backdrop-filter: blur(5px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 0 1rem;
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0.4;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 1.5rem;
+        }
+        
+        .page-title {
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+        
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.2rem;
+            font-weight: 600;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 12px 25px -5px rgba(0, 170, 255, 0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -5px rgba(0, 170, 255, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--accent);
+            background: rgba(0, 170, 255, 0.05);
+            transform: translateY(-3px);
+        }
+        
+        /* Secciones generales */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-subtitle {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
             text-align: center;
         }
-        .servicios-grid {
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+            color: #fff;
+        }
+        
+        .accent {
+            color: var(--accent);
+        }
+        
+        /* Grids y tarjetas */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+        
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-light);
+            border-radius: 28px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+            height: 100%;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 170, 255, 0.3);
+            background: rgba(20, 35, 50, 0.8);
+            box-shadow: 0 28px 40px -12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .glass-card i {
+            color: var(--accent);
+        }
+        
+        /* Proyectos destacados */
+        .proyectos-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 2rem;
         }
-        @media (max-width: 992px) {
-            .servicios-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        
+        .proyecto-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.3s;
         }
+        
+        .proyecto-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 170, 255, 0.3);
+        }
+        
+        .proyecto-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .proyecto-info {
+            padding: 1.8rem;
+        }
+        
+        .proyecto-info h4 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.8rem;
+        }
+        
+        .proyecto-info p {
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+        
+        /* Metodología */
+        .metodologia-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .metodologia-item {
+            background: rgba(18, 28, 40, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            transition: all 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .metodologia-item:hover {
+            background: rgba(0, 170, 255, 0.05);
+            border-color: rgba(0, 170, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .metodologia-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.05);
+            position: absolute;
+            top: 0.5rem;
+            right: 1.2rem;
+            line-height: 1;
+        }
+        
+        .metodologia-item h4 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .metodologia-item p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Tecnologías */
+        .tech-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .tech-item {
+            background: rgba(0, 170, 255, 0.08);
+            border: 1px solid rgba(0, 170, 255, 0.15);
+            color: var(--text-light);
+            padding: 0.8rem 1.6rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            backdrop-filter: blur(4px);
+        }
+        
+        .tech-item:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Testimonios */
+        .testimonial-carousel {
+            margin-top: 2rem;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial-card {
+            flex: 0 0 100%;
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin: 0 1rem;
+            text-align: center;
+        }
+        
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-card p {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .testimonial-card h5 {
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+        
+        /* FAQ Acordeón */
+        .faq-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+        }
+        
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #fff;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: rgba(0, 170, 255, 0.08);
+        }
+        
+        .faq-question i {
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+        
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 2rem 1.5rem 2rem;
+            max-height: 300px;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* Formulario de contacto */
+        .contacto-formulario {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-light);
+            border-radius: 28px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.3);
+        }
+        
+        .form-group {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 0 0.5rem 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-group label {
+            position: absolute;
+            top: 1rem;
+            left: 0;
+            color: var(--text-dim);
+            font-size: 1rem;
+            font-weight: 400;
+            pointer-events: none;
+            transition: all 0.25s ease;
+        }
+        
+        .form-group input:focus ~ label,
+        .form-group input:valid ~ label,
+        .form-group textarea:focus ~ label,
+        .form-group textarea:valid ~ label {
+            top: -0.5rem;
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-bottom-color: var(--accent);
+        }
+        
+        .btn-enviar {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 10px 20px -5px rgba(0, 170, 255, 0.25);
+        }
+        
+        .btn-enviar:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -5px rgba(0, 170, 255, 0.4);
+        }
+        
+        /* Grid para contacto */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        /* Ocultar contenedores de animación */
+        #particles-js, #three-container {
+            display: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .page-title { font-size: 3rem; }
+            .section-title { font-size: 2.4rem; }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+            .metodologia-grid { grid-template-columns: repeat(2, 1fr); }
+            .proyectos-grid { grid-template-columns: repeat(2, 1fr); }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+        
         @media (max-width: 768px) {
-            .servicios-grid {
-                grid-template-columns: 1fr;
-            }
+            .page-title { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .metodologia-grid { grid-template-columns: 1fr; }
+            .proyectos-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -141,21 +542,19 @@
                 <li><a href="../metodologia.html">Metodología</a></li>
                 <li><a href="../contacto.html">Contacto</a></li>
             </ul>
-            <div class="hamburger"><i class="fas fa-bars"></i></div>
+            <div class="hamburger" aria-label="Menú" role="button" tabindex="0"><i class="fas fa-bars"></i></div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section mejorada -->
-        <section class="hero" style="min-height: 70vh; background: linear-gradient(135deg, rgba(0,10,20,0.85) 0%, rgba(0,30,50,0.7) 100%);">
-            <div id="three-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
-            <div id="particles-js" style="z-index: 1;"></div>
-            <div class="hero-content container" style="position: relative; z-index: 2; text-align: center;">
+        <!-- Hero Section profesional (sin partículas) -->
+        <section class="hero">
+            <div class="hero-content container">
                 <h1 class="page-title">Consultoría <span class="accent">tecnológica</span> en Nicaragua</h1>
-                <p class="page-subtitle" style="max-width: 800px; margin: 1rem auto;">Te asesoramos en arquitectura de software, transformación digital y selección de tecnología para que tu empresa dé el siguiente paso. Más de 50 empresas en Nicaragua ya han mejorado su estrategia tecnológica con nosotros.</p>
-                <div style="margin-top: 2rem;">
+                <p class="page-subtitle">Te asesoramos en arquitectura de software, transformación digital y selección de tecnología para que tu empresa dé el siguiente paso. Más de 50 empresas en Nicaragua ya han mejorado su estrategia tecnológica con nosotros.</p>
+                <div class="hero-buttons">
                     <a href="#contacto" class="btn btn-primary">Solicitar primera asesoría gratuita <i class="fas fa-arrow-right"></i></a>
-                    <a href="#servicios" class="btn btn-outline" style="margin-left: 1rem;">Conocer más</a>
+                    <a href="#servicios" class="btn btn-outline">Conocer más</a>
                 </div>
             </div>
         </section>
@@ -165,46 +564,46 @@
             <div class="container">
                 <span class="section-subtitle">· Qué ofrecemos ·</span>
                 <h2 class="section-title">Servicios de <span class="accent">consultoría</span></h2>
-                <div class="servicios-grid" style="margin-top: 2rem;">
+                <div class="grid-3" style="margin-top: 2rem;">
                     <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-sitemap" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                        <h3>Arquitectura de software</h3>
-                        <p>Diseñamos la estructura técnica de tus sistemas para que sean escalables, mantenibles y seguros desde el inicio.</p>
+                        <i class="fas fa-sitemap" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Arquitectura de software</h3>
+                        <p style="color: var(--text-dim);">Diseñamos la estructura técnica de tus sistemas para que sean escalables, mantenibles y seguros desde el inicio.</p>
                     </div>
                     <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-chalkboard-user" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                        <h3>Transformación digital</h3>
-                        <p>Te guiamos en el proceso de digitalizar procesos, adoptar nuevas tecnologías y cambiar la cultura organizacional.</p>
+                        <i class="fas fa-chalkboard-user" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Transformación digital</h3>
+                        <p style="color: var(--text-dim);">Te guiamos en el proceso de digitalizar procesos, adoptar nuevas tecnologías y cambiar la cultura organizacional.</p>
                     </div>
                     <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-microchip" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                        <h3>Selección de tecnología</h3>
-                        <p>Evaluamos y recomendamos las herramientas, lenguajes, plataformas y proveedores más adecuados para tu negocio.</p>
+                        <i class="fas fa-microchip" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Selección de tecnología</h3>
+                        <p style="color: var(--text-dim);">Evaluamos y recomendamos las herramientas, lenguajes, plataformas y proveedores más adecuados para tu negocio.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Beneficios -->
-        <section class="section" style="background: #0a0c12;">
+        <section class="section" style="background: #070b0f;">
             <div class="container">
                 <span class="section-subtitle">· Por qué elegirnos ·</span>
                 <h2 class="section-title">Beneficios de una <span class="accent">consultoría experta</span></h2>
-                <div class="servicios-grid" style="margin-top: 2rem;">
+                <div class="grid-3" style="margin-top: 2rem;">
                     <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-chart-line" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <i class="fas fa-chart-line" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
                         <h3>Ahorro de costos</h3>
-                        <p>Evita inversiones en tecnología que no necesitas. Te ayudamos a priorizar lo que realmente aporta valor.</p>
+                        <p style="color: var(--text-dim);">Evita inversiones en tecnología que no necesitas. Te ayudamos a priorizar lo que realmente aporta valor.</p>
                     </div>
                     <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-rocket" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <i class="fas fa-rocket" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
                         <h3>Aceleración de proyectos</h3>
-                        <p>Reduce el tiempo de implementación con una estrategia clara y evitando errores comunes.</p>
+                        <p style="color: var(--text-dim);">Reduce el tiempo de implementación con una estrategia clara y evitando errores comunes.</p>
                     </div>
                     <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <i class="fas fa-shield-alt" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
                         <h3>Reducción de riesgos</h3>
-                        <p>Identifica y mitiga riesgos técnicos y de negocio antes de que se conviertan en problemas costosos.</p>
+                        <p style="color: var(--text-dim);">Identifica y mitiga riesgos técnicos y de negocio antes de que se conviertan en problemas costosos.</p>
                     </div>
                 </div>
             </div>
@@ -214,7 +613,7 @@
         <section class="section">
             <div class="container">
                 <h2 class="section-title text-center">Tecnologías sobre las que <span class="accent">asesoramos</span></h2>
-                <div class="tech-cloud" style="justify-content: center;">
+                <div class="tech-cloud">
                     <span class="tech-item">AWS / Azure / GCP</span>
                     <span class="tech-item">Kubernetes / Docker</span>
                     <span class="tech-item">React / Angular / Vue</span>
@@ -228,7 +627,7 @@
         </section>
 
         <!-- Proyectos destacados -->
-        <section class="section" style="background: #0a0c12;">
+        <section class="section" style="background: #070b0f;">
             <div class="container">
                 <span class="section-subtitle">· Nuestro trabajo ·</span>
                 <h2 class="section-title">Proyectos <span class="accent">destacados</span></h2>
@@ -263,7 +662,7 @@
             <div class="container">
                 <span class="section-subtitle">· Cómo trabajamos ·</span>
                 <h2 class="section-title">Nuestro <span class="accent">proceso</span> de consultoría</h2>
-                <div class="metodologia-grid" style="margin-top: 2rem;">
+                <div class="metodologia-grid">
                     <div class="metodologia-item">
                         <span class="metodologia-number">1</span>
                         <h4>Diagnóstico inicial</h4>
@@ -289,11 +688,11 @@
         </section>
 
         <!-- Testimonios -->
-        <section class="section" style="background: #0a0c12;">
+        <section class="section" style="background: #070b0f;">
             <div class="container">
                 <span class="section-subtitle">· Testimonios ·</span>
                 <h2 class="section-title">Lo que dicen <span class="accent">nuestros clientes</span></h2>
-                <div class="testimonial-carousel" style="margin-top: 2rem;">
+                <div class="testimonial-carousel">
                     <div class="testimonial-track">
                         <div class="testimonial-card">
                             <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente" class="testimonial-avatar">
@@ -320,7 +719,7 @@
             <div class="container">
                 <span class="section-subtitle">· Preguntas frecuentes ·</span>
                 <h2 class="section-title">Resolvemos tus <span class="accent">dudas</span></h2>
-                <div class="faq-list" style="margin-top: 2rem;">
+                <div class="faq-list" style="max-width: 900px; margin: 2rem auto 0;">
                     <div class="faq-item">
                         <div class="faq-question">
                             ¿Cuánto cuesta una asesoría inicial?
@@ -362,25 +761,25 @@
         </section>
 
         <!-- Sección de contacto -->
-        <section id="contacto" class="section">
+        <section id="contacto" class="section" style="background: #070b0f;">
             <div class="container">
                 <div class="grid-2">
                     <div>
                         <span class="section-subtitle">· Contacto ·</span>
                         <h2 class="section-title">¿Necesitas una mirada externa y experta sobre tu <span class="accent">estrategia tecnológica</span>?</h2>
-                        <p>Solicita tu diagnóstico sin costo y descubre cómo podemos acelerar tu transformación digital.</p>
+                        <p style="color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2rem;">Solicita tu diagnóstico sin costo y descubre cómo podemos acelerar tu transformación digital.</p>
                         <div style="margin-top: 2rem;">
-                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                                <i class="fas fa-phone-alt" style="color: var(--accent);"></i>
-                                <a href="tel:+50589871374">+505 8987 1374</a>
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                                <i class="fas fa-phone-alt" style="color: var(--accent); font-size: 1.2rem;"></i>
+                                <a href="tel:+50589871374" style="color: var(--text-light); text-decoration: none;">+505 8987 1374</a>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                                <i class="fas fa-envelope" style="color: var(--accent);"></i>
-                                <a href="mailto:info@itsasegurity.com">info@itsasegurity.com</a>
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                                <i class="fas fa-envelope" style="color: var(--accent); font-size: 1.2rem;"></i>
+                                <a href="mailto:info@itsasegurity.com" style="color: var(--text-light); text-decoration: none;">info@itsasegurity.com</a>
                             </div>
                             <div style="display: flex; align-items: center; gap: 1rem;">
-                                <i class="fas fa-map-marker-alt" style="color: var(--accent);"></i>
-                                <span>Managua, Nicaragua</span>
+                                <i class="fas fa-map-marker-alt" style="color: var(--accent); font-size: 1.2rem;"></i>
+                                <span style="color: var(--text-dim);">Managua, Nicaragua</span>
                             </div>
                         </div>
                     </div>
@@ -428,15 +827,15 @@
                 <div class="footer-social">
                     <h5>Redes</h5>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/it_segurity" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@it._segurity" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/50589871374" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
+                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados. | AWS Partner · Microsoft Partner · ISO 27001</p>
             </div>
         </div>
     </footer>
@@ -444,28 +843,7 @@
     <script src="../js/script.js"></script>
     <script src="../js/animation.js"></script>
     <script>
-        // Inicialización de Particles.js
         document.addEventListener('DOMContentLoaded', function() {
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS('particles-js', {
-                    "particles": {
-                        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                        "color": { "value": "#00aaff" },
-                        "shape": { "type": "circle" },
-                        "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } },
-                        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 4, "size_min": 0.3 } },
-                        "line_linked": { "enable": true, "distance": 150, "color": "#00aaff", "opacity": 0.4, "width": 1 },
-                        "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
-                    },
-                    "interactivity": {
-                        "detect_on": "canvas",
-                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
-                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
-                    },
-                    "retina_detect": true
-                });
-            }
-
             // Acordeón FAQ
             document.querySelectorAll('.faq-question').forEach(question => {
                 question.addEventListener('click', () => {
@@ -485,8 +863,25 @@
                     track.style.transform = `translateX(-${index * 100}%)`;
                 }, 5000);
             }
+            
+            // Animaciones GSAP suaves (complementarias a animation.js)
+            if (typeof gsap !== 'undefined') {
+                gsap.utils.toArray('.glass-card, .proyecto-card, .metodologia-item').forEach(el => {
+                    gsap.from(el, {
+                        scrollTrigger: {
+                            trigger: el,
+                            start: 'top 85%',
+                            toggleActions: 'play none none reverse'
+                        },
+                        opacity: 0,
+                        y: 30,
+                        duration: 0.6,
+                        ease: 'power2.out'
+                    });
+                });
+            }
         });
     </script>
-    <script type="module" src="../js/three-background.js"></script>
+    <!-- Se eliminan scripts de particles y three -->
 </body>
 </html>
