@@ -472,7 +472,7 @@
         .stat-large .stat-number { font-size: 4.2rem; }
         .stat-large p { font-size: 1.1rem; margin-top: 0.5rem; }
         
-        /* Testimonios */
+        /* Testimonios - VISIBILIDAD GARANTIZADA */
         .testimonial-track {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -480,12 +480,18 @@
             margin-top: 2rem;
         }
         .testimonial-card {
-            background: var(--bg-card);
+            background: rgba(15, 24, 34, 0.8);
             backdrop-filter: blur(12px);
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 28px;
             padding: 2.5rem 2rem;
             text-align: center;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.35);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 170, 255, 0.3);
+            background: rgba(18, 30, 42, 0.95);
         }
         .testimonial-avatar {
             width: 90px;
@@ -787,7 +793,7 @@
             </div>
         </section>
 
-        <!-- Testimonios -->
+        <!-- Testimonios (SECCIÓN CORREGIDA) -->
         <section id="testimonios" class="section">
             <div class="container">
                 <span class="section-subtitle">· Clientes ·</span>
@@ -944,6 +950,12 @@
         gsap.from('.cert-item', {
             scrollTrigger: { trigger: '.certificaciones', start: 'top 85%' },
             opacity: 0, scale: 0.8, stagger: 0.1, duration: 0.5, ease: 'back.out(1.2)'
+        });
+        
+        // También animar testimonios
+        gsap.from('.testimonial-card', {
+            scrollTrigger: { trigger: '#testimonios', start: 'top 75%' },
+            opacity: 0, y: 40, stagger: 0.15, duration: 0.7, ease: 'power2.out'
         });
     </script>
 </body>
