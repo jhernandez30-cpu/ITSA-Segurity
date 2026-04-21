@@ -1,4 +1,4 @@
-// animation.js
+// animation.js - versión corregida para evitar errores GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 // Animación inicial de la hero
@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
       .from('.hero-scroll-indicator', { opacity: 0, y: -20, duration: 0.6 }, '-=0.2');
 });
 
-// ScrollTrigger: revelado de secciones
+// ScrollTrigger: revelado de secciones (genérico)
 gsap.utils.toArray('.section').forEach(section => {
     gsap.from(section, {
         scrollTrigger: {
@@ -26,8 +26,10 @@ gsap.utils.toArray('.section').forEach(section => {
     });
 });
 
-// Animación de títulos con split (letra por letra)
+// Animación de títulos con split (letra por letra) – solo si no tiene ya la clase 'char'
 gsap.utils.toArray('.section-title').forEach(title => {
+    // Evitar duplicar spans si ya fueron procesados
+    if (title.querySelector('.char')) return;
     const chars = title.innerText.split('');
     title.innerHTML = chars.map(c => `<span class="char">${c}</span>`).join('');
     gsap.from(title.querySelectorAll('.char'), {
@@ -44,20 +46,20 @@ gsap.utils.toArray('.section-title').forEach(title => {
     });
 });
 
-// Efecto parallax en hero (si tiene imagen de fondo)
-gsap.to('.hero', {
-    scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true
-    },
-    backgroundPosition: '50% 30%', // ajusta según imagen
-    ease: 'none'
-});
+// Efecto parallax en hero (si tiene imagen de fondo) – desactivado porque no hay imagen
+// gsap.to('.hero', {
+//     scrollTrigger: {
+//         trigger: '.hero',
+//         start: 'top top',
+//         end: 'bottom top',
+//         scrub: true
+//     },
+//     backgroundPosition: '50% 30%',
+//     ease: 'none'
+// });
 
-// Animación de tarjetas de servicios (stagger)
-gsap.from('.service-card', {
+// Animación de tarjetas de servicios (clase correcta: .servicio-card)
+gsap.from('.servicio-card', {
     scrollTrigger: {
         trigger: '#servicios',
         start: 'top 70%',
@@ -76,20 +78,36 @@ gsap.from('.timeline-item', {
         start: 'top 70%',
     },
     opacity: 0,
-    x: -100,
-    stagger: 0.3,
-    duration: 1
+    x: -50,
+    stagger: 0.2,
+    duration: 0.8,
+    ease: 'power2.out'
 });
 
-// Animación de la nube de habilidades (si existe)
-gsap.from('.skill-item', {
+// Animación de tarjetas de equipo
+gsap.from('.miembro-card', {
     scrollTrigger: {
-        trigger: '.skills-cloud',
-        start: 'top 80%',
+        trigger: '.equipo',
+        start: 'top 75%',
     },
     opacity: 0,
-    scale: 0.5,
-    stagger: 0.03,
+    y: 40,
+    stagger: 0.1,
+    duration: 0.6,
+    ease: 'power2.out'
+});
+
+// Animación de certificaciones
+gsap.from('.cert-item', {
+    scrollTrigger: {
+        trigger: '.certificaciones',
+        start: 'top 85%',
+    },
+    opacity: 0,
+    scale: 0.8,
+    stagger: 0.1,
     duration: 0.5,
     ease: 'back.out(1.2)'
 });
+
+// Eliminadas las referencias a .skill-item y .skills-cloud (no existen)
