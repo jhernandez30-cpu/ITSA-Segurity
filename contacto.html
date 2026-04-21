@@ -14,13 +14,191 @@
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/projects.css">
     
-    <!-- Scripts externos -->
+    <!-- GSAP (conservado para posibles animaciones de scroll) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Se elimina particles.js -->
     
     <style>
-        /* Estilo para el campo con etiqueta horizontal (Tipo de servicio) */
+        /* ===== ESTILOS PROFESIONALES EMPRESARIALES ===== */
+        
+        /* Hero con fondo azul oscuro sólido */
+        .hero {
+            min-height: 60vh;
+            background-color: #0a0c12; /* Fondo oscuro corporativo */
+            position: relative;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 170, 255, 0.1);
+        }
+        
+        /* Eliminar contenedor de partículas */
+        #particles-js {
+            display: none;
+        }
+        
+        /* Contenido del hero */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            font-weight: 400;
+        }
+        
+        /* Sección de contacto con mayor espaciado */
+        .section {
+            padding: 80px 0;
+        }
+        
+        /* Tarjeta de información de contacto más elegante */
+        .contact-info-large {
+            background: rgba(20, 30, 45, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-info-large h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #fff;
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+        
+        .contact-info-large p {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-dim);
+        }
+        
+        .contact-info-large i {
+            width: 24px;
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+        
+        .contact-info-large a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .contact-info-large a:hover {
+            color: var(--accent);
+        }
+        
+        .social-large {
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1.2rem;
+        }
+        
+        .social-large a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            color: var(--text-dim);
+            font-size: 1.4rem;
+            transition: all 0.25s ease;
+        }
+        
+        .social-large a:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Formulario más refinado */
+        .contact-form {
+            background: rgba(20, 30, 45, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .form-group {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 0 0.5rem 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-group label {
+            position: absolute;
+            top: 1rem;
+            left: 0;
+            color: var(--text-dim);
+            font-size: 1rem;
+            font-weight: 400;
+            pointer-events: none;
+            transition: all 0.25s ease;
+        }
+        
+        .form-group input:focus ~ label,
+        .form-group input:valid ~ label,
+        .form-group textarea:focus ~ label,
+        .form-group textarea:valid ~ label {
+            top: -0.5rem;
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-bottom-color: var(--accent);
+        }
+        
+        /* Campo de selección horizontal */
         .form-group-row {
             display: flex;
             align-items: center;
@@ -28,57 +206,103 @@
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
+        
         .form-group-row label {
-            min-width: 130px;
+            min-width: 140px;
             font-weight: 500;
             color: var(--text-dim);
             font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
+        
         .form-group-row select {
             flex: 1;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding: 0.8rem 0;
-            color: var(--text-light);
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            color: #fff;
             font-size: 1rem;
             cursor: pointer;
             outline: none;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, background 0.3s;
+            font-family: 'Inter', sans-serif;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300aaff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1rem;
         }
+        
+        .form-group-row select:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
         .form-group-row select:focus {
-            border-bottom-color: var(--accent);
+            border-color: var(--accent);
         }
+        
         .form-group-row select option {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
+            background-color: #0f1a24;
+            color: #fff;
         }
+        
+        /* Botón de envío */
+        .btn-block {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-radius: 12px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 170, 255, 0.2);
+        }
+        
+        .btn-block:hover {
+            background: #0099dd;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 170, 255, 0.3);
+        }
+        
+        /* Mensaje de estado */
+        .form-status {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            display: none;
+        }
+        
+        .form-status p {
+            margin: 0;
+            padding: 0.75rem;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 4px solid var(--accent);
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            .contact-info-large,
+            .contact-form {
+                padding: 1.8rem;
+            }
             .form-group-row {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 0.5rem;
             }
-            .form-group-row label {
-                margin-bottom: 0.2rem;
-            }
             .form-group-row select {
                 width: 100%;
             }
-        }
-        
-        /* Mensaje de estado del formulario */
-        .form-status {
-            margin-top: 1rem;
-            text-align: center;
-            font-size: 0.9rem;
-            display: none;
-        }
-        .form-status p {
-            margin: 0;
-            padding: 0.5rem;
-            border-radius: 8px;
-            background: rgba(0,0,0,0.6);
         }
     </style>
 </head>
@@ -101,17 +325,16 @@
                 <li><a href="metodologia.html">Metodología</a></li>
                 <li><a href="contacto.html" class="active">Contacto</a></li>
             </ul>
-            <div class="hamburger"><i class="fas fa-bars"></i></div>
+            <div class="hamburger" aria-label="Menú" role="button" tabindex="0"><i class="fas fa-bars"></i></div>
         </nav>
     </header>
 
     <main>
-        <!-- HERO CON PARTICLES -->
-        <section class="hero" style="min-height: 60vh; background: linear-gradient(135deg, rgba(0,10,20,0.85) 0%, rgba(0,30,50,0.7) 100%);">
-            <div id="particles-js"></div>
+        <!-- HERO SIN ANIMACIONES, FONDO AZUL OSCURO CORPORATIVO -->
+        <section class="hero">
             <div class="hero-content container">
                 <h1 class="page-title">Contacta con <span class="accent">nosotros</span></h1>
-                <p class="page-subtitle">Estamos a un mensaje de distancia.</p>
+                <p class="page-subtitle">Estamos a un mensaje de distancia. Cuéntanos tu proyecto y te responderemos en menos de 24 horas.</p>
             </div>
         </section>
 
@@ -119,28 +342,40 @@
         <section class="section">
             <div class="container grid-2">
                 <!-- Tarjeta de información -->
-                <div class="contact-info-large glass-card">
-                    <h2>Información de contacto</h2>
-                    <p><i class="fas fa-map-marker-alt"></i> Managua, Nicaragua</p>
-                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+50589871374">+505 8987 1374</a></p>
+                <div class="contact-info-large">
+                    <h2>Oficina Central</h2>
+                    <p><i class="fas fa-map-marker-alt"></i> Managua, Nicaragua<br><span style="margin-left: 2.5rem; font-size: 0.95rem; opacity: 0.7;">Edificio Plaza España, 5to piso</span></p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+50589871374">+505 8987 1374</a><br><span style="margin-left: 2.5rem; font-size: 0.95rem; opacity: 0.7;">Lun - Vie · 8:00 a 18:00</span></p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:info@itsasegurity.com">info@itsasegurity.com</a></p>
+                    <p><i class="fas fa-globe"></i> <a href="#">www.itsasegurity.com</a></p>
+                    
                     <div class="social-large">
-                        <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/it_segurity" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@it._segurity" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/50589871374" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    
+                    <!-- Insignia de confianza -->
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                        <p style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-shield-alt" style="color: var(--accent);"></i>
+                            <span style="font-weight: 500;">Consultoría inicial gratuita</span>
+                        </p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">Evaluamos tu caso sin compromiso y te entregamos una propuesta personalizada.</p>
                     </div>
                 </div>
 
-                <!-- FORMULARIO CON ETIQUETA AL LADO -->
+                <!-- FORMULARIO PROFESIONAL -->
                 <form id="contactForm" action="https://formspree.io/f/xnjojrwb" method="POST" class="contact-form">
                     <div class="form-group">
                         <input type="text" id="name" name="name" required>
-                        <label for="name">Nombre completo</label>
+                        <label for="name">Nombre completo *</label>
                     </div>
                     <div class="form-group">
                         <input type="email" id="email" name="email" required>
-                        <label for="email">Correo electrónico</label>
+                        <label for="email">Correo electrónico corporativo *</label>
                     </div>
                     <div class="form-group">
                         <input type="text" id="subject" name="_subject" value="Nuevo mensaje desde ITSA Segurity">
@@ -149,27 +384,46 @@
                     
                     <!-- CAMPO CON ETIQUETA AL LADO -->
                     <div class="form-group-row">
-                        <label for="service">Tipo de servicio</label>
+                        <label for="service">Tipo de servicio *</label>
                         <select id="service" name="service" required>
-                            <option value="" disabled selected>Selecciona un servicio</option>
+                            <option value="" disabled selected>— Selecciona una opción —</option>
                             <option value="desarrollo-web">Desarrollo Web</option>
                             <option value="software-medida">Software a medida</option>
                             <option value="ciberseguridad">Ciberseguridad</option>
                             <option value="marketing-digital">Marketing Digital</option>
                             <option value="ia-datos">IA & Datos</option>
-                            <option value="consultoria">Consultoría</option>
+                            <option value="consultoria">Consultoría estratégica</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <textarea id="message" name="message" rows="5" required></textarea>
-                        <label for="message">Mensaje</label>
+                        <label for="message">Describe tu proyecto o necesidad *</label>
                     </div>
                     
+                    <!-- Protección anti-spam -->
                     <input type="text" name="_gotcha" style="display:none">
-                    <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Enviar mensaje
+                    </button>
                     <div id="form-status" class="form-status"></div>
+                    
+                    <p style="font-size: 0.8rem; text-align: center; margin-top: 1.5rem; color: var(--text-dim); opacity: 0.7;">
+                        Al enviar aceptas nuestra <a href="privacidad.html" style="color: var(--accent);">política de privacidad</a>. 
+                        Tus datos están seguros.
+                    </p>
                 </form>
+            </div>
+        </section>
+        
+        <!-- MAPA O UBICACIÓN (opcional, añade profesionalismo) -->
+        <section style="padding-bottom: 80px;">
+            <div class="container">
+                <div style="border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31210.846948845!2d-86.275449!3d12.114992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f7155f4a5f2e5d%3A0x6f4d7d1b1b6f3f4f!2sManagua%2C%20Nicaragua!5e0!3m2!1ses!2sni!4v1620000000000!5m2!1ses!2sni" 
+                            width="100%" height="300" style="border:0; display: block;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
         </section>
     </main>
@@ -196,15 +450,15 @@
                 <div class="footer-social">
                     <h5>Redes</h5>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/it_segurity" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@it._segurity" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/50589871374" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
+                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados. | Ciberseguridad · Desarrollo · Innovación</p>
             </div>
         </div>
     </footer>
@@ -212,30 +466,46 @@
     <!-- SCRIPTS -->
     <script src="js/script.js"></script>
     <script src="js/animation.js"></script>
-
-    <!-- Inicialización de particles.js -->
+    
+    <!-- Se elimina inicialización de particles.js -->
+    
+    <!-- Script para manejo del formulario (opcional, profesional) -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS('particles-js', {
-                    "particles": {
-                        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
-                        "color": { "value": "#00aaff" },
-                        "shape": { "type": "circle" },
-                        "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } },
-                        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 4, "size_min": 0.3 } },
-                        "line_linked": { "enable": true, "distance": 150, "color": "#00aaff", "opacity": 0.4, "width": 1 },
-                        "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
-                    },
-                    "interactivity": {
-                        "detect_on": "canvas",
-                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
-                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
-                    },
-                    "retina_detect": true
+        (function() {
+            const form = document.getElementById('contactForm');
+            const statusDiv = document.getElementById('form-status');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+                    
+                    statusDiv.style.display = 'block';
+                    statusDiv.innerHTML = '<p style="color: var(--accent);"><i class="fas fa-spinner fa-spin"></i> Enviando mensaje...</p>';
+                    
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            statusDiv.innerHTML = '<p style="color: #4caf50;"><i class="fas fa-check-circle"></i> ¡Mensaje enviado! Te contactaremos pronto.</p>';
+                            form.reset();
+                            // Restablecer etiquetas flotantes
+                            document.querySelectorAll('.form-group input, .form-group textarea').forEach(field => {
+                                field.value = '';
+                            });
+                        } else {
+                            throw new Error('Error en el envío');
+                        }
+                    })
+                    .catch(error => {
+                        statusDiv.innerHTML = '<p style="color: #ff6b6b;"><i class="fas fa-exclamation-triangle"></i> Error al enviar. Intenta de nuevo o escríbenos directamente a info@itsasegurity.com</p>';
+                    });
                 });
             }
-        });
+        })();
     </script>
 </body>
 </html>
