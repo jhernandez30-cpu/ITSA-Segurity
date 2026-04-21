@@ -25,72 +25,333 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
-    <!-- Se eliminan particles.js y Three.js (ya no se usan) -->
-    
     <style>
-        /* Personalización de la cuadrícula de metodología */
+        /* ===== ESTILOS PROFESIONALES EMPRESARIALES ===== */
+        
+        /* Hero corporativo */
+        .hero {
+            min-height: 55vh;
+            background-color: #0a0c12;
+            position: relative;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 170, 255, 0.1);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-size: 3.8rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-dim);
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Sección general */
+        .section {
+            padding: 90px 0;
+        }
+        
+        .section-subtitle {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+        
+        /* Grid de metodología más profesional */
         .metodologia-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
+        
         .metodologia-item {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 30px;
-            padding: 2rem;
-            transition: transform 0.3s ease, border-color 0.3s;
+            background: rgba(20, 30, 45, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 28px;
+            padding: 2.5rem 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: left;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
+        
+        .metodologia-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), #0066cc);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
         .metodologia-item:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent);
+            transform: translateY(-12px);
+            border-color: rgba(0, 170, 255, 0.3);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
         }
-        .metodologia-number {
-            font-size: 3rem;
-            font-weight: 800;
+        
+        .metodologia-item:hover::before {
+            opacity: 1;
+        }
+        
+        .metodologia-icon {
+            font-size: 2.8rem;
             color: var(--accent);
-            opacity: 0.5;
-            display: block;
-            margin-bottom: 1rem;
-            line-height: 1;
+            margin-bottom: 1.5rem;
+            background: rgba(0, 170, 255, 0.08);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            transition: all 0.3s;
         }
-        .metodologia-item h4 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
+        
+        .metodologia-item:hover .metodologia-icon {
+            background: var(--accent);
             color: #fff;
+            transform: scale(1.05);
         }
+        
+        .metodologia-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.05);
+            position: absolute;
+            top: 1.5rem;
+            right: 1.8rem;
+            line-height: 1;
+            z-index: 0;
+        }
+        
+        .metodologia-item h4 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            position: relative;
+            z-index: 1;
+        }
+        
         .metodologia-item p {
             color: var(--text-dim);
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
         }
+        
+        /* Sección de principios ágiles */
+        .principios-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .principio-card {
+            background: rgba(20, 30, 45, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s;
+        }
+        
+        .principio-card:hover {
+            background: rgba(0, 170, 255, 0.05);
+            border-color: rgba(0, 170, 255, 0.2);
+        }
+        
+        .principio-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.2rem;
+        }
+        
+        .principio-card h5 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .principio-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        /* Timeline de fases (complementario) */
+        .fases-timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 4rem 0 2rem;
+            position: relative;
+        }
+        
+        .fases-timeline::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), var(--accent), transparent);
+            z-index: 0;
+        }
+        
+        .fase-item {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+        
+        .fase-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border: 3px solid #0a0c12;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+        }
+        
+        .fase-item span {
+            display: block;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .fase-item small {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+        
+        /* CTA final más impactante */
+        .cta-section {
+            background: linear-gradient(135deg, #000408 0%, #0a1a2a 100%);
+            text-align: center;
+            padding: 100px 0;
+            border-top: 1px solid rgba(0, 170, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 170, 255, 0.1);
+        }
+        
+        .cta-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+        }
+        
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 170, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-cta:hover {
+            background: #0099dd;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 170, 255, 0.35);
+        }
+        
+        /* Responsive */
         @media (max-width: 992px) {
             .metodologia-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .principios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .fases-timeline {
+                flex-wrap: wrap;
+                gap: 2rem;
+            }
+            .fases-timeline::before {
+                display: none;
+            }
+            .fase-item {
+                flex: 0 0 calc(50% - 1rem);
+            }
         }
+        
         @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.8rem;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
             .metodologia-grid {
                 grid-template-columns: 1fr;
             }
-        }
-
-        /* Ajuste para el fondo azul oscuro sin animaciones */
-        .hero {
-            min-height: 60vh;
-            background-color: #0a0c12; /* Mismo tono que el fondo general */
-            position: relative;
-        }
-        /* Eliminamos cualquier contenedor de animación */
-        #particles-js, #three-container {
-            display: none;
-        }
-        /* Aseguramos que el contenido del hero esté por encima */
-        .hero-content {
-            position: relative;
-            z-index: 2;
+            .principios-grid {
+                grid-template-columns: 1fr;
+            }
+            .fase-item {
+                flex: 0 0 100%;
+            }
+            .cta-title {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -113,68 +374,218 @@
                 <li><a href="metodologia.html" class="active">Metodología</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
-            <div class="hamburger" aria-label="Menú"><i class="fas fa-bars"></i></div>
+            <div class="hamburger" aria-label="Menú" role="button" tabindex="0"><i class="fas fa-bars"></i></div>
         </nav>
     </header>
 
     <main>
-        <!-- HERO SIN ANIMACIONES, FONDO AZUL OSCURO -->
+        <!-- HERO CORPORATIVO -->
         <section class="hero">
-            <!-- Contenedores de animación eliminados -->
             <div class="hero-content container">
-                <h1 class="page-title">Metodología <span class="accent">ágil</span></h1>
-                <p class="page-subtitle">Transparencia, iteración y valor continuo.</p>
+                <h1 class="page-title">Metodología <span class="accent">Ágil Empresarial</span></h1>
+                <p class="page-subtitle">Un framework probado que combina agilidad, transparencia y excelencia técnica para entregar soluciones de alto impacto.</p>
             </div>
         </section>
 
-        <!-- SECCIÓN DE METODOLOGÍA (6 PASOS) -->
+        <!-- INTRODUCCIÓN Y PRINCIPIOS -->
         <section class="section">
             <div class="container">
-                <span class="section-subtitle">· Nuestro proceso ·</span>
-                <h2 class="section-title">Cómo <span class="accent">trabajamos</span></h2>
-                <p class="text-center" style="margin-bottom: 2rem; color: var(--text-dim);">Un enfoque probado que combina agilidad, transparencia y comunicación constante para entregar productos que superan expectativas.</p>
+                <span class="section-subtitle">· Nuestro enfoque ·</span>
+                <h2 class="section-title">Principios que guían <span class="accent">cada proyecto</span></h2>
+                <p class="text-center" style="margin-bottom: 1rem; color: var(--text-dim); max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Adoptamos las mejores prácticas de Scrum, Kanban y Extreme Programming, adaptadas al contexto empresarial nicaragüense.
+                </p>
                 
-                <div class="metodologia-grid">
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">01</span>
-                        <h4>Descubrimiento</h4>
-                        <p>Entendemos tu visión, necesidades y objetivos de negocio. Realizamos entrevistas, análisis competitivo y definición de la hoja de ruta.</p>
+                <div class="principios-grid">
+                    <div class="principio-card">
+                        <i class="fas fa-sync-alt"></i>
+                        <h5>Iteración continua</h5>
+                        <p>Entregas frecuentes con valor tangible, ciclos de feedback cortos.</p>
                     </div>
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">02</span>
-                        <h4>Diseño conceptual</h4>
-                        <p>Wireframes, prototipos interactivos y narrativa visual. Validamos contigo cada detalle antes de escribir una línea de código.</p>
+                    <div class="principio-card">
+                        <i class="fas fa-users"></i>
+                        <h5>Colaboración estrecha</h5>
+                        <p>El cliente forma parte del equipo. Comunicación diaria y transparencia total.</p>
                     </div>
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">03</span>
-                        <h4>Desarrollo iterativo</h4>
-                        <p>Sprints semanales con entregas funcionales. Aplicamos Scrum y Kanban para mantener flexibilidad y entregar valor rápido.</p>
+                    <div class="principio-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h5>Mejora basada en datos</h5>
+                        <p>Métricas de rendimiento, analítica y retrospectivas para optimizar.</p>
                     </div>
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">04</span>
-                        <h4>Pruebas y calidad</h4>
-                        <p>Testing continuo, auditorías de seguridad y optimización de rendimiento. Aseguramos que cada entrega cumpla los estándares más altos.</p>
-                    </div>
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">05</span>
-                        <h4>Lanzamiento</h4>
-                        <p>Deploy monitoreado, estrategia de go-to-market y acompañamiento post-lanzamiento para garantizar una transición sin fricciones.</p>
-                    </div>
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">06</span>
-                        <h4>Evolución</h4>
-                        <p>Soporte, mantenimiento y mejora continua basada en datos. Tu producto sigue creciendo con nuevas funcionalidades y optimizaciones.</p>
+                    <div class="principio-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h5>Calidad incorporada</h5>
+                        <p>Pruebas automatizadas, revisiones de código y seguridad desde el diseño.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA FINAL -->
-        <section class="section" style="background: linear-gradient(135deg, #000408, #001c28); text-align: center;">
+        <!-- FASES DEL PROCESO (TIMELINE VISUAL) -->
+        <section class="section" style="background: rgba(0, 0, 0, 0.2); padding: 60px 0;">
             <div class="container">
-                <h2 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 1.5rem;">¿Listo para transformar tu idea en un <span class="accent">producto real</span>?</h2>
-                <p style="font-size: 1.2rem; color: var(--text-dim); max-width: 600px; margin: 0 auto 2rem;">Aplica nuestra metodología a tu proyecto y obtén resultados tangibles desde el primer sprint.</p>
-                <a href="contacto.html" class="btn btn-primary">Hablemos <i class="fas fa-arrow-right"></i></a>
+                <span class="section-subtitle">· El camino hacia el éxito ·</span>
+                <h2 class="section-title">Nuestro <span class="accent">ciclo de vida</span> de desarrollo</h2>
+                
+                <div class="fases-timeline">
+                    <div class="fase-item">
+                        <div class="fase-dot"></div>
+                        <span>Discover</span>
+                        <small>Descubrimiento</small>
+                    </div>
+                    <div class="fase-item">
+                        <div class="fase-dot"></div>
+                        <span>Design</span>
+                        <small>Diseño</small>
+                    </div>
+                    <div class="fase-item">
+                        <div class="fase-dot"></div>
+                        <span>Develop</span>
+                        <small>Desarrollo</small>
+                    </div>
+                    <div class="fase-item">
+                        <div class="fase-dot"></div>
+                        <span>Test</span>
+                        <small>Pruebas</small>
+                    </div>
+                    <div class="fase-item">
+                        <div class="fase-dot"></div>
+                        <span>Deploy</span>
+                        <small>Lanzamiento</small>
+                    </div>
+                    <div class="fase-item">
+                        <div class="fase-dot"></div>
+                        <span>Evolve</span>
+                        <small>Evolución</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- METODOLOGÍA DETALLADA (6 PASOS CON ICONOS) -->
+        <section class="section">
+            <div class="container">
+                <span class="section-subtitle">· Así lo hacemos ·</span>
+                <h2 class="section-title">Fases de nuestra <span class="accent">metodología</span></h2>
+                <p class="text-center" style="margin-bottom: 2rem; color: var(--text-dim); max-width: 750px; margin-left: auto; margin-right: auto;">
+                    Un proceso estructurado pero flexible, diseñado para minimizar riesgos y maximizar el retorno de inversión.
+                </p>
+                
+                <div class="metodologia-grid">
+                    <!-- Fase 1 -->
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">01</span>
+                        <div class="metodologia-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Descubrimiento</h4>
+                        <p>Análisis profundo de tu negocio, stakeholders, competencia y oportunidades. Definimos KPIs, alcance y hoja de ruta alineada con tus objetivos estratégicos.</p>
+                    </div>
+                    
+                    <!-- Fase 2 -->
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">02</span>
+                        <div class="metodologia-icon">
+                            <i class="fas fa-pencil-ruler"></i>
+                        </div>
+                        <h4>Diseño conceptual</h4>
+                        <p>Arquitectura de información, wireframes interactivos y diseño visual de alta fidelidad. Validamos la experiencia de usuario con prototipos navegables antes del desarrollo.</p>
+                    </div>
+                    
+                    <!-- Fase 3 -->
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">03</span>
+                        <div class="metodologia-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Desarrollo iterativo</h4>
+                        <p>Sprints de 2 semanas con entregables funcionales. Utilizamos Scrum con daily meetings, planning y retrospectivas. El cliente ve avances reales constantemente.</p>
+                    </div>
+                    
+                    <!-- Fase 4 -->
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">04</span>
+                        <div class="metodologia-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h4>Pruebas y QA</h4>
+                        <p>Testing automatizado (unitario, integración, E2E), auditorías de seguridad (OWASP), pruebas de carga y rendimiento. Certificamos que cada release es robusta y segura.</p>
+                    </div>
+                    
+                    <!-- Fase 5 -->
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">05</span>
+                        <div class="metodologia-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Lanzamiento</h4>
+                        <p>Despliegue progresivo con monitoreo en tiempo real. Estrategia de comunicación y capacitación para asegurar una adopción exitosa por parte de los usuarios.</p>
+                    </div>
+                    
+                    <!-- Fase 6 -->
+                    <div class="metodologia-item">
+                        <span class="metodologia-number">06</span>
+                        <div class="metodologia-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4>Evolución continua</h4>
+                        <p>Soporte 24/7, mantenimiento proactivo y mejora basada en analítica de uso. Tu producto sigue creciendo con nuevas funcionalidades priorizadas por valor de negocio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HERRAMIENTAS Y TECNOLOGÍAS DE GESTIÓN -->
+        <section class="section" style="background: rgba(0, 0, 0, 0.15);">
+            <div class="container">
+                <span class="section-subtitle">· Herramientas ·</span>
+                <h2 class="section-title">Tecnología que <span class="accent">potencia</span> nuestra metodología</h2>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem 4rem; margin-top: 3rem;">
+                    <div style="text-align: center;">
+                        <i class="fab fa-jira" style="font-size: 3rem; color: #0052CC; margin-bottom: 0.5rem;"></i>
+                        <p style="color: #fff; font-weight: 500;">Jira</p>
+                        <small style="color: var(--text-dim);">Gestión de proyectos</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fab fa-trello" style="font-size: 3rem; color: #0079BF; margin-bottom: 0.5rem;"></i>
+                        <p style="color: #fff; font-weight: 500;">Trello</p>
+                        <small style="color: var(--text-dim);">Tableros Kanban</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fab fa-slack" style="font-size: 3rem; color: #4A154B; margin-bottom: 0.5rem;"></i>
+                        <p style="color: #fff; font-weight: 500;">Slack</p>
+                        <small style="color: var(--text-dim);">Comunicación</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fab fa-github" style="font-size: 3rem; color: #fff; margin-bottom: 0.5rem;"></i>
+                        <p style="color: #fff; font-weight: 500;">GitHub</p>
+                        <small style="color: var(--text-dim);">Control de versiones</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-chart-pie" style="font-size: 3rem; color: #F2C811; margin-bottom: 0.5rem;"></i>
+                        <p style="color: #fff; font-weight: 500;">Miro</p>
+                        <small style="color: var(--text-dim);">Colaboración visual</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL MEJORADO -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">¿Listo para implementar una metodología <span class="accent">de clase mundial</span>?</h2>
+                <p class="cta-subtitle">Agenda una consultoría gratuita de 30 minutos y descubre cómo nuestro proceso puede acelerar tu transformación digital.</p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contacto.html" class="btn-cta">
+                        <i class="fas fa-calendar-check"></i> Solicitar asesoría
+                    </a>
+                    <a href="servicios.html" class="btn-cta" style="background: transparent; border: 1px solid rgba(255,255,255,0.2); box-shadow: none;">
+                        <i class="fas fa-arrow-right"></i> Ver servicios
+                    </a>
+                </div>
+                <p style="margin-top: 2rem; color: var(--text-dim); font-size: 0.9rem;">
+                    <i class="fas fa-lock" style="margin-right: 5px;"></i> Sin compromiso · Confidencialidad garantizada
+                </p>
             </div>
         </section>
     </main>
@@ -201,15 +612,15 @@
                 <div class="footer-social">
                     <h5>Redes</h5>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/it_segurity" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@it._segurity" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://wa.me/50589871374" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/it_segurity" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@it._segurity" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/50589871374" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
+                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados. | Certificaciones ISO 27001 · CEH · AWS Partner</p>
             </div>
         </div>
     </footer>
@@ -218,10 +629,10 @@
     <script src="js/script.js"></script>
     <script src="js/animation.js"></script>
 
-    <!-- Animaciones GSAP específicas -->
+    <!-- Animaciones GSAP mejoradas -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Animar cada item de metodología al hacer scroll
+            // Animación para items de metodología
             gsap.utils.toArray('.metodologia-item').forEach((item, index) => {
                 gsap.from(item, {
                     scrollTrigger: {
@@ -230,14 +641,41 @@
                         toggleActions: 'play none none reverse'
                     },
                     opacity: 0,
-                    y: 50,
-                    duration: 0.6,
-                    delay: index * 0.1,
-                    ease: 'power2.out'
+                    y: 60,
+                    duration: 0.7,
+                    delay: index * 0.08,
+                    ease: 'power3.out'
                 });
+            });
+            
+            // Animación para principios
+            gsap.utils.toArray('.principio-card').forEach((card, i) => {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 90%'
+                    },
+                    opacity: 0,
+                    scale: 0.9,
+                    duration: 0.5,
+                    delay: i * 0.1,
+                    ease: 'back.out(1.2)'
+                });
+            });
+            
+            // Animación para fases timeline
+            gsap.from('.fase-item', {
+                scrollTrigger: {
+                    trigger: '.fases-timeline',
+                    start: 'top 85%'
+                },
+                opacity: 0,
+                y: 30,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: 'power2.out'
             });
         });
     </script>
-    <!-- Se han eliminado los scripts de particles.js y Three.js -->
 </body>
 </html>
