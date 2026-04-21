@@ -21,43 +21,512 @@
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/skills.css">
     
-    <!-- GSAP (mantenido para otras animaciones) -->
+    <!-- GSAP (mantenido para animaciones de scroll) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-    
-    <!-- Se elimina particles.js y Three.js (ya no se usan) -->
     
     <style>
-        /* Ajuste rápido para el fondo azul oscuro del hero sin animaciones */
+        /* ===== ESTILOS CORPORATIVOS INTERNACIONALES ===== */
+        
+        /* Variables globales (sobrescribir si es necesario) */
+        :root {
+            --bg-dark: #0a0c12;
+            --bg-card: rgba(18, 28, 40, 0.7);
+            --border-light: rgba(255, 255, 255, 0.06);
+            --accent: #00aaff;
+            --accent-hover: #0099dd;
+            --text-dim: #a0b3cc;
+            --text-light: #e6edf5;
+            --shadow-lg: 0 25px 40px -12px rgba(0, 0, 0, 0.45);
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+        }
+        
+        /* Hero profesional */
         .hero {
-            background-color: #0a0c12; /* mismo tono que el fondo general */
+            min-height: 90vh;
+            background-color: var(--bg-dark);
             position: relative;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 170, 255, 0.12);
+            overflow: hidden;
         }
-        /* Eliminamos cualquier elemento de animación flotante */
-        #particles-js, #three-container {
-            display: none;
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0.4;
         }
-        /* Aseguramos que el contenido del hero sea visible */
+        
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 1.5rem;
         }
-        /* Pequeño ajuste para la cuadrícula del equipo (4 elementos) */
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #00aaff 0%, #4db8ff 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-dim);
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.2rem;
+            font-weight: 600;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 12px 25px -5px rgba(0, 170, 255, 0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -5px rgba(0, 170, 255, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--accent);
+            background: rgba(0, 170, 255, 0.05);
+            transform: translateY(-3px);
+        }
+        
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--text-dim);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            z-index: 3;
+        }
+        
+        /* Secciones */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-subtitle {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+            color: #fff;
+        }
+        
+        .accent {
+            color: var(--accent);
+        }
+        
+        .section-paragraph {
+            font-size: 1.15rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+        
+        /* Presentación */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .presentacion-visual {
+            position: relative;
+        }
+        
+        .presentation-img {
+            border-radius: 28px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .glass-card {
+            background: rgba(18, 28, 40, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+        
+        .glass-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-right: 1rem;
+        }
+        
+        .stats-mini {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+        
+        .stat-item {
+            text-align: left;
+        }
+        
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+        }
+        
+        .stat-item span:not(.stat-number) {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-left: 4px;
+        }
+        
+        .stat-item p {
+            color: var(--text-dim);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        
+        /* Servicios Grid */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .servicio-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-light);
+            border-radius: 28px;
+            padding: 2.5rem 1.8rem;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .servicio-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 170, 255, 0.3);
+            background: rgba(20, 35, 50, 0.8);
+            box-shadow: 0 28px 40px -12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.8rem;
+        }
+        
+        .servicio-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .card-description {
+            color: var(--text-dim);
+            line-height: 1.65;
+            margin-bottom: 1.8rem;
+            flex: 1;
+        }
+        
+        .card-link {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.2s;
+        }
+        
+        .card-link:hover {
+            gap: 12px;
+        }
+        
+        .btn-link {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        /* Timeline */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .timeline-item {
+            text-align: center;
+        }
+        
+        .timeline-year {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content {
+            background: var(--bg-card);
+            padding: 1.8rem;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+        }
+        
+        .timeline-content h4 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Estadísticas grandes */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .stat-large {
+            text-align: center;
+            padding: 2.5rem;
+            background: rgba(18, 28, 40, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            border: 1px solid var(--border-light);
+        }
+        
+        .stat-large .stat-number {
+            font-size: 4rem;
+        }
+        
+        /* Testimonios */
+        .testimonial-carousel {
+            margin-top: 2rem;
+        }
+        
+        .testimonial-track {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-card p {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .testimonial-card h5 {
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+        
+        /* Equipo */
         .equipo-grid-horizontal {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
-        @media (max-width: 992px) {
-            .equipo-grid-horizontal {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        
+        .miembro-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: transform 0.25s;
         }
-        @media (max-width: 576px) {
-            .equipo-grid-horizontal {
-                grid-template-columns: 1fr;
-            }
+        
+        .miembro-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 170, 255, 0.2);
+        }
+        
+        .miembro-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        .miembro-card h4 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .miembro-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        .social-links a {
+            color: var(--text-dim);
+            margin: 0 8px;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Certificaciones */
+        .cert-grid-horizontal {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem 3rem;
+        }
+        
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.02);
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            border: 1px solid rgba(255,255,255,0.04);
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+        
+        .cert-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        .footer {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 3rem 0 1.5rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 3.2rem; }
+            .servicios-grid { grid-template-columns: repeat(2, 1fr); }
+            .equipo-grid-horizontal { grid-template-columns: repeat(2, 1fr); }
+            .testimonial-track { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+            .grid-2 { grid-template-columns: 1fr; gap: 2rem; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .section-title { font-size: 2.2rem; }
+            .servicios-grid { grid-template-columns: 1fr; }
+            .timeline-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .equipo-grid-horizontal { grid-template-columns: 1fr; }
+            .stats-mini { flex-direction: column; gap: 1.5rem; }
         }
     </style>
 </head>
@@ -85,19 +554,18 @@
     </header>
 
     <main>
-        <!-- HERO SECTION (sin particles ni Three.js, fondo azul oscuro) -->
+        <!-- HERO SECTION PROFESIONAL -->
         <section id="hero" class="hero">
-            <!-- Contenedores de animación eliminados -->
             <div class="hero-content container">
-                <h1 class="hero-title">Expertos en <span class="gradient-text">Transformación Digital</span> para Empresas</h1>
-                <p class="hero-subtitle">Más de 120 proyectos exitosos en Managua y todo el país. Desarrollo web, software a medida, ciberseguridad y marketing digital con resultados medibles.</p>
+                <h1 class="hero-title">Impulsamos la <span class="gradient-text">Transformación Digital</span> de tu Empresa</h1>
+                <p class="hero-subtitle">Más de 120 proyectos en Nicaragua y la región. Desarrollo web, software a medida, ciberseguridad y marketing digital con resultados tangibles.</p>
                 <div class="hero-cta">
                     <a href="contacto.html" class="btn btn-primary">Solicitar evaluación gratuita <i class="fas fa-shield-alt"></i></a>
                     <a href="servicios.html" class="btn btn-outline">Conoce nuestros servicios</a>
                 </div>
             </div>
             <div class="hero-scroll-indicator">
-                <span>Desliza</span>
+                <span>Descubrir</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
         </section>
@@ -108,7 +576,7 @@
                 <div class="presentacion-texto">
                     <span class="section-subtitle">· ITSA Segurity ·</span>
                     <h2 class="section-title">Tecnología que <span class="accent">impulsa</span> tu negocio en Nicaragua</h2>
-                    <p class="section-paragraph">No solo escribimos código: diseñamos soluciones digitales a la medida de las empresas nicaragüenses. Combinamos desarrollo, creatividad y seguridad para que tu negocio destaque en un mercado competitivo.</p>
+                    <p class="section-paragraph">No solo escribimos código: diseñamos soluciones digitales a la medida de las empresas nicaragüenses. Combinamos desarrollo de vanguardia, creatividad y ciberseguridad para que tu negocio destaque en un mercado competitivo.</p>
                     <div class="stats-mini">
                         <div class="stat-item">
                             <span class="stat-number">8</span><span>+</span>
@@ -126,17 +594,18 @@
                 </div>
                 <div class="presentacion-visual">
                     <img src="assets/images/presentation.jpg" alt="ITSA tecnología" class="presentation-img" onerror="this.style.display='none'">
-                    <div class="glass-card" style="margin-top: 1rem;">
+                    <div class="glass-card" style="margin-top: 1.5rem; display: flex; justify-content: space-around;">
                         <i class="fas fa-code"></i>
                         <i class="fas fa-shield-alt"></i>
                         <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-cloud"></i>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- SECCIÓN DE SERVICIOS -->
-        <section id="servicios" class="section servicios-grid-section" style="background: #0a0c12; padding: 80px 0;">
+        <section id="servicios" class="section servicios-grid-section" style="background: #070b0f;">
             <div class="container">
                 <span class="section-subtitle">· Lo que hacemos ·</span>
                 <h2 class="section-title">Soluciones digitales <span class="accent">para empresas nicaragüenses</span></h2>
@@ -168,7 +637,7 @@
                     </div>
                 </div>
 
-                <div class="service-cta" style="text-align: center; margin-top: 3rem;">
+                <div class="service-cta" style="text-align: center; margin-top: 3.5rem;">
                     <a href="servicios.html" class="btn btn-link">Ver todos los servicios <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>
             </div>
@@ -206,7 +675,7 @@
         </section>
 
         <!-- ESTADÍSTICAS -->
-        <section id="estadisticas" class="section stats">
+        <section id="estadisticas" class="section stats" style="background: #070b0f;">
             <div class="container">
                 <div class="stats-grid">
                     <div class="stat-large">
@@ -253,10 +722,10 @@
         </section>
 
         <!-- EQUIPO (ACTUALIZADO) -->
-        <section class="section equipo">
+        <section class="section equipo" style="background: #070b0f;">
             <div class="container">
                 <span class="section-subtitle">· Expertos ·</span>
-                <h2 class="section-title">Conoce a nuestro <span class="accent">equipo</span></h2>
+                <h2 class="section-title">Conoce a nuestro <span class="accent">equipo directivo</span></h2>
                 <div class="equipo-grid-horizontal">
                     <!-- Mario Álvarez -->
                     <div class="miembro-card">
@@ -305,7 +774,7 @@
         <!-- CERTIFICACIONES -->
         <section class="section certificaciones">
             <div class="container">
-                <h2 class="section-title">Certificaciones y <span class="accent">alianzas</span></h2>
+                <h2 class="section-title">Certificaciones y <span class="accent">alianzas estratégicas</span></h2>
                 <div class="cert-grid-horizontal">
                     <div class="cert-item"><i class="fas fa-certificate"></i><span>ISO 27001</span></div>
                     <div class="cert-item"><i class="fas fa-shield-alt"></i><span>CEH</span></div>
@@ -347,7 +816,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
+                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados. | AWS Partner · Microsoft Partner · ISO 27001</p>
             </div>
         </div>
     </footer>
@@ -355,6 +824,5 @@
     <!-- SCRIPTS -->
     <script src="js/script.js"></script>
     <script src="js/animation.js"></script>
-    <!-- Se elimina inicialización de particles.js y carga de three-background.js -->
 </body>
 </html>
