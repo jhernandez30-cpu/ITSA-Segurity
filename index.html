@@ -20,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
     <style>
-        /* ===== ESTILOS CORPORATIVOS INTERNACIONALES (AUTOCONTENIDOS) ===== */
+        /* ===== ESTILOS SIMPLIFICADOS Y 100% VISIBLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -29,14 +29,12 @@
         
         :root {
             --bg-dark: #0a0c12;
-            --bg-card: rgba(18, 28, 40, 0.8);
-            --border-light: rgba(255, 255, 255, 0.08);
+            --bg-card: rgba(18, 28, 40, 0.9);
+            --border-light: rgba(255, 255, 255, 0.1);
             --accent: #00aaff;
             --accent-hover: #0099dd;
             --text-dim: #a0b3cc;
             --text-light: #e6edf5;
-            --shadow-lg: 0 30px 50px -15px rgba(0, 0, 0, 0.5);
-            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
         body {
@@ -59,21 +57,19 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.6s ease, visibility 0.6s;
+            transition: opacity 0.6s;
         }
         #preloader.hidden {
             opacity: 0;
             visibility: hidden;
-        }
-        .loader {
-            display: flex;
-            gap: 0.6rem;
         }
         .loader span {
             width: 16px;
             height: 16px;
             background: var(--accent);
             border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
             animation: pulse 1.2s infinite;
         }
         .loader span:nth-child(2) { animation-delay: 0.2s; }
@@ -91,11 +87,10 @@
             left: 0;
             width: 100%;
             padding: 1.2rem 0;
-            background: rgba(8, 12, 18, 0.85);
+            background: rgba(8, 12, 18, 0.9);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-light);
             z-index: 1000;
-            transition: var(--transition);
         }
         .navbar {
             display: flex;
@@ -110,43 +105,24 @@
             font-weight: 700;
             text-decoration: none;
             color: #fff;
-            letter-spacing: -0.01em;
         }
         .logo span {
             color: var(--accent);
-            font-weight: 800;
         }
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2.8rem;
+            gap: 2.5rem;
         }
         .nav-menu a {
             text-decoration: none;
             color: var(--text-dim);
             font-weight: 500;
-            font-size: 1rem;
             transition: color 0.2s;
-            position: relative;
-            padding-bottom: 4px;
         }
         .nav-menu a:hover,
         .nav-menu a.active {
             color: var(--accent);
-        }
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.25s;
-        }
-        .nav-menu a:hover::after,
-        .nav-menu a.active::after {
-            width: 100%;
         }
         .hamburger {
             display: none;
@@ -161,48 +137,31 @@
             background-color: var(--bg-dark);
             display: flex;
             align-items: center;
-            position: relative;
+            text-align: center;
             border-bottom: 1px solid rgba(0, 170, 255, 0.12);
-            overflow: hidden;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            opacity: 0.4;
         }
         .hero-content {
             max-width: 1000px;
             margin: 0 auto;
-            text-align: center;
             padding: 0 1.5rem;
-            position: relative;
-            z-index: 3;
         }
         .hero-title {
-            font-size: 4.2rem;
+            font-size: 4rem;
             font-weight: 700;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
             color: #fff;
         }
         .gradient-text {
-            background: linear-gradient(135deg, #00aaff 0%, #4db8ff 80%);
+            background: linear-gradient(135deg, #00aaff, #4db8ff);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         .hero-subtitle {
-            font-size: 1.35rem;
+            font-size: 1.3rem;
             color: var(--text-dim);
             max-width: 750px;
-            margin: 0 auto 2.8rem;
-            line-height: 1.6;
+            margin: 0 auto 2.5rem;
         }
         .hero-cta {
             display: flex;
@@ -214,62 +173,50 @@
             padding: 1rem 2.5rem;
             font-weight: 600;
             border-radius: 60px;
-            font-size: 1.1rem;
-            transition: var(--transition);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            letter-spacing: -0.01em;
+            transition: all 0.3s;
         }
         .btn-primary {
             background: var(--accent);
             color: #fff;
-            box-shadow: 0 12px 25px -5px rgba(0, 170, 255, 0.35);
-            border: 1px solid rgba(255,255,255,0.15);
         }
         .btn-primary:hover {
             background: var(--accent-hover);
-            transform: translateY(-4px);
-            box-shadow: 0 22px 35px -8px rgba(0, 170, 255, 0.45);
+            transform: translateY(-3px);
         }
         .btn-outline {
             background: transparent;
             color: #fff;
-            border: 1.5px solid rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(8px);
+            border: 1.5px solid rgba(255,255,255,0.3);
         }
         .btn-outline:hover {
             border-color: var(--accent);
-            background: rgba(0, 170, 255, 0.08);
-            transform: translateY(-4px);
+            background: rgba(0,170,255,0.1);
+            transform: translateY(-3px);
         }
         .hero-scroll-indicator {
             position: absolute;
-            bottom: 2.5rem;
+            bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
             color: var(--text-dim);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
             opacity: 0.7;
-            z-index: 3;
-            animation: bounce 2.2s infinite;
+            animation: bounce 2s infinite;
         }
         @keyframes bounce {
             0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(12px); }
+            50% { transform: translateX(-50%) translateY(10px); }
         }
         
         /* Secciones */
         .section {
-            padding: 110px 0;
-            position: relative;
+            padding: 100px 0;
         }
         .container {
             width: 90%;
@@ -277,357 +224,249 @@
             margin: 0 auto;
         }
         .section-subtitle {
-            display: block;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            letter-spacing: 3px;
             color: var(--accent);
-            margin-bottom: 1.2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
             text-align: center;
+            margin-bottom: 1rem;
         }
         .section-title {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 1.8rem;
+            margin-bottom: 2rem;
             color: #fff;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
         }
         .accent { color: var(--accent); }
-        .section-paragraph {
-            font-size: 1.2rem;
-            color: var(--text-dim);
-            line-height: 1.7;
-        }
         
-        /* Grids */
+        /* Grids básicos */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4.5rem;
+            gap: 4rem;
             align-items: center;
-        }
-        .presentation-placeholder {
-            width: 100%;
-            aspect-ratio: 4/3;
-            background: linear-gradient(145deg, #111c26, #0a1018);
-            border-radius: 32px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-size: 4.5rem;
-        }
-        .glass-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 28px;
-            padding: 2.2rem;
-            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.4);
         }
         .stats-mini {
             display: flex;
             gap: 3rem;
-            margin-top: 3rem;
+            margin-top: 2.5rem;
         }
-        .stat-item { text-align: left; }
-        .stat-number {
-            font-size: 3rem;
+        .stat-item .stat-number {
+            font-size: 2.5rem;
             font-weight: 800;
             color: #fff;
-            line-height: 1;
-        }
-        .stat-item span:not(.stat-number) {
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-left: 5px;
         }
         .stat-item p {
             color: var(--text-dim);
-            margin-top: 0.6rem;
-            font-weight: 500;
-            font-size: 1rem;
         }
         
-        /* Servicios grid - VISIBILIDAD GARANTIZADA */
+        /* Servicios - TARJETAS SIMPLES Y VISIBLES (como equipo) */
         .servicios-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2.2rem;
-            margin-top: 3.5rem;
+            gap: 2rem;
+            margin-top: 2rem;
         }
         .servicio-card {
-            background: rgba(15, 24, 34, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 30px;
-            padding: 2.8rem 2rem;
-            transition: var(--transition);
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.35);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            color: var(--text-light);
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 2.5rem 1.8rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
         }
         .servicio-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(0, 170, 255, 0.35);
-            background: rgba(18, 30, 42, 0.95);
-            box-shadow: 0 30px 45px -12px rgba(0, 0, 0, 0.5);
+            transform: translateY(-8px);
+            border-color: var(--accent);
         }
         .card-icon {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--accent);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         .servicio-card h3 {
-            font-size: 1.9rem;
-            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
             color: #fff;
-            font-weight: 600;
-            letter-spacing: -0.01em;
         }
         .card-description {
             color: var(--text-dim);
-            margin-bottom: 2rem;
-            flex: 1;
-            font-size: 1rem;
-            line-height: 1.65;
+            margin-bottom: 1.5rem;
         }
         .card-link {
             color: var(--accent);
-            font-weight: 600;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: gap 0.2s;
-        }
-        .card-link:hover {
-            gap: 12px;
+            font-weight: 600;
         }
         .btn-link {
             color: var(--accent);
-            font-weight: 600;
             text-decoration: none;
-            font-size: 1.15rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: gap 0.2s;
-        }
-        .btn-link:hover {
-            gap: 14px;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
         
         /* Timeline */
         .timeline-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 3.5rem;
+            gap: 2rem;
         }
-        .timeline-item { text-align: center; }
+        .timeline-item {
+            text-align: center;
+        }
         .timeline-year {
-            font-size: 2.4rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--accent);
-            margin-bottom: 0.8rem;
         }
         .timeline-content {
             background: var(--bg-card);
-            padding: 2rem 1.8rem;
-            border-radius: 26px;
+            padding: 1.8rem;
+            border-radius: 24px;
             border: 1px solid var(--border-light);
             backdrop-filter: blur(10px);
-        }
-        .timeline-content h4 {
-            font-size: 1.5rem;
-            color: #fff;
-            margin-bottom: 0.6rem;
-        }
-        .timeline-content p {
-            color: var(--text-dim);
         }
         
         /* Stats */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            gap: 2rem;
         }
         .stat-large {
             text-align: center;
-            padding: 3rem 2rem;
-            background: rgba(15, 24, 34, 0.6);
-            backdrop-filter: blur(10px);
-            border-radius: 32px;
+            padding: 2.5rem;
+            background: var(--bg-card);
+            border-radius: 24px;
             border: 1px solid var(--border-light);
+            backdrop-filter: blur(10px);
         }
-        .stat-large .stat-number { font-size: 4.2rem; }
-        .stat-large p { font-size: 1.1rem; margin-top: 0.5rem; }
+        .stat-large .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #fff;
+        }
         
-        /* Testimonios - VISIBILIDAD GARANTIZADA */
+        /* Testimonios */
         .testimonial-track {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 2rem;
+            gap: 2rem;
         }
         .testimonial-card {
-            background: rgba(15, 24, 34, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 28px;
-            padding: 2.5rem 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 2rem;
             text-align: center;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.35);
-        }
-        .testimonial-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 170, 255, 0.3);
-            background: rgba(18, 30, 42, 0.95);
+            backdrop-filter: blur(10px);
         }
         .testimonial-avatar {
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            object-fit: cover;
             border: 3px solid var(--accent);
-            margin-bottom: 1.8rem;
-        }
-        .testimonial-card p {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            line-height: 1.6;
             margin-bottom: 1.5rem;
         }
-        .testimonial-card h5 {
-            color: var(--text-dim);
-            font-weight: 500;
-        }
         
-        /* Equipo */
+        /* Equipo (mismo estilo que servicios) */
         .equipo-grid-horizontal {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2.2rem;
+            gap: 2rem;
         }
         .miembro-card {
             background: var(--bg-card);
-            backdrop-filter: blur(10px);
             border: 1px solid var(--border-light);
-            border-radius: 28px;
-            padding: 2.5rem 1.8rem;
+            border-radius: 24px;
+            padding: 2rem 1.5rem;
             text-align: center;
-            transition: transform 0.25s;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
         }
         .miembro-card:hover {
             transform: translateY(-8px);
-            border-color: rgba(0, 170, 255, 0.2);
+            border-color: var(--accent);
         }
         .miembro-avatar {
-            width: 130px;
-            height: 130px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            object-fit: cover;
             border: 3px solid var(--accent);
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
         }
-        .miembro-card h4 { color: #fff; font-size: 1.4rem; margin-bottom: 0.5rem; }
-        .miembro-card p { color: var(--text-dim); margin-bottom: 1.2rem; }
+        .miembro-card h4 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .miembro-card p {
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+        }
         .social-links a {
             color: var(--text-dim);
             margin: 0 8px;
-            font-size: 1.2rem;
-            transition: color 0.2s;
         }
-        .social-links a:hover { color: var(--accent); }
         
         /* Certificaciones */
         .cert-grid-horizontal {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2.2rem 3.5rem;
-            margin-top: 1.5rem;
+            gap: 2rem;
         }
         .cert-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 60px;
+            padding: 0.8rem 2rem;
             display: flex;
             align-items: center;
-            gap: 14px;
-            background: rgba(255,255,255,0.02);
-            padding: 0.9rem 2.2rem;
-            border-radius: 60px;
-            border: 1px solid rgba(255,255,255,0.05);
+            gap: 10px;
             color: var(--text-dim);
-            font-weight: 500;
-            font-size: 1.05rem;
-            backdrop-filter: blur(5px);
         }
-        .cert-item i { color: var(--accent); font-size: 1.7rem; }
+        .cert-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
         
         /* Footer */
         .footer {
             background: #05080c;
-            padding: 4rem 0 1.8rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 3rem 0 1.5rem;
+            border-top: 1px solid var(--border-light);
         }
         .footer-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 2.5rem;
-            margin-bottom: 3rem;
+            gap: 2rem;
         }
-        .footer-brand p { color: var(--text-dim); margin-top: 1rem; }
-        .footer-links h5, .footer-social h5 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: #fff;
-            font-weight: 600;
+        .footer-links ul {
+            list-style: none;
         }
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 0.9rem; }
         .footer-links a {
             color: var(--text-dim);
             text-decoration: none;
-            transition: color 0.2s;
-        }
-        .footer-links a:hover { color: var(--accent); }
-        .social-icons {
-            display: flex;
-            gap: 1.3rem;
         }
         .social-icons a {
             color: var(--text-dim);
             font-size: 1.5rem;
-            transition: var(--transition);
-        }
-        .social-icons a:hover {
-            color: var(--accent);
-            transform: translateY(-3px);
+            margin-right: 1rem;
         }
         .footer-bottom {
             text-align: center;
-            padding-top: 2.2rem;
-            border-top: 1px solid rgba(255,255,255,0.04);
+            margin-top: 2rem;
             color: var(--text-dim);
-            font-size: 0.95rem;
         }
         
         /* Responsive */
         @media (max-width: 992px) {
-            .hero-title { font-size: 3.5rem; }
-            .servicios-grid { grid-template-columns: repeat(2, 1fr); }
-            .equipo-grid-horizontal { grid-template-columns: repeat(2, 1fr); }
-            .testimonial-track { grid-template-columns: 1fr; max-width: 550px; margin: 0 auto; }
-            .grid-2 { grid-template-columns: 1fr; gap: 3rem; }
-            .section-title { font-size: 2.6rem; }
+            .servicios-grid, .equipo-grid-horizontal { grid-template-columns: repeat(2, 1fr); }
+            .testimonial-track { grid-template-columns: 1fr; }
+            .grid-2 { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
             .nav-menu {
@@ -636,25 +475,19 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 75px);
-                background: rgba(8, 12, 18, 0.98);
-                backdrop-filter: blur(15px);
+                background: var(--bg-dark);
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                transition: left 0.35s;
-                gap: 2.5rem;
+                transition: left 0.3s;
+                gap: 2rem;
             }
             .nav-menu.active { left: 0; }
             .hamburger { display: block; }
+            .servicios-grid, .equipo-grid-horizontal, .timeline-grid, .stats-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
             .hero-title { font-size: 2.8rem; }
             .section-title { font-size: 2.2rem; }
-            .servicios-grid { grid-template-columns: 1fr; }
-            .timeline-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .equipo-grid-horizontal { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .social-icons { justify-content: center; }
-            .stats-mini { flex-direction: column; gap: 1.8rem; }
         }
     </style>
 </head>
@@ -675,18 +508,17 @@
                 <li><a href="metodologia.html">Metodología</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
-            <div class="hamburger" aria-label="Menú" role="button" tabindex="0"><i class="fas fa-bars"></i></div>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero -->
-        <section id="hero" class="hero">
+        <section class="hero">
             <div class="hero-content">
                 <h1 class="hero-title">Impulsamos la <span class="gradient-text">Transformación Digital</span> de tu Empresa</h1>
-                <p class="hero-subtitle">Más de 120 proyectos exitosos en Nicaragua y Centroamérica. Desarrollo web, software a medida, ciberseguridad y marketing digital con resultados medibles.</p>
+                <p class="hero-subtitle">Más de 120 proyectos exitosos en Nicaragua y Centroamérica.</p>
                 <div class="hero-cta">
-                    <a href="contacto.html" class="btn btn-primary">Solicitar evaluación gratuita <i class="fas fa-shield-alt"></i></a>
+                    <a href="contacto.html" class="btn btn-primary">Solicitar evaluación gratuita</a>
                     <a href="servicios.html" class="btn btn-outline">Conoce nuestros servicios</a>
                 </div>
             </div>
@@ -696,35 +528,28 @@
             </div>
         </section>
 
-        <!-- Presentación -->
-        <section id="presentacion" class="section">
+        <section class="section">
             <div class="container grid-2">
-                <div class="presentacion-texto">
+                <div>
                     <span class="section-subtitle">· ITSA Segurity ·</span>
                     <h2 class="section-title">Tecnología que <span class="accent">impulsa</span> tu negocio en Nicaragua</h2>
-                    <p class="section-paragraph">No solo escribimos código: diseñamos soluciones digitales a la medida de las empresas nicaragüenses. Combinamos desarrollo de vanguardia, creatividad y ciberseguridad para que tu negocio destaque en un mercado competitivo.</p>
+                    <p style="color: var(--text-dim); font-size: 1.2rem;">Diseñamos soluciones digitales a la medida de empresas nicaragüenses, combinando desarrollo, creatividad y ciberseguridad.</p>
                     <div class="stats-mini">
-                        <div class="stat-item"><span class="stat-number">8</span><span>+</span><p>Años de experiencia</p></div>
-                        <div class="stat-item"><span class="stat-number">120</span><span>+</span><p>Proyectos exitosos</p></div>
-                        <div class="stat-item"><span class="stat-number">15</span><span>+</span><p>Especialistas</p></div>
+                        <div class="stat-item"><span class="stat-number">8+</span><p>Años de experiencia</p></div>
+                        <div class="stat-item"><span class="stat-number">120+</span><p>Proyectos exitosos</p></div>
+                        <div class="stat-item"><span class="stat-number">15+</span><p>Especialistas</p></div>
                     </div>
                 </div>
-                <div class="presentacion-visual">
-                    <div class="presentation-placeholder">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <div class="glass-card" style="margin-top: 1.8rem; display: flex; justify-content: space-around;">
-                        <i class="fas fa-code"></i>
-                        <i class="fas fa-shield-alt"></i>
-                        <i class="fas fa-chart-line"></i>
-                        <i class="fas fa-cloud"></i>
+                <div style="text-align: center;">
+                    <div style="background: linear-gradient(145deg, #111c26, #0a1018); border-radius: 30px; padding: 4rem; border: 1px solid var(--border-light);">
+                        <i class="fas fa-microchip" style="font-size: 5rem; color: var(--accent);"></i>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Servicios (SECCIÓN CORREGIDA) -->
-        <section id="servicios" class="section" style="background: #070b0f;">
+        <!-- Servicios - SECCIÓN CLAVE: TARJETAS SIMPLES -->
+        <section class="section" style="background: #070b0f;">
             <div class="container">
                 <span class="section-subtitle">· Lo que hacemos ·</span>
                 <h2 class="section-title">Soluciones digitales <span class="accent">para empresas nicaragüenses</span></h2>
@@ -732,136 +557,89 @@
                     <div class="servicio-card">
                         <i class="fas fa-laptop-code card-icon"></i>
                         <h3>Desarrollo Web</h3>
-                        <p class="card-description">Sitios web y aplicaciones con enfoque en resultados: más clientes, mejor posicionamiento y experiencia de usuario.</p>
-                        <a href="servicios.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                        <p class="card-description">Sitios web y aplicaciones con enfoque en resultados.</p>
+                        <a href="servicios.html" class="card-link">Conocer más →</a>
                     </div>
                     <div class="servicio-card">
                         <i class="fas fa-cogs card-icon"></i>
                         <h3>Software a medida</h3>
-                        <p class="card-description">Automatiza procesos, integra sistemas y escala tu negocio con soluciones de software diseñadas específicamente para ti.</p>
-                        <a href="servicios.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                        <p class="card-description">Automatiza procesos y escala tu negocio.</p>
+                        <a href="servicios.html" class="card-link">Conocer más →</a>
                     </div>
                     <div class="servicio-card">
                         <i class="fas fa-shield-haltered card-icon"></i>
                         <h3>Ciberseguridad</h3>
-                        <p class="card-description">Protege tus datos y los de tus clientes. Auditorías, pentesting y monitorización 24/7 para empresas en Nicaragua.</p>
-                        <a href="servicios.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                        <p class="card-description">Protege tus datos con auditorías y pentesting.</p>
+                        <a href="servicios.html" class="card-link">Conocer más →</a>
                     </div>
                     <div class="servicio-card">
                         <i class="fas fa-bullseye card-icon"></i>
                         <h3>Marketing Digital</h3>
-                        <p class="card-description">Atrae más clientes con estrategias SEO, SEM, redes sociales y automatización, adaptadas al mercado nicaragüense.</p>
-                        <a href="servicios.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+                        <p class="card-description">Atrae más clientes con SEO y redes sociales.</p>
+                        <a href="servicios.html" class="card-link">Conocer más →</a>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 4rem;">
-                    <a href="servicios.html" class="btn-link">Ver todos los servicios <i class="fas fa-long-arrow-alt-right"></i></a>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="servicios.html" class="btn-link">Ver todos los servicios →</a>
                 </div>
             </div>
         </section>
 
-        <!-- Experiencia -->
-        <section id="experiencia" class="section">
+        <section class="section">
             <div class="container">
                 <span class="section-subtitle">· Trayectoria ·</span>
                 <h2 class="section-title">Evolución <span class="accent">constante</span> desde Managua</h2>
                 <div class="timeline-grid">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2020</div>
-                        <div class="timeline-content"><h4>Fundación de ITSA</h4><p>Nacemos con la misión de fusionar tecnología y estrategia para empresas nicaragüenses.</p></div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2022</div>
-                        <div class="timeline-content"><h4>Certificación en ciberseguridad</h4><p>Obtenemos alianzas estratégicas y certificaciones internacionales.</p></div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2026</div>
-                        <div class="timeline-content"><h4>Más de 120 proyectos</h4><p>Empresas de toda Nicaragua y la región confían en nuestra experiencia.</p></div>
-                    </div>
+                    <div class="timeline-item"><div class="timeline-year">2020</div><div class="timeline-content"><h4>Fundación</h4><p>Nacemos en Nicaragua.</p></div></div>
+                    <div class="timeline-item"><div class="timeline-year">2022</div><div class="timeline-content"><h4>Certificación</h4><p>Alianzas internacionales.</p></div></div>
+                    <div class="timeline-item"><div class="timeline-year">2026</div><div class="timeline-content"><h4>+120 proyectos</h4><p>Líderes en innovación.</p></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- Estadísticas -->
-        <section id="estadisticas" class="section" style="background: #070b0f;">
+        <section class="section" style="background: #070b0f;">
             <div class="container">
                 <div class="stats-grid">
-                    <div class="stat-large"><span class="stat-number">98</span><span>%</span><p>Satisfacción del cliente</p></div>
-                    <div class="stat-large"><span class="stat-number">24</span><span>/7</span><p>Soporte continuo</p></div>
-                    <div class="stat-large"><span class="stat-number">15</span><span>+</span><p>Premios e innovación</p></div>
+                    <div class="stat-large"><span class="stat-number">98%</span><p>Satisfacción</p></div>
+                    <div class="stat-large"><span class="stat-number">24/7</span><p>Soporte</p></div>
+                    <div class="stat-large"><span class="stat-number">15+</span><p>Premios</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonios (SECCIÓN CORREGIDA) -->
-        <section id="testimonios" class="section">
+        <section class="section">
             <div class="container">
                 <span class="section-subtitle">· Clientes ·</span>
                 <h2 class="section-title">Lo que dicen de <span class="accent">nosotros</span></h2>
                 <div class="testimonial-track">
-                    <div class="testimonial-card">
-                        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Laura Méndez" class="testimonial-avatar">
-                        <p>"ITSA transformó nuestra presencia digital. El enfoque estratégico marcó la diferencia."</p>
-                        <h5>— Laura Méndez, CMO de InnovaCorp</h5>
-                    </div>
-                    <div class="testimonial-card">
-                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Carlos Rivas" class="testimonial-avatar">
-                        <p>"Su equipo de ciberseguridad evitó vulnerabilidades críticas. Altamente recomendados."</p>
-                        <h5>— Carlos Rivas, CTO de FintechPro</h5>
-                    </div>
-                    <div class="testimonial-card">
-                        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Ana Soto" class="testimonial-avatar">
-                        <p>"El desarrollo de software fue impecable, con entregas ágiles y calidad superior."</p>
-                        <h5>— Ana Soto, Directora de Operaciones</h5>
-                    </div>
+                    <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/women/1.jpg" class="testimonial-avatar"><p>"ITSA transformó nuestra presencia digital."</p><h5>— Laura Méndez</h5></div>
+                    <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/men/1.jpg" class="testimonial-avatar"><p>"Su equipo de ciberseguridad es excelente."</p><h5>— Carlos Rivas</h5></div>
+                    <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/women/2.jpg" class="testimonial-avatar"><p>"Desarrollo de software impecable."</p><h5>— Ana Soto</h5></div>
                 </div>
             </div>
         </section>
 
-        <!-- Equipo -->
-        <section class="section equipo" style="background: #070b0f;">
+        <section class="section" style="background: #070b0f;">
             <div class="container">
                 <span class="section-subtitle">· Expertos ·</span>
                 <h2 class="section-title">Conoce a nuestro <span class="accent">equipo directivo</span></h2>
                 <div class="equipo-grid-horizontal">
-                    <div class="miembro-card">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mario Álvarez" class="miembro-avatar">
-                        <h4>Mario Álvarez</h4>
-                        <p>Director en Ciberseguridad y Hacking Ético</p>
-                        <div class="social-links"><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a></div>
-                    </div>
-                    <div class="miembro-card">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Brais Moure" class="miembro-avatar">
-                        <h4>Brais Moure</h4>
-                        <p>Director de desarrollo de software</p>
-                        <div class="social-links"><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a></div>
-                    </div>
-                    <div class="miembro-card">
-                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Jon Hernández" class="miembro-avatar">
-                        <h4>Jon Hernández</h4>
-                        <p>Director de desarrollo Web</p>
-                        <div class="social-links"><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a></div>
-                    </div>
-                    <div class="miembro-card">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Paula Gonzalez" class="miembro-avatar">
-                        <h4>Paula Gonzalez</h4>
-                        <p>Growth Marketing Manager</p>
-                        <div class="social-links"><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></div>
-                    </div>
+                    <div class="miembro-card"><img src="https://randomuser.me/api/portraits/men/32.jpg" class="miembro-avatar"><h4>Mario Álvarez</h4><p>Director de Ciberseguridad</p></div>
+                    <div class="miembro-card"><img src="https://randomuser.me/api/portraits/men/45.jpg" class="miembro-avatar"><h4>Brais Moure</h4><p>Director de Software</p></div>
+                    <div class="miembro-card"><img src="https://randomuser.me/api/portraits/men/22.jpg" class="miembro-avatar"><h4>Jon Hernández</h4><p>Director Web</p></div>
+                    <div class="miembro-card"><img src="https://randomuser.me/api/portraits/women/44.jpg" class="miembro-avatar"><h4>Paula Gonzalez</h4><p>Growth Manager</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- Certificaciones -->
-        <section class="section certificaciones">
+        <section class="section">
             <div class="container">
-                <h2 class="section-title">Certificaciones y <span class="accent">alianzas estratégicas</span></h2>
+                <h2 class="section-title">Certificaciones y <span class="accent">alianzas</span></h2>
                 <div class="cert-grid-horizontal">
-                    <div class="cert-item"><i class="fas fa-certificate"></i><span>ISO 27001</span></div>
-                    <div class="cert-item"><i class="fas fa-shield-alt"></i><span>CEH</span></div>
-                    <div class="cert-item"><i class="fab fa-aws"></i><span>AWS Partner</span></div>
-                    <div class="cert-item"><i class="fab fa-microsoft"></i><span>Microsoft Partner</span></div>
-                    <div class="cert-item"><i class="fas fa-lock"></i><span>PCI DSS</span></div>
+                    <div class="cert-item"><i class="fas fa-certificate"></i> ISO 27001</div>
+                    <div class="cert-item"><i class="fas fa-shield-alt"></i> CEH</div>
+                    <div class="cert-item"><i class="fab fa-aws"></i> AWS Partner</div>
+                    <div class="cert-item"><i class="fab fa-microsoft"></i> Microsoft Partner</div>
                 </div>
             </div>
         </section>
@@ -870,33 +648,12 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
-                    <p>Innovación digital con propósito.</p>
-                </div>
-                <div class="footer-links">
-                    <h5>Empresa</h5>
-                    <ul>
-                        <li><a href="metodologia.html">Metodología</a></li>
-                        <li><a href="tecnologia.html">Tecnología</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="privacidad.html">Política de privacidad</a></li>
-                        <li><a href="aviso-legal.html">Aviso legal</a></li>
-                        <li><a href="terminos.html">Términos y condiciones</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h5>Redes</h5>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/it_segurity" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@it._segurity" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://wa.me/50589871374" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
+                <div><a href="index.html" class="logo">ITSA <span>Segurity</span></a><p>Innovación digital con propósito.</p></div>
+                <div class="footer-links"><h5>Empresa</h5><ul><li><a href="metodologia.html">Metodología</a></li><li><a href="tecnologia.html">Tecnología</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+                <div><h5>Redes</h5><div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div></div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados. | AWS Partner · Microsoft Partner · ISO 27001</p>
+                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -905,58 +662,14 @@
         window.addEventListener('load', () => {
             document.getElementById('preloader').classList.add('hidden');
         });
-        
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        if (hamburger) {
-            hamburger.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-        }
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
     </script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
-        
-        window.addEventListener('load', () => {
-            const tl = gsap.timeline();
-            tl.from('.hero-title', { opacity: 0, y: 80, duration: 1.2, ease: 'power3.out' })
-              .from('.hero-subtitle', { opacity: 0, y: 30, duration: 0.9 }, '-=0.7')
-              .from('.hero-cta .btn', { opacity: 0, scale: 0.85, stagger: 0.2, duration: 0.8 }, '-=0.5')
-              .from('.hero-scroll-indicator', { opacity: 0, y: -20, duration: 0.6 }, '-=0.3');
-        });
-        
-        gsap.utils.toArray('.section').forEach(section => {
-            gsap.from(section, {
-                scrollTrigger: { trigger: section, start: 'top 80%', toggleActions: 'play none none reverse' },
-                opacity: 0, y: 50, duration: 1, ease: 'power2.out'
-            });
-        });
-        
-        gsap.from('.servicio-card', {
-            scrollTrigger: { trigger: '#servicios', start: 'top 70%' },
-            opacity: 0, y: 60, stagger: 0.15, duration: 0.9, ease: 'power3.out'
-        });
-        
-        gsap.from('.timeline-item', {
-            scrollTrigger: { trigger: '#experiencia', start: 'top 70%' },
-            opacity: 0, x: -40, stagger: 0.2, duration: 0.8, ease: 'power2.out'
-        });
-        
-        gsap.from('.miembro-card', {
-            scrollTrigger: { trigger: '.equipo', start: 'top 75%' },
-            opacity: 0, y: 40, stagger: 0.1, duration: 0.6, ease: 'power2.out'
-        });
-        
-        gsap.from('.cert-item', {
-            scrollTrigger: { trigger: '.certificaciones', start: 'top 85%' },
-            opacity: 0, scale: 0.8, stagger: 0.1, duration: 0.5, ease: 'back.out(1.2)'
-        });
-        
-        // También animar testimonios
-        gsap.from('.testimonial-card', {
-            scrollTrigger: { trigger: '#testimonios', start: 'top 75%' },
-            opacity: 0, y: 40, stagger: 0.15, duration: 0.7, ease: 'power2.out'
-        });
+        gsap.from('.hero-title', { opacity: 0, y: 80, duration: 1.2 });
+        gsap.from('.servicio-card', { scrollTrigger: '#servicios', opacity: 0, y: 50, stagger: 0.1 });
     </script>
 </body>
 </html>
