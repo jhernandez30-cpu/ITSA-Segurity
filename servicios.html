@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- CSS modulares (mantenemos los existentes, pero nuestros estilos prevalecerán) -->
+    <!-- CSS modulares (se mantienen, pero nuestros estilos prevalecen) -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/projects.css">
@@ -23,9 +23,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
     <style>
-        /* ===== ESTILOS PROFESIONALES STARTUP (FORZADOS PARA VISUALIZACIÓN CORRECTA) ===== */
+        /* ===== ESTILOS STARTUP PROFESIONALES (FORZADOS PARA VISUALIZACIÓN CORRECTA) ===== */
         
-        /* Hero corporativo (sin partículas) */
+        /* Hero corporativo */
         .servicios-hero {
             min-height: 60vh;
             background: radial-gradient(circle at 20% 30%, #0f1a2b 0%, #05080f 100%);
@@ -120,7 +120,7 @@
             flex-direction: column !important;
             height: 100% !important;
             border-bottom: 3px solid transparent !important;
-            text-align: left !important; /* Alineación de contenido */
+            text-align: left !important;
         }
         
         .servicio-card::before {
@@ -202,7 +202,7 @@
             color: #33bbff !important;
         }
         
-        /* Sección "Cómo trabajamos" (Metodología) - FORZADA para visualización startup */
+        /* Sección "Cómo trabajamos" (Metodología probada) */
         .metodologia-section {
             background: rgba(0, 0, 0, 0.25) !important;
             border-top: 1px solid rgba(255,255,255,0.03) !important;
@@ -241,13 +241,13 @@
         .metodologia-number {
             font-size: 4rem !important;
             font-weight: 800 !important;
-            color: rgba(255, 255, 255, 0.04) !important;
+            color: rgba(255, 255, 255, 0.06) !important; /* Más visible */
             position: absolute !important;
             top: 0.2rem !important;
             right: 1rem !important;
             line-height: 1 !important;
             z-index: 0 !important;
-            opacity: 1 !important; /* Anula opacidad baja de projects.css */
+            opacity: 1 !important;
         }
         
         .metodologia-item h4 {
@@ -577,8 +577,8 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DE SERVICIOS -->
-        <section class="servicios-grid-section section">
+        <!-- SECCIÓN DE SERVICIOS (AHORA CON id="servicios" PARA GSAP) -->
+        <section id="servicios" class="servicios-grid-section section">
             <div class="container">
                 <h2 class="section-title">Servicios <span class="accent">empresariales</span> de alto impacto</h2>
                 <p class="section-subtitle">Combinamos tecnología de vanguardia con experiencia sectorial para ofrecer soluciones personalizadas que aceleran el crecimiento de su organización.</p>
@@ -762,12 +762,13 @@
 
     <!-- SCRIPTS -->
     <script src="js/script.js"></script>
-    <script src="js/animation.js"></script>
+    <!-- Reemplazado animation.js por la versión específica para servicios -->
+    <script src="js/animation-servicios.js"></script>
     
-    <!-- Animaciones GSAP suaves -->
+    <!-- Animaciones GSAP adicionales inline (no interfieren) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Animación para tarjetas de servicio
+            // Animación para tarjetas de servicio (respaldo)
             gsap.utils.toArray('.servicio-card').forEach((card, i) => {
                 gsap.from(card, {
                     scrollTrigger: {
@@ -783,7 +784,7 @@
                 });
             });
             
-            // Animación para items de metodología
+            // Animación para items de metodología (respaldo)
             gsap.utils.toArray('.metodologia-item').forEach((item, i) => {
                 gsap.from(item, {
                     scrollTrigger: {
