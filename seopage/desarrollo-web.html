@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* ===== ESTILOS BASE PROFESIONALES (Mismos que index corregido) ===== */
+        /* ===== ESTILOS BASE PROFESIONALES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -98,7 +98,7 @@
             border: none;
         }
         
-        /* Hero limpio (sin canvas) */
+        /* Hero limpio */
         .hero {
             min-height: 80vh;
             display: flex;
@@ -435,13 +435,14 @@
 <body>
     <header class="header">
         <nav class="navbar">
-            <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+            <!-- CORREGIDO: ruta hacia index en la raíz -->
+            <a href="../index.html" class="logo">ITSA <span>Segurity</span></a>
             <ul class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="tecnologia.html">Tecnología</a></li>
-                <li><a href="metodologia.html">Metodología</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../servicios.html">Servicios</a></li>
+                <li><a href="../tecnologia.html">Tecnología</a></li>
+                <li><a href="../metodologia.html">Metodología</a></li>
+                <li><a href="../contacto.html">Contacto</a></li>
             </ul>
             <button class="hamburger" aria-label="Menú">
                 <i class="fas fa-bars"></i>
@@ -592,7 +593,7 @@
             </div>
         </section>
 
-        <!-- Testimonios (Estáticos, sin carrusel) -->
+        <!-- Testimonios -->
         <section class="section" style="background: #070b0f;">
             <div class="container">
                 <span class="section-subtitle">· Confianza ·</span>
@@ -676,18 +677,18 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
+                    <a href="../index.html" class="logo">ITSA <span>Segurity</span></a>
                     <p style="margin-top: 1rem; color: var(--text-dim);">Innovación digital con propósito. Transformamos ideas en soluciones tecnológicas seguras.</p>
                 </div>
                 <div class="footer-links">
                     <h5 style="color:#fff; margin-bottom:1.5rem;">Empresa</h5>
                     <ul>
-                        <li style="margin-bottom:0.8rem;"><a href="metodologia.html">Metodología</a></li>
-                        <li style="margin-bottom:0.8rem;"><a href="tecnologia.html">Tecnología</a></li>
-                        <li style="margin-bottom:0.8rem;"><a href="contacto.html">Contacto</a></li>
-                        <li style="margin-bottom:0.8rem;"><a href="privacidad.html">Política de privacidad</a></li>
-                        <li style="margin-bottom:0.8rem;"><a href="aviso-legal.html">Aviso legal</a></li>
-                        <li style="margin-bottom:0.8rem;"><a href="terminos.html">Términos</a></li>
+                        <li style="margin-bottom:0.8rem;"><a href="../metodologia.html">Metodología</a></li>
+                        <li style="margin-bottom:0.8rem;"><a href="../tecnologia.html">Tecnología</a></li>
+                        <li style="margin-bottom:0.8rem;"><a href="../contacto.html">Contacto</a></li>
+                        <li style="margin-bottom:0.8rem;"><a href="../privacidad.html">Política de privacidad</a></li>
+                        <li style="margin-bottom:0.8rem;"><a href="../aviso-legal.html">Aviso legal</a></li>
+                        <li style="margin-bottom:0.8rem;"><a href="../terminos.html">Términos</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
@@ -731,7 +732,7 @@
                 });
             });
             
-            // Manejo básico del formulario (evita recarga para demo)
+            // Manejo básico del formulario
             const form = document.getElementById('contactForm');
             if (form) {
                 form.addEventListener('submit', (e) => {
