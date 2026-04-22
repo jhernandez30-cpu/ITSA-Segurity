@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios · ITSA Segurity</title>
-    <meta name="description" content="Servicios de desarrollo web, software a medida, ciberseguridad, marketing digital, IA y consultoría en Managua, Nicaragua. Soluciones digitales para empresas con resultados medibles.">
-    <meta name="keywords" content="servicios digitales Nicaragua, desarrollo web Managua, software a medida, ciberseguridad Nicaragua, marketing digital, IA, consultoría tecnológica">
+    <meta name="description" content="Servicios de desarrollo web, software a medida, ciberseguridad, marketing digital, IA y consultoría en Managua, Nicaragua.">
+    <meta name="keywords" content="servicios digitales Nicaragua, desarrollo web Managua, software a medida, ciberseguridad Nicaragua">
     
     <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,19 +13,200 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- CSS modulares (se mantienen, pero nuestros estilos prevalecen) -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/projects.css">
-    <link rel="stylesheet" href="css/skills.css">
-    <!-- GSAP y ScrollTrigger -->
+    
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
     <style>
-        /* ===== ESTILOS STARTUP PROFESIONALES (FORZADOS PARA VISUALIZACIÓN CORRECTA) ===== */
-        
-        /* Hero corporativo */
+        /* =============================================
+           RESET Y ESTILOS BASE (INDEPENDIENTES)
+           ============================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0c10;
+            color: #f0f0f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* Header glass (independiente) */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #f0f0f0;
+        }
+
+        .logo span {
+            color: #00aaff;
+            font-weight: 800;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #b0b0b0;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #00aaff;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer {
+            background: #050608;
+            padding: 4rem 0 1rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: #b0b0b0;
+            margin-top: 1rem;
+        }
+
+        .footer-links h5, .footer-social h5 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #00aaff;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .social-icons a {
+            color: #b0b0b0;
+            font-size: 1.4rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #00aaff;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0b0c10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease, visibility 1s;
+        }
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .loader span {
+            width: 15px;
+            height: 15px;
+            background: #00aaff;
+            border-radius: 50%;
+            animation: pulse 1.2s infinite;
+        }
+        .loader span:nth-child(2) { animation-delay: 0.2s; }
+        .loader span:nth-child(3) { animation-delay: 0.4s; }
+        .loader span:nth-child(4) { animation-delay: 0.6s; }
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.5); opacity: 0.3; }
+            50% { transform: scale(1); opacity: 1; }
+        }
+
+        /* ===== ESTILOS DE LA PÁGINA DE SERVICIOS (FORZADOS) ===== */
+        .accent {
+            color: #00aaff !important;
+        }
+
+        /* Hero */
         .servicios-hero {
             min-height: 60vh;
             background: radial-gradient(circle at 20% 30%, #0f1a2b 0%, #05080f 100%);
@@ -34,157 +215,109 @@
             align-items: center;
             border-bottom: 1px solid rgba(0, 170, 255, 0.15);
             padding: 0;
+            margin-top: 80px; /* Compensa header fijo */
         }
-        
-        .servicios-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><path d="M0 400 Q 200 300 400 400 T 800 400 T 1200 400 L 1200 800 L 0 800 Z" fill="rgba(0,170,255,0.02)"/></svg>') no-repeat bottom;
-            background-size: cover;
-            opacity: 0.5;
-            pointer-events: none;
-        }
-        
+
         .servicios-hero .hero-content {
             max-width: 950px;
             margin: 0 auto;
             text-align: center;
             position: relative;
             z-index: 2;
+            padding: 2rem 0;
         }
-        
+
         .servicios-title {
             font-size: 4rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
             line-height: 1.2;
             color: #fff;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        
+
         .servicios-subtitle {
             font-size: 1.3rem;
             color: #b0c7e0;
-            font-weight: 400;
             max-width: 750px;
             margin: 0 auto;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
-        
-        /* Secciones generales */
+
+        /* Secciones */
         .section {
             padding: 100px 0;
         }
-        
+
         .section-title {
             font-size: 2.8rem;
             font-weight: 700;
             text-align: center;
             margin-bottom: 1rem;
-            letter-spacing: -0.01em;
             color: #fff !important;
         }
-        
+
         .section-subtitle {
             text-align: center;
             max-width: 750px;
             margin: 0 auto 3.5rem;
             color: #a0b5cc !important;
             font-size: 1.15rem;
-            line-height: 1.6;
         }
-        
-        /* Grid de servicios mejorado */
+
+        /* Servicios grid */
         .servicios-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
         }
-        
+
         .servicio-card {
             background: rgba(18, 28, 40, 0.7) !important;
             backdrop-filter: blur(12px) !important;
             border: 1px solid rgba(255, 255, 255, 0.06) !important;
             border-radius: 32px !important;
             padding: 2.8rem 2rem !important;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+            transition: all 0.4s !important;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
-            position: relative !important;
-            overflow: hidden !important;
             display: flex !important;
             flex-direction: column !important;
             height: 100% !important;
             border-bottom: 3px solid transparent !important;
-            text-align: left !important;
         }
-        
-        .servicio-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #00aaff, #0066cc);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-        
+
         .servicio-card:hover {
             transform: translateY(-12px) !important;
             border-color: rgba(0, 170, 255, 0.3) !important;
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5) !important;
             background: rgba(20, 32, 48, 0.85) !important;
             border-bottom-color: #00aaff !important;
         }
-        
-        .servicio-card:hover::before {
-            opacity: 1;
-        }
-        
+
         .card-icon {
             font-size: 2.8rem;
             color: #00aaff !important;
             margin-bottom: 2rem !important;
             background: rgba(0, 170, 255, 0.08) !important;
-            width: 75px !important;
-            height: 75px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            border-radius: 20px !important;
-            transition: all 0.3s !important;
-            border: 1px solid rgba(0,170,255,0.15) !important;
+            width: 75px;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            border: 1px solid rgba(0,170,255,0.15);
         }
-        
-        .servicio-card:hover .card-icon {
-            background: #00aaff !important;
-            color: #fff !important;
-            transform: scale(1.05) rotate(2deg) !important;
-            box-shadow: 0 0 25px rgba(0,170,255,0.5) !important;
-        }
-        
+
         .servicio-card h3 {
             font-size: 1.9rem;
             margin-bottom: 1.2rem;
             color: #fff !important;
-            font-weight: 600;
-            letter-spacing: -0.01em;
         }
-        
+
         .card-description {
             color: #b0c2d9 !important;
-            line-height: 1.7 !important;
-            margin-bottom: 2rem !important;
-            flex-grow: 1 !important;
-            font-size: 1rem !important;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            flex-grow: 1;
         }
-        
+
         .card-link {
             color: #00aaff !important;
             text-decoration: none;
@@ -192,31 +325,21 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: gap 0.3s;
             margin-top: auto;
-            font-size: 1.05rem;
         }
-        
-        .card-link:hover {
-            gap: 14px;
-            color: #33bbff !important;
-        }
-        
-        /* Sección "Cómo trabajamos" (Metodología probada) */
+
+        /* Metodología */
         .metodologia-section {
             background: rgba(0, 0, 0, 0.25) !important;
-            border-top: 1px solid rgba(255,255,255,0.03) !important;
-            border-bottom: 1px solid rgba(255,255,255,0.03) !important;
-            padding: 100px 0 !important;
         }
-        
+
         .metodologia-grid {
             display: grid !important;
             grid-template-columns: repeat(4, 1fr) !important;
             gap: 2rem !important;
             margin-top: 2rem !important;
         }
-        
+
         .metodologia-item {
             background: rgba(20, 30, 45, 0.5) !important;
             border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -224,91 +347,65 @@
             padding: 2.2rem 1.8rem !important;
             text-align: center !important;
             backdrop-filter: blur(8px) !important;
-            transition: all 0.3s !important;
             position: relative !important;
             overflow: hidden !important;
             box-shadow: 0 15px 25px rgba(0,0,0,0.2) !important;
-            border-left: none !important; /* Anula regla de projects.css */
+            border-left: none !important;
         }
-        
-        .metodologia-item:hover {
-            background: rgba(0, 170, 255, 0.08) !important;
-            border-color: rgba(0, 170, 255, 0.3) !important;
-            transform: translateY(-6px) !important;
-            box-shadow: 0 25px 35px rgba(0,0,0,0.3) !important;
-        }
-        
+
         .metodologia-number {
             font-size: 4rem !important;
             font-weight: 800 !important;
-            color: rgba(255, 255, 255, 0.06) !important; /* Más visible */
+            color: rgba(255, 255, 255, 0.06) !important;
             position: absolute !important;
             top: 0.2rem !important;
             right: 1rem !important;
-            line-height: 1 !important;
-            z-index: 0 !important;
-            opacity: 1 !important;
+            z-index: 0;
         }
-        
+
         .metodologia-item h4 {
             font-size: 1.7rem !important;
             color: #fff !important;
-            margin-bottom: 1rem !important;
-            font-weight: 600 !important;
-            position: relative !important;
-            z-index: 1 !important;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
         }
-        
+
         .metodologia-item p {
             color: #b0c2d9 !important;
-            font-size: 0.98rem !important;
-            line-height: 1.6 !important;
-            position: relative !important;
-            z-index: 1 !important;
+            position: relative;
+            z-index: 1;
         }
-        
-        /* Sección de tecnologías */
+
+        /* Tecnologías */
         .tecnologias-section {
             background: #080c14 !important;
         }
-        
+
         .tech-cloud {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 1rem;
-            max-width: 950px;
-            margin: 0 auto;
         }
-        
+
         .tech-item {
             background: rgba(0, 170, 255, 0.06) !important;
             border: 1px solid rgba(0, 170, 255, 0.2) !important;
             color: #e0e9f5 !important;
             padding: 0.9rem 1.8rem !important;
             border-radius: 50px !important;
-            font-size: 1rem !important;
-            font-weight: 500 !important;
-            transition: all 0.25s !important;
-            backdrop-filter: blur(4px) !important;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
         }
-        
-        .tech-item:hover {
-            background: #00aaff !important;
-            color: #fff !important;
-            border-color: #00aaff !important;
-            transform: translateY(-3px) !important;
-            box-shadow: 0 10px 20px rgba(0,170,255,0.3) !important;
-        }
-        
-        /* Estadísticas mejoradas */
+
+        /* Estadísticas */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
         }
-        
+
         .stat-large {
             text-align: center !important;
             padding: 2.5rem 1.5rem !important;
@@ -316,141 +413,70 @@
             border-radius: 24px !important;
             backdrop-filter: blur(8px) !important;
             border: 1px solid rgba(255,255,255,0.05) !important;
-            transition: transform 0.3s !important;
         }
-        
-        .stat-large:hover {
-            transform: scale(1.02);
-            background: rgba(0, 170, 255, 0.05) !important;
-        }
-        
+
         .stat-number {
             font-size: 4.5rem;
             font-weight: 800;
             color: #00aaff !important;
-            line-height: 1;
-            display: inline-block;
         }
-        
-        .stat-large span:not(.stat-number) {
-            font-size: 1.8rem;
-            color: #a0b5cc !important;
-            margin-left: 5px;
-            font-weight: 500;
-        }
-        
-        .stat-large p {
-            color: #c0d0e5 !important;
-            margin-top: 0.8rem;
-            font-size: 1.15rem;
-            font-weight: 500;
-        }
-        
-        .stat-large i {
-            font-size: 2.2rem;
-            color: #00aaff !important;
-            margin-bottom: 1rem;
-            opacity: 0.8;
-        }
-        
-        /* Sección de clientes/confianza */
+
+        /* Trust section */
         .trust-section {
             background: rgba(0, 0, 0, 0.2);
-            border-top: 1px solid rgba(255,255,255,0.03);
-            border-bottom: 1px solid rgba(255,255,255,0.03);
             padding: 70px 0;
         }
-        
+
         .trust-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
             gap: 3rem 4rem;
         }
-        
+
         .trust-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            opacity: 0.7;
-            transition: opacity 0.3s;
+            opacity: 0.8;
         }
-        
-        .trust-item:hover {
-            opacity: 1;
-        }
-        
+
         .trust-item i {
             font-size: 2.8rem;
             color: #b0c7e0;
             margin-bottom: 0.5rem;
         }
-        
-        .trust-item span {
-            color: #a0b5cc;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-        
+
         .badge-container {
             display: flex;
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
-            margin: 2rem 0 0;
+            margin-top: 2rem;
         }
-        
+
         .badge {
             background: rgba(0, 170, 255, 0.08);
             border: 1px solid rgba(0, 170, 255, 0.25);
             padding: 0.8rem 2rem;
             border-radius: 40px;
             color: #e0e9f5;
-            font-weight: 500;
             backdrop-filter: blur(4px);
         }
-        
-        .badge i {
-            margin-right: 8px;
-            color: #00aaff;
-        }
-        
-        /* CTA final */
+
+        /* CTA */
         .cta-section {
             background: linear-gradient(145deg, #020408 0%, #0e1a28 100%);
             text-align: center;
             padding: 110px 0;
-            border-top: 1px solid rgba(0, 170, 255, 0.15);
-            position: relative;
-            overflow: hidden;
         }
-        
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #00aaff, transparent);
-        }
-        
+
         .cta-content h2 {
             font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
             color: #fff;
         }
-        
-        .cta-content p {
-            font-size: 1.25rem;
-            color: #b0c7e0;
-            max-width: 700px;
-            margin: 0 auto 2.8rem;
-        }
-        
+
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -462,61 +488,33 @@
             color: #fff;
             border-radius: 60px;
             text-decoration: none;
-            transition: all 0.3s;
             box-shadow: 0 15px 30px rgba(0, 170, 255, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            letter-spacing: 0.3px;
         }
-        
-        .btn-primary:hover {
-            background: #0099dd;
-            transform: translateY(-4px);
-            box-shadow: 0 25px 45px rgba(0, 170, 255, 0.4);
-        }
-        
-        /* Eliminar partículas */
-        #particles-js-servicios {
-            display: none;
-        }
-        
+
         /* Responsive */
         @media (max-width: 992px) {
-            .servicios-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .metodologia-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-            }
-            .servicios-title {
-                font-size: 3.2rem;
-            }
-            .section-title {
-                font-size: 2.5rem;
-            }
+            .servicios-grid { grid-template-columns: repeat(2, 1fr); }
+            .metodologia-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
-        
         @media (max-width: 768px) {
-            .servicios-grid {
-                grid-template-columns: 1fr;
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: #0b0c10;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s;
             }
-            .metodologia-grid {
-                grid-template-columns: 1fr !important;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            .servicios-title {
-                font-size: 2.6rem;
-            }
-            .section-title {
-                font-size: 2.2rem;
-            }
-            .cta-content h2 {
-                font-size: 2.6rem;
-            }
-            .trust-grid {
-                gap: 2rem;
-            }
+            .nav-menu.active { left: 0; }
+            .hamburger { display: block; }
+            .servicios-grid { grid-template-columns: 1fr; }
+            .metodologia-grid { grid-template-columns: 1fr !important; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -528,7 +526,7 @@
         </div>
     </div>
 
-    <!-- HEADER GLASS -->
+    <!-- HEADER -->
     <header class="header">
         <nav class="navbar container">
             <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
@@ -539,35 +537,26 @@
                 <li><a href="metodologia.html">Metodología</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
-            <div class="hamburger" aria-label="Menú" role="button" tabindex="0"><i class="fas fa-bars"></i></div>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
         </nav>
     </header>
 
     <main>
-        <!-- HERO DE SERVICIOS -->
+        <!-- HERO -->
         <section class="servicios-hero">
             <div class="container hero-content">
                 <h1 class="servicios-title">Soluciones <span class="accent">digitales</span> de clase mundial</h1>
-                <p class="servicios-subtitle">Impulsamos la transformación digital de empresas en Nicaragua y la región con servicios de desarrollo web, software a medida, ciberseguridad, marketing digital, inteligencia artificial y consultoría estratégica. Resultados medibles, estándares internacionales.</p>
+                <p class="servicios-subtitle">Impulsamos la transformación digital de empresas en Nicaragua y la región con servicios de desarrollo web, software a medida, ciberseguridad, marketing digital, inteligencia artificial y consultoría estratégica.</p>
             </div>
         </section>
 
-        <!-- SECCIÓN DE CONFIANZA -->
+        <!-- CONFIANZA -->
         <section class="trust-section">
             <div class="container">
                 <div class="trust-grid">
-                    <div class="trust-item">
-                        <i class="fas fa-building"></i>
-                        <span>Empresas líderes confían en nosotros</span>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>ISO 27001 · AWS Partner · Microsoft Partner</span>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fas fa-globe-americas"></i>
-                        <span>Presencia en Centroamérica y EE.UU.</span>
-                    </div>
+                    <div class="trust-item"><i class="fas fa-building"></i><span>Empresas líderes confían en nosotros</span></div>
+                    <div class="trust-item"><i class="fas fa-shield-alt"></i><span>ISO 27001 · AWS Partner · Microsoft Partner</span></div>
+                    <div class="trust-item"><i class="fas fa-globe-americas"></i><span>Presencia en Centroamérica y EE.UU.</span></div>
                 </div>
                 <div class="badge-container">
                     <div class="badge"><i class="fas fa-check-circle"></i> +50 proyectos entregados</div>
@@ -577,149 +566,70 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DE SERVICIOS (AHORA CON id="servicios" PARA GSAP) -->
-        <section id="servicios" class="servicios-grid-section section">
+        <!-- SERVICIOS (con id="servicios" para GSAP) -->
+        <section id="servicios" class="section">
             <div class="container">
                 <h2 class="section-title">Servicios <span class="accent">empresariales</span> de alto impacto</h2>
                 <p class="section-subtitle">Combinamos tecnología de vanguardia con experiencia sectorial para ofrecer soluciones personalizadas que aceleran el crecimiento de su organización.</p>
                 <div class="servicios-grid">
-                    <!-- Servicio 1: Desarrollo Web -->
-                    <div class="servicio-card">
-                        <i class="fas fa-laptop-code card-icon"></i>
-                        <h3>Desarrollo Web</h3>
-                        <p class="card-description">Sitios web corporativos, portales y aplicaciones progresivas (PWA) que reflejan la excelencia de su marca, optimizados para SEO y rendimiento.</p>
-                        <a href="seopage/desarrollo-web.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <!-- Servicio 2: Software a medida -->
-                    <div class="servicio-card">
-                        <i class="fas fa-cogs card-icon"></i>
-                        <h3>Software a medida</h3>
-                        <p class="card-description">Automatización de procesos, ERPs, CRMs y sistemas personalizados que se adaptan exactamente a su operación y escalan con su negocio.</p>
-                        <a href="seopage/software-medida.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <!-- Servicio 3: Ciberseguridad -->
-                    <div class="servicio-card">
-                        <i class="fas fa-shield-haltered card-icon"></i>
-                        <h3>Ciberseguridad</h3>
-                        <p class="card-description">Auditorías, pentesting, cumplimiento normativo y monitoreo continuo para blindar sus activos digitales y garantizar la continuidad del negocio.</p>
-                        <a href="seopage/ciberseguridad.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <!-- Servicio 4: Marketing Digital -->
-                    <div class="servicio-card">
-                        <i class="fas fa-bullseye card-icon"></i>
-                        <h3>Marketing Digital</h3>
-                        <p class="card-description">Estrategias de inbound marketing, SEO/SEM, gestión de redes sociales y analítica avanzada para conectar con su audiencia y maximizar el ROI.</p>
-                        <a href="seopage/marketing-digital.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <!-- Servicio 5: IA y Datos -->
-                    <div class="servicio-card">
-                        <i class="fas fa-brain card-icon"></i>
-                        <h3>IA & Data Science</h3>
-                        <p class="card-description">Implementamos modelos de inteligencia artificial y machine learning para predicción, automatización inteligente y toma de decisiones basada en datos.</p>
-                        <a href="seopage/ia-datos.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <!-- Servicio 6: Consultoría Tecnológica -->
-                    <div class="servicio-card">
-                        <i class="fas fa-chart-pie card-icon"></i>
-                        <h3>Consultoría estratégica</h3>
-                        <p class="card-description">Asesoría en transformación digital, arquitectura cloud y optimización de procesos para alinear la tecnología con sus objetivos empresariales.</p>
-                        <a href="seopage/consultoria.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                    <!-- 6 tarjetas igual que antes -->
+                    <div class="servicio-card"><i class="fas fa-laptop-code card-icon"></i><h3>Desarrollo Web</h3><p class="card-description">Sitios web corporativos, portales y aplicaciones progresivas (PWA) que reflejan la excelencia de su marca.</p><a href="seopage/desarrollo-web.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a></div>
+                    <div class="servicio-card"><i class="fas fa-cogs card-icon"></i><h3>Software a medida</h3><p class="card-description">Automatización de procesos, ERPs, CRMs y sistemas personalizados que escalan con su negocio.</p><a href="seopage/software-medida.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a></div>
+                    <div class="servicio-card"><i class="fas fa-shield-haltered card-icon"></i><h3>Ciberseguridad</h3><p class="card-description">Auditorías, pentesting, cumplimiento normativo y monitoreo continuo para blindar sus activos digitales.</p><a href="seopage/ciberseguridad.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a></div>
+                    <div class="servicio-card"><i class="fas fa-bullseye card-icon"></i><h3>Marketing Digital</h3><p class="card-description">Estrategias de inbound marketing, SEO/SEM y analítica avanzada para maximizar el ROI.</p><a href="seopage/marketing-digital.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a></div>
+                    <div class="servicio-card"><i class="fas fa-brain card-icon"></i><h3>IA & Data Science</h3><p class="card-description">Modelos de inteligencia artificial y machine learning para predicción y automatización inteligente.</p><a href="seopage/ia-datos.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a></div>
+                    <div class="servicio-card"><i class="fas fa-chart-pie card-icon"></i><h3>Consultoría estratégica</h3><p class="card-description">Asesoría en transformación digital, arquitectura cloud y optimización de procesos.</p><a href="seopage/consultoria.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a></div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN "CÓMO TRABAJAMOS" (METODOLOGÍA PROBADA) -->
+        <!-- METODOLOGÍA -->
         <section class="metodologia-section section">
             <div class="container">
                 <h2 class="section-title">Metodología <span class="accent">probada</span></h2>
-                <p class="section-subtitle">Un enfoque ágil, transparente y orientado a resultados que ha sido perfeccionado en más de 50 implementaciones exitosas en la región.</p>
+                <p class="section-subtitle">Un enfoque ágil, transparente y orientado a resultados perfeccionado en más de 50 implementaciones exitosas.</p>
                 <div class="metodologia-grid">
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">01</span>
-                        <h4>Discovery</h4>
-                        <p>Entendemos a fondo su negocio, sus retos y oportunidades en el contexto local e internacional.</p>
-                    </div>
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">02</span>
-                        <h4>Scope & Plan</h4>
-                        <p>Definimos alcance, arquitectura y roadmap con total claridad, alineado a su presupuesto y plazos.</p>
-                    </div>
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">03</span>
-                        <h4>Build iterativo</h4>
-                        <p>Desarrollamos en sprints con demos semanales, permitiendo ajustes y visibilidad total del avance.</p>
-                    </div>
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">04</span>
-                        <h4>Launch & Evolve</h4>
-                        <p>Lanzamiento controlado, transferencia de conocimiento y soporte continuo para evolución futura.</p>
-                    </div>
+                    <div class="metodologia-item"><span class="metodologia-number">01</span><h4>Discovery</h4><p>Entendemos a fondo su negocio y oportunidades.</p></div>
+                    <div class="metodologia-item"><span class="metodologia-number">02</span><h4>Scope & Plan</h4><p>Definimos alcance y roadmap con claridad.</p></div>
+                    <div class="metodologia-item"><span class="metodologia-number">03</span><h4>Build iterativo</h4><p>Desarrollo en sprints con demos semanales.</p></div>
+                    <div class="metodologia-item"><span class="metodologia-number">04</span><h4>Launch & Evolve</h4><p>Lanzamiento controlado y soporte continuo.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN DE TECNOLOGÍAS -->
+        <!-- TECNOLOGÍAS -->
         <section class="tecnologias-section section">
             <div class="container">
                 <h2 class="section-title">Stack tecnológico <span class="accent">enterprise</span></h2>
-                <p class="section-subtitle">Trabajamos con tecnologías modernas, escalables y seguras, seleccionadas según los requisitos específicos de cada proyecto.</p>
+                <p class="section-subtitle">Tecnologías modernas, escalables y seguras.</p>
                 <div class="tech-cloud">
-                    <span class="tech-item">React</span>
-                    <span class="tech-item">Node.js</span>
-                    <span class="tech-item">Python</span>
-                    <span class="tech-item">TypeScript</span>
-                    <span class="tech-item">Next.js</span>
-                    <span class="tech-item">Docker</span>
-                    <span class="tech-item">AWS</span>
-                    <span class="tech-item">MongoDB</span>
-                    <span class="tech-item">PostgreSQL</span>
-                    <span class="tech-item">TensorFlow</span>
-                    <span class="tech-item">Flutter</span>
-                    <span class="tech-item">GitHub</span>
-                    <span class="tech-item">Kubernetes</span>
-                    <span class="tech-item">GraphQL</span>
-                    <span class="tech-item">Jenkins</span>
-                    <span class="tech-item">Terraform</span>
+                    <span class="tech-item">React</span><span class="tech-item">Node.js</span><span class="tech-item">Python</span><span class="tech-item">TypeScript</span>
+                    <span class="tech-item">Next.js</span><span class="tech-item">Docker</span><span class="tech-item">AWS</span><span class="tech-item">MongoDB</span>
+                    <span class="tech-item">PostgreSQL</span><span class="tech-item">TensorFlow</span><span class="tech-item">Flutter</span><span class="tech-item">GitHub</span>
+                    <span class="tech-item">Kubernetes</span><span class="tech-item">GraphQL</span><span class="tech-item">Jenkins</span><span class="tech-item">Terraform</span>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN DE ESTADÍSTICAS CON ICONOS -->
+        <!-- ESTADÍSTICAS -->
         <section class="section stats">
             <div class="container">
                 <div class="stats-grid">
-                    <div class="stat-large">
-                        <i class="fas fa-smile"></i>
-                        <div><span class="stat-number">98</span><span>%</span></div>
-                        <p>Satisfacción del cliente</p>
-                    </div>
-                    <div class="stat-large">
-                        <i class="fas fa-headset"></i>
-                        <div><span class="stat-number">24</span><span>/7</span></div>
-                        <p>Soporte continuo</p>
-                    </div>
-                    <div class="stat-large">
-                        <i class="fas fa-trophy"></i>
-                        <div><span class="stat-number">15</span><span>+</span></div>
-                        <p>Premios y reconocimientos</p>
-                    </div>
+                    <div class="stat-large"><i class="fas fa-smile"></i><div><span class="stat-number">98</span><span>%</span></div><p>Satisfacción del cliente</p></div>
+                    <div class="stat-large"><i class="fas fa-headset"></i><div><span class="stat-number">24</span><span>/7</span></div><p>Soporte continuo</p></div>
+                    <div class="stat-large"><i class="fas fa-trophy"></i><div><span class="stat-number">15</span><span>+</span></div><p>Premios y reconocimientos</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA FINAL -->
+        <!-- CTA -->
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
                     <h2>¿Listo para llevar su empresa al siguiente nivel?</h2>
-                    <p>Agende una consultoría inicial sin costo. Analizaremos sus necesidades y le presentaremos una propuesta de valor personalizada con estándares internacionales.</p>
-                    <a href="contacto.html" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i> Solicitar asesoría gratuita
-                    </a>
-                    <p style="margin-top: 2.5rem; font-size: 0.95rem; color: #90a4c2;">
-                        <i class="fas fa-lock"></i> Confidencialidad garantizada · Sin compromiso
-                    </p>
+                    <p style="color:#b0c7e0; margin:1.5rem 0 2.5rem;">Agende una consultoría inicial sin costo.</p>
+                    <a href="contacto.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Solicitar asesoría gratuita</a>
+                    <p style="margin-top:2.5rem; color:#90a4c2;"><i class="fas fa-lock"></i> Confidencialidad garantizada · Sin compromiso</p>
                 </div>
             </div>
         </section>
@@ -729,113 +639,62 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
-                    <p>Innovación digital con propósito. Partner tecnológico de empresas líderes en Nicaragua y Centroamérica.</p>
-                </div>
-                <div class="footer-links">
-                    <h5>Empresa</h5>
-                    <ul>
-                        <li><a href="metodologia.html">Metodología</a></li>
-                        <li><a href="tecnologia.html">Tecnología</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="privacidad.html">Política de privacidad</a></li>
-                        <li><a href="aviso-legal.html">Aviso legal</a></li>
-                        <li><a href="terminos.html">Términos y condiciones</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h5>Redes</h5>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/it_segurity" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/185VZEYC35/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@it._segurity" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://wa.me/50589871374" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
+                <div class="footer-brand"><a href="index.html" class="logo">ITSA <span>Segurity</span></a><p>Innovación digital con propósito.</p></div>
+                <div class="footer-links"><h5>Empresa</h5><ul><li><a href="metodologia.html">Metodología</a></li><li><a href="tecnologia.html">Tecnología</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+                <div class="footer-social"><h5>Redes</h5><div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 ITSA Segurity. Todos los derechos reservados. | AWS Partner · Microsoft Partner · ISO 27001</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 ITSA Segurity. Todos los derechos reservados. | AWS Partner · Microsoft Partner · ISO 27001</p></div>
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
-    <script src="js/script.js"></script>
-    <!-- Reemplazado animation.js por la versión específica para servicios -->
+    <!-- Scripts básicos -->
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 800);
+        });
+        // Hamburguesa
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+
+    <!-- Cargar animation-servicios.js (ASEGÚRATE DE QUE EXISTA) -->
     <script src="js/animation-servicios.js"></script>
     
-    <!-- Animaciones GSAP adicionales inline (no interfieren) -->
+    <!-- OPCIONAL: Si prefieres no depender del archivo externo, descomenta el siguiente bloque y comenta la línea anterior -->
+    <!--
     <script>
+        gsap.registerPlugin(ScrollTrigger);
         document.addEventListener('DOMContentLoaded', () => {
-            // Animación para tarjetas de servicio (respaldo)
+            // Hero (si existe .hero-title, aquí no aplica pero lo dejamos)
+            // Animación de tarjetas de servicio
             gsap.utils.toArray('.servicio-card').forEach((card, i) => {
                 gsap.from(card, {
-                    scrollTrigger: {
-                        trigger: card,
-                        start: 'top 85%',
-                        toggleActions: 'play none none reverse'
-                    },
-                    opacity: 0,
-                    y: 50,
-                    duration: 0.7,
-                    delay: i * 0.1,
-                    ease: 'power2.out'
+                    scrollTrigger: { trigger: card, start: 'top 85%', toggleActions: 'play none none reverse' },
+                    opacity: 0, y: 50, duration: 0.7, delay: i * 0.1, ease: 'power2.out'
                 });
             });
-            
-            // Animación para items de metodología (respaldo)
             gsap.utils.toArray('.metodologia-item').forEach((item, i) => {
                 gsap.from(item, {
-                    scrollTrigger: {
-                        trigger: item,
-                        start: 'top 85%'
-                    },
-                    opacity: 0,
-                    y: 40,
-                    duration: 0.6,
-                    delay: i * 0.1,
-                    ease: 'power2.out'
+                    scrollTrigger: { trigger: item, start: 'top 85%' },
+                    opacity: 0, y: 40, duration: 0.6, delay: i * 0.1, ease: 'power2.out'
                 });
             });
-            
-            // Animación para tech items
             gsap.from('.tech-item', {
-                scrollTrigger: {
-                    trigger: '.tech-cloud',
-                    start: 'top 90%'
-                },
-                opacity: 0,
-                scale: 0.8,
-                duration: 0.5,
-                stagger: 0.03,
-                ease: 'back.out(1.2)'
+                scrollTrigger: { trigger: '.tech-cloud', start: 'top 90%' },
+                opacity: 0, scale: 0.8, duration: 0.5, stagger: 0.03, ease: 'back.out(1.2)'
             });
-
-            // Animación para trust items
             gsap.from('.trust-item', {
-                scrollTrigger: {
-                    trigger: '.trust-section',
-                    start: 'top 90%'
-                },
-                opacity: 0,
-                y: 20,
-                duration: 0.5,
-                stagger: 0.1,
-                ease: 'power2.out'
+                scrollTrigger: { trigger: '.trust-section', start: 'top 90%' },
+                opacity: 0, y: 20, duration: 0.5, stagger: 0.1
             });
-
             gsap.from('.badge', {
-                scrollTrigger: {
-                    trigger: '.badge-container',
-                    start: 'top 95%'
-                },
-                opacity: 0,
-                scale: 0.9,
-                duration: 0.4,
-                stagger: 0.1
+                scrollTrigger: { trigger: '.badge-container', start: 'top 95%' },
+                opacity: 0, scale: 0.9, duration: 0.4, stagger: 0.1
             });
         });
     </script>
+    -->
 </body>
 </html>
