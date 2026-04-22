@@ -20,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
     <style>
-        /* ===== ESTILOS SIMPLIFICADOS Y 100% VISIBLES ===== */
+        /* ===== ESTILOS STARTUP MODERNO ===== */
         * {
             margin: 0;
             padding: 0;
@@ -29,12 +29,13 @@
         
         :root {
             --bg-dark: #0a0c12;
-            --bg-card: rgba(18, 28, 40, 0.9);
+            --bg-card: rgba(22, 34, 48, 0.9);
             --border-light: rgba(255, 255, 255, 0.1);
             --accent: #00aaff;
             --accent-hover: #0099dd;
             --text-dim: #a0b3cc;
             --text-light: #e6edf5;
+            --shadow-card: 0 20px 35px -8px rgba(0, 0, 0, 0.4);
         }
         
         body {
@@ -241,7 +242,7 @@
         }
         .accent { color: var(--accent); }
         
-        /* Grids básicos */
+        /* Grids */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -262,7 +263,7 @@
             color: var(--text-dim);
         }
         
-        /* Servicios - TARJETAS SIMPLES Y VISIBLES (como equipo) */
+        /* Servicios - TARJETAS CLARAS */
         .servicios-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -277,6 +278,7 @@
             text-align: center;
             backdrop-filter: blur(10px);
             transition: transform 0.3s;
+            box-shadow: var(--shadow-card);
         }
         .servicio-card:hover {
             transform: translateY(-8px);
@@ -328,6 +330,7 @@
             border-radius: 24px;
             border: 1px solid var(--border-light);
             backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-card);
         }
         
         /* Stats */
@@ -343,6 +346,7 @@
             border-radius: 24px;
             border: 1px solid var(--border-light);
             backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-card);
         }
         .stat-large .stat-number {
             font-size: 3.5rem;
@@ -363,6 +367,7 @@
             padding: 2rem;
             text-align: center;
             backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-card);
         }
         .testimonial-avatar {
             width: 80px;
@@ -372,7 +377,7 @@
             margin-bottom: 1.5rem;
         }
         
-        /* Equipo (mismo estilo que servicios) */
+        /* Equipo */
         .equipo-grid-horizontal {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -385,6 +390,7 @@
             padding: 2rem 1.5rem;
             text-align: center;
             backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-card);
             transition: transform 0.3s;
         }
         .miembro-card:hover {
@@ -427,6 +433,8 @@
             align-items: center;
             gap: 10px;
             color: var(--text-dim);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-card);
         }
         .cert-item i {
             color: var(--accent);
@@ -548,7 +556,7 @@
             </div>
         </section>
 
-        <!-- Servicios - SECCIÓN CLAVE: TARJETAS SIMPLES -->
+        <!-- Servicios - SECCIÓN CLAVE -->
         <section class="section" style="background: #070b0f;">
             <div class="container">
                 <span class="section-subtitle">· Lo que hacemos ·</span>
