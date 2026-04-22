@@ -6,14 +6,15 @@
     <title>ITSA Segurity · Innovación digital en Nicaragua</title>
     <meta name="description" content="ITSA Segurity: desarrollo web, software a medida, ciberseguridad y marketing digital en Managua, Nicaragua.">
     <meta name="keywords" content="ciberseguridad Nicaragua, pentesting Managua, desarrollo web Nicaragua, software a medida, marketing digital">
+    <meta name="theme-color" content="#0a0c12">
     
-    <!-- Fuentes -->
+    <!-- Preconexiones -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     
-    <!-- Iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome (versión estable) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -38,6 +39,10 @@
             --shadow-card: 0 20px 35px -8px rgba(0, 0, 0, 0.4);
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-dark);
@@ -58,7 +63,7 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.6s;
+            transition: opacity 0.6s, visibility 0.6s;
         }
         #preloader.hidden {
             opacity: 0;
@@ -130,6 +135,8 @@
             font-size: 1.6rem;
             cursor: pointer;
             color: #fff;
+            background: none;
+            border: none;
         }
         
         /* Hero */
@@ -140,6 +147,7 @@
             align-items: center;
             text-align: center;
             border-bottom: 1px solid rgba(0, 170, 255, 0.12);
+            position: relative;
         }
         .hero-content {
             max-width: 1000px;
@@ -147,7 +155,7 @@
             padding: 0 1.5rem;
         }
         .hero-title {
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 8vw, 4rem);
             font-weight: 700;
             margin-bottom: 1.5rem;
             color: #fff;
@@ -209,6 +217,9 @@
             font-size: 0.85rem;
             opacity: 0.7;
             animation: bounce 2s infinite;
+            cursor: pointer;
+            background: none;
+            border: none;
         }
         @keyframes bounce {
             0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -234,7 +245,7 @@
             margin-bottom: 1rem;
         }
         .section-title {
-            font-size: 2.8rem;
+            font-size: clamp(2rem, 6vw, 2.8rem);
             font-weight: 700;
             text-align: center;
             margin-bottom: 2rem;
@@ -253,6 +264,7 @@
             display: flex;
             gap: 3rem;
             margin-top: 2.5rem;
+            flex-wrap: wrap;
         }
         .stat-item .stat-number {
             font-size: 2.5rem;
@@ -263,7 +275,7 @@
             color: var(--text-dim);
         }
         
-        /* Servicios - TARJETAS CLARAS */
+        /* Servicios */
         .servicios-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -277,7 +289,7 @@
             padding: 2.5rem 1.8rem;
             text-align: center;
             backdrop-filter: blur(10px);
-            transition: transform 0.3s;
+            transition: transform 0.3s, border-color 0.3s;
             box-shadow: var(--shadow-card);
         }
         .servicio-card:hover {
@@ -375,6 +387,7 @@
             border-radius: 50%;
             border: 3px solid var(--accent);
             margin-bottom: 1.5rem;
+            object-fit: cover;
         }
         
         /* Equipo */
@@ -403,6 +416,7 @@
             border-radius: 50%;
             border: 3px solid var(--accent);
             margin-bottom: 1.5rem;
+            object-fit: cover;
         }
         .miembro-card h4 {
             color: #fff;
@@ -444,37 +458,73 @@
         /* Footer */
         .footer {
             background: #05080c;
-            padding: 3rem 0 1.5rem;
+            padding: 4rem 0 1.5rem;
             border-top: 1px solid var(--border-light);
         }
         .footer-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 3rem;
+        }
+        .footer-brand p {
+            margin-top: 1rem;
+            color: var(--text-dim);
+        }
+        .footer-links h5,
+        .footer-social h5 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
         .footer-links ul {
             list-style: none;
         }
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
         .footer-links a {
             color: var(--text-dim);
             text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
         .social-icons a {
             color: var(--text-dim);
             font-size: 1.5rem;
-            margin-right: 1rem;
+            transition: color 0.2s;
+        }
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        .footer-contact p {
+            color: var(--text-dim);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .footer-bottom {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
             color: var(--text-dim);
+            font-size: 0.9rem;
         }
         
         /* Responsive */
         @media (max-width: 992px) {
             .servicios-grid, .equipo-grid-horizontal { grid-template-columns: repeat(2, 1fr); }
             .testimonial-track { grid-template-columns: 1fr; }
-            .grid-2 { grid-template-columns: 1fr; }
+            .grid-2 { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
             .nav-menu {
@@ -489,13 +539,15 @@
                 justify-content: center;
                 transition: left 0.3s;
                 gap: 2rem;
+                padding: 2rem;
             }
             .nav-menu.active { left: 0; }
             .hamburger { display: block; }
             .servicios-grid, .equipo-grid-horizontal, .timeline-grid, .stats-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 2.8rem; }
-            .section-title { font-size: 2.2rem; }
+            .hero-title { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .stats-mini { gap: 1.5rem; }
         }
     </style>
 </head>
@@ -507,16 +559,18 @@
     </div>
 
     <header class="header">
-        <nav class="navbar">
-            <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="tecnologia.html">Tecnología</a></li>
-                <li><a href="metodologia.html">Metodología</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+        <nav class="navbar" aria-label="Navegación principal">
+            <a href="index.html" class="logo" aria-label="ITSA Segurity inicio">ITSA <span>Segurity</span></a>
+            <ul class="nav-menu" role="list">
+                <li role="listitem"><a href="index.html" class="active">Inicio</a></li>
+                <li role="listitem"><a href="servicios.html">Servicios</a></li>
+                <li role="listitem"><a href="tecnologia.html">Tecnología</a></li>
+                <li role="listitem"><a href="metodologia.html">Metodología</a></li>
+                <li role="listitem"><a href="contacto.html">Contacto</a></li>
             </ul>
-            <div class="hamburger"><i class="fas fa-bars"></i></div>
+            <button class="hamburger" aria-label="Menú" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
 
@@ -530,10 +584,10 @@
                     <a href="servicios.html" class="btn btn-outline">Conoce nuestros servicios</a>
                 </div>
             </div>
-            <div class="hero-scroll-indicator">
+            <button class="hero-scroll-indicator" aria-label="Desplazarse hacia abajo" onclick="document.getElementById('servicios').scrollIntoView({behavior: 'smooth'});">
                 <span>Descubrir</span>
                 <i class="fas fa-chevron-down"></i>
-            </div>
+            </button>
         </section>
 
         <section class="section">
@@ -557,7 +611,7 @@
         </section>
 
         <!-- Servicios - SECCIÓN CLAVE -->
-        <section class="section" style="background: #070b0f;">
+        <section id="servicios" class="section" style="background: #070b0f;">
             <div class="container">
                 <span class="section-subtitle">· Lo que hacemos ·</span>
                 <h2 class="section-title">Soluciones digitales <span class="accent">para empresas nicaragüenses</span></h2>
@@ -575,7 +629,7 @@
                         <a href="servicios.html" class="card-link">Conocer más →</a>
                     </div>
                     <div class="servicio-card">
-                        <i class="fas fa-shield-haltered card-icon"></i>
+                        <i class="fas fa-shield-alt card-icon"></i>
                         <h3>Ciberseguridad</h3>
                         <p class="card-description">Protege tus datos con auditorías y pentesting.</p>
                         <a href="servicios.html" class="card-link">Conocer más →</a>
@@ -620,9 +674,21 @@
                 <span class="section-subtitle">· Clientes ·</span>
                 <h2 class="section-title">Lo que dicen de <span class="accent">nosotros</span></h2>
                 <div class="testimonial-track">
-                    <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/women/1.jpg" class="testimonial-avatar"><p>"ITSA transformó nuestra presencia digital."</p><h5>— Laura Méndez</h5></div>
-                    <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/men/1.jpg" class="testimonial-avatar"><p>"Su equipo de ciberseguridad es excelente."</p><h5>— Carlos Rivas</h5></div>
-                    <div class="testimonial-card"><img src="https://randomuser.me/api/portraits/women/2.jpg" class="testimonial-avatar"><p>"Desarrollo de software impecable."</p><h5>— Ana Soto</h5></div>
+                    <div class="testimonial-card">
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Laura Méndez" class="testimonial-avatar" loading="lazy">
+                        <p>"ITSA transformó nuestra presencia digital."</p>
+                        <h5>— Laura Méndez</h5>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Carlos Rivas" class="testimonial-avatar" loading="lazy">
+                        <p>"Su equipo de ciberseguridad es excelente."</p>
+                        <h5>— Carlos Rivas</h5>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Ana Soto" class="testimonial-avatar" loading="lazy">
+                        <p>"Desarrollo de software impecable."</p>
+                        <h5>— Ana Soto</h5>
+                    </div>
                 </div>
             </div>
         </section>
@@ -632,10 +698,22 @@
                 <span class="section-subtitle">· Expertos ·</span>
                 <h2 class="section-title">Conoce a nuestro <span class="accent">equipo directivo</span></h2>
                 <div class="equipo-grid-horizontal">
-                    <div class="miembro-card"><img src="https://randomuser.me/api/portraits/men/32.jpg" class="miembro-avatar"><h4>Mario Álvarez</h4><p>Director de Ciberseguridad</p></div>
-                    <div class="miembro-card"><img src="https://randomuser.me/api/portraits/men/45.jpg" class="miembro-avatar"><h4>Brais Moure</h4><p>Director de Software</p></div>
-                    <div class="miembro-card"><img src="https://randomuser.me/api/portraits/men/22.jpg" class="miembro-avatar"><h4>Jon Hernández</h4><p>Director Web</p></div>
-                    <div class="miembro-card"><img src="https://randomuser.me/api/portraits/women/44.jpg" class="miembro-avatar"><h4>Paula Gonzalez</h4><p>Growth Manager</p></div>
+                    <div class="miembro-card">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mario Álvarez" class="miembro-avatar" loading="lazy">
+                        <h4>Mario Álvarez</h4><p>Director de Ciberseguridad</p>
+                    </div>
+                    <div class="miembro-card">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Brais Moure" class="miembro-avatar" loading="lazy">
+                        <h4>Brais Moure</h4><p>Director de Software</p>
+                    </div>
+                    <div class="miembro-card">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Jon Hernández" class="miembro-avatar" loading="lazy">
+                        <h4>Jon Hernández</h4><p>Director Web</p>
+                    </div>
+                    <div class="miembro-card">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Paula Gonzalez" class="miembro-avatar" loading="lazy">
+                        <h4>Paula Gonzalez</h4><p>Growth Manager</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -653,13 +731,13 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER COMPLETO Y PROFESIONAL -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">ITSA <span>Segurity</span></a>
-                    <p>Innovación digital con propósito.</p>
+                    <p>Innovación digital con propósito. Transformamos ideas en soluciones tecnológicas seguras.</p>
                 </div>
                 <div class="footer-links">
                     <h5>Empresa</h5>
@@ -673,19 +751,94 @@
                     </ul>
                 </div>
                 <div class="footer-social">
+                    <h5>Conéctate</h5>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Managua, Nicaragua</p>
+                        <p><i class="fas fa-envelope"></i> contacto@itsasegurity.com</p>
+                        <p><i class="fas fa-phone-alt"></i> +505 1234 5678</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> ITSA Segurity. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        window.addEventListener('load', () => {
-            document.getElementById('preloader').classList.add('hidden');
-        });
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        });
-    </script>
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.from('.hero-title', { opacity: 0, y: 80, duration: 1.2 });
-        gsap.from('.servicio-card', { scrollTrigger: '#servicios', opacity: 0, y: 50, stagger: 0.1 });
+        (function() {
+            "use strict";
+            
+            // Preloader
+            window.addEventListener('load', () => {
+                document.getElementById('preloader').classList.add('hidden');
+            });
+            
+            // Menú móvil
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            function toggleMenu() {
+                const isActive = navMenu.classList.toggle('active');
+                hamburger.setAttribute('aria-expanded', isActive);
+                hamburger.innerHTML = isActive ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            }
+            
+            hamburger.addEventListener('click', toggleMenu);
+            
+            // Cerrar menú al hacer clic en un enlace
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+            
+            // Año actual en footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // GSAP Animations
+            gsap.registerPlugin(ScrollTrigger);
+            
+            gsap.from('.hero-title', { 
+                opacity: 0, 
+                y: 80, 
+                duration: 1.2 
+            });
+            
+            gsap.from('.servicio-card', {
+                scrollTrigger: {
+                    trigger: '#servicios',
+                    start: 'top 80%',
+                },
+                opacity: 0,
+                y: 50,
+                stagger: 0.1,
+                duration: 0.8
+            });
+            
+            // Animación para estadísticas
+            gsap.from('.stat-large', {
+                scrollTrigger: {
+                    trigger: '.stats-grid',
+                    start: 'top 85%',
+                },
+                opacity: 0,
+                scale: 0.9,
+                stagger: 0.1,
+                duration: 0.6
+            });
+        })();
     </script>
 </body>
 </html>
