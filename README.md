@@ -1,16 +1,16 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/ITSA%20Segurity-Digital%20Solutions-0078D4?style=for-the-badge&logo=microsoft&logoColor=white" alt="ITSA Segurity" />
+<img src="https://img.shields.io/badge/ITSA%20Segurity-Innovaci%C3%B3n%20Digital-0078D4?style=for-the-badge&logo=microsoft&logoColor=white" alt="ITSA Segurity" />
 
-# ITSA Segurity
+# 🛡️ ITSA Segurity
 
-### Soluciones digitales para empresas, marcas y emprendedores
+### Construimos el futuro digital de tu negocio
 
-Desarrollo web · Software a medida · Ciberseguridad · Automatización · Marketing digital
+Desarrollo web, software, ciberseguridad, automatización y marketing digital con enfoque profesional.
 
 <br>
 
-[![Website](https://img.shields.io/badge/Website-ITSA%20Segurity-00A86B?style=for-the-badge&logo=googlechrome&logoColor=white)](https://jhernandez30-cpu.github.io/ITSA-Segurity/)
+[![Sitio Web](https://img.shields.io/badge/Sitio%20Web-ITSA%20Segurity-00A86B?style=for-the-badge&logo=googlechrome&logoColor=white)](https://jhernandez30-cpu.github.io/ITSA-Segurity/)
 [![GitHub](https://img.shields.io/badge/GitHub-jhernandez30--cpu-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jhernandez30-cpu)
 [![Instagram](https://img.shields.io/badge/Instagram-it__segurity-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/it_segurity?igsh=MWsydThncWcxODh4MA==)
 [![Facebook](https://img.shields.io/badge/Facebook-ITSA%20Segurity-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/share/178tB1SBk1/)
