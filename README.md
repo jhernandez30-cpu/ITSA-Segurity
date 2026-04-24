@@ -73,10 +73,13 @@ Combinamos **desarrollo de software, seguridad informática y marketing digital*
       <img src="https://img.icons8.com/fluency/48/artificial-intelligence.png" alt="IA & Data Science" /><br />
       <b>IA & Data Science</b><br />
       Modelos de machine learning e inteligencia artificial aplicados a tu negocio.
-    </td>
-    <td align="center">
-      <img src="https://img.icons8.com/fluency/48/strategy-board.png" alt="Consultoría" /><br />
-      <b>Consultoría Estratégica</b><br />
+    <table align="center">
+  <tr>
+    <td align="center" width="250">
+      <img src="https://img.icons8.com/fluency/48/strategy-board.png" alt="Consultoría Estratégica" width="48" height="48" />
+      <br />
+      <b>Consultoría Estratégica</b>
+      <br />
       Transformación digital, arquitectura cloud y optimización de procesos.
     </td>
   </tr>
