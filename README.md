@@ -143,13 +143,6 @@ Combinamos **desarrollo de software, seguridad informática y marketing digital*
 
 ## 📞 Contacto directo
 
-¿Listo para iniciar tu transformación digital? Escríbenos y te respondemos en menos de **24 horas**.
-
-- 📍 **Oficina:** Edificio Plaza España, 5to piso – Managua, Nicaragua  
-- 📱 **Teléfono:** [+505 8987 1374](tel:+50589871374)  
-- ✉️ **Correo:** itsasecurity@gmail.com  
-- 🌐 **Web:** [itsasegurity.com](https://jhernandez30-cpu.github.io/ITSA-Segurity/)
-
 <div align="center">
   <a href="https://jhernandez30-cpu.github.io/ITSA-Segurity/contacto.html">
     <img src="https://img.shields.io/badge/Solicitar%20Cotizaci%C3%B3n-Aqu%C3%AD-00BFFF?style=for-the-badge" alt="Solicitar Cotización" />
