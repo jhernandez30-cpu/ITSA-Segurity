@@ -25,9 +25,7 @@ Desarrollo web, software, ciberseguridad, automatización y marketing digital co
   <img src="https://img.shields.io/github/followers/jhernandez30-cpu?style=for-the-badge&color=blue" alt="GitHub followers" />
 </a>
 
-<a href="https://github.com/jhernandez30-cpu/ITSA-Segurity">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=jhernandez30-cpu.ITSA-Segurity&style=for-the-badge&color=blue" alt="Visitors" />
-</a>
+<img src="https://komarev.com/ghpvc/?username=jhernandez30-cpu&label=VISITORS&style=for-the-badge&color=blue" alt="Visitors" />
 
 </div>
 
