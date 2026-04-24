@@ -40,64 +40,67 @@ Combinamos **desarrollo de software, seguridad informática y marketing digital*
 - 👥 Equipo de **15+ expertos** multidisciplinarios  
 - 🌎 Presencia en **Nicaragua, Costa Rica y El Salvador**  
 - 🧠 Filosofía: **“Construir, proteger, optimizar”**
-
 ---
 
 ## 🚀 Servicios que ofrecemos
 
-<table align="center">
+<br>
+
+<div align="center">
+
+<table>
   <tr>
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/web.png" alt="Desarrollo Web" width="48" height="48" />
-      <br />
-      <b>Desarrollo Web</b>
-      <br />
+      <img src="https://img.icons8.com/fluency/48/web.png" alt="Desarrollo Web" width="48" height="48">
+      <br><br>
+      <strong>Desarrollo Web</strong>
+      <br><br>
       Páginas corporativas, e-commerce y aplicaciones progresivas con diseño responsive y alto rendimiento.
     </td>
-
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/gear.png" alt="Software a Medida" width="48" height="48" />
-      <br />
-      <b>Software a Medida</b>
-      <br />
+      <img src="https://img.icons8.com/fluency/48/gear.png" alt="Software a Medida" width="48" height="48">
+      <br><br>
+      <strong>Software a Medida</strong>
+      <br><br>
       ERPs, CRMs y sistemas personalizados que automatizan procesos y mejoran la productividad.
     </td>
-
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/security-checked.png" alt="Ciberseguridad" width="48" height="48" />
-      <br />
-      <b>Ciberseguridad</b>
-      <br />
+      <img src="https://img.icons8.com/fluency/48/security-checked.png" alt="Ciberseguridad" width="48" height="48">
+      <br><br>
+      <strong>Ciberseguridad</strong>
+      <br><br>
       Auditorías, pentesting, monitoreo y buenas prácticas de seguridad digital.
     </td>
   </tr>
-
   <tr>
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/commercial.png" alt="Marketing Digital" width="48" height="48" />
-      <br />
-      <b>Marketing Digital</b>
-      <br />
+      <img src="https://img.icons8.com/fluency/48/commercial.png" alt="Marketing Digital" width="48" height="48">
+      <br><br>
+      <strong>Marketing Digital</strong>
+      <br><br>
       SEO, redes sociales e inbound marketing para atraer clientes calificados.
     </td>
-
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/artificial-intelligence.png" alt="IA y Data Science" width="48" height="48" />
-      <br />
-      <b>IA & Data Science</b>
-      <br />
+      <img src="https://img.icons8.com/fluency/48/artificial-intelligence.png" alt="IA y Data Science" width="48" height="48">
+      <br><br>
+      <strong>IA & Data Science</strong>
+      <br><br>
       Modelos de inteligencia artificial, análisis de datos y automatización aplicada al negocio.
     </td>
-
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/strategy-board.png" alt="Consultoría Estratégica" width="48" height="48" />
-      <br />
-      <b>Consultoría Estratégica</b>
-      <br />
+      <img src="https://img.icons8.com/fluency/48/strategy-board.png" alt="Consultoría Estratégica" width="48" height="48">
+      <br><br>
+      <strong>Consultoría Estratégica</strong>
+      <br><br>
       Transformación digital, arquitectura cloud y optimización de procesos.
     </td>
   </tr>
 </table>
+
+</div>
+
+<br>
+
 ---
 
 ## 🧰 Stack tecnológico
