@@ -15,14 +15,21 @@ Desarrollo web, software, ciberseguridad, automatización y marketing digital co
 [![Instagram](https://img.shields.io/badge/Instagram-it__segurity-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/it_segurity?igsh=MWsydThncWcxODh4MA==)
 [![Facebook](https://img.shields.io/badge/Facebook-ITSA%20Segurity-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/share/178tB1SBk1/)
 
+<div align="center">
+
+<a href="https://github.com/jhernandez30-cpu/ITSA-Segurity/stargazers">
+  <img src="https://img.shields.io/github/stars/jhernandez30-cpu/ITSA-Segurity?style=for-the-badge&color=yellow" alt="GitHub Repo stars" />
+</a>
+
+<a href="https://github.com/jhernandez30-cpu">
+  <img src="https://img.shields.io/github/followers/jhernandez30-cpu?style=for-the-badge&color=blue" alt="GitHub followers" />
+</a>
+
+<a href="https://github.com/jhernandez30-cpu/ITSA-Segurity">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=jhernandez30-cpu.ITSA-Segurity&style=for-the-badge&color=blue" alt="Visitors" />
+</a>
+
 </div>
-
-[![GitHub Repo stars](https://img.shields.io/github/stars/jhernandez30-cpu/ITSA-Segurity?style=for-the-badge&color=yellow)](https://github.com/jhernandez30-cpu/ITSA-Segurity/stargazers)
-[![GitHub followers](https://img.shields.io/github/followers/jhernandez30-cpu?style=for-the-badge&color=blue)](https://github.com/jhernandez30-cpu)
-[![Visitors](https://visitor-badge.laobi.icu/badge?page_id=jhernandez30-cpu.ITSA-Segurity&style=for-the-badge&color=blue)](https://github.com/jhernandez30-cpu/ITSA-Segurity)
-
-</div>
-
 ---
 
 ## 🛡️ ¿Quiénes somos?
