@@ -17,7 +17,6 @@ Desarrollo web, software, ciberseguridad, automatización y marketing digital co
 
 </div>
 
-[![Website](https://img.shields.io/badge/🌐%20Sitio%20Web-Visítanos-00BFFF?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://jhernandez30-cpu.github.io/ITSA-Segurity/)
 [![GitHub Repo stars](https://img.shields.io/github/stars/jhernandez30-cpu/ITSA-Segurity?style=for-the-badge&color=yellow)](https://github.com/jhernandez30-cpu/ITSA-Segurity/stargazers)
 [![GitHub followers](https://img.shields.io/github/followers/jhernandez30-cpu?style=for-the-badge&color=blue)](https://github.com/jhernandez30-cpu)
 [![Visitors](https://visitor-badge.laobi.icu/badge?page_id=jhernandez30-cpu.ITSA-Segurity&style=for-the-badge&color=blue)](https://github.com/jhernandez30-cpu/ITSA-Segurity)
