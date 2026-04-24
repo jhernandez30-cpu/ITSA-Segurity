@@ -132,15 +132,6 @@ Combinamos **desarrollo de software, seguridad informática y marketing digital*
 
 ---
 
-## 👥 Nuestro equipo
-
-| <img src="https://via.placeholder.com/100/0D1117/00BFFF?text=MA" width="100" /> | <img src="https://via.placeholder.com/100/0D1117/00BFFF?text=BM" width="100" /> | <img src="https://via.placeholder.com/100/0D1117/00BFFF?text=JH" width="100" /> | <img src="https://via.placeholder.com/100/0D1117/00BFFF?text=PG" width="100" /> |
-|:---:|:---:|:---:|:---:|
-| **Mario Álvarez**<br/>Director de Ciberseguridad | **Brais Moure**<br/>Director de Software | **Jon Hernández**<br/>Director Web & Founder | **Paula González**<br/>Growth Manager |
-
-*(Reemplaza las imágenes por fotos reales de tu equipo)*
-
----
 
 ## 🏆 Certificaciones y alianzas
 
