@@ -45,37 +45,51 @@ Combinamos **desarrollo de software, seguridad informática y marketing digital*
 
 ## 🚀 Servicios que ofrecemos
 
-<table>
+<table align="center">
   <tr>
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/web.png" alt="Desarrollo Web" /><br />
-      <b>Desarrollo Web</b><br />
-      Páginas corporativas, e‑commerce y aplicaciones progresivas con diseño responsive y alto rendimiento.
+      <img src="https://img.icons8.com/fluency/48/web.png" alt="Desarrollo Web" width="48" height="48" />
+      <br />
+      <b>Desarrollo Web</b>
+      <br />
+      Páginas corporativas, e-commerce y aplicaciones progresivas con diseño responsive y alto rendimiento.
     </td>
+
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/gear.png" alt="Software a Medida" /><br />
-      <b>Software a Medida</b><br />
+      <img src="https://img.icons8.com/fluency/48/gear.png" alt="Software a Medida" width="48" height="48" />
+      <br />
+      <b>Software a Medida</b>
+      <br />
       ERPs, CRMs y sistemas personalizados que automatizan procesos y mejoran la productividad.
     </td>
+
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/security-checked.png" alt="Ciberseguridad" /><br />
-      <b>Ciberseguridad</b><br />
-      Auditorías, pentesting, monitoreo y cumplimiento normativo (Ley 787 de Nicaragua).
+      <img src="https://img.icons8.com/fluency/48/security-checked.png" alt="Ciberseguridad" width="48" height="48" />
+      <br />
+      <b>Ciberseguridad</b>
+      <br />
+      Auditorías, pentesting, monitoreo y buenas prácticas de seguridad digital.
     </td>
   </tr>
+
   <tr>
-    <td align="center">
-      <img src="https://img.icons8.com/fluency/48/commercial.png" alt="Marketing Digital" /><br />
-      <b>Marketing Digital</b><br />
+    <td align="center" width="33%">
+      <img src="https://img.icons8.com/fluency/48/commercial.png" alt="Marketing Digital" width="48" height="48" />
+      <br />
+      <b>Marketing Digital</b>
+      <br />
       SEO, redes sociales e inbound marketing para atraer clientes calificados.
     </td>
-    <td align="center">
-      <img src="https://img.icons8.com/fluency/48/artificial-intelligence.png" alt="IA & Data Science" /><br />
-      <b>IA & Data Science</b><br />
-      Modelos de machine learning e inteligencia artificial aplicados a tu negocio.
-    <table align="center">
-  <tr>
-    <td align="center" width="250">
+
+    <td align="center" width="33%">
+      <img src="https://img.icons8.com/fluency/48/artificial-intelligence.png" alt="IA y Data Science" width="48" height="48" />
+      <br />
+      <b>IA & Data Science</b>
+      <br />
+      Modelos de inteligencia artificial, análisis de datos y automatización aplicada al negocio.
+    </td>
+
+    <td align="center" width="33%">
       <img src="https://img.icons8.com/fluency/48/strategy-board.png" alt="Consultoría Estratégica" width="48" height="48" />
       <br />
       <b>Consultoría Estratégica</b>
@@ -84,7 +98,6 @@ Combinamos **desarrollo de software, seguridad informática y marketing digital*
     </td>
   </tr>
 </table>
-
 ---
 
 ## 🧰 Stack tecnológico
