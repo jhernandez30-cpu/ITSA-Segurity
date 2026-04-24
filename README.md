@@ -151,7 +151,7 @@ Combinamos **desarrollo de software, seguridad informática y marketing digital*
 - 🌐 **Web:** [itsasegurity.com](https://jhernandez30-cpu.github.io/ITSA-Segurity/)
 
 <div align="center">
-  <a href="[https://jhernandez30-cpu.github.io/ITSA-Segurity/contacto.html]">
+  <a href="[[https://jhernandez30-cpu.github.io/ITSA-Segurity/#contacto](https://jhernandez30-cpu.github.io/ITSA-Segurity/contacto.html)]">
     <img src="https://img.shields.io/badge/📩%20Solicitar%20Cotización-Aquí-00BFFF?style=for-the-badge" alt="Cotizar" />
   </a>
 </div>
