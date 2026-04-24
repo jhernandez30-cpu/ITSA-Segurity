@@ -124,3 +124,9 @@ Trabajamos con un proceso claro para convertir ideas en soluciones digitales fun
 5. Pruebas y optimización
 6. Entrega final
 7. Soporte y mejora continua
+
+
+📄 Licencia
+
+Este proyecto representa la presencia digital de ITSA Segurity.
+Todos los derechos reservados © 2026.
