@@ -145,31 +145,36 @@ document.documentElement.classList.add("js-enabled");
     }
 
     function initHeroNetwork() {
-        const network = document.querySelector(".hero-network");
-        if (!network) return;
+        const networks = document.querySelectorAll(".hero-network");
+        if (!networks.length) return;
 
-        const nodes = 30;
-        const lines = 14;
-        const fragment = document.createDocumentFragment();
+        networks.forEach((network) => {
+            if (network.children.length) return;
 
-        for (let index = 0; index < nodes; index += 1) {
-            const node = document.createElement("span");
-            node.className = "signal-node";
-            node.style.left = `${8 + Math.random() * 84}%`;
-            node.style.top = `${10 + Math.random() * 78}%`;
-            fragment.appendChild(node);
-        }
+            const isPageHero = network.classList.contains("page-hero-network");
+            const nodes = isPageHero ? 24 : 30;
+            const lines = isPageHero ? 11 : 14;
+            const fragment = document.createDocumentFragment();
 
-        for (let index = 0; index < lines; index += 1) {
-            const line = document.createElement("span");
-            line.className = "circuit-line";
-            line.style.left = `${4 + Math.random() * 86}%`;
-            line.style.top = `${14 + Math.random() * 72}%`;
-            line.style.transform = `rotate(${Math.random() * 160 - 80}deg)`;
-            fragment.appendChild(line);
-        }
+            for (let index = 0; index < nodes; index += 1) {
+                const node = document.createElement("span");
+                node.className = "signal-node";
+                node.style.left = `${8 + Math.random() * 84}%`;
+                node.style.top = `${10 + Math.random() * 78}%`;
+                fragment.appendChild(node);
+            }
 
-        network.appendChild(fragment);
+            for (let index = 0; index < lines; index += 1) {
+                const line = document.createElement("span");
+                line.className = "circuit-line";
+                line.style.left = `${4 + Math.random() * 86}%`;
+                line.style.top = `${14 + Math.random() * 72}%`;
+                line.style.transform = `rotate(${Math.random() * 160 - 80}deg)`;
+                fragment.appendChild(line);
+            }
+
+            network.appendChild(fragment);
+        });
 
         if (!canAnimate()) return;
 
