@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios · ITSA Segurity</title>
-    <meta name="description" content="Servicios de desarrollo web, software a medida, ciberseguridad, marketing digital, IA y consultoría en Managua, Nicaragua.">
-    <meta name="keywords" content="servicios digitales Nicaragua, desarrollo web Managua, software a medida, ciberseguridad Nicaragua">
+    <title>Servicios | ITSA Segurity</title>
+    <meta name="description" content="Servicios de desarrollo web, software a medida, ciberseguridad, marketing digital, automatización con IA y consultoría tecnológica en Nicaragua.">
+    <meta name="keywords" content="servicios digitales Nicaragua, desarrollo web Managua, software a medida, ciberseguridad Nicaragua, marketing digital, automatización con IA, GSAP, Bootstrap, React, Anime.js, Next.js">
     <meta name="author" content="ITSA Segurity">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#050816">
@@ -13,679 +13,84 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_NI">
     <meta property="og:site_name" content="ITSA Segurity">
-    <meta property="og:title" content="Servicios · ITSA Segurity">
-    <meta property="og:description" content="Servicios de desarrollo web, software a medida, ciberseguridad, marketing digital, IA y consultoría en Managua, Nicaragua.">
+    <meta property="og:title" content="Servicios | ITSA Segurity">
+    <meta property="og:description" content="Servicios de desarrollo web, software a medida, ciberseguridad, marketing digital, automatización con IA y consultoría tecnológica en Nicaragua.">
     <meta property="og:url" content="https://jhernandez30-cpu.github.io/ITSA-Segurity/servicios.html">
     <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Servicios · ITSA Segurity">
-    <meta name="twitter:description" content="Servicios de desarrollo web, software a medida, ciberseguridad, marketing digital, IA y consultoría en Managua, Nicaragua.">
+    <meta name="twitter:title" content="Servicios | ITSA Segurity">
+    <meta name="twitter:description" content="Servicios de desarrollo web, software a medida, ciberseguridad, marketing digital, automatización con IA y consultoría tecnológica en Nicaragua.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23050816'/%3E%3Cpath d='M32 8l19 8v13c0 13-8 22-19 27-11-5-19-14-19-27V16l19-8z' fill='none' stroke='%2300b4d8' stroke-width='4'/%3E%3Cpath d='M24 32l5 5 12-14' fill='none' stroke='%2300ff9c' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://unpkg.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/styles.css">
-<style>
-        /* =============================================
-           RESET Y ESTILOS BASE (100% INDEPENDIENTES)
-           ============================================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0c10;
-            color: #f0f0f0;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        /* Header glass */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 1.5rem 0;
-            background: rgba(10, 10, 15, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            z-index: 1000;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: #f0f0f0;
-        }
-
-        .logo span {
-            color: #00aaff;
-            font-weight: 800;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #b0b0b0;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: #00aaff;
-        }
-
-        .hamburger {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Footer */
-        .footer {
-            background: #050608;
-            padding: 4rem 0 1rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-brand p {
-            color: #b0b0b0;
-            margin-top: 1rem;
-        }
-
-        .footer-links h5, .footer-social h5 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: #fff;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.7rem;
-        }
-
-        .footer-links a {
-            color: #b0b0b0;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #00aaff;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1.2rem;
-        }
-
-        .social-icons a {
-            color: #b0b0b0;
-            font-size: 1.4rem;
-            transition: all 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #00aaff;
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            color: #b0b0b0;
-            font-size: 0.9rem;
-        }
-
-        /* Preloader */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0b0c10;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 1s ease, visibility 1s;
-        }
-        #preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        .loader {
-            display: flex;
-            gap: 0.5rem;
-        }
-        .loader span {
-            width: 15px;
-            height: 15px;
-            background: #00aaff;
-            border-radius: 50%;
-            animation: pulse 1.2s infinite;
-        }
-        .loader span:nth-child(2) { animation-delay: 0.2s; }
-        .loader span:nth-child(3) { animation-delay: 0.4s; }
-        .loader span:nth-child(4) { animation-delay: 0.6s; }
-        @keyframes pulse {
-            0%, 100% { transform: scale(0.5); opacity: 0.3; }
-            50% { transform: scale(1); opacity: 1; }
-        }
-
-        /* ===== ESTILOS DE LA PÁGINA DE SERVICIOS (FORZADOS) ===== */
-        .accent {
-            color: #00aaff !important;
-        }
-
-        /* Hero */
-        .servicios-hero {
-            min-height: 60vh;
-            background: radial-gradient(circle at 20% 30%, #0f1a2b 0%, #05080f 100%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid rgba(0, 170, 255, 0.15);
-            padding: 0;
-            margin-top: 80px; /* Compensa header fijo */
-        }
-
-        .servicios-hero .hero-content {
-            max-width: 950px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            padding: 2rem 0;
-        }
-
-        .servicios-title {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            color: #fff;
-        }
-
-        .servicios-subtitle {
-            font-size: 1.3rem;
-            color: #b0c7e0;
-            max-width: 750px;
-            margin: 0 auto;
-        }
-
-        /* Secciones */
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: #fff !important;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto 3.5rem;
-            color: #a0b5cc !important;
-            font-size: 1.15rem;
-        }
-
-        /* Servicios grid */
-        .servicios-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-        }
-
-        .servicio-card {
-            background: rgba(18, 28, 40, 0.7) !important;
-            backdrop-filter: blur(12px) !important;
-            border: 1px solid rgba(255, 255, 255, 0.06) !important;
-            border-radius: 32px !important;
-            padding: 2.8rem 2rem !important;
-            transition: all 0.4s !important;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
-            display: flex !important;
-            flex-direction: column !important;
-            height: 100% !important;
-            border-bottom: 3px solid transparent !important;
-        }
-
-        .servicio-card:hover {
-            transform: translateY(-12px) !important;
-            border-color: rgba(0, 170, 255, 0.3) !important;
-            background: rgba(20, 32, 48, 0.85) !important;
-            border-bottom-color: #00aaff !important;
-        }
-
-        .card-icon {
-            font-size: 2.8rem;
-            color: #00aaff !important;
-            margin-bottom: 2rem !important;
-            background: rgba(0, 170, 255, 0.08) !important;
-            width: 75px;
-            height: 75px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 20px;
-            border: 1px solid rgba(0,170,255,0.15);
-        }
-
-        .servicio-card h3 {
-            font-size: 1.9rem;
-            margin-bottom: 1.2rem;
-            color: #fff !important;
-        }
-
-        .card-description {
-            color: #b0c2d9 !important;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        .card-link {
-            color: #00aaff !important;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: auto;
-        }
-
-        /* Metodología */
-        .metodologia-section {
-            background: rgba(0, 0, 0, 0.25) !important;
-        }
-
-        .metodologia-grid {
-            display: grid !important;
-            grid-template-columns: repeat(4, 1fr) !important;
-            gap: 2rem !important;
-            margin-top: 2rem !important;
-        }
-
-        .metodologia-item {
-            background: rgba(20, 30, 45, 0.5) !important;
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            border-radius: 28px !important;
-            padding: 2.2rem 1.8rem !important;
-            text-align: center !important;
-            backdrop-filter: blur(8px) !important;
-            position: relative !important;
-            overflow: hidden !important;
-            box-shadow: 0 15px 25px rgba(0,0,0,0.2) !important;
-            border-left: none !important;
-        }
-
-        .metodologia-number {
-            font-size: 4rem !important;
-            font-weight: 800 !important;
-            color: rgba(255, 255, 255, 0.06) !important;
-            position: absolute !important;
-            top: 0.2rem !important;
-            right: 1rem !important;
-            z-index: 0;
-        }
-
-        .metodologia-item h4 {
-            font-size: 1.7rem !important;
-            color: #fff !important;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .metodologia-item p {
-            color: #b0c2d9 !important;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Tecnologías */
-        .tecnologias-section {
-            background: #080c14 !important;
-        }
-
-        .tech-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .tech-item {
-            background: rgba(0, 170, 255, 0.06) !important;
-            border: 1px solid rgba(0, 170, 255, 0.2) !important;
-            color: #e0e9f5 !important;
-            padding: 0.9rem 1.8rem !important;
-            border-radius: 50px !important;
-            font-weight: 500;
-            backdrop-filter: blur(4px);
-        }
-
-        /* Estadísticas */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-        }
-
-        .stat-large {
-            text-align: center !important;
-            padding: 2.5rem 1.5rem !important;
-            background: rgba(20, 30, 45, 0.4) !important;
-            border-radius: 24px !important;
-            backdrop-filter: blur(8px) !important;
-            border: 1px solid rgba(255,255,255,0.05) !important;
-        }
-
-        .stat-number {
-            font-size: 4.5rem;
-            font-weight: 800;
-            color: #00aaff !important;
-        }
-
-        /* Trust section */
-        .trust-section {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 70px 0;
-        }
-
-        .trust-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 3rem 4rem;
-        }
-
-        .trust-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            opacity: 0.8;
-        }
-
-        .trust-item i {
-            font-size: 2.8rem;
-            color: #b0c7e0;
-            margin-bottom: 0.5rem;
-        }
-
-        .badge-container {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .badge {
-            background: rgba(0, 170, 255, 0.08);
-            border: 1px solid rgba(0, 170, 255, 0.25);
-            padding: 0.8rem 2rem;
-            border-radius: 40px;
-            color: #e0e9f5;
-            backdrop-filter: blur(4px);
-        }
-
-        /* CTA */
-        .cta-section {
-            background: linear-gradient(145deg, #020408 0%, #0e1a28 100%);
-            text-align: center;
-            padding: 110px 0;
-        }
-
-        .cta-content h2 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 14px;
-            padding: 1.3rem 3.2rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            background: #00aaff;
-            color: #fff;
-            border-radius: 60px;
-            text-decoration: none;
-            box-shadow: 0 15px 30px rgba(0, 170, 255, 0.25);
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .servicios-grid { grid-template-columns: repeat(2, 1fr); }
-            .metodologia-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: #0b0c10;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: left 0.3s;
-            }
-            .nav-menu.active { left: 0; }
-            .hamburger { display: block; }
-            .servicios-grid { grid-template-columns: 1fr; }
-            .metodologia-grid { grid-template-columns: 1fr !important; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-        }
-    </style>
 </head>
 <body>
     <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
-    <!-- PRELOADER -->
-    <div id="preloader">
-        <div class="loader">
-            <span></span><span></span><span></span><span></span>
-        </div>
-    </div>
-
-    <!-- HEADER -->
-        <header class="site-header" id="siteHeader">
-        <nav class="site-navbar container" aria-label="Navegaci&oacute;n principal">
-            <a class="brand" href="index.html#inicio" aria-label="ITSA Segurity inicio">
-                <span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
-                <span>ITSA <strong>Segurity</strong></span>
-            </a>
+    <div id="preloader" aria-hidden="true"><div class="loader"><span></span><span></span><span></span></div></div>
+    <header class="site-header" id="siteHeader">
+        <nav class="site-navbar container" aria-label="Navegación principal">
+            <a class="brand" href="index.html" aria-label="ITSA Segurity inicio"><span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span><span>ITSA <strong>Segurity</strong></span></a>
             <ul class="site-nav-menu" id="navMenu">
-                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="index.html#nosotros">Nosotros</a></li>
-                <li><a href="index.html#servicios">Servicios</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="servicios.html" class="is-active">Servicios</a></li>
+                <li><a href="metodologia.html">Metodología</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
                 <li><a href="index.html#proyectos">Proyectos</a></li>
-                <li><a href="index.html#seguridad">Seguridad</a></li>
-                <li><a href="index.html#testimonios">Testimonios</a></li>
+                <li><a href="seopage/ciberseguridad.html">Seguridad</a></li>
                 <li><a href="index.html#blog">Blog</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
             <div class="nav-actions">
-                <a class="btn btn-small btn-primary" href="index.html#contacto">
-                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                    Solicitar asesor&iacute;a
-                </a>
-                <button class="nav-toggle" type="button" aria-label="Abrir men&uacute;" aria-expanded="false" aria-controls="navMenu">
-                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
-                </button>
+                <a class="btn btn-small btn-primary" href="contacto.html"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Solicitar asesoría</a>
+                <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
             </div>
         </nav>
     </header>
-
-    <main id="contenido">
-        <!-- HERO -->
-        <section class="servicios-hero">
-            <div class="container hero-content">
-                <h1 class="servicios-title">Soluciones <span class="accent">digitales</span> de clase mundial</h1>
-                <p class="servicios-subtitle">Impulsamos la transformación digital de empresas en Nicaragua y la región con servicios de desarrollo web, software a medida, ciberseguridad, marketing digital, inteligencia artificial y consultoría estratégica.</p>
-            </div>
-        </section>
-
-        <!-- CONFIANZA -->
-        <section class="trust-section">
-            <div class="container">
-                <div class="trust-grid">
-                    <div class="trust-item"><i class="fas fa-building"></i><span>Empresas líderes confían en nosotros</span></div>
-                    <div class="trust-item"><i class="fas fa-shield-alt"></i><span>ISO 27001 · AWS Partner · Microsoft Partner</span></div>
-                    <div class="trust-item"><i class="fas fa-globe-americas"></i><span>Presencia en Centroamérica y EE.UU.</span></div>
-                </div>
-                <div class="badge-container">
-                    <div class="badge"><i class="fas fa-check-circle"></i> +50 proyectos entregados</div>
-                    <div class="badge"><i class="fas fa-clock"></i> Soporte 24/7</div>
-                    <div class="badge"><i class="fas fa-lock"></i> Cumplimiento GDPR</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SERVICIOS (con id="servicios" para GSAP) -->
-        <section id="servicios" class="section">
-            <div class="container">
-                <h2 class="section-title">Servicios <span class="accent">empresariales</span> de alto impacto</h2>
-                <p class="section-subtitle">Combinamos tecnología de vanguardia con experiencia sectorial para ofrecer soluciones personalizadas que aceleran el crecimiento de su organización.</p>
-                <div class="servicios-grid">
-                    <!-- 6 tarjetas -->
-                    <div class="servicio-card"><i class="fas fa-laptop-code card-icon"></i><h3>Desarrollo Web</h3><p class="card-description">Sitios web corporativos, portales y aplicaciones progresivas (PWA) que reflejan la excelencia de su marca.</p><a href="seopage/desarrollo-web.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a></div>
-                    <div class="servicio-card"><i class="fas fa-cogs card-icon"></i><h3>Software a medida</h3><p class="card-description">Automatización de procesos, ERPs, CRMs y sistemas personalizados que escalan con su negocio.</p><a href="seopage/software-medida.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a></div>
-                    <div class="servicio-card"><i class="fas fa-shield-haltered card-icon"></i><h3>Ciberseguridad</h3><p class="card-description">Auditorías, pentesting, cumplimiento normativo y monitoreo continuo para blindar sus activos digitales.</p><a href="seopage/ciberseguridad.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a></div>
-                    <div class="servicio-card"><i class="fas fa-bullseye card-icon"></i><h3>Marketing Digital</h3><p class="card-description">Estrategias de inbound marketing, SEO/SEM y analítica avanzada para maximizar el ROI.</p><a href="seopage/marketing-digital.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a></div>
-                    <div class="servicio-card"><i class="fas fa-brain card-icon"></i><h3>IA & Data Science</h3><p class="card-description">Modelos de inteligencia artificial y machine learning para predicción y automatización inteligente.</p><a href="seopage/ia-datos.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a></div>
-                    <div class="servicio-card"><i class="fas fa-chart-pie card-icon"></i><h3>Consultoría estratégica</h3><p class="card-description">Asesoría en transformación digital, arquitectura cloud y optimización de procesos.</p><a href="seopage/consultoria.html" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- METODOLOGÍA -->
-        <section class="metodologia-section section">
-            <div class="container">
-                <h2 class="section-title">Metodología <span class="accent">probada</span></h2>
-                <p class="section-subtitle">Un enfoque ágil, transparente y orientado a resultados perfeccionado en más de 50 implementaciones exitosas.</p>
-                <div class="metodologia-grid">
-                    <div class="metodologia-item"><span class="metodologia-number">01</span><h4>Discovery</h4><p>Entendemos a fondo su negocio y oportunidades.</p></div>
-                    <div class="metodologia-item"><span class="metodologia-number">02</span><h4>Scope & Plan</h4><p>Definimos alcance y roadmap con claridad.</p></div>
-                    <div class="metodologia-item"><span class="metodologia-number">03</span><h4>Build iterativo</h4><p>Desarrollo en sprints con demos semanales.</p></div>
-                    <div class="metodologia-item"><span class="metodologia-number">04</span><h4>Launch & Evolve</h4><p>Lanzamiento controlado y soporte continuo.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TECNOLOGÍAS -->
-        <section class="tecnologias-section section">
-            <div class="container">
-                <h2 class="section-title">Stack tecnológico <span class="accent">enterprise</span></h2>
-                <p class="section-subtitle">Tecnologías modernas, escalables y seguras.</p>
-                <div class="tech-cloud">
-                    <span class="tech-item">React</span><span class="tech-item">Node.js</span><span class="tech-item">Python</span><span class="tech-item">TypeScript</span>
-                    <span class="tech-item">Next.js</span><span class="tech-item">Docker</span><span class="tech-item">AWS</span><span class="tech-item">MongoDB</span>
-                    <span class="tech-item">PostgreSQL</span><span class="tech-item">TensorFlow</span><span class="tech-item">Flutter</span><span class="tech-item">GitHub</span>
-                    <span class="tech-item">Kubernetes</span><span class="tech-item">GraphQL</span><span class="tech-item">Jenkins</span><span class="tech-item">Terraform</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- ESTADÍSTICAS -->
-        <section class="section stats">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-large"><i class="fas fa-smile"></i><div><span class="stat-number">98</span><span>%</span></div><p>Satisfacción del cliente</p></div>
-                    <div class="stat-large"><i class="fas fa-headset"></i><div><span class="stat-number">24</span><span>/7</span></div><p>Soporte continuo</p></div>
-                    <div class="stat-large"><i class="fas fa-trophy"></i><div><span class="stat-number">15</span><span>+</span></div><p>Premios y reconocimientos</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>¿Listo para llevar su empresa al siguiente nivel?</h2>
-                    <p style="color:#b0c7e0; margin:1.5rem 0 2.5rem;">Agende una consultoría inicial sin costo.</p>
-                    <a href="index.html#contacto" class="btn-primary"><i class="fas fa-calendar-check"></i> Solicitar asesoría gratuita</a>
-                    <p style="margin-top:2.5rem; color:#90a4c2;"><i class="fas fa-lock"></i> Confidencialidad garantizada · Sin compromiso</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-     <!-- Footer corporativo -->
-        <footer class="site-footer">
+    <main id="contenido"><section class="page-hero" aria-labelledby="page-title">
+        <img class="page-hero-bg" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80" alt="Fondo tecnológico de ITSA Segurity" width="1600" height="900">
+        <div class="container page-hero-content">
+            <p class="section-kicker reveal">Servicios</p>
+            <h1 class="page-title reveal" id="page-title">Soluciones digitales completas para empresas modernas</h1>
+            <p class="page-subtitle reveal">Elige el servicio que necesita tu empresa y entra a su página especializada con beneficios, proceso, stack y CTA.</p>
+            <div class="hero-actions reveal"><a class="btn btn-primary" href="contacto.html"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Solicitar asesoría</a><a class="btn btn-ghost" href="#catalogo"><i class="fa-solid fa-layer-group" aria-hidden="true"></i>Ver catálogo</a></div>
+        </div>
+    </section><section class="section services-section" id="catalogo" data-reveal-group><div class="container"><div class="section-heading"><p class="section-kicker reveal">Catálogo conectado</p><h2 class="section-title reveal">Cada servicio tiene su landing SEO</h2><p class="section-intro reveal">Las tarjetas enlazan a páginas dentro de <code>seopage/</code> para posicionar mejor cada solución.</p></div><div class="services-grid"><article class="service-card reveal interactive-card"><span class="icon-badge"><i class="fa-solid fa-code" aria-hidden="true"></i></span><h3>Desarrollo Web</h3><p>Creamos sitios web institucionales, landing pages, tiendas online y experiencias digitales rápidas, modernas y optimizadas para SEO.</p><ul class="check-list"><li>Sitios institucionales</li><li>Landing pages de conversión</li><li>Tiendas online</li><li>Portafolios profesionales</li><li>Optimización SEO</li></ul><a class="btn btn-card" href="seopage/desarrollo-web.html">Ver detalle</a></article><article class="service-card reveal interactive-card"><span class="icon-badge"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></span><h3>Software a Medida</h3><p>Desarrollamos sistemas administrativos, aplicaciones web, paneles de control e integraciones para ordenar procesos y datos de tu empresa.</p><ul class="check-list"><li>Sistemas administrativos</li><li>Aplicaciones web</li><li>Automatización de procesos</li><li>Paneles de control</li><li>Integración con bases de datos</li></ul><a class="btn btn-card" href="seopage/software-medida.html">Ver detalle</a></article><article class="service-card reveal interactive-card"><span class="icon-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span><h3>Ciberseguridad</h3><p>Ayudamos a proteger sitios web, datos, accesos y procesos digitales con buenas prácticas, revisión de riesgos y concientización empresarial.</p><ul class="check-list"><li>Evaluación de vulnerabilidades</li><li>Protección de datos</li><li>Seguridad para sitios web</li><li>Buenas prácticas de acceso</li><li>Concientización básica para empresas</li></ul><a class="btn btn-card" href="seopage/ciberseguridad.html">Ver detalle</a></article><article class="service-card reveal interactive-card"><span class="icon-badge"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></span><h3>Marketing Digital</h3><p>Creamos estrategias de contenido, branding, campañas y posicionamiento online para que tu empresa gane visibilidad y oportunidades comerciales.</p><ul class="check-list"><li>Estrategia para redes sociales</li><li>Diseño de contenido</li><li>Campañas publicitarias</li><li>Branding digital</li><li>Posicionamiento online</li></ul><a class="btn btn-card" href="seopage/marketing-digital.html">Ver detalle</a></article><article class="service-card reveal interactive-card"><span class="icon-badge"><i class="fa-solid fa-robot" aria-hidden="true"></i></span><h3>Automatización con IA</h3><p>Implementamos chatbots, asistentes virtuales y flujos de automatización para responder más rápido y reducir tareas repetitivas.</p><ul class="check-list"><li>Chatbots</li><li>Asistentes virtuales</li><li>Automatización de atención al cliente</li><li>Flujos con n8n o Make</li><li>Mejora de procesos internos</li></ul><a class="btn btn-card" href="seopage/ia-datos.html">Ver detalle</a></article><article class="service-card reveal interactive-card"><span class="icon-badge"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span><h3>Consultoría Tecnológica</h3><p>Te ayudamos a ordenar prioridades tecnológicas, elegir herramientas, planificar proyectos y construir una ruta digital segura y realista.</p><ul class="check-list"><li>Diagnóstico tecnológico</li><li>Roadmap digital</li><li>Selección de herramientas</li><li>Arquitectura de soluciones</li><li>Acompañamiento a equipos</li></ul><a class="btn btn-card" href="seopage/consultoria.html">Ver detalle</a></article></div></div></section><section class="section skills-section" data-reveal-group><div class="container"><div class="section-heading"><p class="section-kicker reveal">Stack transversal</p><h2 class="section-title reveal">GSAP, Bootstrap, React, Anime.js y Next.js presentes en la propuesta</h2><p class="section-intro reveal">Usamos estas tecnologías como base visual, animada y de arquitectura para proyectos modernos.</p></div><div class="framework-stack framework-stack-large reveal"><span>GSAP</span><span>Bootstrap</span><span>React</span><span>Anime.js</span><span>Next.js</span></div></div></section><section class="section contact-cta-section" data-reveal-group><div class="container cta-panel reveal"><h2>¿Listo para elegir una solución?</h2><p>Cuéntanos tu necesidad y te recomendamos la ruta más adecuada.</p><a class="btn btn-primary" href="contacto.html"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Contactar ahora</a></div></section></main>
+    <footer class="site-footer">
+        <div class="container footer-stack-panel">
+            <p class="section-kicker">Stack visual y tecnológico</p>
+            <div class="framework-stack react-stack-root" data-stack="GSAP,Bootstrap,React,Anime.js,Next.js"><span>GSAP</span><span>Bootstrap</span><span>React</span><span>Anime.js</span><span>Next.js</span></div>
+        </div>
         <div class="container site-footer-grid">
             <div class="site-footer-brand">
-                <a class="brand" href="index.html#inicio" aria-label="ITSA Segurity inicio">
-                    <span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
-                    <span>ITSA <strong>Segurity</strong></span>
-                </a>
-                <p>Soluciones digitales seguras para empresas modernas: desarrollo web, software, ciberseguridad, marketing digital y automatizaci&oacute;n con IA.</p>
+                <a class="brand" href="index.html" aria-label="ITSA Segurity inicio"><span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span><span>ITSA <strong>Segurity</strong></span></a>
+                <p>Soluciones digitales seguras para empresas modernas: desarrollo web, software, ciberseguridad, marketing digital y automatización con IA.</p>
             </div>
-            <nav class="site-footer-column" aria-label="Enlaces r&aacute;pidos">
-                <h2>Enlaces r&aacute;pidos</h2>
+            <nav class="site-footer-column" aria-label="Enlaces rápidos">
+                <h2>Enlaces rápidos</h2>
+                <a href="index.html">Inicio</a>
                 <a href="index.html#nosotros">Nosotros</a>
-                <a href="index.html#servicios">Servicios</a>
-                <a href="index.html#skills">GSAP Skills</a>
-                <a href="index.html#proyectos">Proyectos</a>
-                <a href="index.html#contacto">Contacto</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="metodologia.html">Metodología</a>
+                <a href="tecnologia.html">Tecnología</a>
+                <a href="contacto.html">Contacto</a>
             </nav>
             <nav class="site-footer-column" aria-label="Servicios">
                 <h2>Servicios</h2>
-                <a href="index.html#servicios">Desarrollo Web</a>
-                <a href="index.html#servicios">Software empresarial</a>
-                <a href="index.html#servicios">Ciberseguridad</a>
-                <a href="index.html#servicios">Marketing Digital</a>
-                <a href="index.html#servicios">Automatizaci&oacute;n con IA</a>
+                <a href="seopage/desarrollo-web.html">Desarrollo Web</a>
+                <a href="seopage/software-medida.html">Software a Medida</a>
+                <a href="seopage/ciberseguridad.html">Ciberseguridad</a>
+                <a href="seopage/marketing-digital.html">Marketing Digital</a>
+                <a href="seopage/ia-datos.html">Automatización con IA</a>
+                <a href="seopage/consultoria.html">Consultoría Tecnológica</a>
             </nav>
             <div class="site-footer-column">
                 <h2>Contacto</h2>
@@ -700,22 +105,16 @@
             </div>
         </div>
         <div class="container site-footer-bottom">
-            <p>ITSA Segurity &copy; 2026. Soluciones digitales seguras para empresas modernas.</p>
-            <div>
-                <a href="privacidad.html">Privacidad</a>
-                <a href="terminos.html">T&eacute;rminos</a>
-                <a href="aviso-legal.html">Aviso legal</a>
-            </div>
+            <p>ITSA Segurity © 2026. Soluciones digitales seguras para empresas modernas.</p>
+            <div><a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a><a href="aviso-legal.html">Aviso legal</a></div>
         </div>
     </footer>
-
-    <a class="floating-whatsapp" href="https://wa.me/50589871374?text=Hola%20ITSA%20Segurity%2C%20quiero%20solicitar%20asesor%C3%ADa" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-    </a>
-
+    <a class="floating-whatsapp" href="https://wa.me/50589871374?text=Hola%20ITSA%20Segurity%2C%20quiero%20solicitar%20asesor%C3%ADa" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin defer></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin defer></script>
     <script src="js/script.js" defer></script>
 </body>
 </html>

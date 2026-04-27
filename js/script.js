@@ -24,6 +24,7 @@ document.documentElement.classList.add("js-enabled");
         initWhatsAppLinks();
         initContactForm();
         initFaqAccordion();
+        initReactStack();
     });
 
     function initPreloader() {
@@ -46,7 +47,12 @@ document.documentElement.classList.add("js-enabled");
         const header = document.getElementById("siteHeader");
         const toggle = document.querySelector(".nav-toggle, .hamburger");
         const menu = document.getElementById("navMenu");
-        const links = menu.querySelectorAll("a[href*='#']");
+        const links = menu.querySelectorAll("a[href]");
+        const currentFile = window.location.pathname.split("/").pop() || "index.html";
+        const samePageHashLinks = Array.from(links).filter((link) => {
+            const href = link.getAttribute("href") || "";
+            return href.startsWith("#") || href.startsWith(`${currentFile}#`);
+        });
         const sections = Array.from(document.querySelectorAll("main section[id]"));
 
         if (!header || !menu) return;
@@ -109,12 +115,12 @@ document.documentElement.classList.add("js-enabled");
             });
         });
 
-        if (sections.length) {
+        if (sections.length && samePageHashLinks.length) {
             const sectionObserver = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (!entry.isIntersecting) return;
                     const activeLink = menu.querySelector(`a[href="#${entry.target.id}"], a[href$="#${entry.target.id}"]`);
-                    links.forEach((link) => link.classList.remove("is-active"));
+                    samePageHashLinks.forEach((link) => link.classList.remove("is-active"));
                     if (activeLink) activeLink.classList.add("is-active");
                 });
             }, {
@@ -486,6 +492,28 @@ document.documentElement.classList.add("js-enabled");
                 if (!item) return;
                 item.classList.toggle("active");
             });
+        });
+    }
+
+    function initReactStack() {
+        const roots = document.querySelectorAll(".react-stack-root");
+        if (!roots.length || !window.React || !window.ReactDOM) return;
+
+        roots.forEach((root) => {
+            const stack = String(root.dataset.stack || "")
+                .split(",")
+                .map((item) => item.trim())
+                .filter(Boolean);
+
+            if (!stack.length) return;
+
+            window.ReactDOM.createRoot(root).render(
+                window.React.createElement(
+                    window.React.Fragment,
+                    null,
+                    stack.map((name) => window.React.createElement("span", { key: name }, name))
+                )
+            );
         });
     }
 
