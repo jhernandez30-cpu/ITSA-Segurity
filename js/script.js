@@ -206,6 +206,22 @@ document.documentElement.classList.add("js-enabled");
             return;
         }
 
+        if (!document.querySelector(".hero") && document.querySelector(".page-hero")) {
+            const pageHeroItems = document.querySelectorAll(".page-hero .reveal");
+            window.anime({
+                targets: pageHeroItems,
+                opacity: [0, 1],
+                translateY: [22, 0],
+                duration: 760,
+                delay: window.anime.stagger(80),
+                easing: "easeOutCubic",
+                complete: () => {
+                    pageHeroItems.forEach((item) => item.classList.add("is-visible"));
+                }
+            });
+            return;
+        }
+
         const timeline = window.anime.timeline({
             easing: "easeOutExpo",
             duration: 850
