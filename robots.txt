@@ -1,12 +1,4 @@
-# robots.txt para ITSA Segurity
-# Permitir el rastreo completo del sitio
-
 User-agent: *
 Allow: /
 
-# Deshabilitar rutas innecesarias (si las hubiera)
-# Disallow: /assets/private/
-# Disallow: /admin/
-
-# Indicar la ubicación del sitemap
 Sitemap: https://jhernandez30-cpu.github.io/ITSA-Segurity/sitemap.xml
