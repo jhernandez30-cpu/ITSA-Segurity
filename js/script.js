@@ -4,7 +4,7 @@ document.documentElement.classList.add("js-enabled");
     "use strict";
 
     const CONTACT = {
-        email: "hernandezg.josuea@hotmail.com",
+        email: "itsasecurity@gmail.com",
         whatsapp: "50589871374"
     };
 
