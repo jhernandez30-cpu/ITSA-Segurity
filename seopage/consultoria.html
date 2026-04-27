@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultoría Tecnológica en Managua · ITSA Segurity</title>
-    <meta name="description" content="Te asesoramos en arquitectura de software, transformación digital y selección de tecnología para que tu empresa en Nicaragua dé el siguiente paso. Diagnóstico inicial sin costo.">
-    <meta name="keywords" content="consultoría tecnológica Nicaragua, arquitectura software, transformación digital, selección de tecnología, asesoría TI">
+    <title>Consultoría Tecnológica en Nicaragua | ITSA Segurity</title>
+    <meta name="description" content="Te ayudamos a ordenar prioridades tecnológicas, elegir herramientas, planificar proyectos y construir una ruta digital segura y realista.">
+    <meta name="keywords" content="consultoría tecnológica Nicaragua, estrategia digital, arquitectura web, asesoría TI, transformación digital, GSAP, Bootstrap, React, Anime.js, Next.js">
     <meta name="author" content="ITSA Segurity">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#050816">
@@ -13,843 +13,84 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_NI">
     <meta property="og:site_name" content="ITSA Segurity">
-    <meta property="og:title" content="Consultoría Tecnológica en Managua · ITSA Segurity">
-    <meta property="og:description" content="Te asesoramos en arquitectura de software, transformación digital y selección de tecnología para que tu empresa en Nicaragua dé el siguiente paso. Diagnóstico inicial sin costo.">
+    <meta property="og:title" content="Consultoría Tecnológica en Nicaragua | ITSA Segurity">
+    <meta property="og:description" content="Te ayudamos a ordenar prioridades tecnológicas, elegir herramientas, planificar proyectos y construir una ruta digital segura y realista.">
     <meta property="og:url" content="https://jhernandez30-cpu.github.io/ITSA-Segurity/seopage/consultoria.html">
     <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Consultoría Tecnológica en Managua · ITSA Segurity">
-    <meta name="twitter:description" content="Te asesoramos en arquitectura de software, transformación digital y selección de tecnología para que tu empresa en Nicaragua dé el siguiente paso. Diagnóstico inicial sin costo.">
+    <meta name="twitter:title" content="Consultoría Tecnológica en Nicaragua | ITSA Segurity">
+    <meta name="twitter:description" content="Te ayudamos a ordenar prioridades tecnológicas, elegir herramientas, planificar proyectos y construir una ruta digital segura y realista.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23050816'/%3E%3Cpath d='M32 8l19 8v13c0 13-8 22-19 27-11-5-19-14-19-27V16l19-8z' fill='none' stroke='%2300b4d8' stroke-width='4'/%3E%3Cpath d='M24 32l5 5 12-14' fill='none' stroke='%2300ff9c' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://unpkg.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="../css/styles.css">
-<link rel="stylesheet" href="../css/hero.css">
-<link rel="stylesheet" href="../css/projects.css">
-<link rel="stylesheet" href="../css/skills.css">
-<style>
-        /* ===== ESTILOS CORPORATIVOS PARA CONSULTORÍA ===== */
-        :root {
-            --bg-dark: #0a0c12;
-            --bg-card: rgba(18, 28, 40, 0.7);
-            --border-light: rgba(255, 255, 255, 0.06);
-            --accent: #00aaff;
-            --accent-hover: #0099dd;
-            --text-dim: #a0b3cc;
-            --text-light: #e6edf5;
-            --shadow-lg: 0 25px 40px -12px rgba(0, 0, 0, 0.45);
-        }
-        
-        body {
-            background-color: var(--bg-dark);
-        }
-        
-        /* Hero profesional sin animaciones */
-        .hero {
-            min-height: 70vh;
-            background-color: var(--bg-dark);
-            position: relative;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid rgba(0, 170, 255, 0.12);
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            opacity: 0.4;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 0 1.5rem;
-        }
-        
-        .page-title {
-            font-size: 3.8rem;
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: 0;
-            margin-bottom: 1.5rem;
-            color: #fff;
-        }
-        
-        .page-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-dim);
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            line-height: 1.6;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 1rem 2.2rem;
-            font-weight: 600;
-            border-radius: 60px;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .btn-primary {
-            background: var(--accent);
-            color: #fff;
-            box-shadow: 0 12px 25px -5px rgba(0, 170, 255, 0.3);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .btn-primary:hover {
-            background: var(--accent-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 20px 30px -5px rgba(0, 170, 255, 0.4);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(8px);
-        }
-        
-        .btn-outline:hover {
-            border-color: var(--accent);
-            background: rgba(0, 170, 255, 0.05);
-            transform: translateY(-3px);
-        }
-        
-        /* Secciones generales */
-        .section {
-            padding: 100px 0;
-        }
-        
-        .section-subtitle {
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 0;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        .section-title {
-            font-size: 2.8rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0;
-            color: #fff;
-        }
-        
-        .accent {
-            color: var(--accent);
-        }
-        
-        /* Grids y tarjetas */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-        }
-        
-        .glass-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-light);
-            border-radius: 28px;
-            padding: 2.5rem 2rem;
-            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
-            height: 100%;
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 170, 255, 0.3);
-            background: rgba(20, 35, 50, 0.8);
-            box-shadow: 0 28px 40px -12px rgba(0, 0, 0, 0.4);
-        }
-        
-        .glass-card i {
-            color: var(--accent);
-        }
-        
-        /* Proyectos destacados */
-        .proyectos-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .proyecto-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-light);
-            border-radius: 24px;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-        
-        .proyecto-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 170, 255, 0.3);
-        }
-        
-        .proyecto-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--border-light);
-        }
-        
-        .proyecto-info {
-            padding: 1.8rem;
-        }
-        
-        .proyecto-info h4 {
-            font-size: 1.5rem;
-            color: #fff;
-            margin-bottom: 0.8rem;
-        }
-        
-        .proyecto-info p {
-            color: var(--text-dim);
-            line-height: 1.6;
-        }
-        
-        /* Metodología */
-        .metodologia-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .metodologia-item {
-            background: rgba(18, 28, 40, 0.5);
-            backdrop-filter: blur(8px);
-            border: 1px solid var(--border-light);
-            border-radius: 24px;
-            padding: 2rem 1.8rem;
-            text-align: center;
-            transition: all 0.25s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .metodologia-item:hover {
-            background: rgba(0, 170, 255, 0.05);
-            border-color: rgba(0, 170, 255, 0.2);
-            transform: translateY(-5px);
-        }
-        
-        .metodologia-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: rgba(255, 255, 255, 0.05);
-            position: absolute;
-            top: 0.5rem;
-            right: 1.2rem;
-            line-height: 1;
-        }
-        
-        .metodologia-item h4 {
-            font-size: 1.5rem;
-            color: #fff;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .metodologia-item p {
-            color: var(--text-dim);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Tecnologías */
-        .tech-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .tech-item {
-            background: rgba(0, 170, 255, 0.08);
-            border: 1px solid rgba(0, 170, 255, 0.15);
-            color: var(--text-light);
-            padding: 0.8rem 1.6rem;
-            border-radius: 40px;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            backdrop-filter: blur(4px);
-        }
-        
-        .tech-item:hover {
-            background: var(--accent);
-            color: #fff;
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
-        
-        /* Testimonios */
-        .testimonial-carousel {
-            margin-top: 2rem;
-            overflow: hidden;
-            width: 100%;
-        }
-        
-        .testimonial-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        
-        .testimonial-card {
-            flex: 0 0 100%;
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-light);
-            border-radius: 24px;
-            padding: 2.5rem;
-            margin: 0 1rem;
-            text-align: center;
-        }
-        
-        .testimonial-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent);
-            margin-bottom: 1.5rem;
-        }
-        
-        .testimonial-card p {
-            color: var(--text-light);
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .testimonial-card h5 {
-            color: var(--text-dim);
-            font-weight: 500;
-        }
-        
-        /* FAQ Acordeón */
-        .faq-item {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid var(--border-light);
-            border-radius: 20px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-            backdrop-filter: blur(8px);
-        }
-        
-        .faq-question {
-            padding: 1.5rem 2rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: #fff;
-            transition: background 0.3s;
-        }
-        
-        .faq-question:hover {
-            background: rgba(0, 170, 255, 0.08);
-        }
-        
-        .faq-question i {
-            color: var(--accent);
-            transition: transform 0.3s;
-        }
-        
-        .faq-answer {
-            padding: 0 2rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            color: var(--text-dim);
-            line-height: 1.7;
-        }
-        
-        .faq-item.active .faq-answer {
-            padding: 0 2rem 1.5rem 2rem;
-            max-height: 300px;
-        }
-        
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-        
-        /* Formulario de contacto */
-        .contacto-formulario {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-light);
-            border-radius: 28px;
-            padding: 2.5rem;
-            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.3);
-        }
-        
-        .form-group {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem 0 0.5rem 0;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-            color: #fff;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        .form-group label {
-            position: absolute;
-            top: 1rem;
-            left: 0;
-            color: var(--text-dim);
-            font-size: 1rem;
-            font-weight: 400;
-            pointer-events: none;
-            transition: all 0.25s ease;
-        }
-        
-        .form-group input:focus ~ label,
-        .form-group input:valid ~ label,
-        .form-group textarea:focus ~ label,
-        .form-group textarea:valid ~ label {
-            top: -0.5rem;
-            font-size: 0.75rem;
-            color: var(--accent);
-            font-weight: 500;
-            letter-spacing: 0;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-bottom-color: var(--accent);
-        }
-        
-        .btn-enviar {
-            background: var(--accent);
-            color: #fff;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 10px 20px -5px rgba(0, 170, 255, 0.25);
-        }
-        
-        .btn-enviar:hover {
-            background: var(--accent-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 20px 30px -5px rgba(0, 170, 255, 0.4);
-        }
-        
-        /* Grid para contacto */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        /* Ocultar contenedores de animación */
-        #particles-js, #three-container {
-            display: none;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .page-title { font-size: 3rem; }
-            .section-title { font-size: 2.4rem; }
-            .grid-3 { grid-template-columns: repeat(2, 1fr); }
-            .metodologia-grid { grid-template-columns: repeat(2, 1fr); }
-            .proyectos-grid { grid-template-columns: repeat(2, 1fr); }
-            .grid-2 { grid-template-columns: 1fr; }
-        }
-        
-        @media (max-width: 768px) {
-            .page-title { font-size: 2.5rem; }
-            .section-title { font-size: 2rem; }
-            .grid-3 { grid-template-columns: 1fr; }
-            .metodologia-grid { grid-template-columns: 1fr; }
-            .proyectos-grid { grid-template-columns: 1fr; }
-        }
-    </style>
 </head>
 <body>
     <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
-    <div id="preloader"><div class="loader"><span></span><span></span><span></span><span></span></div></div>
-
-        <header class="site-header" id="siteHeader">
-        <nav class="site-navbar container" aria-label="Navegaci&oacute;n principal">
-            <a class="brand" href="../index.html#inicio" aria-label="ITSA Segurity inicio">
-                <span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
-                <span>ITSA <strong>Segurity</strong></span>
-            </a>
+    <div id="preloader" aria-hidden="true"><div class="loader"><span></span><span></span><span></span></div></div>
+    <header class="site-header" id="siteHeader">
+        <nav class="site-navbar container" aria-label="Navegación principal">
+            <a class="brand" href="../index.html" aria-label="ITSA Segurity inicio"><span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span><span>ITSA <strong>Segurity</strong></span></a>
             <ul class="site-nav-menu" id="navMenu">
-                <li><a href="../index.html#inicio">Inicio</a></li>
+                <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../index.html#nosotros">Nosotros</a></li>
-                <li><a href="../index.html#servicios">Servicios</a></li>
-                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../servicios.html" class="is-active">Servicios</a></li>
+                <li><a href="../metodologia.html">Metodología</a></li>
+                <li><a href="../tecnologia.html">Tecnología</a></li>
                 <li><a href="../index.html#proyectos">Proyectos</a></li>
-                <li><a href="../index.html#seguridad">Seguridad</a></li>
-                <li><a href="../index.html#testimonios">Testimonios</a></li>
+                <li><a href="ciberseguridad.html">Seguridad</a></li>
                 <li><a href="../index.html#blog">Blog</a></li>
-                <li><a href="../index.html#contacto">Contacto</a></li>
+                <li><a href="../contacto.html">Contacto</a></li>
             </ul>
             <div class="nav-actions">
-                <a class="btn btn-small btn-primary" href="../index.html#contacto">
-                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                    Solicitar asesor&iacute;a
-                </a>
-                <button class="nav-toggle" type="button" aria-label="Abrir men&uacute;" aria-expanded="false" aria-controls="navMenu">
-                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
-                </button>
+                <a class="btn btn-small btn-primary" href="../contacto.html"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Solicitar asesoría</a>
+                <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
             </div>
         </nav>
     </header>
-
-    <main id="contenido">
-        <!-- Hero Section profesional (sin partículas) -->
-        <section class="hero">
-            <div class="hero-content container">
-                <h1 class="page-title">Consultoría <span class="accent">tecnológica</span> en Nicaragua</h1>
-                <p class="page-subtitle">Te asesoramos en arquitectura de software, transformación digital y selección de tecnología para que tu empresa dé el siguiente paso. Más de 50 empresas en Nicaragua ya han mejorado su estrategia tecnológica con nosotros.</p>
-                <div class="hero-buttons">
-                    <a href="#contacto" class="btn btn-primary">Solicitar primera asesoría gratuita <i class="fas fa-arrow-right"></i></a>
-                    <a href="#servicios" class="btn btn-outline">Conocer más</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de servicios destacados -->
-        <section id="servicios" class="section">
-            <div class="container">
-                <span class="section-subtitle">· Qué ofrecemos ·</span>
-                <h2 class="section-title">Servicios de <span class="accent">consultoría</span></h2>
-                <div class="grid-3" style="margin-top: 2rem;">
-                    <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-sitemap" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Arquitectura de software</h3>
-                        <p style="color: var(--text-dim);">Diseñamos la estructura técnica de tus sistemas para que sean escalables, mantenibles y seguros desde el inicio.</p>
-                    </div>
-                    <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-chalkboard-user" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Transformación digital</h3>
-                        <p style="color: var(--text-dim);">Te guiamos en el proceso de digitalizar procesos, adoptar nuevas tecnologías y cambiar la cultura organizacional.</p>
-                    </div>
-                    <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-microchip" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Selección de tecnología</h3>
-                        <p style="color: var(--text-dim);">Evaluamos y recomendamos las herramientas, lenguajes, plataformas y proveedores más adecuados para tu negocio.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Beneficios -->
-        <section class="section" style="background: #070b0f;">
-            <div class="container">
-                <span class="section-subtitle">· Por qué elegirnos ·</span>
-                <h2 class="section-title">Beneficios de una <span class="accent">consultoría experta</span></h2>
-                <div class="grid-3" style="margin-top: 2rem;">
-                    <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-chart-line" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                        <h3>Ahorro de costos</h3>
-                        <p style="color: var(--text-dim);">Evita inversiones en tecnología que no necesitas. Te ayudamos a priorizar lo que realmente aporta valor.</p>
-                    </div>
-                    <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-rocket" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                        <h3>Aceleración de proyectos</h3>
-                        <p style="color: var(--text-dim);">Reduce el tiempo de implementación con una estrategia clara y evitando errores comunes.</p>
-                    </div>
-                    <div class="glass-card" style="text-align: center;">
-                        <i class="fas fa-shield-alt" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                        <h3>Reducción de riesgos</h3>
-                        <p style="color: var(--text-dim);">Identifica y mitiga riesgos técnicos y de negocio antes de que se conviertan en problemas costosos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tecnologías que manejamos -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title text-center">Tecnologías sobre las que <span class="accent">asesoramos</span></h2>
-                <div class="tech-cloud">
-                    <span class="tech-item">AWS / Azure / GCP</span>
-                    <span class="tech-item">Kubernetes / Docker</span>
-                    <span class="tech-item">React / Angular / Vue</span>
-                    <span class="tech-item">Node.js / Python / Java</span>
-                    <span class="tech-item">PostgreSQL / MongoDB</span>
-                    <span class="tech-item">Power BI / Tableau</span>
-                    <span class="tech-item">Salesforce / HubSpot</span>
-                    <span class="tech-item">ISO 27001 / PCI DSS</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Proyectos destacados -->
-        <section class="section" style="background: #070b0f;">
-            <div class="container">
-                <span class="section-subtitle">· Nuestro trabajo ·</span>
-                <h2 class="section-title">Proyectos <span class="accent">destacados</span></h2>
-                <div class="proyectos-grid">
-                    <div class="proyecto-card">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format" alt="Arquitectura cloud">
-                        <div class="proyecto-info">
-                            <h4>Migración a la nube</h4>
-                            <p>Diseñamos la estrategia de migración a AWS para una empresa de retail, reduciendo costos en un 30%.</p>
-                        </div>
-                    </div>
-                    <div class="proyecto-card">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format" alt="Transformación digital">
-                        <div class="proyecto-info">
-                            <h4>Transformación digital</h4>
-                            <p>Acompañamos a una entidad financiera en su proceso de digitalización, mejorando la eficiencia operativa en un 40%.</p>
-                        </div>
-                    </div>
-                    <div class="proyecto-card">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format" alt="Selección de tecnología">
-                        <div class="proyecto-info">
-                            <h4>Selección de ERP</h4>
-                            <p>Evaluamos y seleccionamos el ERP más adecuado para una empresa de logística, ahorrando más de $50,000 en costos de implementación.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Proceso de trabajo -->
-        <section class="section">
-            <div class="container">
-                <span class="section-subtitle">· Cómo trabajamos ·</span>
-                <h2 class="section-title">Nuestro <span class="accent">proceso</span> de consultoría</h2>
-                <div class="metodologia-grid">
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">1</span>
-                        <h4>Diagnóstico inicial</h4>
-                        <p>Reunión sin costo para entender tu situación, desafíos y objetivos.</p>
-                    </div>
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">2</span>
-                        <h4>Análisis y propuesta</h4>
-                        <p>Entregamos un informe con hallazgos, recomendaciones y hoja de ruta.</p>
-                    </div>
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">3</span>
-                        <h4>Acompañamiento</h4>
-                        <p>Te apoyamos en la implementación, ya sea ejecutando nosotros o supervisando a tu equipo.</p>
-                    </div>
-                    <div class="metodologia-item">
-                        <span class="metodologia-number">4</span>
-                        <h4>Seguimiento y mejora</h4>
-                        <p>Revisamos resultados y ajustamos la estrategia según sea necesario.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonios -->
-        <section class="section" style="background: #070b0f;">
-            <div class="container">
-                <span class="section-subtitle">· Testimonios ·</span>
-                <h2 class="section-title">Lo que dicen <span class="accent">nuestros clientes</span></h2>
-                <div class="testimonial-carousel">
-                    <div class="testimonial-track">
-                        <div class="testimonial-card">
-                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente" class="testimonial-avatar">
-                            <p>"La asesoría de ITSA Segurity fue clave para nuestra migración a la nube. Redujimos costos y mejoramos la seguridad. Su enfoque práctico y conocimiento técnico nos dieron la confianza para tomar las mejores decisiones."</p>
-                            <h5>— Carlos Rivas, CTO de FintechPro</h5>
-                        </div>
-                        <div class="testimonial-card">
-                            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Cliente" class="testimonial-avatar">
-                            <p>"El equipo nos guió en un proceso de transformación digital que parecía abrumador. Su metodología paso a paso y su capacidad para entender nuestro negocio marcaron la diferencia."</p>
-                            <h5>— Ana Soto, Directora de Operaciones</h5>
-                        </div>
-                        <div class="testimonial-card">
-                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Cliente" class="testimonial-avatar">
-                            <p>"Gracias a su consultoría, seleccionamos el ERP perfecto para nuestras necesidades. El ahorro en tiempo y dinero fue significativo. Recomiendo ampliamente sus servicios."</p>
-                            <h5>— Juan Pérez, Gerente de Logística</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ (Acordeón) -->
-        <section class="section">
-            <div class="container">
-                <span class="section-subtitle">· Preguntas frecuentes ·</span>
-                <h2 class="section-title">Resolvemos tus <span class="accent">dudas</span></h2>
-                <div class="faq-list" style="max-width: 900px; margin: 2rem auto 0;">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            ¿Cuánto cuesta una asesoría inicial?
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            La primera reunión de diagnóstico es completamente gratuita y sin compromiso. En ella definimos el alcance y te entregamos una propuesta de valor.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            ¿Trabajan solo con empresas grandes?
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            No. Hemos ayudado tanto a pymes como a corporaciones. Adaptamos la profundidad de la consultoría a tu tamaño y presupuesto.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            ¿Qué diferencia hay entre consultoría y desarrollo?
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            La consultoría se enfoca en asesorarte para que tomes buenas decisiones (qué hacer, con qué tecnología, cómo organizarte). Si luego necesitas que ejecutemos, también podemos hacerlo.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            ¿Cuánto tiempo dura un proyecto de consultoría?
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            Depende del alcance. Un diagnóstico puede llevar 2-4 semanas. Una transformación digital más profunda puede extenderse varios meses. Siempre trabajamos por fases y con entregables claros.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de contacto -->
-        <section id="contacto" class="section" style="background: #070b0f;">
-            <div class="container">
-                <div class="grid-2">
-                    <div>
-                        <span class="section-subtitle">· Contacto ·</span>
-                        <h2 class="section-title">¿Necesitas una mirada externa y experta sobre tu <span class="accent">estrategia tecnológica</span>?</h2>
-                        <p style="color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2rem;">Solicita tu diagnóstico sin costo y descubre cómo podemos acelerar tu transformación digital.</p>
-                        <div style="margin-top: 2rem;">
-                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                                <i class="fas fa-phone-alt" style="color: var(--accent); font-size: 1.2rem;"></i>
-                                <a href="tel:+50589871374" style="color: var(--text-light); text-decoration: none;">+505 8987 1374</a>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                                <i class="fas fa-envelope" style="color: var(--accent); font-size: 1.2rem;"></i>
-                                <a href="mailto:info@itsasegurity.com" style="color: var(--text-light); text-decoration: none;">info@itsasegurity.com</a>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 1rem;">
-                                <i class="fas fa-map-marker-alt" style="color: var(--accent); font-size: 1.2rem;"></i>
-                                <span style="color: var(--text-dim);">Managua, Nicaragua</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <form class="contacto-formulario" id="contactForm">
-                            <div class="form-group">
-                                <input type="text" id="nombre" name="nombre" required>
-                                <label for="nombre">Nombre completo</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" required>
-                                <label for="email">Correo electrónico</label>
-                            </div>
-                            <div class="form-group">
-                                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-                                <label for="mensaje">Mensaje</label>
-                            </div>
-                            <button type="submit" class="btn-enviar">Enviar mensaje <i class="fas fa-arrow-right"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-        <footer class="site-footer">
+    <main id="contenido"><section class="page-hero" aria-labelledby="page-title">
+        <img class="page-hero-bg" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" alt="Fondo tecnológico de ITSA Segurity" width="1600" height="900">
+        <div class="container page-hero-content">
+            <p class="section-kicker reveal">Estrategia TI</p>
+            <h1 class="page-title reveal" id="page-title">Consultoría Tecnológica en Nicaragua</h1>
+            <p class="page-subtitle reveal">Te ayudamos a ordenar prioridades tecnológicas, elegir herramientas, planificar proyectos y construir una ruta digital segura y realista.</p>
+            <div class="hero-actions reveal"><a class="btn btn-primary" href="../contacto.html"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Solicitar consultoría</a><a class="btn btn-ghost" href="../servicios.html"><i class="fa-solid fa-layer-group" aria-hidden="true"></i>Todos los servicios</a></div>
+        </div>
+    </section><section class="section" data-reveal-group><div class="container service-detail-layout"><article class="story-panel reveal"><h2>Qué logramos</h2><p>Te ayudamos a ordenar prioridades tecnológicas, elegir herramientas, planificar proyectos y construir una ruta digital segura y realista.</p><ul class="check-list"><li>Ruta tecnológica clara</li><li>Decisiones con menos riesgo</li><li>Priorización por impacto</li><li>Acompañamiento estratégico</li></ul></article><article class="story-panel reveal"><h2>Incluye</h2><ul class="check-list"><li>Diagnóstico tecnológico</li><li>Roadmap digital</li><li>Selección de herramientas</li><li>Arquitectura de soluciones</li><li>Acompañamiento a equipos</li></ul></article></div></section><section class="section skills-section" data-reveal-group><div class="container"><div class="section-heading"><p class="section-kicker reveal">Stack del servicio</p><h2 class="section-title reveal">Tecnologías y herramientas conectadas</h2></div><div class="framework-stack framework-stack-large reveal"><span>Auditoría</span><span>Roadmap</span><span>React</span><span>Next.js</span><span>Bootstrap</span><span>GSAP</span><span>Anime.js</span><span>SEO</span></div></div></section><section class="section" data-reveal-group><div class="container"><div class="section-heading"><p class="section-kicker reveal">Proceso</p><h2 class="section-title reveal">Cómo trabajamos este servicio</h2></div><div class="process-grid"><article class="process-card reveal interactive-card"><span>01</span><h3>Reunión de descubrimiento</h3><p>Etapa enfocada en claridad, avance medible y decisiones bien documentadas.</p></article><article class="process-card reveal interactive-card"><span>02</span><h3>Mapa de necesidades</h3><p>Etapa enfocada en claridad, avance medible y decisiones bien documentadas.</p></article><article class="process-card reveal interactive-card"><span>03</span><h3>Análisis de riesgos y oportunidades</h3><p>Etapa enfocada en claridad, avance medible y decisiones bien documentadas.</p></article><article class="process-card reveal interactive-card"><span>04</span><h3>Plan de acción</h3><p>Etapa enfocada en claridad, avance medible y decisiones bien documentadas.</p></article><article class="process-card reveal interactive-card"><span>05</span><h3>Seguimiento ejecutivo</h3><p>Etapa enfocada en claridad, avance medible y decisiones bien documentadas.</p></article></div></div></section><section class="section contact-cta-section" data-reveal-group><div class="container cta-panel reveal"><h2>Solicitar consultoría</h2><p>Cuéntanos tu caso y te proponemos una solución ajustada a tu empresa.</p><a class="btn btn-primary" href="../contacto.html"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Solicitar asesoría</a></div></section></main>
+    <footer class="site-footer">
+        <div class="container footer-stack-panel">
+            <p class="section-kicker">Stack visual y tecnológico</p>
+            <div class="framework-stack react-stack-root" data-stack="GSAP,Bootstrap,React,Anime.js,Next.js"><span>GSAP</span><span>Bootstrap</span><span>React</span><span>Anime.js</span><span>Next.js</span></div>
+        </div>
         <div class="container site-footer-grid">
             <div class="site-footer-brand">
-                <a class="brand" href="../index.html#inicio" aria-label="ITSA Segurity inicio">
-                    <span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
-                    <span>ITSA <strong>Segurity</strong></span>
-                </a>
-                <p>Soluciones digitales seguras para empresas modernas: desarrollo web, software, ciberseguridad, marketing digital y automatizaci&oacute;n con IA.</p>
+                <a class="brand" href="../index.html" aria-label="ITSA Segurity inicio"><span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span><span>ITSA <strong>Segurity</strong></span></a>
+                <p>Soluciones digitales seguras para empresas modernas: desarrollo web, software, ciberseguridad, marketing digital y automatización con IA.</p>
             </div>
-            <nav class="site-footer-column" aria-label="Enlaces r&aacute;pidos">
-                <h2>Enlaces r&aacute;pidos</h2>
+            <nav class="site-footer-column" aria-label="Enlaces rápidos">
+                <h2>Enlaces rápidos</h2>
+                <a href="../index.html">Inicio</a>
                 <a href="../index.html#nosotros">Nosotros</a>
-                <a href="../index.html#servicios">Servicios</a>
-                <a href="../index.html#skills">GSAP Skills</a>
-                <a href="../index.html#proyectos">Proyectos</a>
-                <a href="../index.html#contacto">Contacto</a>
+                <a href="../servicios.html">Servicios</a>
+                <a href="../metodologia.html">Metodología</a>
+                <a href="../tecnologia.html">Tecnología</a>
+                <a href="../contacto.html">Contacto</a>
             </nav>
             <nav class="site-footer-column" aria-label="Servicios">
                 <h2>Servicios</h2>
-                <a href="../index.html#servicios">Desarrollo Web</a>
-                <a href="../index.html#servicios">Software empresarial</a>
-                <a href="../index.html#servicios">Ciberseguridad</a>
-                <a href="../index.html#servicios">Marketing Digital</a>
-                <a href="../index.html#servicios">Automatizaci&oacute;n con IA</a>
+                <a href="desarrollo-web.html">Desarrollo Web</a>
+                <a href="software-medida.html">Software a Medida</a>
+                <a href="ciberseguridad.html">Ciberseguridad</a>
+                <a href="marketing-digital.html">Marketing Digital</a>
+                <a href="ia-datos.html">Automatización con IA</a>
+                <a href="consultoria.html">Consultoría Tecnológica</a>
             </nav>
             <div class="site-footer-column">
                 <h2>Contacto</h2>
@@ -864,22 +105,16 @@
             </div>
         </div>
         <div class="container site-footer-bottom">
-            <p>ITSA Segurity &copy; 2026. Soluciones digitales seguras para empresas modernas.</p>
-            <div>
-                <a href="../privacidad.html">Privacidad</a>
-                <a href="../terminos.html">T&eacute;rminos</a>
-                <a href="../aviso-legal.html">Aviso legal</a>
-            </div>
+            <p>ITSA Segurity © 2026. Soluciones digitales seguras para empresas modernas.</p>
+            <div><a href="../privacidad.html">Privacidad</a><a href="../terminos.html">Términos</a><a href="../aviso-legal.html">Aviso legal</a></div>
         </div>
     </footer>
-
-    <a class="floating-whatsapp" href="https://wa.me/50589871374?text=Hola%20ITSA%20Segurity%2C%20quiero%20solicitar%20asesor%C3%ADa" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-    </a>
-
+    <a class="floating-whatsapp" href="https://wa.me/50589871374?text=Hola%20ITSA%20Segurity%2C%20quiero%20solicitar%20asesor%C3%ADa" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin defer></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin defer></script>
     <script src="../js/script.js" defer></script>
 </body>
 </html>
