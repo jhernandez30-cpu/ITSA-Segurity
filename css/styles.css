@@ -348,6 +348,9 @@ button {
     object-fit: cover;
     opacity: 0.44;
     filter: saturate(1.15) contrast(1.08);
+    transform: scale(1.03);
+    animation: heroImageFloat 18s ease-in-out infinite alternate;
+    will-change: transform;
 }
 
 .hero-overlay {
@@ -545,6 +548,24 @@ button {
     object-fit: cover;
     opacity: 0.28;
     filter: saturate(1.1) contrast(1.08);
+    transform: scale(1.03);
+    animation: heroImageFloat 18s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+.page-hero-network {
+    opacity: 0.9;
+    mix-blend-mode: screen;
+}
+
+@keyframes heroImageFloat {
+    from {
+        transform: scale(1.03) translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: scale(1.09) translate3d(-1.4%, -1%, 0);
+    }
 }
 
 .page-hero::before {
@@ -1810,6 +1831,12 @@ blockquote {
 
     .js-enabled .reveal {
         opacity: 1;
+        transform: none;
+    }
+
+    .hero-bg,
+    .page-hero-bg {
+        animation: none !important;
         transform: none;
     }
 }
