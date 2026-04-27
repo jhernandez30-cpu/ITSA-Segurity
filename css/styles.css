@@ -1637,6 +1637,13 @@ blockquote {
     transform: translateY(0);
 }
 
+/* Failsafe: legal pages must remain readable even if an animation CDN is delayed. */
+.js-enabled .page-hero .reveal,
+.js-enabled .legal-page-section .reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .interactive-card {
     will-change: transform;
 }
