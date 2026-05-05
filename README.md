@@ -1,180 +1,188 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/ITSA%20Segurity-Innovaci%C3%B3n%20Digital-0078D4?style=for-the-badge&logo=microsoft&logoColor=white" alt="ITSA Segurity" />
+<img src="https://img.shields.io/badge/Variedades%20Nora-Tienda%20Online-E4405F?style=for-the-badge&logo=shopify&logoColor=white" alt="Variedades Nora" />
 
-# 🛡️ ITSA Segurity
+# 👜 Variedades Nora
 
-### Construimos el futuro digital de tu negocio
+### Tienda online de variedades, moda y accesorios en Nicaragua
 
-Desarrollo web, software, ciberseguridad, automatización y marketing digital con enfoque profesional.
+Bolsos, carteras, mochilas, cangureras, perfumes, cosméticos, ropa, accesorios, ofertas y nuevos ingresos con compra rápida por WhatsApp.
 
 <br>
 
-[![Sitio Web](https://img.shields.io/badge/Sitio%20Web-ITSA%20Segurity-00A86B?style=for-the-badge&logo=googlechrome&logoColor=white)](https://jhernandez30-cpu.github.io/ITSA-Segurity/)
+[![Sitio Web](https://img.shields.io/badge/Sitio%20Web-Variedades%20Nora-00A86B?style=for-the-badge&logo=googlechrome&logoColor=white)](https://jhernandez30-cpu.github.io/Variedades-Nora/)
+[![WhatsApp](https://img.shields.io/badge/Comprar%20por-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/50582299406)
 [![GitHub](https://img.shields.io/badge/GitHub-jhernandez30--cpu-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jhernandez30-cpu)
-[![Instagram](https://img.shields.io/badge/Instagram-it__segurity-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/it_segurity?igsh=MWsydThncWcxODh4MA==)
-[![Facebook](https://img.shields.io/badge/Facebook-ITSA%20Segurity-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/share/178tB1SBk1/)
+[![Facebook](https://img.shields.io/badge/Facebook-Variedades%20Nora-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/share/1Az3mAWps9/)
 
-<div align="center">
+<br>
 
-<a href="https://github.com/jhernandez30-cpu/ITSA-Segurity/stargazers">
-  <img src="https://img.shields.io/github/stars/jhernandez30-cpu/ITSA-Segurity?style=for-the-badge&color=yellow" alt="GitHub Repo stars" />
+<a href="https://github.com/jhernandez30-cpu/Variedades-Nora/stargazers">
+  <img src="https://img.shields.io/github/stars/jhernandez30-cpu/Variedades-Nora?style=for-the-badge&color=yellow" alt="GitHub Repo stars" />
 </a>
 
 <a href="https://github.com/jhernandez30-cpu">
   <img src="https://img.shields.io/github/followers/jhernandez30-cpu?style=for-the-badge&color=blue" alt="GitHub followers" />
 </a>
 
-<img src="https://komarev.com/ghpvc/?username=jhernandez30-cpu&label=VISITORS&style=for-the-badge&color=blue" alt="Visitors" />
+<img src="https://komarev.com/ghpvc/?username=jhernandez30-cpu&label=VISITORS&style=for-the-badge&color=E4405F" alt="Visitors" />
 
 </div>
 
-
-## 🛡️ ¿Quiénes somos?
-
-**ITSA Segurity** es una empresa de tecnología y ciberseguridad con sede en **Nicaragua**, dedicada a impulsar la transformación digital de organizaciones en toda Centroamérica.  
-Combinamos **desarrollo de software, seguridad informática y marketing digital** para ofrecer soluciones completas que realmente generan impacto.
-
-- 🏢 Más de **8 años** en el mercado  
-- 💼 **120+ proyectos** exitosos  
-- 👥 Equipo de **15+ expertos** multidisciplinarios  
-- 🌎 Presencia en **Nicaragua, Costa Rica y El Salvador**  
-- 🧠 Filosofía: **“Construir, proteger, optimizar”**
 ---
 
-## 🚀 Servicios que ofrecemos
+## 🛍️ Sobre Variedades Nora
 
-<br>
+**Variedades Nora** es una tienda online de moda, cosméticos y accesorios en Nicaragua.  
+El sitio web está diseñado para mostrar productos de forma clara, moderna y fácil de navegar, permitiendo que los clientes consulten precios, colores, modelos y disponibilidad directamente por WhatsApp.
+
+La tienda ofrece una experiencia sencilla para comprar bolsos, carteras, mochilas, cangureras, perfumes, maquillaje, cremas, ropa casual, accesorios y regalos.
+
+---
+
+## 🎯 Objetivo del sitio web
+
+El propósito de este proyecto es fortalecer la presencia digital de **Variedades Nora** mediante una tienda online moderna, rápida y enfocada en conversión.
+
+El sitio permite:
+
+- Presentar productos por categorías.
+- Mostrar productos destacados.
+- Facilitar consultas por WhatsApp.
+- Promocionar ofertas y nuevos ingresos.
+- Mejorar el posicionamiento SEO en Google.
+- Guiar al cliente desde la navegación hasta la compra.
+- Transmitir confianza mediante una estructura clara y profesional.
+
+---
+
+## 🧺 Categorías principales
 
 <div align="center">
 
 <table>
   <tr>
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/web.png" alt="Desarrollo Web" width="48" height="48">
+      <img src="https://img.icons8.com/fluency/48/handbag-front-view.png" alt="Bolsos" width="48" height="48">
       <br><br>
-      <strong>Desarrollo Web</strong>
+      <strong>Bolsos</strong>
       <br><br>
-      Páginas corporativas, e-commerce y aplicaciones progresivas con diseño responsive y alto rendimiento.
+      Bolsos modernos, elegantes y casuales para uso diario, trabajo, salidas y regalos.
     </td>
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/gear.png" alt="Software a Medida" width="48" height="48">
+      <img src="https://img.icons8.com/fluency/48/wallet.png" alt="Carteras" width="48" height="48">
       <br><br>
-      <strong>Software a Medida</strong>
+      <strong>Carteras</strong>
       <br><br>
-      ERPs, CRMs y sistemas personalizados que automatizan procesos y mejoran la productividad.
+      Carteras modernas, compactas y elegantes para combinar con diferentes estilos.
     </td>
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/security-checked.png" alt="Ciberseguridad" width="48" height="48">
+      <img src="https://img.icons8.com/fluency/48/backpack.png" alt="Mochilas" width="48" height="48">
       <br><br>
-      <strong>Ciberseguridad</strong>
+      <strong>Mochilas</strong>
       <br><br>
-      Auditorías, pentesting, monitoreo y buenas prácticas de seguridad digital.
+      Mochilas juveniles, escolares, casuales y prácticas para universidad o rutina diaria.
     </td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/commercial.png" alt="Marketing Digital" width="48" height="48">
+      <img src="https://img.icons8.com/fluency/48/shopping-bag.png" alt="Cangureras" width="48" height="48">
       <br><br>
-      <strong>Marketing Digital</strong>
+      <strong>Cangureras</strong>
       <br><br>
-      SEO, redes sociales e inbound marketing para atraer clientes calificados.
+      Cangureras cómodas y modernas para llevar celular, llaves y accesorios esenciales.
     </td>
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/artificial-intelligence.png" alt="IA y Data Science" width="48" height="48">
+      <img src="https://img.icons8.com/fluency/48/perfume-bottle.png" alt="Perfumes" width="48" height="48">
       <br><br>
-      <strong>IA & Data Science</strong>
+      <strong>Perfumes</strong>
       <br><br>
-      Modelos de inteligencia artificial, análisis de datos y automatización aplicada al negocio.
+      Perfumes para mujer y opciones ideales para detalles, regalos y ocasiones especiales.
     </td>
     <td align="center" width="33%">
-      <img src="https://img.icons8.com/fluency/48/strategy-board.png" alt="Consultoría Estratégica" width="48" height="48">
+      <img src="https://img.icons8.com/fluency/48/lipstick.png" alt="Cosméticos" width="48" height="48">
       <br><br>
-      <strong>Consultoría Estratégica</strong>
+      <strong>Cosméticos</strong>
       <br><br>
-      Transformación digital, arquitectura cloud y optimización de procesos.
+      Maquillaje, cremas, productos de cuidado personal y belleza para uso diario.
     </td>
   </tr>
 </table>
 
 </div>
 
-<br>
+---
+
+## ⭐ Productos destacados
+
+El sitio presenta productos seleccionados con descripción breve, valoración, disponibilidad y botón directo para consultar por WhatsApp.
+
+Algunos productos incluidos son:
+
+- Cangurera moderna ajustable
+- Bolso elegante para mujer
+- Cartera moderna casual
+- Mochila juvenil para uso diario
+- Bolso glam de temporada
+- Cartera compacta con textura
+- Bolso cruzado moderno
+- Mochila escolar moderna
+- Perfume para mujer ideal para regalo
+- Maquillaje básico para mujer
+- Maquillaje coreano
+- Crema de cuidado personal
 
 ---
 
-## 🧰 Stack tecnológico
+## 🚀 Características del proyecto
 
-**Frontend**  
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-
-**Backend & Base de datos**  
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-
-**DevOps & Cloud**  
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-
-**Ciberseguridad**  
-![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
-![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
-![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white)
+- Diseño visual moderno.
+- Sitio responsivo para celulares, tablets y computadoras.
+- Catálogo organizado por categorías.
+- Productos destacados con CTA de compra.
+- Botones directos a WhatsApp.
+- Sección de ofertas y nuevos ingresos.
+- Blog SEO con guías de compra.
+- Preguntas frecuentes para clientes.
+- Formulario de consulta por producto.
+- Footer con enlaces legales y contacto.
+- Estructura pensada para SEO local en Nicaragua.
 
 ---
 
-## 📌 Proyecto destacado
+## 🔎 SEO y posicionamiento
 
-<div align="center">
-  <a href="https://github.com/jhernandez30-cpu/ITSA-Segurity">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=jhernandez30-cpu&repo=ITSA-Segurity&theme=radical&show_owner=true" alt="ITSA Segurity Repo Card" />
-  </a>
-</div>
+El sitio está estructurado para mejorar la visibilidad en búsquedas como:
 
-- 🌐 **Sitio web corporativo** con diseño moderno y responsive.
-- 🛡️ Sección de ciberseguridad con formulario de cotización interactivo.
-- 🧪 Integración continua con GitHub Actions.
-- 📊 Panel de administración (en desarrollo).
+- Tienda online de variedades en Nicaragua.
+- Bolsos para mujer en Nicaragua.
+- Carteras modernas en Nicaragua.
+- Mochilas en Nicaragua.
+- Cangureras modernas.
+- Cosméticos en Nicaragua.
+- Perfumes para mujer.
+- Regalos para mujer en Nicaragua.
+- Accesorios de moda en Nicaragua.
 
----
-
-## 📈 Estadísticas del repositorio
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=jhernandez30-cpu&show_icons=true&theme=radical&count_private=true&include_all_commits=true" alt="Estadísticas de GitHub" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jhernandez30-cpu&layout=compact&theme=radical&langs_count=6" alt="Lenguajes más usados" />
-</div>
+Además, incluye contenido tipo blog para atraer tráfico orgánico mediante guías de compra, ideas de regalos y recomendaciones de productos.
 
 ---
 
+## 🧭 Estructura principal del sitio
 
-## 🏆 Certificaciones y alianzas
-
-![ISO 27001](https://img.shields.io/badge/ISO%2027001-Certified-0066CC?style=for-the-badge&logo=iso&logoColor=white)
-![CEH](https://img.shields.io/badge/CEH-Certified-222222?style=for-the-badge&logo=ec-council&logoColor=white)
-![AWS Partner](https://img.shields.io/badge/AWS-Partner-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Microsoft Partner](https://img.shields.io/badge/Microsoft-Partner-5C2D91?style=for-the-badge&logo=microsoft&logoColor=white)
-
----
-
-## 📞 Contacto directo
-
-<div align="center">
-  <a href="https://jhernandez30-cpu.github.io/ITSA-Segurity/contacto.html">
-    <img src="https://img.shields.io/badge/Solicitar%20Cotizaci%C3%B3n-Aqu%C3%AD-00BFFF?style=for-the-badge" alt="Solicitar Cotización" />
-  </a>
-</div>
-
----
-
-<div align="center">
-  <sub>© 2026 ITSA Segurity. Transformamos tecnología en seguridad y crecimiento.</sub>
-</div>
+```text
+Inicio
+Categorías
+Bolsos
+Carteras
+Mochilas
+Cangureras
+Perfumes
+Cosméticos
+Ropa
+Accesorios
+Ofertas
+Nuevos ingresos
+Blog
+FAQ
+Contacto
