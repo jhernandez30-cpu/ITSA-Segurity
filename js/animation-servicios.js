@@ -13,14 +13,11 @@ function animateIfExists(selector, animationFn) {
 window.addEventListener('load', () => {
     if (document.querySelector('.hero-title')) {
         const tl = gsap.timeline();
-        tl.from('.hero-title', { opacity: 0, y: 100, duration: 1.2, ease: 'power3.out' })
-          .from('.hero-subtitle', { opacity: 0, y: 30, duration: 0.8 }, '-=0.6')
-          .from('.hero-cta .btn', { opacity: 0, scale: 0.8, stagger: 0.2, duration: 0.8 }, '-=0.4')
-          .from('.hero-scroll-indicator', { opacity: 0, y: -20, duration: 0.6 }, '-=0.2');
+        tl.from('.hero-title', { opacity: 0, y: 100, duration: 1.2, ease: 'power3.out' }).from('.hero-subtitle', { opacity: 0, y: 30, duration: 0.8 }, '-=0.6').from('.hero-cta.btn', { opacity: 0, scale: 0.8, stagger: 0.2, duration: 0.8 }, '-=0.4').from('.hero-scroll-indicator', { opacity: 0, y: -20, duration: 0.6 }, '-=0.2');
     }
 });
 
-// Revelado de secciones (genérico) - Aplica a todas las .section
+// Revelado de secciones (genérico) - Aplica a todas las.section
 animateIfExists('.section', (sections) => {
     gsap.from(sections, {
         scrollTrigger: {
@@ -36,7 +33,7 @@ animateIfExists('.section', (sections) => {
     });
 });
 
-// Animación de tarjetas de servicios (clase .servicio-card)
+// Animación de tarjetas de servicios (clase.servicio-card)
 // Ahora sí encuentra el trigger '#servicios' que acabamos de agregar
 animateIfExists('.servicio-card', (cards) => {
     gsap.from(cards, {

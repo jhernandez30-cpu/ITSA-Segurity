@@ -1,5 +1,4 @@
-/* hero.css - Versión corporativa sin imagen de fondo */
-.hero {
+/* hero.css - Versión corporativa sin imagen de fondo */.hero {
     position: relative;
     min-height: 90vh;
     display: flex;
@@ -7,9 +6,7 @@
     overflow: hidden;
     background-color: #0a0c12; /* Fondo azul oscuro sólido */
     border-bottom: 1px solid rgba(0, 170, 255, 0.12);
-}
-
-.hero::after {
+}.hero::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -20,42 +17,33 @@
     opacity: 0.4;
 }
 
-/* Contenido del hero */
-.hero-content {
+/* Contenido del hero */.hero-content {
     position: relative;
     z-index: 3;
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
     padding: 0 1.5rem;
-}
-
-.hero-title {
+}.hero-title {
     font-size: clamp(3rem, 8vw, 4.5rem);
     font-weight: 800;
     line-height: 1.15;
     margin-bottom: 1.5rem;
     color: #fff;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.hero-subtitle {
+}.hero-subtitle {
     font-size: 1.3rem;
     color: #a0b3cc;
     margin-bottom: 2.5rem;
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.hero-cta {
+}.hero-cta {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-.hero-scroll-indicator {
+}.hero-scroll-indicator {
     position: absolute;
     bottom: 2rem;
     left: 50%;
@@ -79,8 +67,7 @@
 }
 
 /* Ajustes para móvil */
-@media (max-width: 768px) {
-    .hero {
+@media (max-width: 768px) {.hero {
         min-height: 80vh;
     }
 }

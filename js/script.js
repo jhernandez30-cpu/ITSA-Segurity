@@ -12,6 +12,7 @@ document.documentElement.classList.add("js-enabled");
     const canAnimate = () => typeof window.anime === "function" && !prefersReducedMotion;
 
     document.addEventListener("DOMContentLoaded", () => {
+        removeLegacyAssistant();
         initPreloader();
         initNavigation();
         initHeroText();
@@ -26,6 +27,56 @@ document.documentElement.classList.add("js-enabled");
         initFaqAccordion();
         initReactStack();
     });
+
+    function removeLegacyAssistant() {
+        const legacyAssistantPattern = /Asistente\s+JAH|asistente\s+virtual\s+de\s+Abraham|Contacto\s+WhatsApp|Escribe\s+tu\s+pregunta|Gu[iÃ­]ame/i;
+        const protectedContainers = new Set(["HTML", "BODY", "MAIN", "HEADER", "FOOTER", "NAV"]);
+
+        const removeNode = (node) => {
+            if (!node || !node.parentNode) return;
+            node.parentNode.removeChild(node);
+        };
+
+        const findRemovableRoot = (element) => {
+            let current = element;
+
+            while (
+                current.parentElement &&
+                !protectedContainers.has(current.parentElement.tagName) &&
+                current.parentElement.id !== "page-wrapper" &&
+                legacyAssistantPattern.test(current.parentElement.textContent || "") &&
+                (current.parentElement.textContent || "").length < 1200
+            ) {
+                current = current.parentElement;
+            }
+
+            return protectedContainers.has(current.tagName) || current.id === "page-wrapper" ? null : current;
+        };
+
+        const clean = () => {
+            document.querySelectorAll("body *").forEach((element) => {
+                const text = element.textContent || "";
+                const placeholder = element.getAttribute("placeholder") || "";
+
+                if (!legacyAssistantPattern.test(`${text} ${placeholder}`)) return;
+
+                removeNode(findRemovableRoot(element));
+            });
+        };
+
+        clean();
+
+        if (!document.body || !("MutationObserver" in window)) return;
+
+        const observer = new MutationObserver(() => {
+            window.requestAnimationFrame(clean);
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    }
 
     function initPreloader() {
         const preloader = document.getElementById("preloader");
@@ -44,9 +95,11 @@ document.documentElement.classList.add("js-enabled");
     }
 
     function initNavigation() {
-        const header = document.getElementById("siteHeader");
-        const toggle = document.querySelector(".nav-toggle, .hamburger");
-        const menu = document.getElementById("navMenu");
+        const header = document.getElementById("header") || document.getElementById("siteHeader");
+        const toggle = document.querySelector(".nav-toggle,.hamburger");
+        const menu = document.getElementById("navMenu") || document.querySelector("#nav > ul");
+        if (!header || !menu) return;
+
         const links = menu.querySelectorAll("a[href]");
         const currentFile = window.location.pathname.split("/").pop() || "index.html";
         const samePageHashLinks = Array.from(links).filter((link) => {
@@ -54,8 +107,6 @@ document.documentElement.classList.add("js-enabled");
             return href.startsWith("#") || href.startsWith(`${currentFile}#`);
         });
         const sections = Array.from(document.querySelectorAll("main section[id]"));
-
-        if (!header || !menu) return;
 
         let ticking = false;
         const updateHeader = () => {
@@ -76,7 +127,7 @@ document.documentElement.classList.add("js-enabled");
             document.body.classList.remove("nav-open");
             if (toggle) {
                 toggle.setAttribute("aria-expanded", "false");
-                toggle.setAttribute("aria-label", "Abrir menú");
+                toggle.setAttribute("aria-label", "Abrir menÃº");
                 toggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
             }
         };
@@ -86,7 +137,7 @@ document.documentElement.classList.add("js-enabled");
                 const isOpen = menu.classList.toggle("is-open");
                 document.body.classList.toggle("nav-open", isOpen);
                 toggle.setAttribute("aria-expanded", String(isOpen));
-                toggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+                toggle.setAttribute("aria-label", isOpen ? "Cerrar menÃº" : "Abrir menÃº");
                 toggle.innerHTML = isOpen
                     ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
                     : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
@@ -138,10 +189,7 @@ document.documentElement.classList.add("js-enabled");
 
         const text = title.textContent.trim();
         title.setAttribute("aria-label", text);
-        title.innerHTML = text
-            .split(/\s+/)
-            .map((word) => `<span class="word" aria-hidden="true">${escapeHtml(word)}</span>`)
-            .join(" ");
+        title.innerHTML = text.split(/\s+/).map((word) => `<span class="word" aria-hidden="true">${escapeHtml(word)}</span>`).join(" ");
     }
 
     function initHeroNetwork() {
@@ -227,36 +275,31 @@ document.documentElement.classList.add("js-enabled");
             duration: 850
         });
 
-        timeline
-            .add({
+        timeline.add({
                 targets: ".hero-kicker",
                 opacity: [0, 1],
                 translateY: [18, 0]
-            })
-            .add({
+            }).add({
                 targets: ".hero-title .word",
                 opacity: [0, 1],
                 translateY: [34, 0],
                 delay: window.anime.stagger(32)
-            }, "-=520")
-            .add({
+            }, "-=520").add({
                 targets: ".hero-copy",
                 opacity: [0, 1],
                 translateY: [22, 0]
-            }, "-=620")
-            .add({
+            }, "-=620").add({
                 targets: ".hero-actions .btn",
                 opacity: [0, 1],
                 translateY: [18, 0],
                 delay: window.anime.stagger(90)
-            }, "-=580")
-            .add({
+            }, "-=580").add({
                 targets: ".hero-trust",
                 opacity: [0, 1],
                 translateY: [16, 0]
             }, "-=560");
 
-        document.querySelectorAll(".hero .reveal").forEach((element) => element.classList.add("is-visible"));
+        document.querySelectorAll(".hero .reveal, .hero-title .word").forEach((element) => element.classList.add("is-visible"));
     }
 
     function initRevealAnimations() {
@@ -383,15 +426,13 @@ document.documentElement.classList.add("js-enabled");
 
         const timeline = window.gsap.timeline(timelineConfig);
 
-        timeline
-            .to(".gsap-skill-card", {
+        timeline.to(".gsap-skill-card", {
                 autoAlpha: 1,
                 y: 0,
                 duration: 0.65,
                 ease: "power3.out",
                 stagger: 0.12
-            })
-            .to(fills, {
+            }).to(fills, {
                 width: (_index, element) => {
                     const meter = element.closest(".skill-meter");
                     return `${Number(meter?.dataset.level || 0)}%`;
@@ -399,8 +440,7 @@ document.documentElement.classList.add("js-enabled");
                 duration: 1.05,
                 ease: "power2.out",
                 stagger: 0.08
-            }, "-=0.32")
-            .to(".skill-chip", {
+            }, "-=0.32").to(".skill-chip", {
                 autoAlpha: 1,
                 y: 0,
                 duration: 0.34,
@@ -472,15 +512,15 @@ document.documentElement.classList.add("js-enabled");
                 mensaje: String(formData.get("mensaje") || "").trim()
             };
 
-            const subject = `Solicitud de asesoría - ${data.servicio || "ITSA Segurity"}`;
+            const subject = `Solicitud de asesorÃ­a - ${data.servicio || "ITSA Segurity"}`;
             const body = [
-                "Hola ITSA Segurity, quiero solicitar asesoría.",
+                "Hola ITSA Segurity, quiero solicitar asesorÃ­a.",
                 "",
                 `Nombre: ${data.nombre}`,
                 `Empresa: ${data.empresa || "No especificada"}`,
                 `Correo: ${data.correo}`,
-                `Teléfono: ${data.telefono || "No especificado"}`,
-                `Servicio de interés: ${data.servicio}`,
+                `TelÃ©fono: ${data.telefono || "No especificado"}`,
+                `Servicio de interÃ©s: ${data.servicio}`,
                 "",
                 "Mensaje:",
                 data.mensaje
@@ -488,7 +528,7 @@ document.documentElement.classList.add("js-enabled");
 
             const mailto = `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             const whatsappMessage = [
-                "Hola ITSA Segurity, quiero solicitar asesoría.",
+                "Hola ITSA Segurity, quiero solicitar asesorÃ­a.",
                 `Nombre: ${data.nombre}`,
                 `Empresa: ${data.empresa || "No especificada"}`,
                 `Servicio: ${data.servicio}`,
@@ -521,10 +561,7 @@ document.documentElement.classList.add("js-enabled");
         if (!roots.length || !window.React || !window.ReactDOM) return;
 
         roots.forEach((root) => {
-            const stack = String(root.dataset.stack || "")
-                .split(",")
-                .map((item) => item.trim())
-                .filter(Boolean);
+            const stack = String(root.dataset.stack || "").split(",").map((item) => item.trim()).filter(Boolean);
 
             if (!stack.length) return;
 
@@ -548,3 +585,4 @@ document.documentElement.classList.add("js-enabled");
         return div.innerHTML;
     }
 })();
+

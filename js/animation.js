@@ -9,14 +9,11 @@ function animateIfExists(selector, animationFn) {
     }
 }
 
-// Animación inicial de la hero (solo si existe .hero-title)
+// Animación inicial de la hero (solo si existe.hero-title)
 window.addEventListener('load', () => {
     if (document.querySelector('.hero-title')) {
         const tl = gsap.timeline();
-        tl.from('.hero-title', { opacity: 0, y: 100, duration: 1.2, ease: 'power3.out' })
-          .from('.hero-subtitle', { opacity: 0, y: 30, duration: 0.8 }, '-=0.6')
-          .from('.hero-cta .btn', { opacity: 0, scale: 0.8, stagger: 0.2, duration: 0.8 }, '-=0.4')
-          .from('.hero-scroll-indicator', { opacity: 0, y: -20, duration: 0.6 }, '-=0.2');
+        tl.from('.hero-title', { opacity: 0, y: 100, duration: 1.2, ease: 'power3.out' }).from('.hero-subtitle', { opacity: 0, y: 30, duration: 0.8 }, '-=0.6').from('.hero-cta.btn', { opacity: 0, scale: 0.8, stagger: 0.2, duration: 0.8 }, '-=0.4').from('.hero-scroll-indicator', { opacity: 0, y: -20, duration: 0.6 }, '-=0.2');
     }
 });
 
@@ -54,7 +51,7 @@ animateIfExists('.section-title', (titles) => {
     });
 });
 
-// Animación de tarjetas de servicios (clase .servicio-card)
+// Animación de tarjetas de servicios (clase.servicio-card)
 animateIfExists('.servicio-card', (cards) => {
     gsap.from(cards, {
         scrollTrigger: { trigger: '#servicios', start: 'top 70%' },
@@ -66,7 +63,7 @@ animateIfExists('.servicio-card', (cards) => {
     });
 });
 
-// Animación de la línea de tiempo (solo si existe .timeline-item)
+// Animación de la línea de tiempo (solo si existe.timeline-item)
 animateIfExists('.timeline-item', (items) => {
     gsap.from(items, {
         scrollTrigger: { trigger: '#experiencia', start: 'top 70%' },
@@ -78,7 +75,7 @@ animateIfExists('.timeline-item', (items) => {
     });
 });
 
-// Animación de tarjetas de equipo (solo si existe .miembro-card)
+// Animación de tarjetas de equipo (solo si existe.miembro-card)
 animateIfExists('.miembro-card', (cards) => {
     gsap.from(cards, {
         scrollTrigger: { trigger: '.equipo', start: 'top 75%' },
@@ -90,7 +87,7 @@ animateIfExists('.miembro-card', (cards) => {
     });
 });
 
-// Animación de certificaciones (solo si existe .cert-item)
+// Animación de certificaciones (solo si existe.cert-item)
 animateIfExists('.cert-item', (items) => {
     gsap.from(items, {
         scrollTrigger: { trigger: '.certificaciones', start: 'top 85%' },
