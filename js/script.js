@@ -55,6 +55,8 @@ document.documentElement.classList.add("js-enabled");
 
         const clean = () => {
             document.querySelectorAll("body *").forEach((element) => {
+                if (element.closest("#itsa-chatbot, .itsa-chatbot")) return;
+
                 const text = element.textContent || "";
                 const placeholder = element.getAttribute("placeholder") || "";
 
