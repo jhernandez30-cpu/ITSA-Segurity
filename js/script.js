@@ -484,7 +484,7 @@ document.documentElement.classList.add("js-enabled");
     function initWhatsAppLinks() {
         document.querySelectorAll("[data-whatsapp-service]").forEach((link) => {
             const service = link.dataset.whatsappService;
-            link.href = buildWhatsAppUrl(`Hola ITSA Segurity, quiero solicitar el servicio de ${service}.`);
+            link.href = buildWhatsAppUrl(`Hola ITSA SEGURITY, quiero solicitar el servicio de ${service}.`);
         });
     }
 
@@ -514,9 +514,9 @@ document.documentElement.classList.add("js-enabled");
                 mensaje: String(formData.get("mensaje") || "").trim()
             };
 
-            const subject = `Solicitud de asesorÃ­a - ${data.servicio || "ITSA Segurity"}`;
+            const subject = `Solicitud de asesorÃ­a - ${data.servicio || "ITSA SEGURITY"}`;
             const body = [
-                "Hola ITSA Segurity, quiero solicitar asesorÃ­a.",
+                "Hola ITSA SEGURITY, quiero solicitar asesorÃ­a.",
                 "",
                 `Nombre: ${data.nombre}`,
                 `Empresa: ${data.empresa || "No especificada"}`,
@@ -530,7 +530,7 @@ document.documentElement.classList.add("js-enabled");
 
             const mailto = `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             const whatsappMessage = [
-                "Hola ITSA Segurity, quiero solicitar asesorÃ­a.",
+                "Hola ITSA SEGURITY, quiero solicitar asesorÃ­a.",
                 `Nombre: ${data.nombre}`,
                 `Empresa: ${data.empresa || "No especificada"}`,
                 `Servicio: ${data.servicio}`,
