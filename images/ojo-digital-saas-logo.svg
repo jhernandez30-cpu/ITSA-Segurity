@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" role="img" aria-labelledby="title desc">
+	<title id="title">Ojo Digital SaaS</title>
+	<desc id="desc">Logo de Ojo Digital SaaS de ITSA SEGURITY con escudo, ojo digital y colores cian, verde y azul.</desc>
+	<defs>
+		<linearGradient id="shield" x1="160" y1="80" x2="800" y2="620" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#00d4ff"/>
+			<stop offset="0.52" stop-color="#006dff"/>
+			<stop offset="1" stop-color="#16f2a5"/>
+		</linearGradient>
+		<linearGradient id="eye" x1="230" y1="250" x2="730" y2="430" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#7defff"/>
+			<stop offset="0.5" stop-color="#ffffff"/>
+			<stop offset="1" stop-color="#16f2a5"/>
+		</linearGradient>
+		<filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+			<feGaussianBlur stdDeviation="8" result="blur"/>
+			<feMerge>
+				<feMergeNode in="blur"/>
+				<feMergeNode in="SourceGraphic"/>
+			</feMerge>
+		</filter>
+	</defs>
+	<rect width="960" height="720" rx="42" fill="#050816"/>
+	<circle cx="480" cy="300" r="230" fill="none" stroke="#00d4ff" stroke-opacity="0.12" stroke-width="2"/>
+	<circle cx="480" cy="300" r="180" fill="none" stroke="#16f2a5" stroke-opacity="0.14" stroke-width="2"/>
+	<g fill="none" stroke="#00d4ff" stroke-linecap="round" stroke-width="8" opacity="0.9">
+		<path d="M270 265h-82m0 0-34-34"/>
+		<path d="M270 335h-92m0 0-42 42"/>
+		<path d="M690 265h82m0 0 34-34"/>
+		<path d="M690 335h92m0 0 42 42"/>
+		<circle cx="150" cy="231" r="13"/>
+		<circle cx="136" cy="377" r="13"/>
+		<circle cx="810" cy="231" r="13"/>
+		<circle cx="824" cy="377" r="13"/>
+	</g>
+	<path d="M480 86l206 76v139c0 139-82 246-206 305-124-59-206-166-206-305V162l206-76z" fill="#071426" stroke="url(#shield)" stroke-width="12" filter="url(#glow)"/>
+	<path d="M480 142l151 56v106c0 98-56 176-151 224-95-48-151-126-151-224V198l151-56z" fill="#0b1f37" stroke="#7defff" stroke-opacity="0.65" stroke-width="4"/>
+	<path d="M230 318c72-78 151-117 250-117s178 39 250 117c-72 78-151 117-250 117s-178-39-250-117z" fill="#06111d" stroke="url(#eye)" stroke-width="10" filter="url(#glow)"/>
+	<circle cx="480" cy="318" r="84" fill="#06111d" stroke="#00d4ff" stroke-width="10"/>
+	<circle cx="480" cy="318" r="52" fill="#00d4ff" opacity="0.35"/>
+	<circle cx="480" cy="318" r="31" fill="#7defff"/>
+	<circle cx="493" cy="304" r="12" fill="#ffffff"/>
+	<path d="M480 244v-64m0 276v-64m-74-74h-70m288 0h-70" stroke="#16f2a5" stroke-linecap="round" stroke-width="8"/>
+	<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+		<text x="480" y="622" fill="#ffffff" font-size="62" font-weight="700" letter-spacing="1">Ojo Digital</text>
+		<text x="480" y="674" fill="#16f2a5" font-size="42" font-weight="700" letter-spacing="8">SAAS</text>
+		<text x="480" y="704" fill="#7defff" font-size="17" letter-spacing="6">BY ITSA SEGURITY</text>
+	</g>
+</svg>

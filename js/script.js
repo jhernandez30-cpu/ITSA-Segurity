@@ -5,7 +5,7 @@ document.documentElement.classList.add("js-enabled");
 
     const CONTACT = {
         email: "itsasecurity@gmail.com",
-        whatsapp: "50589871374"
+        whatsapp: "50557885446"
     };
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

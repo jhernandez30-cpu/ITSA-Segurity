@@ -1,10 +1,10 @@
 (function () {
 	'use strict';
 
-	const INITIAL_GREETING = 'Hola, soy ITSA, el asistente virtual de ITSA SEGURITY. Puedo ayudarte con desarrollo web, software a medida, ciberseguridad, SEO, automatización con IA, consultoría tecnológica, Ojo Digital y recursos para empresas en Nicaragua. ¿Qué necesitas resolver?';
-	const UNKNOWN_RESPONSE = 'Gracias por tu mensaje. Puedo orientarte sobre servicios tecnológicos en Nicaragua, desarrollo web, software, ciberseguridad, SEO, automatización con IA, consultoría, Ojo Digital, recursos o contacto. ¿Cuál tema te interesa?';
+	const INITIAL_GREETING = 'Hola, soy ITSA, el asistente virtual de ITSA SEGURITY. Puedo ayudarte con Ojo Digital SaaS, monitoreo web mensual, desarrollo web, software a medida, ciberseguridad, SEO, automatización con IA y consultoría tecnológica. ¿Qué necesitas resolver?';
+	const UNKNOWN_RESPONSE = 'Gracias por tu mensaje. Puedo orientarte sobre Ojo Digital SaaS, monitoreo web, planes mensuales, desarrollo web, software, ciberseguridad, SEO, automatización con IA, consultoría, recursos o contacto. ¿Cuál tema te interesa?';
 	const INACTIVITY_LIMIT = 120000;
-	const WHATSAPP_URL = 'https://wa.me/50589871374?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20ITSA%20SEGURITY.%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20tecnol%C3%B3gicos%20en%20Nicaragua.';
+	const WHATSAPP_URL = 'https://wa.me/50557885446?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20ITSA%20SEGURITY.%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Ojo%20Digital%20SaaS.';
 	const EMAIL_URL = 'mailto:itsasecurity@gmail.com';
 	const AVATAR_ALT = 'ITSA, asistente virtual de ITSA SEGURITY';
 
@@ -30,14 +30,14 @@
 	};
 
 	const serviceResponses = {
-		servicios: 'ITSA SEGURITY ofrece servicios tecnológicos para empresas en Nicaragua: desarrollo web, software a medida, ciberseguridad, SEO, automatización con IA y consultoría tecnológica. Cada servicio tiene su propia página con alcance, entregables, proceso y preguntas frecuentes.',
+		servicios: 'ITSA SEGURITY ofrece servicios tecnológicos para empresas en Nicaragua: Ojo Digital SaaS, desarrollo web, software a medida, ciberseguridad, SEO, automatización con IA y consultoría tecnológica. Cada servicio tiene su propia página con alcance, entregables, proceso y preguntas frecuentes.',
 		web: 'En Desarrollo Web creamos sitios corporativos, landing pages y páginas empresariales responsive con estructura SEO, llamadas a WhatsApp, formularios, seguridad básica y enfoque comercial para empresas en Nicaragua.',
 		ciberseguridad: 'En Ciberseguridad ayudamos a proteger sitios web, accesos, datos y procesos digitales mediante buenas prácticas, revisión de riesgos, respaldos, protección web y concientización para empresas nicaragüenses.',
 		seo: 'En SEO trabajamos arquitectura, titles, meta descriptions, contenido semántico, enlazado interno, sitemap, robots, canonical y optimizaciones para mejorar visibilidad en Google sin abusar de palabras clave.',
 		ia: 'En Automatización con IA implementamos chatbots, asistentes, flujos automáticos y apoyo a procesos internos para reducir tareas repetitivas y mejorar atención, ventas o reportes.',
 		software: 'En Software a Medida desarrollamos sistemas administrativos, aplicaciones web, paneles de control, bases de datos e integraciones para ordenar procesos y centralizar información empresarial.',
 		consultoria: 'En Consultoría Tecnológica realizamos diagnóstico, selección de herramientas, arquitectura de soluciones, roadmap digital y acompañamiento para ejecutar proyectos con orden.',
-		ojo: 'Ojo Digital Ético es una propuesta de monitoreo inteligente autorizado para servidores, redes, sensores, cámaras propias e IoT. Está pensado para operar con consentimiento, auditoría, privacidad y ciberseguridad.',
+		ojo: 'Ojo Digital SaaS es la plataforma mensual de ITSA SEGURITY para monitorear sitios web propios o autorizados: disponibilidad, SSL, seguridad básica, SEO, rendimiento, reportes, alertas y recomendaciones con IA.',
 		recursos: 'En Recursos encuentras guías breves y preguntas frecuentes para decidir mejor: por qué una empresa necesita una web profesional, qué revisar en seguridad web y cuándo automatizar con IA.',
 		nicaragua: 'ITSA SEGURITY trabaja con enfoque nacional para empresas, emprendimientos y negocios en Nicaragua. La web también está preparada para captar búsquedas locales como Managua cuando el proyecto lo necesite.',
 		legal: 'El sitio incluye páginas base de Política de privacidad, Términos y condiciones y Aviso legal para reforzar confianza y transparencia. Son documentos informativos que pueden validarse con asesoría legal profesional.'
@@ -79,9 +79,9 @@
 			{ label: 'Contacto', path: siteLinks.contacto }
 		],
 		ojo: [
-			{ label: 'Ojo Digital', path: siteLinks.ojo },
+			{ label: 'Ojo Digital SaaS', path: siteLinks.ojo },
 			{ label: 'Ciberseguridad', path: siteLinks.ciberseguridad },
-			{ label: 'Solicitar demo', path: siteLinks.contacto }
+			{ label: 'Solicitar diagnóstico', path: siteLinks.contacto }
 		],
 		recursos: [
 			{ label: 'Recursos', path: siteLinks.recursos },
@@ -107,7 +107,7 @@
 		{ label: 'SEO', intent: 'seo' },
 		{ label: 'Automatización IA', intent: 'ia' },
 		{ label: 'Consultoría Tecnológica', intent: 'consultoria' },
-		{ label: 'Ojo Digital', intent: 'ojo' },
+		{ label: 'Ojo Digital SaaS', intent: 'ojo' },
 		{ label: 'Recursos', intent: 'recursos' },
 		{ label: 'Contacto', intent: 'contacto' }
 	];
@@ -120,7 +120,7 @@
 		ia: ['ia', 'chatbot', 'automatizar', 'asistente', 'inteligencia artificial', 'automatización', 'automatizacion'],
 		software: ['software', 'sistema', 'aplicacion', 'aplicación', 'panel', 'base de datos', 'crm', 'erp', 'proceso'],
 		consultoria: ['consultoría', 'consultoria', 'herramientas', 'diagnóstico', 'diagnostico', 'proyecto', 'tecnología', 'tecnologia', 'roadmap'],
-		ojo: ['ojo digital', 'monitoreo', 'iot', 'sensor', 'sensores', 'camara', 'cámara', 'servidor', 'servidores', 'dashboard', 'alertas'],
+		ojo: ['ojo digital', 'ojo digital saas', 'monitoreo', 'monitoreo web', 'saas', 'planes', 'ssl', 'disponibilidad', 'reportes', 'dashboard', 'alertas'],
 		recursos: ['recurso', 'recursos', 'guia', 'guía', 'preguntas', 'faq', 'comparativa', 'aprender', 'informacion', 'información'],
 		nicaragua: ['nicaragua', 'nicaraguense', 'nicaragüense', 'managua', 'local', 'empresa en nicaragua', 'negocio en nicaragua'],
 		legal: ['privacidad', 'terminos', 'términos', 'condiciones', 'aviso legal', 'legal', 'datos personales'],
