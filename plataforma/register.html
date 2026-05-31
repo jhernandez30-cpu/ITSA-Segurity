@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="es-NI">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registro Demo | Ojo Digital SaaS | ITSA SEGURITY</title>
+	<meta name="description" content="Registro demo para Ojo Digital SaaS con roles client y admin usando localStorage mientras se integra Supabase Auth.">
+	<link rel="canonical" href="https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/register.html">
+	<meta property="og:title" content="Registro Demo | Ojo Digital SaaS">
+	<meta property="og:description" content="Crea un usuario demo para probar dashboard, reportes y analitica de Ojo Digital SaaS.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://jhernandez30-cpu.github.io/ITSA-Segurity/images/ojo-digital-saas-logo.svg">
+	<link rel="icon" href="../images/ojo-digital-saas-logo.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="../assets/css/platform.css">
+</head>
+<body class="platform-page" data-page="register">
+	<main class="platform-auth-shell">
+		<section class="platform-auth-copy">
+			<a class="platform-auth-logo" href="../index.html">
+				<img src="../images/ojo-digital-saas-logo.svg" alt="Ojo Digital SaaS">
+				<span><strong>Ojo Digital SaaS</strong><span>Registro demo</span></span>
+			</a>
+			<h1>Crear cuenta demo para el panel</h1>
+			<p>La cuenta se guarda solo en el navegador. Sirve para probar el flujo inicial antes de conectar Supabase, base de datos real y roles productivos.</p>
+			<div class="platform-callout">No se almacenan credenciales reales ni se ejecutan revisiones intrusivas. El motor actual simula monitoreo autorizado.</div>
+		</section>
+		<section class="platform-auth-card" aria-labelledby="register-title">
+			<h2 id="register-title">Registro demo</h2>
+			<form class="platform-form" data-register-form>
+				<label class="platform-field">
+					<span>Nombre</span>
+					<input class="platform-input" type="text" name="name" autocomplete="name" placeholder="Nombre del usuario" required>
+				</label>
+				<label class="platform-field">
+					<span>Correo demo</span>
+					<input class="platform-input" type="email" name="email" autocomplete="email" placeholder="usuario@demo.local" required>
+				</label>
+				<label class="platform-field">
+					<span>Rol</span>
+					<select class="platform-select" name="role">
+						<option value="client">Cliente</option>
+						<option value="admin">Admin demo</option>
+					</select>
+				</label>
+				<label class="platform-field">
+					<span>PIN demo</span>
+					<input class="platform-input" type="password" name="pin" autocomplete="new-password" minlength="6" placeholder="Minimo 6 caracteres" required>
+				</label>
+				<button class="platform-button" type="submit">Crear y entrar</button>
+				<p class="platform-message" data-form-message role="status" aria-live="polite"></p>
+			</form>
+			<div class="platform-actions" style="margin-top: 1rem;">
+				<a class="platform-link-button secondary" href="login.html">Ya tengo cuenta demo</a>
+				<a class="platform-link-button secondary" href="../index.html">Volver al sitio</a>
+			</div>
+		</section>
+	</main>
+	<script src="../assets/js/ojo-digital-platform.js" defer></script>
+</body>
+</html>

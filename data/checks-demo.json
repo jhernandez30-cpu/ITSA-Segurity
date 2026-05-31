@@ -1,0 +1,62 @@
+[
+  {
+    "siteName": "Portal Colegio Norte",
+    "url": "https://colegionorte.edu.ni",
+    "status": "saludable",
+    "httpStatus": 200,
+    "responseTimeMs": 430,
+    "sslValid": true,
+    "seoScore": 88,
+    "performanceScore": 81,
+    "securityScore": 86,
+    "generalScore": 85,
+    "findings": ["SSL vigente", "Metadatos principales configurados", "Tiempo de respuesta estable"],
+    "recommendations": ["Agregar schema educativo", "Comprimir imagenes hero", "Revisar accesibilidad de formularios"],
+    "checkedAt": "2026-05-29T15:40:00.000Z"
+  },
+  {
+    "siteName": "Iglesia Vida Nueva",
+    "url": "https://iglesiavida.org",
+    "status": "advertencia",
+    "httpStatus": 200,
+    "responseTimeMs": 980,
+    "sslValid": true,
+    "seoScore": 72,
+    "performanceScore": 64,
+    "securityScore": 78,
+    "generalScore": 71,
+    "findings": ["Carga lenta en movil", "Faltan metadescripciones en secciones internas", "Backups no documentados"],
+    "recommendations": ["Optimizar imagenes", "Crear paginas para eventos y donaciones", "Documentar respaldo mensual"],
+    "checkedAt": "2026-05-29T14:10:00.000Z"
+  },
+  {
+    "siteName": "Tienda Central Online",
+    "url": "https://tiendacentral.com.ni",
+    "status": "critico",
+    "httpStatus": 503,
+    "responseTimeMs": 2150,
+    "sslValid": true,
+    "seoScore": 58,
+    "performanceScore": 42,
+    "securityScore": 63,
+    "generalScore": 54,
+    "findings": ["Servicio intermitente", "Tiempo de respuesta alto", "Catalogo con enlaces rotos"],
+    "recommendations": ["Revisar hosting y logs", "Activar cache", "Priorizar correccion de enlaces de productos"],
+    "checkedAt": "2026-05-29T13:30:00.000Z"
+  },
+  {
+    "siteName": "Landing Emprende Studio",
+    "url": "https://emprendestudio.com",
+    "status": "saludable",
+    "httpStatus": 200,
+    "responseTimeMs": 520,
+    "sslValid": true,
+    "seoScore": 84,
+    "performanceScore": 79,
+    "securityScore": 82,
+    "generalScore": 82,
+    "findings": ["Buena disponibilidad", "CTAs visibles", "SSL correcto"],
+    "recommendations": ["Agregar blog de recursos", "Mejorar tracking de conversion", "Crear dashboard mensual"],
+    "checkedAt": "2026-05-29T12:50:00.000Z"
+  }
+]

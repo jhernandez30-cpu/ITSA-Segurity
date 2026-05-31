@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="es-NI">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Power BI | Ojo Digital SaaS | ITSA SEGURITY</title>
+	<meta name="description" content="Pagina preparada para embeber dashboard Power BI de Ojo Digital SaaS con placeholder seguro si no existe POWERBI_EMBED_URL.">
+	<link rel="canonical" href="https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/powerbi.html">
+	<meta property="og:title" content="Power BI | Ojo Digital SaaS">
+	<meta property="og:description" content="Integracion preparada para Power BI Service sin inventar enlaces reales.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://jhernandez30-cpu.github.io/ITSA-Segurity/images/ojo-digital-saas-logo.svg">
+	<link rel="icon" href="../images/ojo-digital-saas-logo.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="../assets/css/platform.css">
+</head>
+<body class="platform-page" data-page="powerbi" data-protected="true">
+	<div class="platform-shell">
+		<aside class="platform-sidebar">
+			<a class="platform-brand" href="dashboard.html"><img src="../images/ojo-digital-saas-logo.svg" alt="Ojo Digital SaaS"><span><strong>Ojo Digital</strong><span>Power BI</span></span></a>
+			<nav class="platform-nav" aria-label="Navegacion plataforma">
+				<a href="dashboard.html"><i class="fas fa-chart-line"></i>Dashboard</a>
+				<a href="reportes.html"><i class="fas fa-file-alt"></i>Reportes</a>
+				<a href="excel-dashboard.html"><i class="fas fa-table"></i>Excel dashboard</a>
+				<a class="is-active" href="powerbi.html"><i class="fas fa-chart-pie"></i>Power BI</a>
+				<a href="admin.html"><i class="fas fa-user-shield"></i>Admin</a>
+				<button type="button" data-logout><i class="fas fa-sign-out-alt"></i>Cerrar sesion</button>
+			</nav>
+		</aside>
+		<main class="platform-main">
+			<header class="platform-topbar">
+				<div class="platform-title">
+					<h1>Dashboard Power BI</h1>
+					<p>Contenedor preparado para reporte Power BI con indicadores demo mientras no exista enlace embed real.</p>
+				</div>
+				<span class="platform-user-pill" data-current-user>Sesion demo</span>
+			</header>
+			<section class="platform-grid metric-grid" id="powerbiMetrics"></section>
+			<section class="platform-card">
+				<h2>Reporte embebido</h2>
+				<div class="powerbi-frame" id="powerbiFrame"></div>
+				<div class="platform-actions" style="margin-top: 1rem;">
+					<a class="platform-link-button" id="openPowerbi">Abrir reporte externo</a>
+					<a class="platform-link-button secondary" href="../docs/POWERBI_INTEGRATION.md">Ver instrucciones internas</a>
+				</div>
+			</section>
+			<section class="platform-card">
+				<h2>Conexion esperada</h2>
+				<ul class="platform-list">
+					<li>Crear reporte en Power BI Desktop usando CSV o base de datos real.</li>
+					<li>Publicar en Power BI Service y configurar permisos.</li>
+					<li>Colocar el embed seguro en <code>POWERBI_EMBED_URL</code> o en la constante del JS.</li>
+					<li>No publicar datos privados mediante enlace publico sin autorizacion del cliente.</li>
+				</ul>
+			</section>
+		</main>
+	</div>
+	<script src="../assets/js/ojo-digital-platform.js" defer></script>
+</body>
+</html>

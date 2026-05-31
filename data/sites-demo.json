@@ -1,0 +1,38 @@
+[
+  {
+    "id": "site-colegio-norte",
+    "client": "Colegio Norte",
+    "siteName": "Portal Colegio Norte",
+    "url": "https://colegionorte.edu.ni",
+    "plan": "Profesional",
+    "status": "saludable",
+    "lastCheck": "2026-05-29T15:40:00.000Z"
+  },
+  {
+    "id": "site-iglesia-vida",
+    "client": "Iglesia Vida Nueva",
+    "siteName": "Iglesia Vida Nueva",
+    "url": "https://iglesiavida.org",
+    "plan": "Basico",
+    "status": "advertencia",
+    "lastCheck": "2026-05-29T14:10:00.000Z"
+  },
+  {
+    "id": "site-tienda-central",
+    "client": "Tienda Central",
+    "siteName": "Tienda Central Online",
+    "url": "https://tiendacentral.com.ni",
+    "plan": "Empresarial",
+    "status": "critico",
+    "lastCheck": "2026-05-29T13:30:00.000Z"
+  },
+  {
+    "id": "site-emprende",
+    "client": "Emprende Studio",
+    "siteName": "Landing Emprende Studio",
+    "url": "https://emprendestudio.com",
+    "plan": "Profesional",
+    "status": "saludable",
+    "lastCheck": "2026-05-29T12:50:00.000Z"
+  }
+]

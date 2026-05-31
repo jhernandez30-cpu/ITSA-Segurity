@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="es-NI">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Demo | Ojo Digital SaaS | ITSA SEGURITY</title>
+	<meta name="description" content="Inicio de sesion demo para la plataforma Ojo Digital SaaS de ITSA SEGURITY con dashboard, reportes, Excel y Power BI preparados.">
+	<link rel="canonical" href="https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/login.html">
+	<meta property="og:title" content="Login Demo | Ojo Digital SaaS">
+	<meta property="og:description" content="Accede al panel demo de Ojo Digital SaaS con localStorage, roles client y admin.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://jhernandez30-cpu.github.io/ITSA-Segurity/images/ojo-digital-saas-logo.svg">
+	<link rel="icon" href="../images/ojo-digital-saas-logo.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="../assets/css/platform.css">
+</head>
+<body class="platform-page" data-page="login">
+	<main class="platform-auth-shell">
+		<section class="platform-auth-copy">
+			<a class="platform-auth-logo" href="../index.html">
+				<img src="../images/ojo-digital-saas-logo.svg" alt="Ojo Digital SaaS">
+				<span><strong>Ojo Digital SaaS</strong><span>BY ITSA SEGURITY</span></span>
+			</a>
+			<h1>Entrar al panel de monitoreo digital</h1>
+			<p>Acceso demo para clientes y administradores. Esta version usa localStorage, datos simulados y no debe usarse con credenciales reales.</p>
+			<div class="platform-actions">
+				<a class="platform-link-button secondary" href="../soluciones/ojo-digital.html">Ver producto</a>
+				<a class="platform-link-button secondary" href="../soluciones/plataforma.html">Ver plataforma</a>
+			</div>
+		</section>
+		<section class="platform-auth-card" aria-labelledby="login-title">
+			<h2 id="login-title">Iniciar sesion demo</h2>
+			<p class="platform-muted">Usa una cuenta demo o registra un usuario temporal.</p>
+			<form class="platform-form" data-login-form>
+				<label class="platform-field">
+					<span>Correo demo</span>
+					<input class="platform-input" type="email" name="email" autocomplete="username" placeholder="cliente@demo.local" required>
+				</label>
+				<label class="platform-field">
+					<span>PIN demo</span>
+					<input class="platform-input" type="password" name="pin" autocomplete="current-password" placeholder="demo123" required>
+				</label>
+				<button class="platform-button" type="submit">Entrar al dashboard</button>
+				<p class="platform-message" data-form-message role="status" aria-live="polite"></p>
+			</form>
+			<div class="platform-actions" style="margin-top: 1rem;">
+				<button class="platform-button secondary" type="button" data-demo-login="client">Entrar como cliente demo</button>
+				<button class="platform-button secondary" type="button" data-demo-login="admin">Entrar como admin demo</button>
+			</div>
+			<div class="platform-demo-credentials">
+				<strong>Credenciales demo:</strong><br>
+				Cliente: cliente@demo.local / demo123<br>
+				Admin: admin@demo.local / admin123
+			</div>
+			<p class="platform-muted">No uses claves reales. La autenticacion real queda preparada para Supabase Auth.</p>
+			<a class="platform-link-button secondary" href="register.html">Crear usuario demo</a>
+		</section>
+	</main>
+	<script src="../assets/js/ojo-digital-platform.js" defer></script>
+</body>
+</html>

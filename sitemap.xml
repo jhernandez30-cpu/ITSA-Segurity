@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://jhernandez30-cpu.github.io/ITSA-Segurity/</loc>
-        <lastmod>2026-05-09</lastmod>
+        <lastmod>2026-05-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -76,7 +76,61 @@
         <loc>https://jhernandez30-cpu.github.io/ITSA-Segurity/soluciones/ojo-digital.html</loc>
         <lastmod>2026-05-30</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://jhernandez30-cpu.github.io/ITSA-Segurity/soluciones/plataforma.html</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/login.html</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/register.html</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/dashboard.html</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/reportes.html</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/excel-dashboard.html</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/powerbi.html</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/admin.html</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
     </url>
     <url>
         <loc>https://jhernandez30-cpu.github.io/ITSA-Segurity/empresa/metodologia.html</loc>

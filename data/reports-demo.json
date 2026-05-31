@@ -1,0 +1,50 @@
+[
+  {
+    "id": "rep-2026-05-colegio",
+    "client": "Colegio Norte",
+    "siteName": "Portal Colegio Norte",
+    "url": "https://colegionorte.edu.ni",
+    "date": "2026-05-29",
+    "availability": "99.8%",
+    "ssl": "Valido",
+    "seo": 88,
+    "performance": 81,
+    "security": 86,
+    "generalScore": 85,
+    "status": "saludable",
+    "findings": ["SSL vigente", "Respuesta estable", "Buen enlazado interno"],
+    "recommendations": ["Agregar schema educativo", "Optimizar imagenes principales"]
+  },
+  {
+    "id": "rep-2026-05-iglesia",
+    "client": "Iglesia Vida Nueva",
+    "siteName": "Iglesia Vida Nueva",
+    "url": "https://iglesiavida.org",
+    "date": "2026-05-29",
+    "availability": "98.9%",
+    "ssl": "Valido",
+    "seo": 72,
+    "performance": 64,
+    "security": 78,
+    "generalScore": 71,
+    "status": "advertencia",
+    "findings": ["Carga lenta en movil", "Faltan metadescripciones"],
+    "recommendations": ["Optimizar imagenes", "Crear paginas de eventos", "Documentar respaldos"]
+  },
+  {
+    "id": "rep-2026-05-tienda",
+    "client": "Tienda Central",
+    "siteName": "Tienda Central Online",
+    "url": "https://tiendacentral.com.ni",
+    "date": "2026-05-29",
+    "availability": "94.2%",
+    "ssl": "Valido",
+    "seo": 58,
+    "performance": 42,
+    "security": 63,
+    "generalScore": 54,
+    "status": "critico",
+    "findings": ["Servicio intermitente", "Tiempo de respuesta alto", "Enlaces rotos"],
+    "recommendations": ["Revisar hosting", "Activar cache", "Corregir catalogo"]
+  }
+]

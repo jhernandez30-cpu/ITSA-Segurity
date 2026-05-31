@@ -1,0 +1,5 @@
+Cliente,Sitio Web,URL,Fecha de Revision,Disponibilidad,Codigo HTTP,Tiempo de Respuesta,SSL Valido,Puntaje SEO,Puntaje Rendimiento,Puntaje Seguridad,Estado General,Alertas,Recomendaciones,Plan
+Colegio Norte,Portal Colegio Norte,https://colegionorte.edu.ni,2026-05-29,99.8%,200,430,Si,88,81,86,Saludable,0,"Agregar schema educativo; comprimir imagenes hero",Profesional
+Iglesia Vida Nueva,Iglesia Vida Nueva,https://iglesiavida.org,2026-05-29,98.9%,200,980,Si,72,64,78,Advertencia,2,"Optimizar imagenes; crear paginas de eventos; documentar respaldo mensual",Basico
+Tienda Central,Tienda Central Online,https://tiendacentral.com.ni,2026-05-29,94.2%,503,2150,Si,58,42,63,Critico,4,"Revisar hosting y logs; activar cache; corregir enlaces de productos",Empresarial
+Emprende Studio,Landing Emprende Studio,https://emprendestudio.com,2026-05-29,99.5%,200,520,Si,84,79,82,Saludable,1,"Agregar blog de recursos; mejorar tracking de conversion",Profesional

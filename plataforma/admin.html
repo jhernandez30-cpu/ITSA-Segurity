@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="es-NI">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Demo | Ojo Digital SaaS | ITSA SEGURITY</title>
+	<meta name="description" content="Panel admin demo de Ojo Digital SaaS con usuarios, sitios, revisiones, alertas, planes y accesos a Excel y Power BI.">
+	<link rel="canonical" href="https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/admin.html">
+	<meta property="og:title" content="Admin Demo | Ojo Digital SaaS">
+	<meta property="og:description" content="Vista administrativa demo protegida por rol localStorage admin.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://jhernandez30-cpu.github.io/ITSA-Segurity/images/ojo-digital-saas-logo.svg">
+	<link rel="icon" href="../images/ojo-digital-saas-logo.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="../assets/css/platform.css">
+</head>
+<body class="platform-page" data-page="admin" data-protected="true" data-role="admin">
+	<div class="platform-shell">
+		<aside class="platform-sidebar">
+			<a class="platform-brand" href="dashboard.html"><img src="../images/ojo-digital-saas-logo.svg" alt="Ojo Digital SaaS"><span><strong>Ojo Digital</strong><span>Admin demo</span></span></a>
+			<nav class="platform-nav" aria-label="Navegacion plataforma">
+				<a href="dashboard.html"><i class="fas fa-chart-line"></i>Dashboard</a>
+				<a href="reportes.html"><i class="fas fa-file-alt"></i>Reportes</a>
+				<a href="excel-dashboard.html"><i class="fas fa-table"></i>Excel dashboard</a>
+				<a href="powerbi.html"><i class="fas fa-chart-pie"></i>Power BI</a>
+				<a class="is-active" href="admin.html"><i class="fas fa-user-shield"></i>Admin</a>
+				<button type="button" data-logout><i class="fas fa-sign-out-alt"></i>Cerrar sesion</button>
+			</nav>
+		</aside>
+		<main class="platform-main">
+			<header class="platform-topbar">
+				<div class="platform-title">
+					<h1>Panel admin inicial</h1>
+					<p>Resumen demo de usuarios, sitios, revisiones, alertas criticas, planes activos y accesos de analitica.</p>
+				</div>
+				<span class="platform-user-pill" data-current-user>Sesion demo</span>
+			</header>
+			<section class="platform-grid metric-grid" id="adminMetrics"></section>
+			<section class="platform-grid content-grid">
+				<article class="platform-card">
+					<h2>Resumen operativo</h2>
+					<ul class="platform-list" id="adminSummary"></ul>
+					<div class="platform-actions" style="margin-top: 1rem;">
+						<a class="platform-link-button" href="reportes.html">Acceso a reportes</a>
+						<a class="platform-link-button secondary" href="powerbi.html">Acceso a Power BI</a>
+						<a class="platform-link-button secondary" href="excel-dashboard.html">Acceso a Excel dashboard</a>
+					</div>
+				</article>
+				<article class="platform-card">
+					<h2>Clientes demo</h2>
+					<div id="adminUsers"></div>
+				</article>
+			</section>
+			<section class="platform-card" style="margin-top: 1rem;">
+				<h2>Sitios demo</h2>
+				<div id="adminSites"></div>
+			</section>
+		</main>
+	</div>
+	<script src="../assets/js/ojo-digital-platform.js" defer></script>
+</body>
+</html>

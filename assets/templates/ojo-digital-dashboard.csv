@@ -1,0 +1,2 @@
+Cliente,Sitio Web,URL,Fecha de Revision,Disponibilidad,Codigo HTTP,Tiempo de Respuesta,SSL Valido,Puntaje SEO,Puntaje Rendimiento,Puntaje Seguridad,Estado General,Alertas,Recomendaciones,Plan
+Cliente Demo,Sitio Demo,https://ejemplo.com,2026-05-30,99.5%,200,450,Si,85,78,82,Saludable,"SSL vigente; buen estado general","Optimizar imagenes; revisar metadatos; documentar respaldos",Profesional

@@ -6,7 +6,7 @@
 
 ### Construimos el futuro digital de tu negocio
 
-Desarrollo web, software, ciberseguridad, automatización y marketing digital con enfoque profesional.
+Desarrollo web, software, ciberseguridad, automatización, SEO y Ojo Digital SaaS con enfoque profesional.
 
 <br>
 
@@ -140,9 +140,53 @@ Combinamos **desarrollo de software, seguridad informática y marketing digital*
 </div>
 
 - 🌐 **Sitio web corporativo** con diseño moderno y responsive.
-- 🛡️ Sección de ciberseguridad con formulario de cotización interactivo.
-- 🧪 Integración continua con GitHub Actions.
-- 📊 Panel de administración (en desarrollo).
+- 👁️ **Ojo Digital SaaS** como producto principal de monitoreo autorizado.
+- 📊 **Plataforma demo** con login, dashboard, reportes, Excel y Power BI preparado.
+- 🛡️ Enfoque de ciberseguridad defensiva y monitoreo de activos propios o autorizados.
+
+## Ojo Digital SaaS
+
+Ojo Digital SaaS es una plataforma inteligente de monitoreo digital creada por ITSA SEGURITY para ayudar a negocios, colegios, iglesias, emprendedores y pequeñas empresas a vigilar el estado de su sitio web, seguridad básica, SEO, rendimiento y presencia digital desde un solo panel.
+
+Rutas principales:
+
+- Sitio comercial: `soluciones/ojo-digital.html`
+- Plataforma comercial: `soluciones/plataforma.html`
+- Login demo: `plataforma/login.html`
+- Dashboard demo: `plataforma/dashboard.html`
+- Reportes: `plataforma/reportes.html`
+- Dashboard Excel: `plataforma/excel-dashboard.html`
+- Power BI: `plataforma/powerbi.html`
+- Admin demo: `plataforma/admin.html`
+
+La demo usa `localStorage` y datos simulados. No debe usarse con credenciales reales.
+
+Plantillas de analitica:
+
+- `assets/templates/ojo-digital-dashboard.xlsx`
+- `assets/templates/ojo-digital-dashboard.csv`
+
+## Documentación técnica
+
+- `docs/SAAS_STRUCTURE.md`
+- `docs/POWERBI_INTEGRATION.md`
+- `docs/EXCEL_DASHBOARD.md`
+- `docs/ROADMAP_OJO_DIGITAL.md`
+
+Variables de entorno base:
+
+```env
+SUPABASE_URL=
+SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+DATABASE_URL=
+OPENAI_API_KEY=
+GEMINI_API_KEY=
+POWERBI_EMBED_URL=
+POWERBI_REPORT_ID=
+POWERBI_WORKSPACE_ID=
+WHATSAPP_NUMBER=
+```
 
 ---
 

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="es-NI">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dashboard Cliente | Ojo Digital SaaS | ITSA SEGURITY</title>
+	<meta name="description" content="Dashboard demo de Ojo Digital SaaS con sitios monitoreados, alertas, SSL, SEO, rendimiento, reportes, Excel y Power BI.">
+	<link rel="canonical" href="https://jhernandez30-cpu.github.io/ITSA-Segurity/plataforma/dashboard.html">
+	<meta property="og:title" content="Dashboard Cliente | Ojo Digital SaaS">
+	<meta property="og:description" content="Panel demo para monitoreo autorizado de sitios web, reportes y recomendaciones.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://jhernandez30-cpu.github.io/ITSA-Segurity/images/ojo-digital-saas-logo.svg">
+	<link rel="icon" href="../images/ojo-digital-saas-logo.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="../assets/css/platform.css">
+</head>
+<body class="platform-page" data-page="dashboard" data-protected="true">
+	<div class="platform-shell">
+		<aside class="platform-sidebar">
+			<a class="platform-brand" href="dashboard.html"><img src="../images/ojo-digital-saas-logo.svg" alt="Ojo Digital SaaS"><span><strong>Ojo Digital</strong><span>SaaS Dashboard</span></span></a>
+			<nav class="platform-nav" aria-label="Navegacion plataforma">
+				<a class="is-active" href="dashboard.html"><i class="fas fa-chart-line"></i>Dashboard</a>
+				<a href="reportes.html"><i class="fas fa-file-alt"></i>Reportes</a>
+				<a href="excel-dashboard.html"><i class="fas fa-table"></i>Excel dashboard</a>
+				<a href="powerbi.html"><i class="fas fa-chart-pie"></i>Power BI</a>
+				<a href="admin.html"><i class="fas fa-user-shield"></i>Admin</a>
+				<a href="../soluciones/ojo-digital.html"><i class="fas fa-eye"></i>Landing SaaS</a>
+				<button type="button" data-logout><i class="fas fa-sign-out-alt"></i>Cerrar sesion</button>
+			</nav>
+		</aside>
+		<main class="platform-main">
+			<header class="platform-topbar">
+				<div class="platform-title">
+					<h1>Dashboard general</h1>
+					<p>Monitoreo autorizado de sitios web, SSL, SEO, rendimiento y seguridad basica.</p>
+				</div>
+				<span class="platform-user-pill" data-current-user>Sesion demo</span>
+			</header>
+			<section class="platform-grid metric-grid" id="dashboardMetrics" aria-label="Indicadores principales"></section>
+			<section class="platform-grid content-grid">
+				<div class="platform-grid">
+					<article class="platform-card">
+						<h2>Mis sitios web</h2>
+						<div class="platform-grid site-grid" id="sitesList"></div>
+					</article>
+					<article class="platform-card">
+						<h2>Historial reciente</h2>
+						<div id="historyTable"></div>
+					</article>
+				</div>
+				<aside class="platform-grid">
+					<article class="platform-card">
+						<h2>Nueva revision</h2>
+						<form class="platform-form" id="siteForm">
+							<label class="platform-field"><span>Nombre del sitio</span><input class="platform-input" name="siteName" type="text" placeholder="Sitio de mi negocio" required></label>
+							<label class="platform-field"><span>URL autorizada</span><input class="platform-input" name="url" type="url" placeholder="https://midominio.com" required></label>
+							<button class="platform-button" type="submit">Agregar sitio y revisar</button>
+							<p class="platform-message" data-site-message role="status" aria-live="polite"></p>
+						</form>
+					</article>
+					<article class="platform-card">
+						<h2>Accesos rapidos</h2>
+						<div class="platform-actions">
+							<a class="platform-link-button" href="dashboard.html">Ver Dashboard General</a>
+							<a class="platform-link-button secondary" href="excel-dashboard.html">Ver Dashboard en Excel</a>
+							<a class="platform-link-button secondary" href="powerbi.html">Ver Dashboard en Power BI</a>
+							<a class="platform-link-button secondary" href="reportes.html">Descargar reporte</a>
+						</div>
+					</article>
+					<article class="platform-card">
+						<h2>Alertas</h2>
+						<ul class="platform-list" id="alertsList"></ul>
+					</article>
+					<article class="platform-card">
+						<h2>Recomendaciones</h2>
+						<ul class="platform-list" id="recommendationsList"></ul>
+					</article>
+				</aside>
+			</section>
+		</main>
+	</div>
+	<script src="../assets/js/ojo-digital-platform.js" defer></script>
+</body>
+</html>
