@@ -1,0 +1,80 @@
+-- Ojo Digital SaaS future schema roadmap.
+-- This file is documentation-first. Do not execute blindly in production.
+-- Review ownership, RLS policies, indexes, billing rules and audit needs first.
+
+-- profiles
+-- User profile data connected to auth.users.
+-- Suggested fields:
+-- id uuid primary key references auth.users(id) on delete cascade
+-- full_name text
+-- company_name text
+-- role text check (role in ('client', 'admin'))
+-- phone text
+-- created_at timestamptz default now()
+
+-- plans
+-- Commercial plans for Ojo Digital SaaS.
+-- Suggested fields:
+-- id bigint primary key generated always as identity
+-- name text not null
+-- monthly_price numeric(10,2)
+-- max_sites integer
+-- includes_excel boolean default false
+-- includes_powerbi boolean default false
+-- created_at timestamptz default now()
+
+-- subscriptions
+-- Active client subscriptions.
+-- Suggested fields:
+-- id bigint primary key generated always as identity
+-- profile_id uuid references public.profiles(id)
+-- plan_id bigint references public.plans(id)
+-- status text check (status in ('trial', 'active', 'past_due', 'cancelled'))
+-- starts_at timestamptz
+-- ends_at timestamptz
+-- created_at timestamptz default now()
+
+-- sites
+-- Authorized digital assets monitored by Ojo Digital SaaS.
+-- Suggested fields:
+-- id bigint primary key generated always as identity
+-- profile_id uuid references public.profiles(id)
+-- name text not null
+-- url text not null
+-- authorization_confirmed boolean default false
+-- created_at timestamptz default now()
+
+-- site_checks
+-- Individual checks for availability, SSL, SEO, performance and security basics.
+-- Suggested fields:
+-- id bigint primary key generated always as identity
+-- site_id bigint references public.sites(id) on delete cascade
+-- status text
+-- ssl_status text
+-- seo_score integer
+-- performance_score integer
+-- security_summary text
+-- checked_at timestamptz default now()
+
+-- reports
+-- Monthly reports generated for clients.
+-- Suggested fields:
+-- id bigint primary key generated always as identity
+-- site_id bigint references public.sites(id) on delete cascade
+-- period text not null
+-- summary text
+-- pdf_url text
+-- excel_url text
+-- powerbi_url text
+-- created_at timestamptz default now()
+
+-- alerts
+-- Actionable alerts from checks and reports.
+-- Suggested fields:
+-- id bigint primary key generated always as identity
+-- site_id bigint references public.sites(id) on delete cascade
+-- severity text check (severity in ('low', 'medium', 'high', 'critical'))
+-- title text not null
+-- description text
+-- resolved_at timestamptz
+-- created_at timestamptz default now()

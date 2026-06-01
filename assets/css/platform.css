@@ -71,10 +71,27 @@
 	text-decoration: none;
 }
 
+.platform-auth-logo picture,
+.platform-brand picture {
+	display: block;
+	line-height: 0;
+}
+
 .platform-auth-logo img,
 .platform-brand img {
-	height: 52px;
-	width: 52px;
+	height: auto;
+	object-fit: contain;
+}
+
+.platform-auth-logo img {
+	max-height: 74px;
+	max-width: 240px;
+	width: 100%;
+}
+
+.platform-brand img {
+	height: 48px;
+	width: 48px;
 }
 
 .platform-auth-logo strong,
@@ -280,6 +297,28 @@
 	gap: 1rem;
 	justify-content: space-between;
 	margin-bottom: 1.5rem;
+}
+
+.platform-topbar-logo {
+	border: 0;
+	display: inline-flex;
+	flex-shrink: 0;
+	margin-left: auto;
+	text-decoration: none;
+}
+
+.platform-topbar-logo picture {
+	display: block;
+	line-height: 0;
+}
+
+.platform-topbar-logo img {
+	display: block;
+	height: auto;
+	max-height: 52px;
+	max-width: 170px;
+	object-fit: contain;
+	width: 100%;
 }
 
 .platform-user-pill {
@@ -509,6 +548,10 @@
 	.platform-topbar {
 		align-items: flex-start;
 		flex-direction: column;
+	}
+
+	.platform-topbar-logo {
+		margin-left: 0;
 	}
 }
 

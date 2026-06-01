@@ -222,3 +222,39 @@ WHATSAPP_NUMBER=
 <div align="center">
   <sub>© 2026 ITSA Segurity. Transformamos tecnología en seguridad y crecimiento.</sub>
 </div>
+---
+
+## Ojo Digital SaaS: Next.js + Supabase
+
+La primera base técnica del SaaS está en `ojo-digital-saas/` y usa:
+
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- Supabase SSR
+- Ruta de prueba `/notes`
+
+Archivos principales:
+
+- `ojo-digital-saas/app/notes/page.tsx`
+- `ojo-digital-saas/utils/supabase/server.ts`
+- `ojo-digital-saas/.env.example`
+- `supabase/schema-notes.sql`
+- `supabase/ojo-digital-roadmap.sql`
+- `docs/SUPABASE_SETUP.md`
+
+Para probar:
+
+```bash
+cd ojo-digital-saas
+npm install
+npm run dev
+```
+
+Luego abrir:
+
+```txt
+http://localhost:3000/notes
+```
+
+No se deben publicar credenciales reales en Git. Usa `.env.development.local` para variables locales y `vercel env pull .env.development.local` para sincronizar variables en Vercel.
